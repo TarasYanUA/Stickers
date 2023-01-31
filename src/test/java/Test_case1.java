@@ -1,5 +1,8 @@
 import adminPanel.AdmProductPage;
 import adminPanel.CsCartSettings;
+import adminPanel.StickerPage;
+import adminPanel.VideoGalleryPage;
+import com.codeborne.selenide.Condition;
 import org.testng.annotations.Test;
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -7,10 +10,84 @@ public class Test_case1 extends TestRunner {
     @Test
     public void VerifyTestCaseOne(){
         CsCartSettings csCartSettings = new CsCartSettings();
-        //Включаем окно Быстрого просмотра и мини-иконки в виде галереи
+        //Включаем мини-иконки в виде галереи и окно Быстрого просмотра
+        csCartSettings.menuSettings.hover();
+        csCartSettings.sectionAppearance.click();
+        if (!csCartSettings.settingMiniThumbnailAsGallery.isSelected()){
+            csCartSettings.settingMiniThumbnailAsGallery.click();
+        }
+        if (!csCartSettings.settingQuickView.isSelected()){
+            csCartSettings.settingQuickView.click();
+        }
+        csCartSettings.button_Save.click();
+        //Включаем Вертикальное отображение мини-иконок (Модуль "Видео галерея")
+        csCartSettings.navigateToAddonsPage();
+        VideoGalleryPage videoGalleryPage = csCartSettings.navigateToVideoGalleryPage();
+        videoGalleryPage.tabSettings.click();
+        if(!videoGalleryPage.settingVerticalView.isSelected()) {
+            videoGalleryPage.settingVerticalView.click();
+            videoGalleryPage.buttonSaveVideoGallery.click();
+        }
+
+        //Три верхних стикера
+        csCartSettings.navigateToAddonsPage();
+        StickerPage stickerPage = csCartSettings.navigateToStickerListPage();
+        //Стикер "Акция" (красный цвет)
+        stickerPage.sticker_Promotion.click();
+        stickerPage.selectSettingPositionsInProductLists("T");
+        stickerPage.selectSettingPositionsOnProductPage("T");
+        stickerPage.statusActive.click();
+        stickerPage.buttonSaveSticker.click();
+        //Стикер "Sale > 10% < 30%" (оранжевый цвет)
+        stickerPage.dropDownToggle.click();
+        stickerPage.toggleStickerList.click();
+        stickerPage.sticker_SaleOrange.click();
+        stickerPage.selectSettingPositionsInProductLists("T");
+        stickerPage.selectSettingPositionsOnProductPage("T");
+        stickerPage.statusActive.click();
+        stickerPage.buttonSaveSticker.click();
+        //Стикер "Популярный" (фиолетовый цвет)
+        stickerPage.dropDownToggle.click();
+        stickerPage.toggleStickerList.click();
+        stickerPage.sticker_PopularProduct.click();
+        stickerPage.selectSettingPositionsInProductLists("T");
+        stickerPage.selectSettingPositionsOnProductPage("T");
+        stickerPage.statusActive.click();
+        stickerPage.buttonSaveSticker.click();
+        stickerPage.gearWheel.click();
+        stickerPage.generateStickerLinks.click();
+        csCartSettings.menuAddons.shouldBe(Condition.enabled);
+
+        //Три нижних стикера
+        //Стикер "Высокий рейтинг" (оранжевый цвет)
+        stickerPage.dropDownToggle.click();
+        stickerPage.toggleStickerList.click();
+        stickerPage.sticker_TopRated.click();
+        stickerPage.selectSettingPositionsInProductLists("B");
+        stickerPage.selectSettingPositionsOnProductPage("B");
+        stickerPage.statusActive.click();
+        stickerPage.buttonSaveSticker.click();
+        //Стикер "Бесплатная доставка" (цвет сине-белый)
+        stickerPage.dropDownToggle.click();
+        stickerPage.toggleStickerList.click();
+        stickerPage.sticker_Free_Delivery.click();
+        stickerPage.selectSettingPositionsInProductLists("B");
+        stickerPage.selectSettingPositionsOnProductPage("B");
+        stickerPage.statusActive.click();
+        stickerPage.buttonSaveSticker.click();
+        stickerPage.gearWheel.click();
+        stickerPage.generateStickerLinks.click();
+        csCartSettings.menuAddons.shouldBe(Condition.enabled);
+        //Стикер "Вес" (цвет серый)
+        stickerPage.dropDownToggle.click();
+        stickerPage.toggleStickerList.click();
+        stickerPage.sticker_Weight.click();
+        stickerPage.selectSettingPositionsInProductLists("B");
+        stickerPage.selectSettingPositionsOnProductPage("B");
+        stickerPage.statusActive.click();
+        stickerPage.buttonSaveSticker.click();
 
 
-        //Подготавливаем Стикеры (6 штук) и пиктограммы
 
 
         //Удаляем все изображения у товара 1
@@ -19,6 +96,5 @@ public class Test_case1 extends TestRunner {
         admProductPage.productImage.hover();
         admProductPage.button_DeleteProductImage.click();
         csCartSettings.button_Save.click();
-
     }
 }
