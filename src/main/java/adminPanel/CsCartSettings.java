@@ -17,6 +17,7 @@ public class CsCartSettings {
     public SelenideElement menuAddons = $("#elm_menu_addons");
     public SelenideElement sectionManageAddons = $("#elm_menu_addons_manage_addons");
     public SelenideElement menuOfStickerAddon = $("tr#addon_ab__stickers button.btn.dropdown-toggle");
+    public SelenideElement sectionStickerSettings = $("div.nowrap a[href*='addon=ab__stickers']");
     public SelenideElement sectionStickerList = $("tr#addon_ab__stickers a[href*='ab__stickers.manage']");
     public SelenideElement menuOFVideoGalleryAddon = $("tr#addon_ab__video_gallery button.btn.dropdown-toggle");
     public SelenideElement sectionVideoGalleryGeneralSettings = $("tr#addon_ab__video_gallery a[href*='selected_section=settings']");
@@ -30,6 +31,11 @@ public class CsCartSettings {
     public void navigateToAddonsPage(){
         menuAddons.hover();
         sectionManageAddons.click();
+    }
+    public StickerPage navigateToStickerSettingsPage(){
+        menuOfStickerAddon.click();
+        sectionStickerSettings.click();
+        return new StickerPage();
     }
     public StickerPage navigateToStickerListPage(){
         menuOfStickerAddon.click();

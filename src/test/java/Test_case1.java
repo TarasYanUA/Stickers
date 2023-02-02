@@ -28,10 +28,20 @@ public class Test_case1 extends TestRunner {
             videoGalleryPage.settingVerticalView.click();
             videoGalleryPage.buttonSaveVideoGallery.click();
         }
+        //Настраиваем настройки модуля "Стикеры"
+        csCartSettings.navigateToAddonsPage();
+        StickerPage stickerPage = csCartSettings.navigateToStickerSettingsPage();
+        stickerPage.tabSettings.click();
+        stickerPage.selectSettingOutputPosition("L");
+        stickerPage.selectSettingOutputTypeTop("column");
+        stickerPage.selectSettingMaxNumberTop("3");
+        stickerPage.selectSettingOutputTypeBottom("column");
+        stickerPage.selectSettingMaxNumberBottom("3");
+        stickerPage.buttonSaveSettings.click();
 
         //Три верхних стикера
         csCartSettings.navigateToAddonsPage();
-        StickerPage stickerPage = csCartSettings.navigateToStickerListPage();
+        csCartSettings.navigateToStickerListPage();
         //Стикер "Акция" (красный цвет)
         stickerPage.sticker_Promotion.click();
         stickerPage.selectSettingPositionsInProductLists("T");
