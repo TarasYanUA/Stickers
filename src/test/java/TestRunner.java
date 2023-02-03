@@ -29,13 +29,6 @@ public class TestRunner {
         Selenide.closeWebDriver();
     }
 
-    public void navigateToStorefront(int tabNumber){
-        $(By.linkText("Сохранить")).click();
-        $(".btn-bar.btn-toolbar.nav__actions-bar.dropleft").$(".cs-icon.dropdown-icon").click();
-        $(By.linkText("Предпросмотр")).click();
-        getWebDriver().getWindowHandle(); switchTo().window(tabNumber);
-    }
-
     public void selectBigPictureFlatTemplate() {
         $("#elm_details_layout").click();
         $x("//option[@value='abt__ut2_bigpicture_flat_template']").click();

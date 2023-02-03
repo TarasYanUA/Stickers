@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Starts working with the products.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Six stickers work correct.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/AdmProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/AdmProductPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/StickerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/StickerPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Test_case0002.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Test_case1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test_case1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675420045218</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Six stickers work correct.">
+      <created>1675423318402</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1675423318402</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,6 +132,7 @@
     <MESSAGE value="Started the first test-case." />
     <MESSAGE value="Continue the first test-case." />
     <MESSAGE value="Starts working with the products." />
-    <option name="LAST_COMMIT_MESSAGE" value="Starts working with the products." />
+    <MESSAGE value="Six stickers work correct." />
+    <option name="LAST_COMMIT_MESSAGE" value="Six stickers work correct." />
   </component>
 </project>

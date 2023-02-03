@@ -5,6 +5,8 @@ import adminPanel.VideoGalleryPage;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.Test;
+
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class Test_case1 extends TestRunner {
@@ -41,7 +43,6 @@ public class Test_case1 extends TestRunner {
         stickerPage.buttonSaveSettings.click();
         //Три верхних стикера
         csCartSettings.navigateToAddonsPage();
-        csCartSettings.navigateToStickerListPage();
         //Стикер "Акция" (красный цвет)
         stickerPage.sticker_Promotion.click();
         stickerPage.selectSettingPositionsInProductLists("T");
@@ -98,14 +99,20 @@ public class Test_case1 extends TestRunner {
         stickerPage.statusActive.click();
         stickerPage.buttonSaveSticker.click();
 
-
-
-
-        //Удаляем все изображения у товара 1
-        AdmProductPage admProductPage = csCartSettings.navigateToEditingProductPage();
-        $x("//td[@class='product-name-column wrap-word']//a[contains(text(), '18-55mm')]").click();
-        admProductPage.productImage.hover();
-        admProductPage.button_DeleteProductImage.click();
+        //Работаем со страницей товара
+        csCartSettings.navigateToEditingCategoryPage();
+        $x("//a[text()='AB: Телефоны']").click();
+        csCartSettings.statusActive_Category.click();
         csCartSettings.button_Save.click();
+        csCartSettings.gearWheelOnTop.click();
+        csCartSettings.button_ViewProducts.click();
+        AdmProductPage admProductPage = new AdmProductPage();
+        $x("//td[@class='product-name-column wrap-word']//a[contains(text(), 'Apple iPhone 14')]").click();
+        admProductPage.statusActive_Product.click();
+        admProductPage.field_ListPrice.click();
+        admProductPage.field_ListPrice.clear();
+        admProductPage.field_ListPrice.sendKeys("2000");
+        csCartSettings.navigateToStorefront(1);
+        Selenide.screenshot("101 ");
     }
 }
