@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class CsCartSettings {
     public CsCartSettings(){super();}
-    public SelenideElement button_Save = $(".cm-product-save-buttons");
+    public SelenideElement button_Save = $(".btn.btn-primary.cm-submit");
     public SelenideElement menuProducts = $x("//li[@class='dropdown nav__header-main-menu-item ']//a[@href='#products']");
     public SelenideElement sectionProducts = $x("//span[text()='Товары']");
     public SelenideElement menuSettings = $(".dropdown-toggle.settings");
@@ -15,7 +15,7 @@ public class CsCartSettings {
     public SelenideElement settingMiniThumbnailAsGallery = $("#field___thumbnails_gallery_147");
     public SelenideElement settingQuickView = $x("//input[contains(@id, 'field___enable_quick_view_')]");
     public SelenideElement menuAddons = $("#elm_menu_addons");
-    public SelenideElement sectionManageAddons = $("#elm_menu_addons_manage_addons");
+    public SelenideElement sectionDownloadedAddons = $("#elm_menu_addons_downloaded_add_ons");
     public SelenideElement menuOfStickerAddon = $("tr#addon_ab__stickers button.btn.dropdown-toggle");
     public SelenideElement sectionStickerSettings = $("div.nowrap a[href*='addon=ab__stickers']");
     public SelenideElement sectionStickerList = $("tr#addon_ab__stickers a[href*='ab__stickers.manage']");
@@ -30,7 +30,7 @@ public class CsCartSettings {
     }
     public void navigateToAddonsPage(){
         menuAddons.hover();
-        sectionManageAddons.click();
+        sectionDownloadedAddons.click();
     }
     public StickerPage navigateToStickerSettingsPage(){
         menuOfStickerAddon.click();

@@ -3,6 +3,7 @@ import adminPanel.CsCartSettings;
 import adminPanel.StickerPage;
 import adminPanel.VideoGalleryPage;
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import org.testng.annotations.Test;
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -38,7 +39,6 @@ public class Test_case1 extends TestRunner {
         stickerPage.selectSettingOutputTypeBottom("column");
         stickerPage.selectSettingMaxNumberBottom("3");
         stickerPage.buttonSaveSettings.click();
-
         //Три верхних стикера
         csCartSettings.navigateToAddonsPage();
         csCartSettings.navigateToStickerListPage();
@@ -66,10 +66,10 @@ public class Test_case1 extends TestRunner {
         stickerPage.buttonSaveSticker.click();
         stickerPage.gearWheel.click();
         stickerPage.generateStickerLinks.click();
-        csCartSettings.menuAddons.shouldBe(Condition.enabled);
-
         //Три нижних стикера
         //Стикер "Высокий рейтинг" (оранжевый цвет)
+        Selenide.sleep(2000);
+        stickerPage.dropDownToggle.shouldBe(Condition.interactable);
         stickerPage.dropDownToggle.click();
         stickerPage.toggleStickerList.click();
         stickerPage.sticker_TopRated.click();
@@ -87,8 +87,9 @@ public class Test_case1 extends TestRunner {
         stickerPage.buttonSaveSticker.click();
         stickerPage.gearWheel.click();
         stickerPage.generateStickerLinks.click();
-        csCartSettings.menuAddons.shouldBe(Condition.enabled);
         //Стикер "Вес" (цвет серый)
+        Selenide.sleep(2000);
+        stickerPage.dropDownToggle.shouldBe(Condition.interactable);
         stickerPage.dropDownToggle.click();
         stickerPage.toggleStickerList.click();
         stickerPage.sticker_Weight.click();

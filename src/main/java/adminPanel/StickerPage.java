@@ -22,7 +22,7 @@ public class StickerPage {
     public SelenideElement settingMaxNumberBottom = $("#ab__stickers_BL_max_count");
     public SelenideElement settingPositionsInProductLists = $("#ab__stickers_output_position_list");
     public SelenideElement settingPositionsOnProductPage = $("#ab__stickers_output_position_detailed_page");
-    public SelenideElement statusActive = $("#ab__stickers_status_11_a");
+    public SelenideElement statusActive = $("input[id^='ab__stickers_status_'][id$='_a']");
     public SelenideElement buttonSaveSettings = $(".cm-addons-save-settings");
     public SelenideElement buttonSaveSticker = $(".cm-submit.btn-primary");
     public SelenideElement gearWheel = $("div.btn-group.dropleft");

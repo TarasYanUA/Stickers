@@ -6,12 +6,12 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 /*
-Модуль "Стикеры" 2.1.0 + модуль "Видео галерея" 3.2.1 + тема Юни2(UltRu) 4.15.2.f. Можно установить весь пакет темы Юни2.
+Модуль "Стикеры" 2.1.0 + модуль "Видео галерея" 3.2.1 + тема Юни2(UltRu) 4.16.1a. Можно установить весь пакет темы Юни2.
 Запускать через файл testng.xml
 */
 
 public class TestRunner {
-    public static final String BASIC_URL = "https://trs.test.abt.team/4152ultru/admin.php";
+    public static final String BASIC_URL = "https://trs.test.abt.team/4161ultru/admin.php";
 
     @BeforeClass
     public void openBrowser() {
