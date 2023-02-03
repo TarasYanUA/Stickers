@@ -29,6 +29,7 @@ public class StickerPage {
     public SelenideElement generateStickerLinks = $(".cm-post.cm-comet");
     public SelenideElement dropDownToggle = $("#last_edited_items .btn.dropdown-toggle");
     public SelenideElement toggleStickerList = $("#last_edited_items a[href*='ab__stickers.manage']");
+    public SelenideElement tab_Conditions = $("#conditions");
 
 
 
