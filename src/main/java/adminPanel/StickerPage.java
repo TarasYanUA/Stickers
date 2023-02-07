@@ -30,6 +30,12 @@ public class StickerPage {
     public SelenideElement dropDownToggle = $("#last_edited_items .btn.dropdown-toggle");
     public SelenideElement toggleStickerList = $("#last_edited_items a[href*='ab__stickers.manage']");
     public SelenideElement tab_Conditions = $("#conditions");
+    public SelenideElement tableOfConditions = $(".conditions-tree-node.clearfix");
+    public SelenideElement button_DeleteCondition = $(".icon-trash");
+    public SelenideElement button_AddCondition = $("div[id*='add_condition'] .btn");
+    public SelenideElement fieldOfConditions = $("div[class='conditions-tree-node'] select");
+    public SelenideElement fieldOfOperator = $("select[name*='sticker_data'][id*='sticker_condition_operator']");
+    public SelenideElement fieldOfPriceCondition = $("input[name*='sticker_data'].input-medium");
 
 
 
@@ -70,5 +76,20 @@ public class StickerPage {
     }
     public void selectSettingPositionsOnProductPage(String value){
         getSettingPositionsOnProductPage().selectByValue(value);
+    }
+
+    public Select getStickerCondition(){return new Select(fieldOfConditions);}
+    public void selectStickerCondition(String value){
+        getStickerCondition().selectByValue(value);
+    }
+
+    public Select getStickerOperator(){return new Select(fieldOfOperator);}
+    public void selectStickerOperator(String value){
+        getStickerOperator().selectByValue(value);
+    }
+    public void clickAndType_PriceCondition(String value){
+        fieldOfPriceCondition.click();
+        fieldOfPriceCondition.clear();
+        fieldOfPriceCondition.sendKeys(value);
     }
 }

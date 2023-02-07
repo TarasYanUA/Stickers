@@ -4,17 +4,24 @@ import adminPanel.StickerPage;
 import adminPanel.VideoGalleryPage;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideConfig;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Selenide.$;
+import java.util.List;
+
 import static com.codeborne.selenide.Selenide.$x;
 
+/*
+ссылка на тест-кейс 1: https://docs.google.com/spreadsheets/d/1UdXKRCHxD7XP7W3UzDN28ff10LyiJPbZKrdvZllpUCU/edit#gid=1582514111
+
+*/
 public class Test_case1 extends TestRunner {
     @Test
     public void VerifyTestCaseOne(){
         CsCartSettings csCartSettings = new CsCartSettings();
         //Включаем мини-иконки в виде галереи и окно Быстрого просмотра
-        csCartSettings.menuSettings.hover();
+        /*csCartSettings.menuSettings.hover();
         csCartSettings.sectionAppearance.click();
         if (!csCartSettings.settingMiniThumbnailAsGallery.isSelected()){
             csCartSettings.settingMiniThumbnailAsGallery.click();
@@ -30,7 +37,7 @@ public class Test_case1 extends TestRunner {
         if(!videoGalleryPage.settingVerticalView.isSelected()) {
             videoGalleryPage.settingVerticalView.click();
             videoGalleryPage.buttonSaveVideoGallery.click();
-        }
+        }*/
         //Настраиваем настройки модуля "Стикеры"
         csCartSettings.navigateToAddonsPage();
         StickerPage stickerPage = csCartSettings.navigateToStickerSettingsPage();
@@ -43,11 +50,13 @@ public class Test_case1 extends TestRunner {
         stickerPage.buttonSaveSettings.click();
         //Три верхних стикера
         csCartSettings.navigateToAddonsPage();
+        csCartSettings.navigateToStickerListPage();
         //Стикер "Акция" (красный цвет)
         stickerPage.sticker_Promotion.click();
         stickerPage.selectSettingPositionsInProductLists("T");
         stickerPage.selectSettingPositionsOnProductPage("T");
         stickerPage.statusActive.click();
+        addConditionOfPrice(stickerPage);
         stickerPage.buttonSaveSticker.click();
         //Стикер "Sale > 10% < 30%" (оранжевый цвет)
         stickerPage.dropDownToggle.click();
@@ -56,6 +65,7 @@ public class Test_case1 extends TestRunner {
         stickerPage.selectSettingPositionsInProductLists("T");
         stickerPage.selectSettingPositionsOnProductPage("T");
         stickerPage.statusActive.click();
+        addConditionOfPrice(stickerPage);
         stickerPage.buttonSaveSticker.click();
         //Стикер "Популярный" (фиолетовый цвет)
         stickerPage.dropDownToggle.click();
@@ -64,6 +74,7 @@ public class Test_case1 extends TestRunner {
         stickerPage.selectSettingPositionsInProductLists("T");
         stickerPage.selectSettingPositionsOnProductPage("T");
         stickerPage.statusActive.click();
+        addConditionOfPrice(stickerPage);
         stickerPage.buttonSaveSticker.click();
         stickerPage.gearWheel.click();
         stickerPage.generateStickerLinks.click();
@@ -77,6 +88,7 @@ public class Test_case1 extends TestRunner {
         stickerPage.selectSettingPositionsInProductLists("B");
         stickerPage.selectSettingPositionsOnProductPage("B");
         stickerPage.statusActive.click();
+        addConditionOfPrice(stickerPage);
         stickerPage.buttonSaveSticker.click();
         //Стикер "Бесплатная доставка" (цвет сине-белый)
         stickerPage.dropDownToggle.click();
@@ -85,6 +97,7 @@ public class Test_case1 extends TestRunner {
         stickerPage.selectSettingPositionsInProductLists("B");
         stickerPage.selectSettingPositionsOnProductPage("B");
         stickerPage.statusActive.click();
+        addConditionOfPrice(stickerPage);
         stickerPage.buttonSaveSticker.click();
         stickerPage.gearWheel.click();
         stickerPage.generateStickerLinks.click();
@@ -97,6 +110,7 @@ public class Test_case1 extends TestRunner {
         stickerPage.selectSettingPositionsInProductLists("B");
         stickerPage.selectSettingPositionsOnProductPage("B");
         stickerPage.statusActive.click();
+        addConditionOfPrice(stickerPage);
         stickerPage.buttonSaveSticker.click();
 
         //Работаем со страницей товара
@@ -112,7 +126,22 @@ public class Test_case1 extends TestRunner {
         admProductPage.field_ListPrice.click();
         admProductPage.field_ListPrice.clear();
         admProductPage.field_ListPrice.sendKeys("2000");
+        admProductPage.selectProductTemplate("default_template");
         csCartSettings.navigateToStorefront(1);
-        Selenide.screenshot("101 ");
+        Selenide.screenshot("101 ProdPage - VerticalIcons, LeftTopColumn, DefaultTemplate");
+        //Проверяем, что мини галерея вертикальная
+
+    }
+
+    private static void addConditionOfPrice(StickerPage stickerPage) {
+        stickerPage.tab_Conditions.hover().click();
+        if(stickerPage.tableOfConditions.exists()){
+            stickerPage.tableOfConditions.hover();
+            stickerPage.button_DeleteCondition.click();
+        }
+        stickerPage.button_AddCondition.shouldBe(Condition.interactable).click();
+        stickerPage.selectStickerCondition("price");
+        stickerPage.selectStickerOperator("gte");
+        stickerPage.clickAndType_PriceCondition("1400");
     }
 }
