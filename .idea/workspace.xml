@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Added product. The next is add condition to 5 stickers.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Added condition to all stickers and prepared a product.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/AdmProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/AdmProductPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/StickerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/StickerPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/storefront/StProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/StProductPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Test_case1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test_case1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675433034284</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added condition to all stickers and prepared a product.">
+      <created>1675784555062</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1675784555062</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,6 +166,7 @@
     <MESSAGE value="Starts working with the products." />
     <MESSAGE value="Six stickers work correct." />
     <MESSAGE value="Added product. The next is add condition to 5 stickers." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added product. The next is add condition to 5 stickers." />
+    <MESSAGE value="Added condition to all stickers and prepared a product." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added condition to all stickers and prepared a product." />
   </component>
 </project>

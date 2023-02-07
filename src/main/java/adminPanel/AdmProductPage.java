@@ -15,10 +15,17 @@ public class AdmProductPage {
     public SelenideElement field_ListPrice = $("#elm_list_price");
     public SelenideElement productName = $(".product-name-column a");
     public SelenideElement productTemplate = $("#elm_details_layout");
+    public SelenideElement tab_Shippings = $("#shippings");
+    public  SelenideElement field_ProductWeight = $("#product_weight");
 
 
     public Select getProductTemplate(){return new Select(productTemplate);}
     public void selectProductTemplate(String value){
         getProductTemplate().selectByValue(value);
+    }
+    public void clickAndType_ProductWeight(String value){
+        field_ProductWeight.click();
+        field_ProductWeight.clear();
+        field_ProductWeight.sendKeys(value);
     }
 }

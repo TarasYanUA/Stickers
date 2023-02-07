@@ -65,7 +65,6 @@ public class Test_case1 extends TestRunner {
         stickerPage.selectSettingPositionsInProductLists("T");
         stickerPage.selectSettingPositionsOnProductPage("T");
         stickerPage.statusActive.click();
-        addConditionOfPrice(stickerPage);
         stickerPage.buttonSaveSticker.click();
         //Стикер "Популярный" (фиолетовый цвет)
         stickerPage.dropDownToggle.click();
@@ -110,7 +109,6 @@ public class Test_case1 extends TestRunner {
         stickerPage.selectSettingPositionsInProductLists("B");
         stickerPage.selectSettingPositionsOnProductPage("B");
         stickerPage.statusActive.click();
-        addConditionOfPrice(stickerPage);
         stickerPage.buttonSaveSticker.click();
 
         //Работаем со страницей товара
@@ -127,6 +125,8 @@ public class Test_case1 extends TestRunner {
         admProductPage.field_ListPrice.clear();
         admProductPage.field_ListPrice.sendKeys("2000");
         admProductPage.selectProductTemplate("default_template");
+        admProductPage.tab_Shippings.hover().click();
+        admProductPage.clickAndType_ProductWeight("9");
         csCartSettings.navigateToStorefront(1);
         Selenide.screenshot("101 ProdPage - VerticalIcons, LeftTopColumn, DefaultTemplate");
         //Проверяем, что мини галерея вертикальная
