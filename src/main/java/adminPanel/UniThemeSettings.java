@@ -11,8 +11,9 @@ public class UniThemeSettings {
     public SelenideElement tab_ProductList = $("#product_list");
     public SelenideElement tab_Product = $("#products");
     public SelenideElement fieldOfPictogramPosition_Grid = $("select[id='settings.abt__ut2.product_list.products_multicolumns.ab__s_pictogram_position.desktop']");
-    public SelenideElement fieldOfPictogramPosition_ListWithoutOptions = $("select[id='settings.abt__ut2.product_list.products_without_options.ab__s_pictogram_position.desktop'");
-    public SelenideElement fieldOfPictogramPosition_CompactList = $("select[id='settings.abt__ut2.product_list.short_list.ab__s_pictogram_position.desktop'");
+    public SelenideElement fieldOfPictogramPosition_ListWithoutOptions = $("select[id='settings.abt__ut2.product_list.products_without_options.ab__s_pictogram_position.desktop']");
+    public SelenideElement fieldOfPictogramPosition_CompactList = $("select[id='settings.abt__ut2.product_list.short_list.ab__s_pictogram_position.desktop']");
+    public SelenideElement fieldOfPictogramPosition_Product = $("select[id='settings.abt__ut2.products.view.ab__s_pictogram_position.desktop']");
 
     public Select getFieldOfPictogramPosition_Grid(){return new Select(fieldOfPictogramPosition_Grid);}
     public void selectPictogramPosition_Grid(String value){
@@ -25,5 +26,9 @@ public class UniThemeSettings {
     public Select getFieldOfPictogramPosition_CompactList(){return new Select(fieldOfPictogramPosition_CompactList);}
     public void selectPictogramPosition_CompactList(String value){
         getFieldOfPictogramPosition_CompactList().selectByValue(value);
+    }
+    public Select getFieldOfPictogramPosition_Product(){return new Select(fieldOfPictogramPosition_Product);}
+    public void selectPictogramPosition_Product(String value){
+        getFieldOfPictogramPosition_Product().selectByValue(value);
     }
 }

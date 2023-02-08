@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Added asserts on the product page.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/adminPanel/UniThemeSettings.java" afterDir="false" />
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Work with pictogram settings.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/AdmProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/StickerPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/VideoGalleryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/VideoGallerySettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/StHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Test_case1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test_case1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/UniThemeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/UniThemeSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Test_case1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,11 +50,11 @@
     "last_opened_file_path": "C:/Idea Projects/Video_gallery/pom.xml"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.Test_case1.TestCaseOne_Storefront">
-    <configuration name="Test_case1" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="TestCaseOne" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Test_case1" />
+      <option name="MAIN_CLASS_NAME" value="TestCaseOne" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -67,10 +62,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_case1.TestCaseOne_Storefront" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCaseOne.TestCaseOne_Storefront" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Test_case1" />
+      <option name="MAIN_CLASS_NAME" value="TestCaseOne" />
       <option name="METHOD_NAME" value="TestCaseOne_Storefront" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -79,10 +74,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_case1.VerifyTestCaseOne" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCaseOne.VerifyTestCaseOne" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Test_case1" />
+      <option name="MAIN_CLASS_NAME" value="TestCaseOne" />
       <option name="METHOD_NAME" value="VerifyTestCaseOne" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -93,9 +88,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Test_case1.TestCaseOne_Storefront" />
-        <item itemvalue="TestNG.Test_case1.VerifyTestCaseOne" />
-        <item itemvalue="TestNG.Test_case1" />
+        <item itemvalue="TestNG.TestCaseOne.TestCaseOne_Storefront" />
+        <item itemvalue="TestNG.TestCaseOne.VerifyTestCaseOne" />
+        <item itemvalue="TestNG.TestCaseOne" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675862824849</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Work with pictogram settings.">
+      <created>1675866753843</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1675866753843</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -193,6 +195,7 @@
     <MESSAGE value="Added product. The next is add condition to 5 stickers." />
     <MESSAGE value="Added condition to all stickers and prepared a product." />
     <MESSAGE value="Added asserts on the product page." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added asserts on the product page." />
+    <MESSAGE value="Work with pictogram settings." />
+    <option name="LAST_COMMIT_MESSAGE" value="Work with pictogram settings." />
   </component>
 </project>

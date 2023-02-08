@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.*;
 ссылка на тест-кейс 1: https://docs.google.com/spreadsheets/d/1UdXKRCHxD7XP7W3UzDN28ff10LyiJPbZKrdvZllpUCU/edit#gid=1582514111
 
 */
-public class Test_case1 extends TestRunner {
+public class TestCaseOne extends TestRunner {
     @Test
     public void TestCaseOne_ConfigurateSettings() {
         //Включаем мини-иконки в виде галереи и окно Быстрого просмотра
@@ -38,7 +38,13 @@ public class Test_case1 extends TestRunner {
         //Настраиваем позицию пиктограмм
         csCartSettings.navigateToAddonsPage();
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
-
+        uniThemeSettings.tab_ProductList.click();
+        uniThemeSettings.selectPictogramPosition_Grid("position_1");
+        uniThemeSettings.selectPictogramPosition_ListWithoutOptions("position_1");
+        uniThemeSettings.selectPictogramPosition_CompactList("position_1");
+        uniThemeSettings.tab_Product.hover().click();
+        uniThemeSettings.selectPictogramPosition_Product("position_1");
+        csCartSettings.button_Save.click();
 
         //Настраиваем настройки модуля "Стикеры"
         csCartSettings.navigateToAddonsPage();
