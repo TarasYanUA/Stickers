@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Added condition to all stickers and prepared a product.">
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Added product. The next is add condition to 5 stickers.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/AdmProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/AdmProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/storefront/StHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/StHomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Test_case1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test_case1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,15 +44,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/UniTheme2/pom.xml&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Idea Projects/Video_gallery/pom.xml"
   }
-}</component>
-  <component name="RunManager" selected="TestNG.Test_case1">
+}]]></component>
+  <component name="RunManager" selected="TestNG.Test_case1.VerifyTestCaseOne">
     <configuration name="Test_case1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
@@ -76,8 +78,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Test_case1" />
         <item itemvalue="TestNG.Test_case1.VerifyTestCaseOne" />
+        <item itemvalue="TestNG.Test_case1" />
       </list>
     </recent_temporary>
   </component>

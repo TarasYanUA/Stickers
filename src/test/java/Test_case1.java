@@ -5,12 +5,15 @@ import adminPanel.VideoGalleryPage;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideConfig;
+import org.apache.hc.core5.util.Asserts;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import storefront.StHomePage;
 
 import java.util.List;
 
-import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.*;
 
 /*
 ссылка на тест-кейс 1: https://docs.google.com/spreadsheets/d/1UdXKRCHxD7XP7W3UzDN28ff10LyiJPbZKrdvZllpUCU/edit#gid=1582514111
@@ -37,7 +40,7 @@ public class Test_case1 extends TestRunner {
         if(!videoGalleryPage.settingVerticalView.isSelected()) {
             videoGalleryPage.settingVerticalView.click();
             videoGalleryPage.buttonSaveVideoGallery.click();
-        }*/
+        }
         //Настраиваем настройки модуля "Стикеры"
         csCartSettings.navigateToAddonsPage();
         StickerPage stickerPage = csCartSettings.navigateToStickerSettingsPage();
@@ -110,7 +113,7 @@ public class Test_case1 extends TestRunner {
         stickerPage.selectSettingPositionsOnProductPage("B");
         stickerPage.statusActive.click();
         stickerPage.buttonSaveSticker.click();
-
+*/
         //Работаем со страницей товара
         csCartSettings.navigateToEditingCategoryPage();
         $x("//a[text()='AB: Телефоны']").click();
@@ -128,9 +131,26 @@ public class Test_case1 extends TestRunner {
         admProductPage.tab_Shippings.hover().click();
         admProductPage.clickAndType_ProductWeight("9");
         csCartSettings.navigateToStorefront(1);
-        Selenide.screenshot("101 ProdPage - VerticalIcons, LeftTopColumn, DefaultTemplate");
-        //Проверяем, что мини галерея вертикальная
 
+        //Работаем с витриной
+        //Проверяем, что галерея мини-иконок вертикальная
+        Assert.assertTrue($(".ab-vg-vertical-thumbnails").exists(), "Gallery of mini-icons is not Vertical!");
+        //Проверяем, что присутствуют стикеры слева и вверху
+        Assert.assertTrue($(".ab-stickers-container__TL").exists(), "There are no stickers on the Top-Left side!");
+        //Проверяем, что присутствуют стикеры слева и внизу
+        Assert.assertTrue($(".ab-stickers-container__BL").exists(), "There are no stickers on the Bottom-Left side!");
+        //Проверяем, что стикеры расположены в колонку
+        Assert.assertTrue($(".column-filling").exists(), "Position of stickers is not in Column!");
+        //Проверяем, что пиктограммы присутствуют
+        Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page!");
+        //Проверяем, что пиктограммы расположены в позиции 1
+        Assert.assertTrue($(".ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1!");
+        Selenide.sleep(2000);   //Пауза нужна, чтобы на скриншоте были видны стикеры
+        Selenide.screenshot("100 ProdPage - VerticalIcons, LeftTopColumn, DefaultTemplate");
+        StHomePage stHomePage = new StHomePage();
+        stHomePage.shiftLanguage(1);
+        Selenide.sleep(2000);   //Пауза нужна, чтобы на скриншоте были видны стикеры
+        Selenide.screenshot("101 ProdPage - VerticalIcons, LeftTopColumn, DefaultTemplate (RTL)");
     }
 
     private static void addConditionOfPrice(StickerPage stickerPage) {

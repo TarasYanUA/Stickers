@@ -60,10 +60,11 @@ public class CsCartSettings {
     }
     public void navigateToStorefront(int tabNumber){
         button_Save.click();
-        //$(".alert-success").shouldBe(Condition.enabled).$(".cm-notification-close").click();
         Selenide.sleep(2000);
         gearWheelOnTop.click();
         button_Preview.click();
         getWebDriver().getWindowHandle(); switchTo().window(tabNumber);
+        $(".cookie-notice").shouldBe(Condition.interactable);
+        $(".cm-btn-success").click();
     }
 }
