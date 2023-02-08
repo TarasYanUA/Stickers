@@ -12,8 +12,8 @@ import static com.codeborne.selenide.Selenide.*;
 
 */
 public class TestCaseOne extends TestRunner {
-    @Test
-    public void TestCaseOne_ConfigurateSettings() {
+    /*@Test
+    public void TestCaseOne_ConfigureSettings() {
         //Включаем мини-иконки в виде галереи и окно Быстрого просмотра
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.menuSettings.hover();
@@ -85,11 +85,10 @@ public class TestCaseOne extends TestRunner {
         stickerSettings.buttonSaveSticker.click();
         stickerSettings.gearWheel.click();
         stickerSettings.generateStickerLinks.click();
+        Selenide.sleep(2000);
         //Три нижних стикера
         //Стикер "Высокий рейтинг" (оранжевый цвет)
-        Selenide.sleep(2000);
-        stickerSettings.dropDownToggle.shouldBe(Condition.interactable);
-        stickerSettings.dropDownToggle.click();
+        stickerSettings.dropDownToggle.shouldBe(Condition.interactable).click();
         stickerSettings.toggleStickerList.click();
         stickerSettings.sticker_TopRated.click();
         stickerSettings.selectSettingPositionsInProductLists("B");
@@ -108,16 +107,28 @@ public class TestCaseOne extends TestRunner {
         stickerSettings.buttonSaveSticker.click();
         stickerSettings.gearWheel.click();
         stickerSettings.generateStickerLinks.click();
-        //Стикер "Вес" (цвет серый)
         Selenide.sleep(2000);
-        stickerSettings.dropDownToggle.shouldBe(Condition.interactable);
-        stickerSettings.dropDownToggle.click();
+        //Стикер "Вес" (цвет серый)
+        stickerSettings.dropDownToggle.shouldBe(Condition.interactable).click();
         stickerSettings.toggleStickerList.click();
         stickerSettings.sticker_Weight.click();
         stickerSettings.selectSettingPositionsInProductLists("B");
         stickerSettings.selectSettingPositionsOnProductPage("B");
         stickerSettings.statusActive.click();
         stickerSettings.buttonSaveSticker.click();
+
+        //Настраиваем блок с товарами
+        csCartSettings.menuDesign.hover();
+        csCartSettings.sectionLayouts.click();
+        csCartSettings.layout_TabProducts.click();
+        csCartSettings.layout_GearwheelOfBlockPopular.click();
+        csCartSettings.popupWindow.shouldBe(Condition.enabled);
+        csCartSettings.selectBlockTemplate("blocks/products/ab__grid_list.tpl");
+        csCartSettings.layout_ButtonSaveBlock.click();
+        csCartSettings.layout_GearwheelOfBlockHits.click();
+        csCartSettings.popupWindow.shouldBe(Condition.enabled);
+        csCartSettings.selectBlockTemplate("blocks/products/products_scroller_advanced.tpl");
+        csCartSettings.layout_ButtonSaveBlock.click();
 
         //Настраиваем страницу товара
         csCartSettings.navigateToEditingCategoryPage();
@@ -136,18 +147,17 @@ public class TestCaseOne extends TestRunner {
         productSettings.tab_Shippings.hover().click();
         productSettings.clickAndType_ProductWeight("9");
         csCartSettings.navigateToStorefront(1);
-    }
+    }*/
     @Test
     public void TestCaseOne_Storefront(){
-/*        //Это удалить после разработки
+        //Это удалить после разработки
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToEditingCategoryPage();
         $x("//a[text()='AB: Телефоны']").click();
         csCartSettings.gearWheelOnTop.click();
         csCartSettings.button_ViewProducts.click();
-        AdmProductPage admProductPage = new AdmProductPage();
         $x("//td[@class='product-name-column wrap-word']//a[contains(text(), 'Apple iPhone 14')]").click();
-        csCartSettings.navigateToStorefront(1);*/
+        csCartSettings.navigateToStorefront(1);
 
 
         //Работаем с витриной
@@ -163,12 +173,12 @@ public class TestCaseOne extends TestRunner {
         Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page!");
         //Проверяем, что пиктограммы расположены в позиции 1
         Assert.assertTrue($(".ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1!");
-        Selenide.sleep(2000);   //Пауза нужна, чтобы на скриншоте были видны стикеры
+        Selenide.sleep(3000);   //Пауза нужна, чтобы на скриншоте были видны стикеры
         Selenide.screenshot("100 ProdPage - VerticalIcons, LeftTopColumn, DefaultTemplate");
         StHomePage stHomePage = new StHomePage();
         stHomePage.shiftLanguage(1);
-        Selenide.sleep(2000);   //Пауза нужна, чтобы на скриншоте были видны стикеры
-        Selenide.screenshot("101 ProdPage - VerticalIcons, LeftTopColumn, DefaultTemplate (RTL)");
+        Selenide.sleep(2000);
+        Selenide.screenshot("101 ProdPage(RTL) - VerticalIcons, LeftTopColumn, DefaultTemplate");
     }
 
     private static void addConditionOfPrice(StickerSettings stickerSettings) {

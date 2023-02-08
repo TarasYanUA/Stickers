@@ -3,6 +3,7 @@ package adminPanel;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.support.ui.Select;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -10,6 +11,8 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 public class CsCartSettings {
     public CsCartSettings(){super();}
     public SelenideElement button_Save = $(".btn.btn-primary.cm-submit");
+    public SelenideElement popupWindow = $(".ui-dialog-title");
+
     public SelenideElement menuProducts = $x("//li[@class='dropdown nav__header-main-menu-item ']//a[@href='#products']");
     public SelenideElement sectionProducts = $x("//span[text()='Товары']");
     public SelenideElement sectionCategories = $("a[href$='categories.manage']");
@@ -17,6 +20,14 @@ public class CsCartSettings {
     public SelenideElement sectionAppearance = $("#elm_menu_settings_Appearance");
     public SelenideElement settingMiniThumbnailAsGallery = $("#field___thumbnails_gallery_147");
     public SelenideElement settingQuickView = $x("//input[contains(@id, 'field___enable_quick_view_')]");
+    public SelenideElement menuDesign = $("#elm_menu_design");
+    public SelenideElement sectionLayouts = $("#elm_menu_design_layouts");
+    public SelenideElement layout_TabProducts = $x("//a[contains(@href, 'selected_location')][text()='Товары']");
+    public SelenideElement layout_GearwheelOfBlockPopular = $("#snapping_714 div.bm-action-properties");
+    public SelenideElement layout_GearwheelOfBlockHits = $("#snapping_715 div.bm-action-properties");
+
+    public SelenideElement layout_BlockTemplate = $("select[id*='products_template']");
+    public SelenideElement layout_ButtonSaveBlock = $("input[name='dispatch[block_manager.update_block]']");
 
     public SelenideElement menuAddons = $("#elm_menu_addons");
     public SelenideElement sectionDownloadedAddons = $("#elm_menu_addons_downloaded_add_ons");
@@ -74,5 +85,10 @@ public class CsCartSettings {
         getWebDriver().getWindowHandle(); switchTo().window(tabNumber);
         $(".cookie-notice").shouldBe(Condition.interactable);
         $(".cm-btn-success").click();
+    }
+
+    public Select getLayout_BlockTemplate(){return new Select(layout_BlockTemplate);}
+    public void selectBlockTemplate(String value){
+        getLayout_BlockTemplate().selectByValue(value);
     }
 }

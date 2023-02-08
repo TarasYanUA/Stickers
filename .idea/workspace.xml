@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Work with pictogram settings.">
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Added pictogram settings.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/UniThemeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/UniThemeSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Test_case1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +51,7 @@
     "last_opened_file_path": "C:/Idea Projects/Video_gallery/pom.xml"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="TestNG.TestCaseOne">
     <configuration name="TestCaseOne" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
@@ -88,9 +89,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.TestCaseOne" />
         <item itemvalue="TestNG.TestCaseOne.TestCaseOne_Storefront" />
         <item itemvalue="TestNG.TestCaseOne.VerifyTestCaseOne" />
-        <item itemvalue="TestNG.TestCaseOne" />
       </list>
     </recent_temporary>
   </component>
@@ -173,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675866753843</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added pictogram settings.">
+      <created>1675868160389</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1675868160389</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -196,6 +204,7 @@
     <MESSAGE value="Added condition to all stickers and prepared a product." />
     <MESSAGE value="Added asserts on the product page." />
     <MESSAGE value="Work with pictogram settings." />
-    <option name="LAST_COMMIT_MESSAGE" value="Work with pictogram settings." />
+    <MESSAGE value="Added pictogram settings." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added pictogram settings." />
   </component>
 </project>
