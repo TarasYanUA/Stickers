@@ -17,8 +17,11 @@ public class CsCartSettings {
     public SelenideElement sectionAppearance = $("#elm_menu_settings_Appearance");
     public SelenideElement settingMiniThumbnailAsGallery = $("#field___thumbnails_gallery_147");
     public SelenideElement settingQuickView = $x("//input[contains(@id, 'field___enable_quick_view_')]");
+
     public SelenideElement menuAddons = $("#elm_menu_addons");
     public SelenideElement sectionDownloadedAddons = $("#elm_menu_addons_downloaded_add_ons");
+    public SelenideElement menuOfUniTheme = $("tr#addon_abt__unitheme2 button.btn.dropdown-toggle");
+    public SelenideElement sectionThemeSettings = $("div.nowrap a[href*='abt__ut2.settings']");
     public SelenideElement menuOfStickerAddon = $("tr#addon_ab__stickers button.btn.dropdown-toggle");
     public SelenideElement sectionStickerSettings = $("div.nowrap a[href*='addon=ab__stickers']");
     public SelenideElement sectionStickerList = $("tr#addon_ab__stickers a[href*='ab__stickers.manage']");
@@ -30,10 +33,10 @@ public class CsCartSettings {
     public SelenideElement button_ViewProducts = $("a[href*='products.manage&cid']");
 
 
-    public AdmProductPage navigateToEditingProductPage(){
+    public ProductSettings navigateToEditingProductPage(){
         menuProducts.hover();
         sectionProducts.click();
-        return new AdmProductPage();
+        return new ProductSettings();
     }
     public void navigateToEditingCategoryPage(){
         menuProducts.hover();
@@ -43,20 +46,25 @@ public class CsCartSettings {
         menuAddons.hover();
         sectionDownloadedAddons.click();
     }
-    public StickerPage navigateToStickerSettingsPage(){
+    public UniThemeSettings navigateToUniThemeSettings(){
+        menuOfUniTheme.click();
+        sectionThemeSettings.click();
+        return new UniThemeSettings();
+    }
+    public StickerSettings navigateToStickerSettingsPage(){
         menuOfStickerAddon.click();
         sectionStickerSettings.click();
-        return new StickerPage();
+        return new StickerSettings();
     }
-    public StickerPage navigateToStickerListPage(){
+    public StickerSettings navigateToStickerListPage(){
         menuOfStickerAddon.click();
         sectionStickerList.click();
-        return new StickerPage();
+        return new StickerSettings();
     }
-    public VideoGalleryPage navigateToVideoGalleryPage(){
+    public VideoGallerySettings navigateToVideoGalleryPage(){
         menuOFVideoGalleryAddon.click();
         sectionVideoGalleryGeneralSettings.click();
-        return new VideoGalleryPage();
+        return new VideoGallerySettings();
     }
     public void navigateToStorefront(int tabNumber){
         button_Save.click();

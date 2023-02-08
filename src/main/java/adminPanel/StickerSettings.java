@@ -5,8 +5,8 @@ import org.openqa.selenium.support.ui.Select;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class StickerPage {
-    public StickerPage(){super();}
+public class StickerSettings {
+    public StickerSettings(){super();}
     public SelenideElement sticker_Promotion = $("a[href*='sticker_id=11']");
     public SelenideElement sticker_SaleOrange = $("a[href*='sticker_id=14']");
     public SelenideElement sticker_PopularProduct = $("a[href*='sticker_id=18']");
