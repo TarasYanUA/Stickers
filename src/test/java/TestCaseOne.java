@@ -4,6 +4,7 @@ import com.codeborne.selenide.Selenide;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import storefront.StHomePage;
+import storefront.StProductPage;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -146,7 +147,7 @@ public class TestCaseOne extends TestRunner {
         productSettings.selectProductTemplate("default_template");
         productSettings.tab_Shippings.hover().click();
         productSettings.clickAndType_ProductWeight("9");
-        csCartSettings.navigateToStorefront(1);
+        StProductPage stProductPage = csCartSettings.navigateToStProductPage(1);
     }*/
     @Test
     public void TestCaseOne_Storefront(){
@@ -157,7 +158,7 @@ public class TestCaseOne extends TestRunner {
         csCartSettings.gearWheelOnTop.click();
         csCartSettings.button_ViewProducts.click();
         $x("//td[@class='product-name-column wrap-word']//a[contains(text(), 'Apple iPhone 14')]").click();
-        csCartSettings.navigateToStorefront(1);
+        StProductPage stProductPage = csCartSettings.navigateToStProductPage(1);
 
 
         //Работаем с витриной
@@ -175,10 +176,15 @@ public class TestCaseOne extends TestRunner {
         Assert.assertTrue($(".ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1!");
         Selenide.sleep(3000);   //Пауза нужна, чтобы на скриншоте были видны стикеры
         Selenide.screenshot("100 ProdPage - VerticalIcons, LeftTopColumn, DefaultTemplate");
-        StHomePage stHomePage = new StHomePage();
-        stHomePage.shiftLanguage(1);
+        stProductPage.block_Popular.hover();
+        //ещё второй блок здесь должен быть
+        Selenide.screenshot("101 Block - VerticalIcons, LeftTopColumn, GridWithButtonMore");
+        stProductPage.shiftLanguage(1);
         Selenide.sleep(2000);
-        Selenide.screenshot("101 ProdPage(RTL) - VerticalIcons, LeftTopColumn, DefaultTemplate");
+        Selenide.screenshot("102 ProdPage(RTL) - VerticalIcons, LeftTopColumn, DefaultTemplate");
+        stProductPage.block_Popular.hover();
+        //ещё второй блок здесь должен быть
+        Selenide.screenshot("103 Block (RTL) - VerticalIcons, LeftTopColumn, GridWithButtonMore");
     }
 
     private static void addConditionOfPrice(StickerSettings stickerSettings) {

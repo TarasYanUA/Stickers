@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.ui.Select;
+import storefront.StProductPage;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -77,7 +78,7 @@ public class CsCartSettings {
         sectionVideoGalleryGeneralSettings.click();
         return new VideoGallerySettings();
     }
-    public void navigateToStorefront(int tabNumber){
+    public StProductPage navigateToStProductPage(int tabNumber){
         button_Save.click();
         Selenide.sleep(2000);
         gearWheelOnTop.click();
@@ -85,6 +86,7 @@ public class CsCartSettings {
         getWebDriver().getWindowHandle(); switchTo().window(tabNumber);
         $(".cookie-notice").shouldBe(Condition.interactable);
         $(".cm-btn-success").click();
+        return new StProductPage();
     }
 
     public Select getLayout_BlockTemplate(){return new Select(layout_BlockTemplate);}
