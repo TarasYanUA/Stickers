@@ -26,9 +26,11 @@ public class CsCartSettings {
     public SelenideElement layout_TabProducts = $x("//a[contains(@href, 'selected_location')][text()='Товары']");
     public SelenideElement layout_GearwheelOfBlockPopular = $("#snapping_714 div.bm-action-properties");
     public SelenideElement layout_GearwheelOfBlockHits = $("#snapping_715 div.bm-action-properties");
-
     public SelenideElement layout_BlockTemplate = $("select[id*='products_template']");
     public SelenideElement layout_ButtonSaveBlock = $("input[name='dispatch[block_manager.update_block]']");
+    public SelenideElement layoutBlock_TabContent = $("li[id*='block_contents'] a");
+    public SelenideElement layout_FieldFilling = $("select[id*='content_items_filling']");
+    public SelenideElement layout_FieldMaxLimit = $("input[id*='content_items_properties_items_limit']");
 
     public SelenideElement menuAddons = $("#elm_menu_addons");
     public SelenideElement sectionDownloadedAddons = $("#elm_menu_addons_downloaded_add_ons");
@@ -92,5 +94,13 @@ public class CsCartSettings {
     public Select getLayout_BlockTemplate(){return new Select(layout_BlockTemplate);}
     public void selectBlockTemplate(String value){
         getLayout_BlockTemplate().selectByValue(value);
+    }
+    public Select getLayout_FieldFilling(){return new Select(layout_FieldFilling);}
+    public void selectLayout_FieldFilling(){
+        getLayout_FieldFilling().selectByValue("newest");}
+    public void clickAndType_Layout_FieldMaxLimit(){
+        layout_FieldMaxLimit.click();
+        layout_FieldMaxLimit.clear();
+        layout_FieldMaxLimit.setValue("4");
     }
 }

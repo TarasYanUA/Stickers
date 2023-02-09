@@ -46,6 +46,22 @@ public class TestCaseOne extends TestRunner {
         uniThemeSettings.selectPictogramPosition_Product("position_1");
         csCartSettings.button_Save.click();
 
+        //Настраиваем блок с товарами
+        csCartSettings.menuDesign.hover();
+        csCartSettings.sectionLayouts.click();
+        csCartSettings.layout_TabProducts.click();
+        csCartSettings.layout_GearwheelOfBlockPopular.click();
+        csCartSettings.popupWindow.shouldBe(Condition.enabled);
+        csCartSettings.selectBlockTemplate("blocks/products/ab__grid_list.tpl");
+        csCartSettings.layoutBlock_TabContent.click();
+        csCartSettings.selectLayout_FieldFilling();
+        csCartSettings.clickAndType_Layout_FieldMaxLimit();
+        csCartSettings.layout_ButtonSaveBlock.click();
+        csCartSettings.layout_GearwheelOfBlockHits.click();
+        csCartSettings.popupWindow.shouldBe(Condition.enabled);
+        csCartSettings.selectBlockTemplate("blocks/products/products_scroller_advanced.tpl");
+        csCartSettings.layout_ButtonSaveBlock.click();
+
         //Настраиваем настройки модуля "Стикеры"
         csCartSettings.navigateToAddonsPage();
         StickerSettings stickerSettings = csCartSettings.navigateToStickerSettingsPage();
@@ -119,19 +135,6 @@ public class TestCaseOne extends TestRunner {
         stickerSettings.statusActive.click();
         stickerSettings.buttonSaveSticker.click();
 
-        //Настраиваем блок с товарами
-        csCartSettings.menuDesign.hover();
-        csCartSettings.sectionLayouts.click();
-        csCartSettings.layout_TabProducts.click();
-        csCartSettings.layout_GearwheelOfBlockPopular.click();
-        csCartSettings.popupWindow.shouldBe(Condition.enabled);
-        csCartSettings.selectBlockTemplate("blocks/products/ab__grid_list.tpl");
-        csCartSettings.layout_ButtonSaveBlock.click();
-        csCartSettings.layout_GearwheelOfBlockHits.click();
-        csCartSettings.popupWindow.shouldBe(Condition.enabled);
-        csCartSettings.selectBlockTemplate("blocks/products/products_scroller_advanced.tpl");
-        csCartSettings.layout_ButtonSaveBlock.click();
-
         //Настраиваем страницу товара
         csCartSettings.navigateToEditingCategoryPage();
         $x("//a[text()='AB: Телефоны']").click();
@@ -178,7 +181,7 @@ public class TestCaseOne extends TestRunner {
         Selenide.sleep(2000);   //Паузы нужны, чтобы на скриншоте были видны стикеры
         Selenide.screenshot("100 ProdPage - VerticalIcons, LeftTopColumn, DefaultTemplate");
         stProductPage.block_Popular.scrollTo();
-        Selenide.sleep(2000);
+        $("div.ut2-gl__body.content-on-hover img.img-ab-hover-gallery").shouldBe(Condition.visible);
         Selenide.screenshot("110 BlockPopular - VerticalIcons, LeftTopColumn, GridWithButtonMore");
         stProductPage.block_Hits.click();
         Selenide.sleep(2000);
@@ -187,7 +190,7 @@ public class TestCaseOne extends TestRunner {
         Selenide.sleep(2000);
         Selenide.screenshot("130 ProdPage(RTL) - VerticalIcons, LeftTopColumn, DefaultTemplate");
         stProductPage.block_Popular.scrollTo();
-        Selenide.sleep(2000);
+        $("div.ut2-gl__body.content-on-hover img.img-ab-hover-gallery").shouldBe(Condition.visible);
         Selenide.screenshot("140 BlockPopular(RTL) - VerticalIcons, LeftTopColumn, GridWithButtonMore");
         stProductPage.block_Hits.click();
         Selenide.screenshot("150 BlockHits(RTL) - VerticalIcons, LeftTopColumn, AdvancedScroller");
@@ -203,6 +206,17 @@ public class TestCaseOne extends TestRunner {
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.click();
         Selenide.sleep(3000);
+        //Проверяем, что присутствуют стикеры слева и вверху
+        Assert.assertTrue($(".ut2-pb__items .ab-stickers-container__TL").exists(), "There are no stickers on the Top-Left side!");
+
+        //Проверяем, что присутствуют стикеры слева и внизу
+        Assert.assertTrue($(".ut2-pb__items .ab-stickers-container__BL").exists(), "There are no stickers on the Bottom-Left side!");
+        //Проверяем, что стикеры расположены в колонку
+        Assert.assertTrue($(".ut2-pb__items .column-filling").exists(), "Position of stickers is not in Column!");
+        //Проверяем, что пиктограммы присутствуют
+        Assert.assertTrue($(".ut2-pb__right .ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page!");
+        //Проверяем, что пиктограммы расположены в позиции 1
+        Assert.assertTrue($(".ut2-pb__right .ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1!");
         Selenide.screenshot("170 QuickView - VerticalIcons, LeftTopColumn");
         stCategoryPage.button_CloseQuickView.click();
         stCategoryPage.template_ListWithoutOptions.click();
