@@ -29,6 +29,10 @@ public class TestRunner {
         Selenide.closeWebDriver();
     }
 
+    public void shiftLanguage(int index) {
+        $("a[id*='_wrap_language_']").hover().click();
+        $$("div[id*='_wrap_language_'] li.ty-select-block__list-item").get(index).click();
+    }
     public void selectBigPictureFlatTemplate() {
         $("#elm_details_layout").click();
         $x("//option[@value='abt__ut2_bigpicture_flat_template']").click();

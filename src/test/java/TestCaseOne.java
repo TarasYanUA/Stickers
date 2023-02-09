@@ -4,7 +4,6 @@ import com.codeborne.selenide.Selenide;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import storefront.StCategoryPage;
-import storefront.StHomePage;
 import storefront.StProductPage;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -13,7 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 */
 public class TestCaseOne extends TestRunner {
-    /*@Test
+    @Test(priority=1)
     public void TestCaseOne_ConfigureSettings() {
         //Включаем мини-иконки в виде галереи и окно Быстрого просмотра
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -74,6 +73,8 @@ public class TestCaseOne extends TestRunner {
         stickerSettings.selectSettingPositionsInProductLists("T");
         stickerSettings.selectSettingPositionsOnProductPage("T");
         stickerSettings.statusActive.click();
+        stickerSettings.tab_DisplayOn.hover().click();
+        stickerSettings.selectDisplayOn_ShortList("small_size");
         stickerSettings.buttonSaveSticker.click();
         //Стикер "Популярный" (фиолетовый цвет)
         stickerSettings.dropDownToggle.click();
@@ -147,21 +148,21 @@ public class TestCaseOne extends TestRunner {
         productSettings.selectProductTemplate("default_template");
         productSettings.tab_Shippings.hover().click();
         productSettings.clickAndType_ProductWeight("9");
-        StProductPage stProductPage = csCartSettings.navigateToStProductPage(1);
-    }*/
-    @Test
-    public void TestCaseOne_Storefront(){
-        //Это удалить после разработки
+        csCartSettings.navigateToStProductPage(1);
+    }
+    @Test(priority=2)
+    public void TestCaseOne_Storefront_ProductPage() {
+/*      //Это удалить после разработки
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToEditingCategoryPage();
         $x("//a[text()='AB: Телефоны']").click();
         csCartSettings.gearWheelOnTop.click();
         csCartSettings.button_ViewProducts.click();
         $x("//td[@class='product-name-column wrap-word']//a[contains(text(), 'Apple iPhone 14')]").click();
-        StProductPage stProductPage = csCartSettings.navigateToStProductPage(1);
+        csCartSettings.navigateToStProductPage(1);*/
 
 
-        //Работаем с витриной, начиная со страницы товара
+        StProductPage stProductPage = new StProductPage();
         //Проверяем, что галерея мини-иконок вертикальная
         Assert.assertTrue($(".ab-vg-vertical-thumbnails").exists(), "Gallery of mini-icons is not Vertical!");
         //Проверяем, что присутствуют стикеры слева и вверху
@@ -182,7 +183,7 @@ public class TestCaseOne extends TestRunner {
         stProductPage.block_Hits.click();
         Selenide.sleep(2000);
         Selenide.screenshot("120 BlockHits - VerticalIcons, LeftTopColumn, AdvancedScroller");
-        stProductPage.shiftLanguage(1);
+        shiftLanguage(1);
         Selenide.sleep(2000);
         Selenide.screenshot("130 ProdPage(RTL) - VerticalIcons, LeftTopColumn, DefaultTemplate");
         stProductPage.block_Popular.scrollTo();
@@ -190,11 +191,13 @@ public class TestCaseOne extends TestRunner {
         Selenide.screenshot("140 BlockPopular(RTL) - VerticalIcons, LeftTopColumn, GridWithButtonMore");
         stProductPage.block_Hits.click();
         Selenide.screenshot("150 BlockHits(RTL) - VerticalIcons, LeftTopColumn, AdvancedScroller");
-        stProductPage.shiftLanguage(2);
-
-        //Работаем со страницей категории
+        shiftLanguage(2);
         stProductPage.breadcrumbs_Phones.click();
         Selenide.sleep(2000);
+    }
+    @Test(priority=3)
+    public void TestCaseOne_Storefront_CategoryPage(){
+        //Работаем со страницей категории
         Selenide.screenshot("160 Category - VerticalIcons, LeftTopColumn, Grid");
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.productInList.hover();
@@ -208,7 +211,7 @@ public class TestCaseOne extends TestRunner {
         stCategoryPage.template_CompactList.click();
         Selenide.sleep(2000);
         Selenide.screenshot("190 Category - VerticalIcons, LeftTopColumn, CompactList");
-        stProductPage.shiftLanguage(1);
+        shiftLanguage(1);
         Selenide.sleep(2000);
         Selenide.screenshot("1100 Category(RTL) - VerticalIcons, LeftTopColumn, CompactList");
         stCategoryPage.template_ListWithoutOptions.click();

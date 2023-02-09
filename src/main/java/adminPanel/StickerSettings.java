@@ -15,6 +15,8 @@ public class StickerSettings {
     public SelenideElement sticker_Weight = $("a[href*='sticker_id=20']");
 
     public SelenideElement tabSettings = $("#settings");
+    public SelenideElement tab_Conditions = $("#conditions");
+    public SelenideElement tab_DisplayOn = $("#display_on");
     public SelenideElement settingOutputPosition = $("select[id*='addon_option_ab__stickers_output_position']");
     public SelenideElement settingOutputTypeTop = $("#ab__stickers_TL");
     public SelenideElement settingMaxNumberTop = $("#ab__stickers_TL_max_count");
@@ -22,6 +24,7 @@ public class StickerSettings {
     public SelenideElement settingMaxNumberBottom = $("#ab__stickers_BL_max_count");
     public SelenideElement settingPositionsInProductLists = $("#ab__stickers_output_position_list");
     public SelenideElement settingPositionsOnProductPage = $("#ab__stickers_output_position_detailed_page");
+    public SelenideElement displayOn_ShortList = $("select[id='ab__stickers_display_on_blocks_products_short_list_tpl']");
     public SelenideElement statusActive = $("input[id^='ab__stickers_status_'][id$='_a']");
     public SelenideElement buttonSaveSettings = $(".cm-addons-save-settings");
     public SelenideElement buttonSaveSticker = $(".cm-submit.btn-primary");
@@ -29,7 +32,6 @@ public class StickerSettings {
     public SelenideElement generateStickerLinks = $(".cm-post.cm-comet");
     public SelenideElement dropDownToggle = $("#last_edited_items .btn.dropdown-toggle");
     public SelenideElement toggleStickerList = $("#last_edited_items a[href*='ab__stickers.manage']");
-    public SelenideElement tab_Conditions = $("#conditions");
     public SelenideElement tableOfConditions = $(".conditions-tree-node.clearfix");
     public SelenideElement button_DeleteCondition = $(".icon-trash");
     public SelenideElement button_AddCondition = $("div[id*='add_condition'] .btn");
@@ -92,4 +94,7 @@ public class StickerSettings {
         fieldOfPriceCondition.clear();
         fieldOfPriceCondition.sendKeys(value);
     }
+    public Select getDisplayOn_ShortList(){return new Select(displayOn_ShortList);}
+    public void selectDisplayOn_ShortList(String value){
+        getDisplayOn_ShortList().selectByValue(value);}
 }
