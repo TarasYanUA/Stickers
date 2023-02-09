@@ -10,6 +10,8 @@ public class StProductPage {
 
     public SelenideElement block_Popular = $(".ty-mainbox-title");
     public SelenideElement block_Hits = $x("(//li[contains(@id, 'abt__ut2_grid_tab')])[2]");
+    public SelenideElement breadcrumbs_Phones = $("a:nth-child(3).ty-breadcrumbs__a bdi");
+
 
     public void shiftLanguage(int index) {
         $("a[id*='_wrap_language_']").hover().click();

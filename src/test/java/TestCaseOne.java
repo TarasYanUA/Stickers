@@ -3,6 +3,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import storefront.StCategoryPage;
 import storefront.StHomePage;
 import storefront.StProductPage;
 import static com.codeborne.selenide.Selenide.*;
@@ -160,7 +161,7 @@ public class TestCaseOne extends TestRunner {
         StProductPage stProductPage = csCartSettings.navigateToStProductPage(1);
 
 
-        //Работаем с витриной
+        //Работаем с витриной, начиная со страницы товара
         //Проверяем, что галерея мини-иконок вертикальная
         Assert.assertTrue($(".ab-vg-vertical-thumbnails").exists(), "Gallery of mini-icons is not Vertical!");
         //Проверяем, что присутствуют стикеры слева и вверху
@@ -189,6 +190,37 @@ public class TestCaseOne extends TestRunner {
         Selenide.screenshot("140 BlockPopular(RTL) - VerticalIcons, LeftTopColumn, GridWithButtonMore");
         stProductPage.block_Hits.click();
         Selenide.screenshot("150 BlockHits(RTL) - VerticalIcons, LeftTopColumn, AdvancedScroller");
+        stProductPage.shiftLanguage(2);
+
+        //Работаем со страницей категории
+        stProductPage.breadcrumbs_Phones.click();
+        Selenide.sleep(2000);
+        Selenide.screenshot("160 Category - VerticalIcons, LeftTopColumn, Grid");
+        StCategoryPage stCategoryPage = new StCategoryPage();
+        stCategoryPage.productInList.hover();
+        stCategoryPage.button_QuickView.click();
+        Selenide.sleep(3000);
+        Selenide.screenshot("170 QuickView - VerticalIcons, LeftTopColumn");
+        stCategoryPage.button_CloseQuickView.click();
+        stCategoryPage.template_ListWithoutOptions.click();
+        Selenide.sleep(2000);
+        Selenide.screenshot("180 Category - VerticalIcons, LeftTopColumn, ListWithoutOptions");
+        stCategoryPage.template_CompactList.click();
+        Selenide.sleep(2000);
+        Selenide.screenshot("190 Category - VerticalIcons, LeftTopColumn, CompactList");
+        stProductPage.shiftLanguage(1);
+        Selenide.sleep(2000);
+        Selenide.screenshot("1100 Category(RTL) - VerticalIcons, LeftTopColumn, CompactList");
+        stCategoryPage.template_ListWithoutOptions.click();
+        Selenide.sleep(2000);
+        Selenide.screenshot("1110 Category(RTL) - VerticalIcons, LeftTopColumn, ListWithoutOptions");
+        stCategoryPage.template_Grid.click();
+        Selenide.sleep(2000);
+        Selenide.screenshot("1120 Category(RTL) - VerticalIcons, LeftTopColumn, Grid");
+        stCategoryPage.productInList.hover();
+        stCategoryPage.button_QuickView.click();
+        Selenide.sleep(3000);
+        Selenide.screenshot("1130 QuickView(RTL) - VerticalIcons, LeftTopColumn");
     }
 
     private static void addConditionOfPrice(StickerSettings stickerSettings) {
