@@ -206,9 +206,9 @@ public class TestCaseOne extends TestRunner {
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.click();
         Selenide.sleep(3000);
+        $(".ui-dialog-title").hover();
         //Проверяем, что присутствуют стикеры слева и вверху
         Assert.assertTrue($(".ut2-pb__items .ab-stickers-container__TL").exists(), "There are no stickers on the Top-Left side!");
-
         //Проверяем, что присутствуют стикеры слева и внизу
         Assert.assertTrue($(".ut2-pb__items .ab-stickers-container__BL").exists(), "There are no stickers on the Bottom-Left side!");
         //Проверяем, что стикеры расположены в колонку
@@ -237,6 +237,7 @@ public class TestCaseOne extends TestRunner {
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.click();
         Selenide.sleep(3000);
+        $(".ui-dialog-title").hover();
         Selenide.screenshot("1130 QuickView(RTL) - VerticalIcons, LeftTopColumn");
     }
 
