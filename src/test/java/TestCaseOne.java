@@ -5,7 +5,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import storefront.StHomePage;
 import storefront.StProductPage;
-
 import static com.codeborne.selenide.Selenide.*;
 
 /*
@@ -174,17 +173,22 @@ public class TestCaseOne extends TestRunner {
         Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page!");
         //Проверяем, что пиктограммы расположены в позиции 1
         Assert.assertTrue($(".ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1!");
-        Selenide.sleep(3000);   //Пауза нужна, чтобы на скриншоте были видны стикеры
+        Selenide.sleep(2000);   //Паузы нужны, чтобы на скриншоте были видны стикеры
         Selenide.screenshot("100 ProdPage - VerticalIcons, LeftTopColumn, DefaultTemplate");
-        stProductPage.block_Popular.hover();
-        //ещё второй блок здесь должен быть
-        Selenide.screenshot("101 Block - VerticalIcons, LeftTopColumn, GridWithButtonMore");
+        stProductPage.block_Popular.scrollTo();
+        Selenide.sleep(2000);
+        Selenide.screenshot("110 BlockPopular - VerticalIcons, LeftTopColumn, GridWithButtonMore");
+        stProductPage.block_Hits.click();
+        Selenide.sleep(2000);
+        Selenide.screenshot("120 BlockHits - VerticalIcons, LeftTopColumn, AdvancedScroller");
         stProductPage.shiftLanguage(1);
         Selenide.sleep(2000);
-        Selenide.screenshot("102 ProdPage(RTL) - VerticalIcons, LeftTopColumn, DefaultTemplate");
-        stProductPage.block_Popular.hover();
-        //ещё второй блок здесь должен быть
-        Selenide.screenshot("103 Block (RTL) - VerticalIcons, LeftTopColumn, GridWithButtonMore");
+        Selenide.screenshot("130 ProdPage(RTL) - VerticalIcons, LeftTopColumn, DefaultTemplate");
+        stProductPage.block_Popular.scrollTo();
+        Selenide.sleep(2000);
+        Selenide.screenshot("140 Block(RTL) - VerticalIcons, LeftTopColumn, GridWithButtonMore");
+        stProductPage.block_Hits.click();
+        Selenide.screenshot("150 BlockHits(RTL) - VerticalIcons, LeftTopColumn, AdvancedScroller");
     }
 
     private static void addConditionOfPrice(StickerSettings stickerSettings) {
