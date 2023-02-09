@@ -186,7 +186,7 @@ public class TestCaseOne extends TestRunner {
         Selenide.screenshot("130 ProdPage(RTL) - VerticalIcons, LeftTopColumn, DefaultTemplate");
         stProductPage.block_Popular.scrollTo();
         Selenide.sleep(2000);
-        Selenide.screenshot("140 Block(RTL) - VerticalIcons, LeftTopColumn, GridWithButtonMore");
+        Selenide.screenshot("140 BlockPopular(RTL) - VerticalIcons, LeftTopColumn, GridWithButtonMore");
         stProductPage.block_Hits.click();
         Selenide.screenshot("150 BlockHits(RTL) - VerticalIcons, LeftTopColumn, AdvancedScroller");
     }
