@@ -47,8 +47,4 @@ public class TestRunner {
         $("#elm_details_layout").click();
         $x("//option[@value='abt__ut2_three_columns_template']").click();
     }
-    public void shiftToRTLLanguage() {
-        $("a[id*='sw_select_en_wrap_language']").click();   //Переключаемся на язык RTL
-        $("a[data-ca-name='ar']").click();
-    }
 }

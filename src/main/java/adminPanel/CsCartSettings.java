@@ -86,9 +86,14 @@ public class CsCartSettings {
         gearWheelOnTop.click();
         button_Preview.click();
         getWebDriver().getWindowHandle(); switchTo().window(tabNumber);
+        return new StProductPage();
+    }
+    public void cookieNotice(){
         $(".cookie-notice").shouldBe(Condition.interactable);
         $(".cm-btn-success").click();
-        return new StProductPage();
+    }
+    public void shiftBrowserTab(int tabNumber){
+        getWebDriver().getWindowHandle(); switchTo().window(tabNumber);
     }
 
     public Select getLayout_BlockTemplate(){return new Select(layout_BlockTemplate);}

@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 */
 public class TestCaseOne extends TestRunner {
-    @Test(priority=1)
+    /*@Test(priority=1)
     public void TestCaseOne_ConfigureSettings() {
         //Включаем мини-иконки в виде галереи и окно Быстрого просмотра
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -152,17 +152,18 @@ public class TestCaseOne extends TestRunner {
         productSettings.tab_Shippings.hover().click();
         productSettings.clickAndType_ProductWeight("9");
         csCartSettings.navigateToStProductPage(1);
-    }
+    }*/
     @Test(priority=2)
     public void TestCaseOne_Storefront_ProductPage() {
-/*      //Это удалить после разработки
+        //Это удалить после разработки
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToEditingCategoryPage();
         $x("//a[text()='AB: Телефоны']").click();
         csCartSettings.gearWheelOnTop.click();
         csCartSettings.button_ViewProducts.click();
         $x("//td[@class='product-name-column wrap-word']//a[contains(text(), 'Apple iPhone 14')]").click();
-        csCartSettings.navigateToStProductPage(1);*/
+        csCartSettings.navigateToStProductPage(1);
+        csCartSettings.cookieNotice();
 
 
         StProductPage stProductPage = new StProductPage();
@@ -181,27 +182,54 @@ public class TestCaseOne extends TestRunner {
         Selenide.sleep(2000);   //Паузы нужны, чтобы на скриншоте были видны стикеры
         Selenide.screenshot("100 ProdPage - VerticalIcons, LeftTopColumn, DefaultTemplate");
         stProductPage.block_Popular.scrollTo();
-        $("div.ut2-gl__body.content-on-hover img.img-ab-hover-gallery").shouldBe(Condition.visible);
-        Selenide.screenshot("110 BlockPopular - VerticalIcons, LeftTopColumn, GridWithButtonMore");
+        Selenide.sleep(2000);
+        Selenide.screenshot("105 BlockPopular - VerticalIcons, LeftTopColumn, GridWithButtonMore");
         stProductPage.block_Hits.click();
         Selenide.sleep(2000);
-        Selenide.screenshot("120 BlockHits - VerticalIcons, LeftTopColumn, AdvancedScroller");
+        Selenide.screenshot("110 BlockHits - VerticalIcons, LeftTopColumn, AdvancedScroller");
         shiftLanguage(1);
         Selenide.sleep(2000);
-        Selenide.screenshot("130 ProdPage(RTL) - VerticalIcons, LeftTopColumn, DefaultTemplate");
+        Selenide.screenshot("115 ProdPage(RTL) - VerticalIcons, LeftTopColumn, DefaultTemplate");
         stProductPage.block_Popular.scrollTo();
         $("div.ut2-gl__body.content-on-hover img.img-ab-hover-gallery").shouldBe(Condition.visible);
-        Selenide.screenshot("140 BlockPopular(RTL) - VerticalIcons, LeftTopColumn, GridWithButtonMore");
+        Selenide.screenshot("120 BlockPopular(RTL) - VerticalIcons, LeftTopColumn, GridWithButtonMore");
         stProductPage.block_Hits.click();
-        Selenide.screenshot("150 BlockHits(RTL) - VerticalIcons, LeftTopColumn, AdvancedScroller");
+        Selenide.screenshot("125 BlockHits(RTL) - VerticalIcons, LeftTopColumn, AdvancedScroller");
+
+        //Смотрим другие шаблоны страницы товара
+        csCartSettings.shiftBrowserTab(0);
+        ProductSettings productSettings = new ProductSettings();
+        productSettings.tab_General.hover().click();
+        productSettings.selectProductTemplate("bigpicture_template");
+        csCartSettings.navigateToStProductPage(2);
+        Selenide.sleep(2000);
+        Selenide.screenshot("130 ProdPage - VerticalIcons, LeftTopColumn, BigPictureTemplate");
+        shiftLanguage(1);
+        Selenide.sleep(2000);
+        Selenide.screenshot("135 ProdPage(RTL) - VerticalIcons, LeftTopColumn, BigPictureTemplate");
+        csCartSettings.shiftBrowserTab(0);
+        productSettings.selectProductTemplate("abt__ut2_bigpicture_flat_template");
+        csCartSettings.navigateToStProductPage(3);
+        Selenide.sleep(2000);
+        Selenide.screenshot("140 ProdPage - VerticalIcons, LeftTopColumn, BigPictureFlatTemplate");
+        shiftLanguage(1);
+        Selenide.sleep(2000);
+        Selenide.screenshot("145 ProdPage(RTL) - VerticalIcons, LeftTopColumn, BigPictureFlatTemplate");
+        csCartSettings.shiftBrowserTab(0);
+        productSettings.selectProductTemplate("abt__ut2_three_columns_template");
+        csCartSettings.navigateToStProductPage(4);
+        Selenide.sleep(2000);
+        Selenide.screenshot("150 ProdPage - VerticalIcons, LeftTopColumn, ThreeColumned");
+        shiftLanguage(1);
+        Selenide.sleep(2000);
+        Selenide.screenshot("155 ProdPage(RTL) - VerticalIcons, LeftTopColumn, ThreeColumned");
+    }
+    /*@Test(priority=3)
+    public void TestCaseOne_Storefront_CategoryPage(){
         shiftLanguage(2);
         stProductPage.breadcrumbs_Phones.click();
         Selenide.sleep(2000);
-    }
-    @Test(priority=3)
-    public void TestCaseOne_Storefront_CategoryPage(){
-        //Работаем со страницей категории
-        Selenide.screenshot("160 Category - VerticalIcons, LeftTopColumn, Grid");
+        Selenide.screenshot("200 Category - VerticalIcons, LeftTopColumn, Grid");
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.click();
@@ -217,29 +245,29 @@ public class TestCaseOne extends TestRunner {
         Assert.assertTrue($(".ut2-pb__right .ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page!");
         //Проверяем, что пиктограммы расположены в позиции 1
         Assert.assertTrue($(".ut2-pb__right .ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1!");
-        Selenide.screenshot("170 QuickView - VerticalIcons, LeftTopColumn");
+        Selenide.screenshot("205 QuickView - VerticalIcons, LeftTopColumn");
         stCategoryPage.button_CloseQuickView.click();
         stCategoryPage.template_ListWithoutOptions.click();
         Selenide.sleep(2000);
-        Selenide.screenshot("180 Category - VerticalIcons, LeftTopColumn, ListWithoutOptions");
+        Selenide.screenshot("210 Category - VerticalIcons, LeftTopColumn, ListWithoutOptions");
         stCategoryPage.template_CompactList.click();
         Selenide.sleep(2000);
-        Selenide.screenshot("190 Category - VerticalIcons, LeftTopColumn, CompactList");
+        Selenide.screenshot("215 Category - VerticalIcons, LeftTopColumn, CompactList");
         shiftLanguage(1);
         Selenide.sleep(2000);
-        Selenide.screenshot("1100 Category(RTL) - VerticalIcons, LeftTopColumn, CompactList");
+        Selenide.screenshot("220 Category(RTL) - VerticalIcons, LeftTopColumn, CompactList");
         stCategoryPage.template_ListWithoutOptions.click();
         Selenide.sleep(2000);
-        Selenide.screenshot("1110 Category(RTL) - VerticalIcons, LeftTopColumn, ListWithoutOptions");
+        Selenide.screenshot("225 Category(RTL) - VerticalIcons, LeftTopColumn, ListWithoutOptions");
         stCategoryPage.template_Grid.click();
         Selenide.sleep(2000);
-        Selenide.screenshot("1120 Category(RTL) - VerticalIcons, LeftTopColumn, Grid");
+        Selenide.screenshot("230 Category(RTL) - VerticalIcons, LeftTopColumn, Grid");
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.click();
         Selenide.sleep(3000);
         $(".ui-dialog-title").hover();
-        Selenide.screenshot("1130 QuickView(RTL) - VerticalIcons, LeftTopColumn");
-    }
+        Selenide.screenshot("235 QuickView(RTL) - VerticalIcons, LeftTopColumn");
+    }*/
 
     private static void addConditionOfPrice(StickerSettings stickerSettings) {
         stickerSettings.tab_Conditions.hover().click();

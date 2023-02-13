@@ -11,6 +11,7 @@ public class ProductSettings {
     public SelenideElement field_ListPrice = $("#elm_list_price");
     public SelenideElement productName = $(".product-name-column a");
     public SelenideElement productTemplate = $("#elm_details_layout");
+    public SelenideElement tab_General = $("#detailed");
     public SelenideElement tab_Shippings = $("#shippings");
     public  SelenideElement field_ProductWeight = $("#product_weight");
 
