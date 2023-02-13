@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Added condition for product block.&#10;Added wait for product block on the storefront.&#10;Added asserts for quickview window.">
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Added all templates for the product page. Thus, product page is totally ready.&#10;Added new numeration for the category page/">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/storefront/StCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/StCategoryPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/storefront/StProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/StProductPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +51,7 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/Stickers/pom.xml&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.TestCaseOne.TestCaseOne_Storefront_ProductPage">
+  <component name="RunManager" selected="TestNG.TestCaseOne.TestCaseOne_Storefront_CategoryPage">
     <configuration name="TestCaseOne" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
@@ -69,6 +68,18 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestCaseOne" />
       <option name="METHOD_NAME" value="TestCaseOne_Storefront" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCaseOne.TestCaseOne_Storefront_CategoryPage" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Stickers" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCaseOne" />
+      <option name="METHOD_NAME" value="TestCaseOne_Storefront_CategoryPage" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -102,6 +113,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.TestCaseOne.TestCaseOne_Storefront_CategoryPage" />
         <item itemvalue="TestNG.TestCaseOne.TestCaseOne_Storefront_ProductPage" />
         <item itemvalue="TestNG.TestCaseOne.TestCaseOne_Storefront" />
         <item itemvalue="TestNG.TestCaseOne" />
@@ -258,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675958389791</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Added all templates for the product page. Thus, product page is totally ready.&#10;Added new numeration for the category page/">
+      <created>1676277609478</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1676277609478</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -287,6 +306,7 @@
     <MESSAGE value="Added all screenshots for a category page." />
     <MESSAGE value="Corrected settings for discount sticker." />
     <MESSAGE value="Added condition for product block.&#10;Added wait for product block on the storefront.&#10;Added asserts for quickview window." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added condition for product block.&#10;Added wait for product block on the storefront.&#10;Added asserts for quickview window." />
+    <MESSAGE value="Added all templates for the product page. Thus, product page is totally ready.&#10;Added new numeration for the category page/" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added all templates for the product page. Thus, product page is totally ready.&#10;Added new numeration for the category page/" />
   </component>
 </project>

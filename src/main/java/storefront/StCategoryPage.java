@@ -7,6 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class StCategoryPage {
     public StCategoryPage(){super();}
 
+    public SelenideElement breadcrumbs_Phones = $("a:nth-child(3).ty-breadcrumbs__a bdi");
     public SelenideElement template_Grid = $(".ty-icon-products-multicolumns");
     public SelenideElement template_ListWithoutOptions = $(".ty-icon-products-without-options");
     public SelenideElement template_CompactList = $(".cm-ajax .ty-icon-short-list");

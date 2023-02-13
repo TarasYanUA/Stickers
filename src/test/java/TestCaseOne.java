@@ -152,8 +152,9 @@ public class TestCaseOne extends TestRunner {
         productSettings.tab_Shippings.hover().click();
         productSettings.clickAndType_ProductWeight("9");
         csCartSettings.navigateToStProductPage(1);
+        csCartSettings.cookieNotice();
     }*/
-    @Test(priority=2)
+    /*@Test(priority=2)
     public void TestCaseOne_Storefront_ProductPage() {
         //Это удалить после разработки
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -223,34 +224,62 @@ public class TestCaseOne extends TestRunner {
         shiftLanguage(1);
         Selenide.sleep(2000);
         Selenide.screenshot("155 ProdPage(RTL) - VerticalIcons, LeftTopColumn, ThreeColumned");
-    }
-    /*@Test(priority=3)
+    }*/
+
+    @Test(priority=3)
     public void TestCaseOne_Storefront_CategoryPage(){
+        //Это удалить после разработки
+        CsCartSettings csCartSettings = new CsCartSettings();
+        csCartSettings.navigateToEditingCategoryPage();
+        $x("//a[text()='AB: Телефоны']").click();
+        csCartSettings.gearWheelOnTop.click();
+        csCartSettings.button_ViewProducts.click();
+        $x("//td[@class='product-name-column wrap-word']//a[contains(text(), 'Apple iPhone 14')]").click();
+        csCartSettings.navigateToStProductPage(1);
+        csCartSettings.cookieNotice();
+
+
         shiftLanguage(2);
-        stProductPage.breadcrumbs_Phones.click();
-        Selenide.sleep(2000);
-        Selenide.screenshot("200 Category - VerticalIcons, LeftTopColumn, Grid");
         StCategoryPage stCategoryPage = new StCategoryPage();
+        stCategoryPage.breadcrumbs_Phones.click();
+        Selenide.sleep(2000);
+        //Проверяем, что присутствуют стикеры слева и вверху
+        Assert.assertTrue($(".ab-stickers-container__TL").exists(), "There are no stickers on the Top-Left side on category page!");
+        //Проверяем, что присутствуют стикеры слева и внизу
+        Assert.assertTrue($(".ab-stickers-container__BL").exists(), "There are no stickers on the Bottom-Left side on category page!");
+        //Проверяем, что стикеры расположены в колонку
+        Assert.assertTrue($(".column-filling").exists(), "Position of stickers is not in Column on category page!");
+        //Проверяем, что пиктограммы присутствуют
+        Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on category page!");
+        //Проверяем, что пиктограммы расположены в позиции 1
+        Assert.assertTrue($(".ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1 on category page!");
+        Selenide.screenshot("200 Category - VerticalIcons, LeftTopColumn, Grid");
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.click();
-        Selenide.sleep(3000);
         $(".ui-dialog-title").hover();
+        Selenide.sleep(3000);
         //Проверяем, что присутствуют стикеры слева и вверху
-        Assert.assertTrue($(".ut2-pb__items .ab-stickers-container__TL").exists(), "There are no stickers on the Top-Left side!");
+        Assert.assertTrue($(".ut2-pb__items .ab-stickers-container__TL").exists(), "There are no stickers on the Top-Left side on quick view window!");
         //Проверяем, что присутствуют стикеры слева и внизу
-        Assert.assertTrue($(".ut2-pb__items .ab-stickers-container__BL").exists(), "There are no stickers on the Bottom-Left side!");
+        Assert.assertTrue($(".ut2-pb__items .ab-stickers-container__BL").exists(), "There are no stickers on the Bottom-Left side on quick view window!");
         //Проверяем, что стикеры расположены в колонку
-        Assert.assertTrue($(".ut2-pb__items .column-filling").exists(), "Position of stickers is not in Column!");
+        Assert.assertTrue($(".ut2-pb__items .column-filling").exists(), "Position of stickers is not in Column on quick view window!");
         //Проверяем, что пиктограммы присутствуют
-        Assert.assertTrue($(".ut2-pb__right .ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page!");
+        Assert.assertTrue($(".ut2-pb__right .ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on quick view window!");
         //Проверяем, что пиктограммы расположены в позиции 1
-        Assert.assertTrue($(".ut2-pb__right .ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1!");
+        Assert.assertTrue($(".ut2-pb__right .ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1 on quick view window!");
         Selenide.screenshot("205 QuickView - VerticalIcons, LeftTopColumn");
         stCategoryPage.button_CloseQuickView.click();
         stCategoryPage.template_ListWithoutOptions.click();
         Selenide.sleep(2000);
         Selenide.screenshot("210 Category - VerticalIcons, LeftTopColumn, ListWithoutOptions");
         stCategoryPage.template_CompactList.click();
+        //Проверяем, что стикеры присутствуют
+        Assert.assertTrue($(".ab-stickers-container").exists(), "There is no stickers on category page as Compact list!");
+        //Проверяем, что пиктограммы присутствуют
+        Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There is no pictograms on category page as Compact list!");
+
+
         Selenide.sleep(2000);
         Selenide.screenshot("215 Category - VerticalIcons, LeftTopColumn, CompactList");
         shiftLanguage(1);
@@ -264,10 +293,10 @@ public class TestCaseOne extends TestRunner {
         Selenide.screenshot("230 Category(RTL) - VerticalIcons, LeftTopColumn, Grid");
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.click();
-        Selenide.sleep(3000);
         $(".ui-dialog-title").hover();
+        Selenide.sleep(3000);
         Selenide.screenshot("235 QuickView(RTL) - VerticalIcons, LeftTopColumn");
-    }*/
+    }
 
     private static void addConditionOfPrice(StickerSettings stickerSettings) {
         stickerSettings.tab_Conditions.hover().click();
