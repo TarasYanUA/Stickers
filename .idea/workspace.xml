@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Added asserts to some steps of the category page.">
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Added description to test-case 1.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/storefront/StCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/StCategoryPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +50,7 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/Stickers/pom.xml&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.TestCaseOne.TestCaseOne_Storefront_CategoryPage">
+  <component name="RunManager" selected="TestNG.TestCaseOne">
     <configuration name="TestCaseOne" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
@@ -111,10 +112,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.TestCaseOne" />
         <item itemvalue="TestNG.TestCaseOne.TestCaseOne_Storefront_CategoryPage" />
         <item itemvalue="TestNG.TestCaseOne.TestCaseOne_Storefront_ProductPage" />
         <item itemvalue="TestNG.TestCaseOne.TestCaseOne_Storefront" />
-        <item itemvalue="TestNG.TestCaseOne" />
         <item itemvalue="TestNG.TestCaseOne.VerifyTestCaseOne" />
       </list>
     </recent_temporary>
@@ -282,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676279190506</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Added description to test-case 1.">
+      <created>1676282402090</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1676282402090</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -313,6 +321,7 @@
     <MESSAGE value="Added condition for product block.&#10;Added wait for product block on the storefront.&#10;Added asserts for quickview window." />
     <MESSAGE value="Added all templates for the product page. Thus, product page is totally ready.&#10;Added new numeration for the category page/" />
     <MESSAGE value="Added asserts to some steps of the category page." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added asserts to some steps of the category page." />
+    <MESSAGE value="Added description to test-case 1." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added description to test-case 1." />
   </component>
 </project>

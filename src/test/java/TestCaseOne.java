@@ -16,14 +16,14 @@ import static com.codeborne.selenide.Selenide.*;
     - Позиция отображения: слева + сверху/снизу
     - Способ отображения: в колонку
     - Позиция пиктограмм: Позиция 1
+    - Описание к стикеру
 - Страница товара: все шаблоны
 - Страница категории: все шаблоны + окно Быстрого просмотра
 - Блок с товарами: шаблоны АВ: Сетка (с кнопкой "Показать ещё") + АВ: Расширенный скроллер товаров
 - Страница Избранных
-- Страница Сравнения
 */
 public class TestCaseOne extends TestRunner {
-    /*@Test(priority=1)
+    @Test(priority=1)
     public void TestCaseOne_ConfigureSettings() {
         //Включаем мини-иконки в виде галереи и окно Быстрого просмотра
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -164,10 +164,10 @@ public class TestCaseOne extends TestRunner {
         productSettings.clickAndType_ProductWeight("9");
         csCartSettings.navigateToStProductPage(1);
         csCartSettings.cookieNotice();
-    }*/
-    /*@Test(priority=2)
-    public void TestCaseOne_Storefront_ProductPage() {
-        //Это удалить после разработки
+    }
+    @Test(priority=2)
+    public void TestCaseOne_ProductPage() {
+/*        //Это удалить после разработки
         CsCartSettings csCartSettings = new CsCartSettings();
         csCartSettings.navigateToEditingCategoryPage();
         $x("//a[text()='AB: Телефоны']").click();
@@ -175,9 +175,10 @@ public class TestCaseOne extends TestRunner {
         csCartSettings.button_ViewProducts.click();
         $x("//td[@class='product-name-column wrap-word']//a[contains(text(), 'Apple iPhone 14')]").click();
         csCartSettings.navigateToStProductPage(1);
-        csCartSettings.cookieNotice();
+        csCartSettings.cookieNotice();*/
 
 
+        CsCartSettings csCartSettings = new CsCartSettings();
         StProductPage stProductPage = new StProductPage();
         //Проверяем, что галерея мини-иконок вертикальная
         Assert.assertTrue($(".ab-vg-vertical-thumbnails").exists(), "Gallery of mini-icons is not Vertical!");
@@ -235,21 +236,10 @@ public class TestCaseOne extends TestRunner {
         shiftLanguage(1);
         Selenide.sleep(2000);
         Selenide.screenshot("155 ProdPage(RTL) - VerticalIcons, LeftTopColumn, ThreeColumned");
-    }*/
+    }
 
     @Test(priority=3)
-    public void TestCaseOne_Storefront_CategoryPage(){
-        //Это удалить после разработки
-        CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToEditingCategoryPage();
-        $x("//a[text()='AB: Телефоны']").click();
-        csCartSettings.gearWheelOnTop.click();
-        csCartSettings.button_ViewProducts.click();
-        $x("//td[@class='product-name-column wrap-word']//a[contains(text(), 'Apple iPhone 14')]").click();
-        csCartSettings.navigateToStProductPage(1);
-        csCartSettings.cookieNotice();
-
-
+    public void TestCaseOne_CategoryPage(){
         shiftLanguage(2);
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.breadcrumbs_Phones.click();
@@ -289,8 +279,6 @@ public class TestCaseOne extends TestRunner {
         Assert.assertTrue($(".ab-stickers-container").exists(), "There is no stickers on category page as Compact list!");
         //Проверяем, что пиктограммы присутствуют
         Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There is no pictograms on category page as Compact list!");
-
-
         Selenide.sleep(2000);
         Selenide.screenshot("215 Category - VerticalIcons, LeftTopColumn, CompactList");
         shiftLanguage(1);
@@ -307,6 +295,32 @@ public class TestCaseOne extends TestRunner {
         $(".ui-dialog-title").hover();
         Selenide.sleep(3000);
         Selenide.screenshot("235 QuickView(RTL) - VerticalIcons, LeftTopColumn");
+        stCategoryPage.button_CloseQuickView.click();
+    }
+
+    @Test(priority=4)
+    public void TestCaseOne_WishListAndComparisonList(){
+        shiftLanguage(2);
+        StCategoryPage stCategoryPage = new StCategoryPage();
+        stCategoryPage.productInList.hover();
+        stCategoryPage.button_AddToWishList.click();
+        $(".cm-notification-content").shouldBe(Condition.enabled);
+        stCategoryPage.button_WishListOnPopupWindow.click();
+        Selenide.sleep(2000);
+        ///Проверяем, что присутствуют стикеры слева и вверху
+        Assert.assertTrue($(".ab-stickers-container__TL").exists(), "There are no stickers on the Top-Left side on Wishlist page!");
+        //Проверяем, что присутствуют стикеры слева и внизу
+        Assert.assertTrue($(".ab-stickers-container__BL").exists(), "There are no stickers on the Bottom-Left side on Wishlist page!");
+        //Проверяем, что стикеры расположены в колонку
+        Assert.assertTrue($(".column-filling").exists(), "Position of stickers is not in Column on Wishlist page!");
+        //Проверяем, что пиктограммы присутствуют
+        Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on Wishlist page!");
+        //Проверяем, что пиктограммы расположены в позиции 1
+        Assert.assertTrue($(".ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1 on Wishlist page!");
+        stCategoryPage.productInList.hover();
+        Selenide.screenshot("300 WishList - VerticalIcons, LeftTopColumn");
+        shiftLanguage(1);
+        Selenide.screenshot("305 WishList(RTL) - VerticalIcons, LeftTopColumn");
     }
 
     private static void addConditionOfPrice(StickerSettings stickerSettings) {

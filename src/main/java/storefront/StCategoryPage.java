@@ -1,7 +1,6 @@
 package storefront;
 
 import com.codeborne.selenide.SelenideElement;
-
 import static com.codeborne.selenide.Selenide.$;
 
 public class StCategoryPage {
@@ -14,4 +13,6 @@ public class StCategoryPage {
     public SelenideElement productInList = $(".ut2-gl__image");
     public SelenideElement button_QuickView = $(".ut2-icon-baseline-visibility");
     public SelenideElement button_CloseQuickView = $(".ui-icon-closethick");
+    public SelenideElement button_AddToWishList = $(".ut2-add-to-wish");
+    public SelenideElement button_WishListOnPopupWindow = $(".ty-btn__secondary");
 }
