@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Removed sticker description with its screenshots.">
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Starts working with test-case 2.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +51,11 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/Stickers/pom.xml&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
   <component name="RunManager" selected="TestNG.TestCaseOne.TestCaseOne_ProductPage">
     <configuration name="TestCaseOne" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
@@ -309,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676302375160</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Starts working with test-case 2.">
+      <created>1676303079066</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1676303079066</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -345,6 +360,7 @@
     <MESSAGE value="Added wish list and sticker description." />
     <MESSAGE value="Added wish list and sticker description with corresponding screenshots." />
     <MESSAGE value="Removed sticker description with its screenshots." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed sticker description with its screenshots." />
+    <MESSAGE value="Starts working with test-case 2." />
+    <option name="LAST_COMMIT_MESSAGE" value="Starts working with test-case 2." />
   </component>
 </project>
