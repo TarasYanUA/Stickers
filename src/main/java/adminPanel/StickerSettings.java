@@ -1,9 +1,10 @@
 package adminPanel;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.ui.Select;
-
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 
 public class StickerSettings {
     public StickerSettings(){super();}
@@ -38,7 +39,16 @@ public class StickerSettings {
     public SelenideElement fieldOfConditions = $("div[class='conditions-tree-node'] select");
     public SelenideElement fieldOfOperator = $("select[name*='sticker_data'][id*='sticker_condition_operator']");
     public SelenideElement fieldOfPriceCondition = $("input[name*='sticker_data'].input-medium");
+    public SelenideElement button_StickerLanguage = $("a[id^='sw_select'][id$='wrap_content']");
+    public ElementsCollection listOfLanguages = $$(".dropdown-menu.cm-select-list.popup-icons li a");
+    public SelenideElement field_Appearance = $("label[for='ab__stickers_appearance_style']");
+    public SelenideElement textRedactor = $(".redactor-layer-img-edit");
 
+
+    public void changeStickerLanguage(int num){
+        button_StickerLanguage.click();
+        listOfLanguages.get(num).click();
+    }
 
 
     public Select getSettingOutputPosition(){return new Select(settingOutputPosition);}

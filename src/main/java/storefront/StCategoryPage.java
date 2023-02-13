@@ -14,5 +14,6 @@ public class StCategoryPage {
     public SelenideElement button_QuickView = $(".ut2-icon-baseline-visibility");
     public SelenideElement button_CloseQuickView = $(".ui-icon-closethick");
     public SelenideElement button_AddToWishList = $(".ut2-add-to-wish");
-    public SelenideElement button_WishListOnPopupWindow = $(".ty-btn__secondary");
+    public SelenideElement button_CloseWishListPopup = $(".cm-notification-close");
+    public SelenideElement button_WishListOnTop = $("a.ty-wishlist__a");
 }
