@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Added wish list to test-case 1.">
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Added wish list and sticker description with corresponding screenshots.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/storefront/StCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/StCategoryPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/storefront/StHomePage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +51,7 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/Stickers/pom.xml&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.TestCaseOne.TestCaseOne_WishListAndComparisonList">
+  <component name="RunManager" selected="TestNG.TestCaseOne.TestCaseOne_ProductPage">
     <configuration name="TestCaseOne" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
@@ -64,11 +63,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCaseOne.TestCaseOne_Storefront" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCaseOne.TestCaseOne_ProductPage" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestCaseOne" />
-      <option name="METHOD_NAME" value="TestCaseOne_Storefront" />
+      <option name="METHOD_NAME" value="TestCaseOne_ProductPage" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -114,11 +113,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TestCaseOne.TestCaseOne_WishListAndComparisonList" />
+        <item itemvalue="TestNG.TestCaseOne.TestCaseOne_ProductPage" />
         <item itemvalue="TestNG.TestCaseOne" />
+        <item itemvalue="TestNG.TestCaseOne.TestCaseOne_WishListAndComparisonList" />
         <item itemvalue="TestNG.TestCaseOne.TestCaseOne_Storefront_CategoryPage" />
         <item itemvalue="TestNG.TestCaseOne.TestCaseOne_Storefront_ProductPage" />
-        <item itemvalue="TestNG.TestCaseOne.TestCaseOne_Storefront" />
       </list>
     </recent_temporary>
   </component>
@@ -299,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676286062367</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Added wish list and sticker description with corresponding screenshots.">
+      <created>1676297373747</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1676297373747</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -332,6 +338,8 @@
     <MESSAGE value="Added asserts to some steps of the category page." />
     <MESSAGE value="Added description to test-case 1." />
     <MESSAGE value="Added wish list to test-case 1." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added wish list to test-case 1." />
+    <MESSAGE value="Added wish list and sticker description." />
+    <MESSAGE value="Added wish list and sticker description with corresponding screenshots." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added wish list and sticker description with corresponding screenshots." />
   </component>
 </project>

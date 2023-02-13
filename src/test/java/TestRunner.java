@@ -8,6 +8,16 @@ import static com.codeborne.selenide.Selenide.*;
 Запускать через файл testng.xml
 */
 
+/*//Это удалить после разработки
+        CsCartSettings csCartSettings = new CsCartSettings();
+                csCartSettings.navigateToEditingCategoryPage();
+                $x("//a[text()='AB: Телефоны']").click();
+                csCartSettings.gearWheelOnTop.click();
+                csCartSettings.button_ViewProducts.click();
+                $x("//td[@class='product-name-column wrap-word']//a[contains(text(), 'Apple iPhone 14')]").click();
+                csCartSettings.navigateToStProductPage(1);
+                csCartSettings.cookieNotice();*/
+
 public class TestRunner {
     public static final String BASIC_URL = "https://trs.test.abt.team/4161ultru/admin.php";
 
@@ -30,21 +40,5 @@ public class TestRunner {
     public void shiftLanguage(int index) {
         $("a[id*='_wrap_language_']").hover().click();
         $$("div[id*='_wrap_language_'] li.ty-select-block__list-item").get(index).click();
-    }
-    public void selectBigPictureFlatTemplate() {
-        $("#elm_details_layout").click();
-        $x("//option[@value='abt__ut2_bigpicture_flat_template']").click();
-    }
-    public void selectBigPictureTemplate() {
-        $("#elm_details_layout").click();
-        $x("//option[@value='bigpicture_template']").click();
-    }
-    public void selectDefaultTemplate() {
-        $("#elm_details_layout").click();
-        $x("//option[@value='default_template']").click();
-    }
-    public void selectThreeColumnTemplate() {
-        $("#elm_details_layout").click();
-        $x("//option[@value='abt__ut2_three_columns_template']").click();
     }
 }
