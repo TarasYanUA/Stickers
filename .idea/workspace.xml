@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Starts working with test-case 2.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +54,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestCaseOne.TestCaseOne_ProductPage">
+  <component name="RunManager" selected="TestNG.TestCaseTwo">
     <configuration name="TestCaseOne" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
@@ -80,30 +78,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCaseOne.TestCaseOne_Storefront_CategoryPage" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Stickers" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCaseOne" />
-      <option name="METHOD_NAME" value="TestCaseOne_Storefront_CategoryPage" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestCaseOne.TestCaseOne_Storefront_ProductPage" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Stickers" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCaseOne" />
-      <option name="METHOD_NAME" value="TestCaseOne_Storefront_ProductPage" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestCaseOne.TestCaseOne_WishListAndComparisonList" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
@@ -116,13 +90,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestCaseTwo" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Stickers" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCaseTwo" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCaseTwo.TestCaseTwo_ConfigureSettings" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Stickers" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCaseTwo" />
+      <option name="METHOD_NAME" value="TestCaseTwo_ConfigureSettings" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.TestCaseTwo" />
+        <item itemvalue="TestNG.TestCaseTwo.TestCaseTwo_ConfigureSettings" />
         <item itemvalue="TestNG.TestCaseOne.TestCaseOne_ProductPage" />
         <item itemvalue="TestNG.TestCaseOne" />
         <item itemvalue="TestNG.TestCaseOne.TestCaseOne_WishListAndComparisonList" />
-        <item itemvalue="TestNG.TestCaseOne.TestCaseOne_Storefront_CategoryPage" />
-        <item itemvalue="TestNG.TestCaseOne.TestCaseOne_Storefront_ProductPage" />
       </list>
     </recent_temporary>
   </component>
@@ -324,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676303079066</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Starts working with test-case 2.">
+      <created>1676304596558</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1676304596558</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
