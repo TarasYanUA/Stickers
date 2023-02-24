@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Test-case 2 -- the last item has left yet.">
-      <change afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Test-case 2 is done.&#10;File TestNG is added.&#10;Methods to select language on storefront are changed.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestCaseThree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/storefront/StCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/StCategoryPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -353,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676369843436</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Test-case 2 is done.&#10;File TestNG is added.&#10;Methods to select language on storefront are changed.">
+      <created>1677244901806</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1677244901806</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -391,6 +397,7 @@
     <MESSAGE value="Removed sticker description with its screenshots." />
     <MESSAGE value="Starts working with test-case 2." />
     <MESSAGE value="Test-case 2 -- the last item has left yet." />
-    <option name="LAST_COMMIT_MESSAGE" value="Test-case 2 -- the last item has left yet." />
+    <MESSAGE value="Test-case 2 is done.&#10;File TestNG is added.&#10;Methods to select language on storefront are changed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Test-case 2 is done.&#10;File TestNG is added.&#10;Methods to select language on storefront are changed." />
   </component>
 </project>

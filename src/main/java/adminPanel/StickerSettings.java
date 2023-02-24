@@ -1,10 +1,8 @@
 package adminPanel;
 
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.ui.Select;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 
 public class StickerSettings {
     public StickerSettings(){super();}
@@ -16,6 +14,7 @@ public class StickerSettings {
     public SelenideElement sticker_Weight = $("a[href*='sticker_id=20']");
 
     public SelenideElement tabSettings = $("#settings");
+    public SelenideElement tabPictograms = $("#ab__stickers_pictograms");
     public SelenideElement tab_Conditions = $("#conditions");
     public SelenideElement tab_DisplayOn = $("#display_on");
     public SelenideElement settingOutputPosition = $("select[id*='addon_option_ab__stickers_output_position']");
@@ -25,6 +24,7 @@ public class StickerSettings {
     public SelenideElement settingMaxNumberBottom = $("#ab__stickers_BL_max_count");
     public SelenideElement settingPositionsInProductLists = $("#ab__stickers_output_position_list");
     public SelenideElement settingPositionsOnProductPage = $("#ab__stickers_output_position_detailed_page");
+    public SelenideElement setting_AppearanceOfPictograms;
     public SelenideElement displayOn_ShortList = $("select[id='ab__stickers_display_on_blocks_products_short_list_tpl']");
     public SelenideElement statusActive = $("input[id^='ab__stickers_status_'][id$='_a']");
     public SelenideElement buttonSaveSettings = $(".cm-addons-save-settings");
@@ -39,14 +39,7 @@ public class StickerSettings {
     public SelenideElement fieldOfConditions = $("div[class='conditions-tree-node'] select");
     public SelenideElement fieldOfOperator = $("select[name*='sticker_data'][id*='sticker_condition_operator']");
     public SelenideElement fieldOfPriceCondition = $("input[name*='sticker_data'].input-medium");
-    public SelenideElement button_StickerLanguage = $("a[id^='sw_select'][id$='wrap_content']");
-    public ElementsCollection listOfLanguages = $$(".dropdown-menu.cm-select-list.popup-icons li a");
 
-
-    public void changeStickerLanguage(int num){
-        button_StickerLanguage.click();
-        listOfLanguages.get(num).click();
-    }
 
 
     public Select getSettingOutputPosition(){return new Select(settingOutputPosition);}
@@ -105,4 +98,6 @@ public class StickerSettings {
     public Select getDisplayOn_ShortList(){return new Select(displayOn_ShortList);}
     public void selectDisplayOn_ShortList(String value){
         getDisplayOn_ShortList().selectByValue(value);}
+    public Select getSetting_AppearanceOfPictograms(){return new Select(setting_AppearanceOfPictograms);}
+    public void selectSetting_AppearanceOfPictograms(String value){getSetting_AppearanceOfPictograms().selectByValue(value);}
 }

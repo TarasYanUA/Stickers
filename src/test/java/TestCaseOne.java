@@ -8,7 +8,7 @@ import storefront.StProductPage;
 import static com.codeborne.selenide.Selenide.*;
 
 /*
-ссылка на тест-кейс 1: https://docs.google.com/spreadsheets/d/1UdXKRCHxD7XP7W3UzDN28ff10LyiJPbZKrdvZllpUCU/edit#gid=1582514111
+ссылка на тест-кейс: https://docs.google.com/spreadsheets/d/1UdXKRCHxD7XP7W3UzDN28ff10LyiJPbZKrdvZllpUCU/edit#gid=1582514111
 Проверяем следующее:
 - CS-Cart: Быстрый просмотр + мини-иконки галереи
 - Модуль "Видео галерея": Вертикальное отображение галереи
