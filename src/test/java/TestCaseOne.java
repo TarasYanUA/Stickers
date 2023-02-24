@@ -188,7 +188,7 @@ public class TestCaseOne extends TestRunner {
         stProductPage.block_Hits.click();
         Selenide.sleep(2000);
         Selenide.screenshot("1110 BlockHits - VerticalIcons, LeftTopColumn, AdvancedScroller");
-        shiftLanguage(1);
+        selectLanguage_RTL();
         Selenide.sleep(2000);
         Selenide.screenshot("1115 ProdPage(RTL) - VerticalIcons, LeftTopColumn, DefaultTemplate");
         stProductPage.block_Popular.scrollTo();
@@ -206,7 +206,7 @@ public class TestCaseOne extends TestRunner {
         csCartSettings.navigateToStProductPage(2);
         Selenide.sleep(2000);
         Selenide.screenshot("1130 ProdPage - VerticalIcons, LeftTopColumn, BigPictureTemplate");
-        shiftLanguage(1);
+        selectLanguage_RTL();
         Selenide.sleep(2000);
         Selenide.screenshot("1135 ProdPage(RTL) - VerticalIcons, LeftTopColumn, BigPictureTemplate");
         csCartSettings.shiftBrowserTab(0);
@@ -214,7 +214,7 @@ public class TestCaseOne extends TestRunner {
         csCartSettings.navigateToStProductPage(3);
         Selenide.sleep(2000);
         Selenide.screenshot("1140 ProdPage - VerticalIcons, LeftTopColumn, BigPictureFlatTemplate");
-        shiftLanguage(1);
+        selectLanguage_RTL();
         Selenide.sleep(2000);
         Selenide.screenshot("1145 ProdPage(RTL) - VerticalIcons, LeftTopColumn, BigPictureFlatTemplate");
         csCartSettings.shiftBrowserTab(0);
@@ -222,14 +222,14 @@ public class TestCaseOne extends TestRunner {
         csCartSettings.navigateToStProductPage(4);
         Selenide.sleep(2000);
         Selenide.screenshot("1150 ProdPage - VerticalIcons, LeftTopColumn, ThreeColumned");
-        shiftLanguage(1);
+        selectLanguage_RTL();
         Selenide.sleep(2000);
         Selenide.screenshot("1155 ProdPage(RTL) - VerticalIcons, LeftTopColumn, ThreeColumned");
     }
 
     @Test(priority=3)
     public void TestCaseOne_CategoryPage(){
-        shiftLanguage(2);
+        selectLanguage_RU();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.breadcrumbs_Phones.click();
         Selenide.sleep(2000);
@@ -244,6 +244,8 @@ public class TestCaseOne extends TestRunner {
         //Проверяем, что пиктограммы расположены в позиции 1
         Assert.assertTrue($(".ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1 on category page!");
         Selenide.screenshot("1200 Category - VerticalIcons, LeftTopColumn, Grid");
+
+        //Смотрим окно Быстрого просмотра
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.click();
         $(".ui-dialog-title").hover();
@@ -270,7 +272,7 @@ public class TestCaseOne extends TestRunner {
         Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There is no pictograms on category page as Compact list!");
         Selenide.sleep(2000);
         Selenide.screenshot("1215 Category - VerticalIcons, LeftTopColumn, CompactList");
-        shiftLanguage(1);
+        selectLanguage_RTL();
         Selenide.sleep(2000);
         Selenide.screenshot("1220 Category(RTL) - VerticalIcons, LeftTopColumn, CompactList");
         stCategoryPage.template_ListWithoutOptions.click();
@@ -289,7 +291,7 @@ public class TestCaseOne extends TestRunner {
 
     @Test(priority=4)
     public void TestCaseOne_WishListAndComparisonList(){
-        shiftLanguage(2);
+        selectLanguage_RU();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.productInList.hover();
         stCategoryPage.button_AddToWishList.click();
@@ -308,7 +310,7 @@ public class TestCaseOne extends TestRunner {
         Assert.assertTrue($(".ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1 on Wishlist page!");
         stCategoryPage.productInList.hover();
         Selenide.screenshot("1300 WishList - VerticalIcons, LeftTopColumn");
-        shiftLanguage(1);
+        selectLanguage_RTL();
         Selenide.screenshot("1305 WishList(RTL) - VerticalIcons, LeftTopColumn");
     }
 

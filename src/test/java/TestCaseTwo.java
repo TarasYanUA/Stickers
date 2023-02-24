@@ -80,7 +80,7 @@ public class TestCaseTwo extends TestRunner {
         stProductPage.block_Hits.click();
         Selenide.sleep(2000);
         Selenide.screenshot("2110 BlockHits - HorizontalIcons, LeftTopRow, AdvancedScroller");
-        shiftLanguage(1);
+        selectLanguage_RTL();
         Selenide.sleep(2000);
         Selenide.screenshot("2115 ProdPage(RTL) - HorizontalIcons, LeftTopRow, DefaultTemplate");
         stProductPage.block_Popular.scrollTo();
@@ -98,7 +98,7 @@ public class TestCaseTwo extends TestRunner {
         csCartSettings.navigateToStProductPage(2);
         Selenide.sleep(2000);
         Selenide.screenshot("2130 ProdPage - HorizontalIcons, LeftTopRow, BigPictureTemplate");
-        shiftLanguage(1);
+        selectLanguage_RTL();
         Selenide.sleep(2000);
         Selenide.screenshot("2135 ProdPage(RTL) - HorizontalIcons, LeftTopRow, BigPictureTemplate");
         csCartSettings.shiftBrowserTab(0);
@@ -106,7 +106,7 @@ public class TestCaseTwo extends TestRunner {
         csCartSettings.navigateToStProductPage(3);
         Selenide.sleep(2000);
         Selenide.screenshot("2140 ProdPage - HorizontalIcons, LeftTopRow, BigPictureFlatTemplate");
-        shiftLanguage(1);
+        selectLanguage_RTL();
         Selenide.sleep(2000);
         Selenide.screenshot("2145 ProdPage(RTL) - HorizontalIcons, LeftTopRow, BigPictureFlatTemplate");
         csCartSettings.shiftBrowserTab(0);
@@ -114,14 +114,14 @@ public class TestCaseTwo extends TestRunner {
         csCartSettings.navigateToStProductPage(4);
         Selenide.sleep(2000);
         Selenide.screenshot("2150 ProdPage - HorizontalIcons, LeftTopRow, ThreeColumned");
-        shiftLanguage(1);
+        selectLanguage_RTL();
         Selenide.sleep(2000);
         Selenide.screenshot("2155 ProdPage(RTL) - HorizontalIcons, LeftTopRow, ThreeColumned");
     }
 
     @Test(priority=3)
-    public void TestCaseOne_CategoryPage(){
-        shiftLanguage(2);
+    public void TestCaseTwo_CategoryPage(){
+        selectLanguage_RU();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.breadcrumbs_Phones.click();
         Selenide.sleep(2000);
@@ -136,6 +136,8 @@ public class TestCaseTwo extends TestRunner {
         //Проверяем, что пиктограммы расположены в позиции 1
         Assert.assertTrue($(".ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1 on category page!");
         Selenide.screenshot("2200 Category - HorizontalIcons, LeftTopRow, Grid");
+
+        //Смотрим окно Быстрого просмотра
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.click();
         $(".ui-dialog-title").hover();
@@ -162,7 +164,7 @@ public class TestCaseTwo extends TestRunner {
         Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There is no pictograms on category page as Compact list!");
         Selenide.sleep(2000);
         Selenide.screenshot("2215 Category - HorizontalIcons, LeftTopRow, CompactList");
-        shiftLanguage(1);
+        selectLanguage_RTL();
         Selenide.sleep(2000);
         Selenide.screenshot("2220 Category(RTL) - HorizontalIcons, LeftTopRow, CompactList");
         stCategoryPage.template_ListWithoutOptions.click();
@@ -180,8 +182,8 @@ public class TestCaseTwo extends TestRunner {
     }
 
     @Test(priority=4)
-    public void TestCaseOne_WishListAndComparisonList(){
-        shiftLanguage(2);
+    public void TestCaseTwo_WishListAndComparisonList(){
+        selectLanguage_RU();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.productInList.hover();
         stCategoryPage.button_AddToWishList.click();
@@ -192,15 +194,15 @@ public class TestCaseTwo extends TestRunner {
         Assert.assertTrue($(".ab-stickers-container__TL").exists(), "There are no stickers on the Top-Left side on Wishlist page!");
         //Проверяем, что присутствуют стикеры слева и внизу
         Assert.assertTrue($(".ab-stickers-container__BL").exists(), "There are no stickers on the Bottom-Left side on Wishlist page!");
-        //Проверяем, что стикеры расположены в колонку
-        Assert.assertTrue($(".column-filling").exists(), "Position of stickers is not in Column on Wishlist page!");
+        //Проверяем, что стикеры расположены в строку
+        Assert.assertTrue($(".row-filling").exists(), "Position of stickers is not in Row on Wishlist page!");
         //Проверяем, что пиктограммы присутствуют
         Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on Wishlist page!");
         //Проверяем, что пиктограммы расположены в позиции 1
         Assert.assertTrue($(".ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1 on Wishlist page!");
         stCategoryPage.productInList.hover();
-        Selenide.screenshot("1300 WishList - VerticalIcons, LeftTopColumn");
-        shiftLanguage(1);
-        Selenide.screenshot("1305 WishList(RTL) - VerticalIcons, LeftTopColumn");
+        Selenide.screenshot("2300 WishList - HorizontalIcons, LeftTopRow");
+        selectLanguage_RTL();
+        Selenide.screenshot("2305 WishList(RTL) - HorizontalIcons, LeftTopRow");
     }
 }

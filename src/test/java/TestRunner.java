@@ -37,8 +37,12 @@ public class TestRunner {
         Selenide.closeWebDriver();
     }
 
-    public void shiftLanguage(int index) {
+    public void selectLanguage_RTL() {
         $("a[id*='_wrap_language_']").hover().click();
-        $$("div[id*='_wrap_language_'] li.ty-select-block__list-item").get(index).click();
+        $(".ty-select-block__list-item a[data-ca-name='ar']").click();
+    }
+    public void selectLanguage_RU() {
+        $("a[id*='_wrap_language_']").hover().click();
+        $(".ty-select-block__list-item a[data-ca-name='ru']").click();
     }
 }
