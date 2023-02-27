@@ -3,6 +3,7 @@
         <classes>
             <class name="TestCaseOne" />
             <class name="TestCaseTwo" />
+            <class name="TestCaseThree" />
         </classes>
     </test>
 </suite>

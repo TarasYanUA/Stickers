@@ -24,7 +24,7 @@ public class TestRunner {
     @BeforeClass
     public void openBrowser() {
         Configuration.browser = "chrome";
-        Configuration.holdBrowserOpen = true; //не закрываем браузер пока ведём разработку
+        Configuration.holdBrowserOpen = false; //не закрываем браузер пока ведём разработку
         Configuration.screenshots = true; //делаем скриншоты при падении
         Configuration.browserSize = "1920x1050"; //Увеличиваем размер экрана
         open(BASIC_URL);

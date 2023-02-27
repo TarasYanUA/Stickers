@@ -290,7 +290,7 @@ public class TestCaseOne extends TestRunner {
     }
 
     @Test(priority=4)
-    public void TestCaseOne_WishListAndComparisonList(){
+    public void TestCaseOne_WishList(){
         selectLanguage_RU();
         StCategoryPage stCategoryPage = new StCategoryPage();
         stCategoryPage.productInList.hover();
@@ -311,6 +311,7 @@ public class TestCaseOne extends TestRunner {
         stCategoryPage.productInList.hover();
         Selenide.screenshot("1300 WishList - VerticalIcons, LeftTopColumn");
         selectLanguage_RTL();
+        Selenide.sleep(2000);
         Selenide.screenshot("1305 WishList(RTL) - VerticalIcons, LeftTopColumn");
     }
 
