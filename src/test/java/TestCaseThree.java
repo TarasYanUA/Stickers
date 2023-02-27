@@ -42,7 +42,7 @@ public class TestCaseThree extends TestRunner {
         uniThemeSettings.tab_ProductList.click();
         uniThemeSettings.selectPictogramPosition_Grid("position_2");
         uniThemeSettings.selectPictogramPosition_ListWithoutOptions("position_2");
-        uniThemeSettings.selectPictogramPosition_CompactList("position_2");
+        uniThemeSettings.selectPictogramPosition_CompactList("position_1"); //Позиции 2 у этого списка нет
         uniThemeSettings.tab_Product.hover().click();
         uniThemeSettings.selectPictogramPosition_Product("position_2");
         csCartSettings.button_Save.click();
@@ -65,10 +65,10 @@ public class TestCaseThree extends TestRunner {
         StickerSettings stickerSettings = csCartSettings.navigateToStickerSettingsPage();
         stickerSettings.tabSettings.click();
         stickerSettings.selectSettingOutputPosition("R");
-        stickerSettings.selectSettingOutputTypeTop("column");
-        stickerSettings.selectSettingMaxNumberTop("3");
-        stickerSettings.selectSettingOutputTypeBottom("column");
-        stickerSettings.selectSettingMaxNumberBottom("3");
+        stickerSettings.selectSetting_OutputType_RightTop("column");
+        stickerSettings.selectSetting_MaxNumber_RightTop("3");
+        stickerSettings.selectSetting_OutputType_RightBottom("column");
+        stickerSettings.selectSetting_MaxNumber_RightBottom("3");
         stickerSettings.tabPictograms.click();
         stickerSettings.selectSetting_AppearanceOfPictograms("teardrop");
         stickerSettings.buttonSaveSettings.click();
@@ -83,9 +83,9 @@ public class TestCaseThree extends TestRunner {
     }
 
     @Test(priority=2)
-    public void TestCaseOne_ProductPage() {
+    public void TestCaseThree_ProductPage() {
         StProductPage stProductPage = new StProductPage();
-        //Проверяем, что галерея мини-иконок вертикальная
+        //Проверяем, что галерея мини-иконок горизонтальная
         Assert.assertTrue($(".ab-vg-vertical-thumbnails").exists(), "Gallery of mini-icons is not Vertical!");
         //Проверяем, что присутствуют стикеры слева и вверху
         Assert.assertTrue($(".ab-stickers-container__TL").exists(), "There are no stickers on the Top-Left side!");

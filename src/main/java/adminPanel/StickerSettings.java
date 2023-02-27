@@ -18,13 +18,18 @@ public class StickerSettings {
     public SelenideElement tab_Conditions = $("#conditions");
     public SelenideElement tab_DisplayOn = $("#display_on");
     public SelenideElement settingOutputPosition = $("select[id*='addon_option_ab__stickers_output_position']");
-    public SelenideElement settingOutputTypeTop = $("#ab__stickers_TL");
-    public SelenideElement settingMaxNumberTop = $("#ab__stickers_TL_max_count");
-    public SelenideElement settingOutputTypeBottom = $("#ab__stickers_BL");
-    public SelenideElement settingMaxNumberBottom = $("#ab__stickers_BL_max_count");
+    public SelenideElement setting_OutputType_LeftTop = $("#ab__stickers_TL");
+    public SelenideElement setting_MaxNumber_LeftTop = $("#ab__stickers_TL_max_count");
+    public SelenideElement setting_OutputType_LeftBottom = $("#ab__stickers_BL");
+    public SelenideElement setting_MaxNumber_LeftBottom = $("#ab__stickers_BL_max_count");
+    public SelenideElement setting_OutputType_RightTop = $("#ab__stickers_TR");
+    public SelenideElement setting_MaxNumber_RightTop = $("#ab__stickers_TR_max_count");
+    public SelenideElement setting_OutputType_RightBottom = $("#ab__stickers_BR");
+    public SelenideElement setting_MaxNumber_RightBottom = $("#ab__stickers_BR_max_count");
     public SelenideElement settingPositionsInProductLists = $("#ab__stickers_output_position_list");
     public SelenideElement settingPositionsOnProductPage = $("#ab__stickers_output_position_detailed_page");
-    public SelenideElement setting_AppearanceOfPictograms;
+    public SelenideElement setting_AppearanceOfPictograms = $("select[id*=addon_option_ab__stickers_p_appearance]");
+
     public SelenideElement displayOn_ShortList = $("select[id='ab__stickers_display_on_blocks_products_short_list_tpl']");
     public SelenideElement statusActive = $("input[id^='ab__stickers_status_'][id$='_a']");
     public SelenideElement buttonSaveSettings = $(".cm-addons-save-settings");
@@ -46,46 +51,56 @@ public class StickerSettings {
     public void selectSettingOutputPosition(String value){
         getSettingOutputPosition().selectByValue(value);
     }
+    public Select getSetting_OutputType_RightTop(){return new Select(setting_OutputType_RightTop);}
+    public void selectSetting_OutputType_RightTop(String value){
+        getSetting_OutputType_RightTop().selectByValue(value);
+    }
+    public Select getSetting_MaxNumber_RightTop(){return new Select(setting_MaxNumber_RightTop);}
+    public void selectSetting_MaxNumber_RightTop(String value){
 
-    public Select getSettingOutputTypeTop(){return new Select(settingOutputTypeTop);}
-    public void selectSettingOutputTypeTop(String value){
-        getSettingOutputTypeTop().selectByValue(value);
+        getSetting_MaxNumber_RightTop().selectByValue(value);
+    }
+    public Select getSetting_MaxNumber_RightBottom(){return new Select(setting_MaxNumber_RightBottom);}
+    public void selectSetting_MaxNumber_RightBottom(String value){
+        getSetting_MaxNumber_RightBottom().selectByValue(value);
+    }
+    public Select getSetting_OutputType_RightBottom(){return new Select(setting_OutputType_RightBottom);}
+    public void selectSetting_OutputType_RightBottom(String value){
+        getSetting_OutputType_RightBottom().selectByValue(value);
+    }
+    public Select getSetting_OutputType_LeftTop(){return new Select(setting_OutputType_LeftTop);}
+    public void selectSetting_OutputType_LeftTop(String value){
+        getSetting_OutputType_LeftTop().selectByValue(value);
+    }
+    public Select getSetting_MaxNumber_LeftTop(){return new Select(setting_MaxNumber_LeftTop);}
+    public void selectSetting_MaxNumber_LeftTop(String value){
+        getSetting_MaxNumber_LeftTop().selectByValue(value);
     }
 
-    public Select getSettingMaxNumberTop(){return new Select(settingMaxNumberTop);}
-    public void selectSettingMaxNumberTop(String value){
-        getSettingMaxNumberTop().selectByValue(value);
+    public Select getSetting_MaxNumber_LeftBottom(){return new Select(setting_MaxNumber_LeftBottom);}
+    public void selectSetting_MaxNumber_LeftBottom(String value){
+        getSetting_MaxNumber_LeftBottom().selectByValue(value);
     }
-
-    public Select getSettingMaxNumberBottom(){return new Select(settingMaxNumberBottom);}
-    public void selectSettingMaxNumberBottom(String value){
-        getSettingMaxNumberBottom().selectByValue(value);
+    public Select getSetting_OutputType_LeftBottom(){return new Select(setting_OutputType_LeftBottom);}
+    public void selectSetting_OutputType_LeftBottom(String value){
+        getSetting_OutputType_LeftBottom().selectByValue(value);
     }
-
-    public Select getSettingOutputTypeBottom(){return new Select(settingOutputTypeBottom);}
-    public void selectSettingOutputTypeBottom(String value){
-        getSettingOutputTypeBottom().selectByValue(value);
-    }
-
     public Select getSettingPositionsInProductLists(){
         return new Select(settingPositionsInProductLists);
     }
     public void selectSettingPositionsInProductLists(String value){
         getSettingPositionsInProductLists().selectByValue(value);
     }
-
     public Select getSettingPositionsOnProductPage(){
         return new Select(settingPositionsOnProductPage);
     }
     public void selectSettingPositionsOnProductPage(String value){
         getSettingPositionsOnProductPage().selectByValue(value);
     }
-
     public Select getStickerCondition(){return new Select(fieldOfConditions);}
     public void selectStickerCondition(String value){
         getStickerCondition().selectByValue(value);
     }
-
     public Select getStickerOperator(){return new Select(fieldOfOperator);}
     public void selectStickerOperator(String value){
         getStickerOperator().selectByValue(value);

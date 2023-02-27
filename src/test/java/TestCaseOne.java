@@ -77,10 +77,10 @@ public class TestCaseOne extends TestRunner {
         StickerSettings stickerSettings = csCartSettings.navigateToStickerSettingsPage();
         stickerSettings.tabSettings.click();
         stickerSettings.selectSettingOutputPosition("L");
-        stickerSettings.selectSettingOutputTypeTop("column");
-        stickerSettings.selectSettingMaxNumberTop("3");
-        stickerSettings.selectSettingOutputTypeBottom("column");
-        stickerSettings.selectSettingMaxNumberBottom("3");
+        stickerSettings.selectSetting_OutputType_LeftTop("column");
+        stickerSettings.selectSetting_MaxNumber_LeftTop("3");
+        stickerSettings.selectSetting_OutputType_LeftBottom("column");
+        stickerSettings.selectSetting_MaxNumber_LeftBottom("3");
         stickerSettings.buttonSaveSettings.click();
         //Три верхних стикера
         csCartSettings.navigateToAddonsPage();
