@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Test-case 3, part 2 is ready!">
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestCaseFour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseThree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
-    </list>
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Test-case 4 is done.&#10;Changed name for screenshots." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -368,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677496333709</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Test-case 4 is done.&#10;Changed name for screenshots.">
+      <created>1677670625061</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1677670625061</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -383,7 +382,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Started the first test-case." />
     <MESSAGE value="Continue the first test-case." />
     <MESSAGE value="Starts working with the products." />
     <MESSAGE value="Six stickers work correct." />
@@ -408,6 +406,7 @@
     <MESSAGE value="Test-case 2 -- the last item has left yet." />
     <MESSAGE value="Test-case 2 is done.&#10;File TestNG is added.&#10;Methods to select language on storefront are changed." />
     <MESSAGE value="Test-case 3, part 2 is ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test-case 3, part 2 is ready!" />
+    <MESSAGE value="Test-case 4 is done.&#10;Changed name for screenshots." />
+    <option name="LAST_COMMIT_MESSAGE" value="Test-case 4 is done.&#10;Changed name for screenshots." />
   </component>
 </project>
