@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Test-case 3, part 2 is ready!">
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestCaseFour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseThree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" afterDir="false" />
@@ -58,7 +59,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestCaseThree">
+  <component name="RunManager" selected="TestNG.Stickers/TestNG.xml">
     <configuration name="Stickers/TestNG.xml" type="TestNG" temporary="true">
       <module name="Stickers" />
       <shortenClasspath name="NONE" />
@@ -133,11 +134,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Stickers/TestNG.xml" />
         <item itemvalue="TestNG.TestCaseThree" />
         <item itemvalue="TestNG.TestCaseThree.TestCaseThree_ConfigureSettings" />
         <item itemvalue="TestNG.TestCaseTwo.TestCaseTwo_ConfigureSettings" />
         <item itemvalue="TestNG.TestCaseTwo" />
-        <item itemvalue="TestNG.Stickers/TestNG.xml" />
       </list>
     </recent_temporary>
   </component>

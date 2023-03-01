@@ -181,21 +181,21 @@ public class TestCaseOne extends TestRunner {
         //Проверяем, что пиктограммы расположены в позиции 1
         Assert.assertTrue($(".ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1!");
         Selenide.sleep(2000);   //Паузы нужны, чтобы на скриншоте были видны стикеры
-        Selenide.screenshot("1100 ProdPage - VerticalIcons, LeftTopColumn, DefaultTemplate");
+        Selenide.screenshot("1100 ProdPage - VerticalIcons, LeftColumn, DefaultTemplate");
         stProductPage.block_Popular.scrollTo();
         Selenide.sleep(2000);
-        Selenide.screenshot("1105 BlockPopular - VerticalIcons, LeftTopColumn, GridWithButtonMore");
+        Selenide.screenshot("1105 BlockPopular - VerticalIcons, LeftColumn, GridWithButtonMore");
         stProductPage.block_Hits.click();
         Selenide.sleep(2000);
-        Selenide.screenshot("1110 BlockHits - VerticalIcons, LeftTopColumn, AdvancedScroller");
+        Selenide.screenshot("1110 BlockHits - VerticalIcons, LeftColumn, AdvancedScroller");
         selectLanguage_RTL();
         Selenide.sleep(2000);
-        Selenide.screenshot("1115 ProdPage(RTL) - VerticalIcons, LeftTopColumn, DefaultTemplate");
+        Selenide.screenshot("1115 ProdPage(RTL) - VerticalIcons, LeftColumn, DefaultTemplate");
         stProductPage.block_Popular.scrollTo();
         $("div.ut2-gl__body.content-on-hover img.img-ab-hover-gallery").shouldBe(Condition.visible);
-        Selenide.screenshot("1120 BlockPopular(RTL) - VerticalIcons, LeftTopColumn, GridWithButtonMore");
+        Selenide.screenshot("1120 BlockPopular(RTL) - VerticalIcons, LeftColumn, GridWithButtonMore");
         stProductPage.block_Hits.click();
-        Selenide.screenshot("1125 BlockHits(RTL) - VerticalIcons, LeftTopColumn, AdvancedScroller");
+        Selenide.screenshot("1125 BlockHits(RTL) - VerticalIcons, LeftColumn, AdvancedScroller");
 
         //Смотрим другие шаблоны страницы товара
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -205,26 +205,26 @@ public class TestCaseOne extends TestRunner {
         productSettings.selectProductTemplate("bigpicture_template");
         csCartSettings.navigateToStProductPage(2);
         Selenide.sleep(2000);
-        Selenide.screenshot("1130 ProdPage - VerticalIcons, LeftTopColumn, BigPictureTemplate");
+        Selenide.screenshot("1130 ProdPage - VerticalIcons, LeftColumn, BigPictureTemplate");
         selectLanguage_RTL();
         Selenide.sleep(2000);
-        Selenide.screenshot("1135 ProdPage(RTL) - VerticalIcons, LeftTopColumn, BigPictureTemplate");
+        Selenide.screenshot("1135 ProdPage(RTL) - VerticalIcons, LeftColumn, BigPictureTemplate");
         csCartSettings.shiftBrowserTab(0);
         productSettings.selectProductTemplate("abt__ut2_bigpicture_flat_template");
         csCartSettings.navigateToStProductPage(3);
         Selenide.sleep(2000);
-        Selenide.screenshot("1140 ProdPage - VerticalIcons, LeftTopColumn, BigPictureFlatTemplate");
+        Selenide.screenshot("1140 ProdPage - VerticalIcons, LeftColumn, BigPictureFlatTemplate");
         selectLanguage_RTL();
         Selenide.sleep(2000);
-        Selenide.screenshot("1145 ProdPage(RTL) - VerticalIcons, LeftTopColumn, BigPictureFlatTemplate");
+        Selenide.screenshot("1145 ProdPage(RTL) - VerticalIcons, LeftColumn, BigPictureFlatTemplate");
         csCartSettings.shiftBrowserTab(0);
         productSettings.selectProductTemplate("abt__ut2_three_columns_template");
         csCartSettings.navigateToStProductPage(4);
         Selenide.sleep(2000);
-        Selenide.screenshot("1150 ProdPage - VerticalIcons, LeftTopColumn, ThreeColumned");
+        Selenide.screenshot("1150 ProdPage - VerticalIcons, LeftColumn, ThreeColumned");
         selectLanguage_RTL();
         Selenide.sleep(2000);
-        Selenide.screenshot("1155 ProdPage(RTL) - VerticalIcons, LeftTopColumn, ThreeColumned");
+        Selenide.screenshot("1155 ProdPage(RTL) - VerticalIcons, LeftColumn, ThreeColumned");
     }
 
     @Test(priority=3)
@@ -243,7 +243,7 @@ public class TestCaseOne extends TestRunner {
         Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on category page!");
         //Проверяем, что пиктограммы расположены в позиции 1
         Assert.assertTrue($(".ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1 on category page!");
-        Selenide.screenshot("1200 Category - VerticalIcons, LeftTopColumn, Grid");
+        Selenide.screenshot("1200 Category - VerticalIcons, LeftColumn, Grid");
 
         //Смотрим окно Быстрого просмотра
         stCategoryPage.productInList.hover();
@@ -260,32 +260,32 @@ public class TestCaseOne extends TestRunner {
         Assert.assertTrue($(".ut2-pb__right .ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on quick view window!");
         //Проверяем, что пиктограммы расположены в позиции 1
         Assert.assertTrue($(".ut2-pb__right .ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1 on quick view window!");
-        Selenide.screenshot("1205 QuickView - VerticalIcons, LeftTopColumn");
+        Selenide.screenshot("1205 QuickView - VerticalIcons, LeftColumn");
         stCategoryPage.button_CloseQuickView.click();
         stCategoryPage.template_ListWithoutOptions.click();
         Selenide.sleep(2000);
-        Selenide.screenshot("1210 Category - VerticalIcons, LeftTopColumn, ListWithoutOptions");
+        Selenide.screenshot("1210 Category - VerticalIcons, LeftColumn, ListWithoutOptions");
         stCategoryPage.template_CompactList.click();
         //Проверяем, что стикеры присутствуют
         Assert.assertTrue($(".ab-stickers-container").exists(), "There is no stickers on category page as Compact list!");
         //Проверяем, что пиктограммы присутствуют
         Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There is no pictograms on category page as Compact list!");
         Selenide.sleep(2000);
-        Selenide.screenshot("1215 Category - VerticalIcons, LeftTopColumn, CompactList");
+        Selenide.screenshot("1215 Category - VerticalIcons, LeftColumn, CompactList");
         selectLanguage_RTL();
         Selenide.sleep(2000);
-        Selenide.screenshot("1220 Category(RTL) - VerticalIcons, LeftTopColumn, CompactList");
+        Selenide.screenshot("1220 Category(RTL) - VerticalIcons, LeftColumn, CompactList");
         stCategoryPage.template_ListWithoutOptions.click();
         Selenide.sleep(2000);
-        Selenide.screenshot("1225 Category(RTL) - VerticalIcons, LeftTopColumn, ListWithoutOptions");
+        Selenide.screenshot("1225 Category(RTL) - VerticalIcons, LeftColumn, ListWithoutOptions");
         stCategoryPage.template_Grid.click();
         Selenide.sleep(2000);
-        Selenide.screenshot("1230 Category(RTL) - VerticalIcons, LeftTopColumn, Grid");
+        Selenide.screenshot("1230 Category(RTL) - VerticalIcons, LeftColumn, Grid");
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.click();
         $(".ui-dialog-title").hover();
         Selenide.sleep(3000);
-        Selenide.screenshot("1235 QuickView(RTL) - VerticalIcons, LeftTopColumn");
+        Selenide.screenshot("1235 QuickView(RTL) - VerticalIcons, LeftColumn");
         stCategoryPage.button_CloseQuickView.click();
     }
 
@@ -309,10 +309,10 @@ public class TestCaseOne extends TestRunner {
         //Проверяем, что пиктограммы расположены в позиции 1
         Assert.assertTrue($(".ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1 on Wishlist page!");
         stCategoryPage.productInList.hover();
-        Selenide.screenshot("1300 WishList - VerticalIcons, LeftTopColumn");
+        Selenide.screenshot("1300 WishList - VerticalIcons, LeftColumn");
         selectLanguage_RTL();
         Selenide.sleep(2000);
-        Selenide.screenshot("1305 WishList(RTL) - VerticalIcons, LeftTopColumn");
+        Selenide.screenshot("1305 WishList(RTL) - VerticalIcons, LeftColumn");
     }
 
     private static void addConditionOfPrice(StickerSettings stickerSettings) {

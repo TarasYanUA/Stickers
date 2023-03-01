@@ -4,22 +4,12 @@ import org.testng.annotations.*;
 import static com.codeborne.selenide.Selenide.*;
 
 /*
-Модуль "Стикеры" 2.1.0 + модуль "Видео галерея" 3.2.1 + тема Юни2(UltRu) 4.16.1a. Лучше установить весь пакет темы Юни2.
+Модуль "Стикеры" 2.1.0 + модуль "Видео галерея" 3.2.1 + тема Юни2(UltRu) 4.16.1b. Лучше установить весь пакет темы Юни2.
 Запускать через файл testng.xml
 */
 
-/*//Это удалить после разработки
-        CsCartSettings csCartSettings = new CsCartSettings();
-                csCartSettings.navigateToEditingCategoryPage();
-                $x("//a[text()='AB: Телефоны']").click();
-                csCartSettings.gearWheelOnTop.click();
-                csCartSettings.button_ViewProducts.click();
-                $x("//td[@class='product-name-column wrap-word']//a[contains(text(), 'Apple iPhone 14')]").click();
-                csCartSettings.navigateToStProductPage(1);
-                csCartSettings.cookieNotice();*/
-
 public class TestRunner {
-    public static final String BASIC_URL = "https://trs.test.abt.team/4161ultru/admin.php";
+    public static final String BASIC_URL = "https://test.unitheme.net/i2TuCVPfvd/admin.php";
 
     @BeforeClass
     public void openBrowser() {
