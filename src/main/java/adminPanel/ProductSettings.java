@@ -10,7 +10,6 @@ public class ProductSettings {
     public SelenideElement statusActive_Product = $("#elm_product_status_0_a");
     public SelenideElement field_ListPrice = $("#elm_list_price");
     public SelenideElement field_productSearch = $("#simple_search input");
-    public SelenideElement productName = $(".product-name-column a");
     public SelenideElement productTemplate = $("#elm_details_layout");
     public SelenideElement tab_General = $("#detailed");
     public SelenideElement tab_Shippings = $("#shippings");
