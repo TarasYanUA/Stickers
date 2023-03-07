@@ -5,11 +5,12 @@ import static com.codeborne.selenide.Selenide.*;
 
 /*
 Модуль "Стикеры" 2.1.0 + модуль "Видео галерея" 3.2.1 + тема Юни2(UltRu) 4.16.1b. Лучше установить весь пакет темы Юни2.
-Запускать через файл testng.xml
+Запускать через файл TestNG.xml
+Скриншоты смотреть в папке: reports -> tests
 */
 
 public class TestRunner {
-    public static final String BASIC_URL = "https://test.unitheme.net/i2TuCVPfvd/admin.php";
+    public static final String BASIC_URL = "https://trs.test.abt.team/4161ultru/admin.php";
 
     @BeforeClass
     public void openBrowser() {
