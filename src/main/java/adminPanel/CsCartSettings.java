@@ -24,8 +24,8 @@ public class CsCartSettings {
     public SelenideElement menuDesign = $("#elm_menu_design");
     public SelenideElement sectionLayouts = $("#elm_menu_design_layouts");
     public SelenideElement layout_TabProducts = $x("//a[contains(@href, 'selected_location')][text()='Товары']");
-    public SelenideElement layout_GearwheelOfBlockPopular = $("#snapping_714 div.bm-action-properties");
-    public SelenideElement layout_GearwheelOfBlockHits = $("#snapping_715 div.bm-action-properties");
+    public SelenideElement layout_GearwheelOfBlockPopular = $("#snapping_705 div.bm-action-properties");
+    public SelenideElement layout_GearwheelOfBlockHits = $("#snapping_706 div.bm-action-properties");
     public SelenideElement layout_BlockTemplate = $("select[id*='products_template']");
     public SelenideElement layout_ButtonSaveBlock = $("input[name='dispatch[block_manager.update_block]']");
     public SelenideElement layoutBlock_TabContent = $("li[id*='block_contents'] a");

@@ -26,7 +26,7 @@ public class TestCaseOne extends TestRunner {
     public void TestCaseOne_ConfigureSettings() {
         //Включаем мини-иконки в виде галереи и окно Быстрого просмотра
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.menuSettings.hover();
+/*        csCartSettings.menuSettings.hover();
         csCartSettings.sectionAppearance.click();
         if (!csCartSettings.settingMiniThumbnailAsGallery.isSelected()) {
             csCartSettings.settingMiniThumbnailAsGallery.click();
@@ -144,12 +144,13 @@ public class TestCaseOne extends TestRunner {
         stickerSettings.selectSettingPositionsOnProductPage("B");
         stickerSettings.statusActive.click();
         stickerSettings.buttonSaveSticker.click();
-
+*/
         //Настраиваем страницу товара
         csCartSettings.navigateToEditingCategoryPage();
         $x("//a[text()='AB: Телефоны']").click();
         csCartSettings.statusActive_Category.click();
         csCartSettings.button_Save.click();
+        makePause();
         csCartSettings.gearWheelOnTop.click();
         csCartSettings.button_ViewProducts.click();
         ProductSettings productSettings = new ProductSettings();

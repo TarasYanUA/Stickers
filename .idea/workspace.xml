@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Test-case 4 is done. Removed error messages.">
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Added some comments in TestRunner.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +49,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/UniTheme2/pom.xml&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/Stickers/pom.xml&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -54,7 +57,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Stickers/TestNG.xml">
+  <component name="RunManager" selected="TestNG.TestCaseFour">
     <configuration name="Stickers/TestNG.xml" type="TestNG" temporary="true">
       <module name="Stickers" />
       <shortenClasspath name="NONE" />
@@ -74,10 +77,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCaseThree" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCaseFour" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCaseThree" />
+      <option name="MAIN_CLASS_NAME" value="TestCaseFour" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -85,12 +88,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCaseThree.TestCaseThree_ConfigureSettings" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCaseOne" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Stickers" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCaseOne" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCaseThree" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestCaseThree" />
-      <option name="METHOD_NAME" value="TestCaseThree_ConfigureSettings" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -108,32 +121,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCaseTwo.TestCaseTwo_ConfigureSettings" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Stickers" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCaseTwo" />
-      <option name="METHOD_NAME" value="TestCaseTwo_ConfigureSettings" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="TestNG.TestCaseFour" />
+      <item itemvalue="TestNG.TestCaseOne" />
       <item itemvalue="TestNG.TestCaseThree" />
-      <item itemvalue="TestNG.TestCaseThree.TestCaseThree_ConfigureSettings" />
       <item itemvalue="TestNG.TestCaseTwo" />
       <item itemvalue="TestNG.Stickers/TestNG.xml" />
-      <item itemvalue="TestNG.TestCaseTwo.TestCaseTwo_ConfigureSettings" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Stickers/TestNG.xml" />
+        <item itemvalue="TestNG.TestCaseFour" />
         <item itemvalue="TestNG.TestCaseThree" />
-        <item itemvalue="TestNG.TestCaseThree.TestCaseThree_ConfigureSettings" />
-        <item itemvalue="TestNG.TestCaseTwo.TestCaseTwo_ConfigureSettings" />
         <item itemvalue="TestNG.TestCaseTwo" />
+        <item itemvalue="TestNG.TestCaseOne" />
+        <item itemvalue="TestNG.Stickers/TestNG.xml" />
       </list>
     </recent_temporary>
   </component>
@@ -384,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677671145408</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Added some comments in TestRunner.">
+      <created>1678200339225</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1678200339225</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -399,7 +407,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Starts working with the products." />
     <MESSAGE value="Six stickers work correct." />
     <MESSAGE value="Added product. The next is add condition to 5 stickers." />
     <MESSAGE value="Added condition to all stickers and prepared a product." />
@@ -424,6 +431,7 @@
     <MESSAGE value="Test-case 3, part 2 is ready!" />
     <MESSAGE value="Test-case 4 is done.&#10;Changed name for screenshots." />
     <MESSAGE value="Test-case 4 is done. Removed error messages." />
-    <option name="LAST_COMMIT_MESSAGE" value="Test-case 4 is done. Removed error messages." />
+    <MESSAGE value="Added some comments in TestRunner." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some comments in TestRunner." />
   </component>
 </project>

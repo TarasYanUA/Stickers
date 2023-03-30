@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 */
 
 public class TestRunner {
-    public static final String BASIC_URL = "https://trs.test.abt.team/4161ultru/admin.php";
+    public static final String BASIC_URL = "https://abd-24639d9c7e.demos.abt.team/admin.php";
 
     @BeforeClass
     public void openBrowser() {
@@ -35,5 +35,12 @@ public class TestRunner {
     public void selectLanguage_RU() {
         $("a[id*='_wrap_language_']").hover().click();
         $(".ty-select-block__list-item a[data-ca-name='ru']").click();
+    }
+    public void makePause(){
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
