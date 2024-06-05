@@ -98,21 +98,21 @@ public class TestCaseThree extends TestRunner {
         //Проверяем, что пиктограммы расположены в позиции 2
         Assert.assertTrue($(".ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2!");
         Selenide.sleep(2000);   //Паузы нужны, чтобы на скриншоте были видны стикеры
-        Selenide.screenshot("3100 ProdPage - HorizontalIcons, RightTopColumn, DefaultTemplate");
+        Selenide.screenshot("3100 ProdPage - HorizontalIcons, RightColumn, DefaultTemplate");
         stProductPage.block_Popular.scrollTo();
         Selenide.sleep(2000);
-        Selenide.screenshot("3105 BlockPopular - HorizontalIcons, RightTopColumn, LightScroller");
+        Selenide.screenshot("3105 BlockPopular - HorizontalIcons, RightColumn, LightScroller");
         stProductPage.block_Hits.click();
         Selenide.sleep(2000);
-        Selenide.screenshot("3110 BlockHits - HorizontalIcons, RightTopColumn, Grid");
+        Selenide.screenshot("3110 BlockHits - HorizontalIcons, RightColumn, Grid");
         selectLanguage_RTL();
         Selenide.sleep(2000);
-        Selenide.screenshot("3115 ProdPage(RTL) - HorizontalIcons, RightTopColumn, DefaultTemplate");
+        Selenide.screenshot("3115 ProdPage(RTL) - HorizontalIcons, RightColumn, DefaultTemplate");
         stProductPage.block_Popular.scrollTo();
         $("div.ut2-gl__body.content-on-hover img.img-ab-hover-gallery").shouldBe(Condition.visible);
-        Selenide.screenshot("3120 BlockPopular(RTL) - HorizontalIcons, RightTopColumn, LightScroller");
+        Selenide.screenshot("3120 BlockPopular(RTL) - HorizontalIcons, RightColumn, LightScroller");
         stProductPage.block_Hits.click();
-        Selenide.screenshot("3125 BlockHits(RTL) - HorizontalIcons, RightTopColumn, Grid");
+        Selenide.screenshot("3125 BlockHits(RTL) - HorizontalIcons, RightColumn, Grid");
 
         //Смотрим другие шаблоны страницы товара
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -122,26 +122,26 @@ public class TestCaseThree extends TestRunner {
         productSettings.selectProductTemplate("bigpicture_template");
         csCartSettings.navigateToStProductPage(2);
         Selenide.sleep(2000);
-        Selenide.screenshot("3130 ProdPage - HorizontalIcons, RightTopColumn, BigPictureTemplate");
+        Selenide.screenshot("3130 ProdPage - HorizontalIcons, RightColumn, BigPictureTemplate");
         selectLanguage_RTL();
         Selenide.sleep(2000);
-        Selenide.screenshot("3135 ProdPage(RTL) - HorizontalIcons, RightTopColumn, BigPictureTemplate");
+        Selenide.screenshot("3135 ProdPage(RTL) - HorizontalIcons, RightColumn, BigPictureTemplate");
         csCartSettings.shiftBrowserTab(0);
         productSettings.selectProductTemplate("abt__ut2_bigpicture_flat_template");
         csCartSettings.navigateToStProductPage(3);
         Selenide.sleep(2000);
-        Selenide.screenshot("3140 ProdPage - HorizontalIcons, RightTopColumn, BigPictureFlatTemplate");
+        Selenide.screenshot("3140 ProdPage - HorizontalIcons, RightColumn, BigPictureFlatTemplate");
         selectLanguage_RTL();
         Selenide.sleep(2000);
-        Selenide.screenshot("3145 ProdPage(RTL) - HorizontalIcons, RightTopColumn, BigPictureFlatTemplate");
+        Selenide.screenshot("3145 ProdPage(RTL) - HorizontalIcons, RightColumn, BigPictureFlatTemplate");
         csCartSettings.shiftBrowserTab(0);
         productSettings.selectProductTemplate("abt__ut2_three_columns_template");
         csCartSettings.navigateToStProductPage(4);
         Selenide.sleep(2000);
-        Selenide.screenshot("3150 ProdPage - HorizontalIcons, RightTopColumn, ThreeColumned");
+        Selenide.screenshot("3150 ProdPage - HorizontalIcons, RightColumn, ThreeColumned");
         selectLanguage_RTL();
         Selenide.sleep(2000);
-        Selenide.screenshot("3155 ProdPage(RTL) - HorizontalIcons, RightTopColumn, ThreeColumned");
+        Selenide.screenshot("3155 ProdPage(RTL) - HorizontalIcons, RightColumn, ThreeColumned");
     }
 
     @Test(priority=3)
@@ -160,7 +160,7 @@ public class TestCaseThree extends TestRunner {
         Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on category page!");
         //Проверяем, что пиктограммы расположены в позиции 2
         Assert.assertTrue($(".ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2 on category page!");
-        Selenide.screenshot("3200 Category - HorizontalIcons, RightTopColumn, Grid");
+        Selenide.screenshot("3200 Category - HorizontalIcons, RightColumn, Grid");
 
         //Смотрим окно Быстрого просмотра
         stCategoryPage.productInList.hover();
@@ -177,32 +177,32 @@ public class TestCaseThree extends TestRunner {
         Assert.assertTrue($(".ut2-pb__right .ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on quick view window!");
         //Проверяем, что пиктограммы расположены в позиции 2
         Assert.assertTrue($(".ut2-pb__right .ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2 on quick view window!");
-        Selenide.screenshot("3205 QuickView - HorizontalIcons, RightTopColumn");
+        Selenide.screenshot("3205 QuickView - HorizontalIcons, RightColumn");
         stCategoryPage.button_CloseQuickView.click();
         stCategoryPage.template_ListWithoutOptions.click();
         Selenide.sleep(2000);
-        Selenide.screenshot("3210 Category - HorizontalIcons, RightTopColumn, ListWithoutOptions");
+        Selenide.screenshot("3210 Category - HorizontalIcons, RightColumn, ListWithoutOptions");
         stCategoryPage.template_CompactList.click();
         //Проверяем, что стикеры присутствуют
         Assert.assertTrue($(".ab-stickers-container").exists(), "There is no stickers on category page as Compact list!");
         //Проверяем, что пиктограммы присутствуют
         Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There is no pictograms on category page as Compact list!");
         Selenide.sleep(2000);
-        Selenide.screenshot("3215 Category - HorizontalIcons, RightTopColumn, CompactList");
+        Selenide.screenshot("3215 Category - HorizontalIcons, RightColumn, CompactList");
         selectLanguage_RTL();
         Selenide.sleep(2000);
-        Selenide.screenshot("3220 Category(RTL) - HorizontalIcons, RightTopColumn, CompactList");
+        Selenide.screenshot("3220 Category(RTL) - HorizontalIcons, RightColumn, CompactList");
         stCategoryPage.template_ListWithoutOptions.click();
         Selenide.sleep(2000);
-        Selenide.screenshot("3225 Category(RTL) - HorizontalIcons, RightTopColumn, ListWithoutOptions");
+        Selenide.screenshot("3225 Category(RTL) - HorizontalIcons, RightColumn, ListWithoutOptions");
         stCategoryPage.template_Grid.click();
         Selenide.sleep(2000);
-        Selenide.screenshot("3230 Category(RTL) - HorizontalIcons, RightTopColumn, Grid");
+        Selenide.screenshot("3230 Category(RTL) - HorizontalIcons, RightColumn, Grid");
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.click();
         $(".ui-dialog-title").hover();
         Selenide.sleep(3000);
-        Selenide.screenshot("3235 QuickView(RTL) - HorizontalIcons, RightTopColumn");
+        Selenide.screenshot("3235 QuickView(RTL) - HorizontalIcons, RightColumn");
         stCategoryPage.button_CloseQuickView.click();
     }
 
@@ -226,9 +226,9 @@ public class TestCaseThree extends TestRunner {
         //Проверяем, что пиктограммы расположены в позиции 2
         Assert.assertTrue($(".ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2 on Wishlist page!");
         stCategoryPage.productInList.hover();
-        Selenide.screenshot("3300 WishList - HorizontalIcons, RightTopColumn");
+        Selenide.screenshot("3300 WishList - HorizontalIcons, RightColumn");
         selectLanguage_RTL();
         Selenide.sleep(2000);
-        Selenide.screenshot("3305 WishList(RTL) - HorizontalIcons, RightTopColumn");
+        Selenide.screenshot("3305 WishList(RTL) - HorizontalIcons, RightColumn");
     }
 }
