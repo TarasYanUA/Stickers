@@ -1,6 +1,8 @@
 package adminPanel;
 
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.Keys;
+
 import static com.codeborne.selenide.Selenide.$;
 
 public class ProductSettings {
@@ -8,7 +10,7 @@ public class ProductSettings {
 
     public SelenideElement statusActive_Product = $("#elm_product_status_0_a");
     public SelenideElement field_ListPrice = $("#elm_list_price");
-    public SelenideElement field_productSearch = $("#simple_search input");
+    public SelenideElement field_productSearch = $("input[form='search_filters_form']");
     public SelenideElement productTemplate = $("#elm_details_layout");
     public SelenideElement tab_General = $("#detailed");
     public SelenideElement tab_Shippings = $("#shippings");
@@ -23,6 +25,11 @@ public class ProductSettings {
     public void clickAndType_ProductSearch(String value){
         field_productSearch.click();
         field_productSearch.sendKeys(value);
-        button_SearchProduct.click();
+        button_SearchProduct.sendKeys(Keys.ENTER);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

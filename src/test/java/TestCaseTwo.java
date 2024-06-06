@@ -1,4 +1,3 @@
-/*
 import adminPanel.*;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
@@ -10,7 +9,6 @@ import storefront.StProductPage;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
-*/
 /*
 ссылка на тест-кейс: https://docs.google.com/spreadsheets/d/1UdXKRCHxD7XP7W3UzDN28ff10LyiJPbZKrdvZllpUCU/edit#gid=1582514111
 Проверяем следующее:
@@ -24,14 +22,12 @@ import static com.codeborne.selenide.Selenide.$x;
 - Страница категории: все шаблоны + окно Быстрого просмотра
 - Блок с товарами: шаблоны АВ: Сетка (с кнопкой "Показать ещё") + АВ: Расширенный скроллер товаров
 - Страница Избранных
-*//*
-
+*/
 public class TestCaseTwo extends TestRunner {
     @Test(priority=1)
     public void TestCaseTwo_ConfigureSettings() {
         //Включаем Горизонтальное отображение мини-иконок (Модуль "Видео галерея")
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToAddonsPage();
         VideoGallerySettings videoGallerySettings = csCartSettings.navigateToVideoGalleryPage();
         videoGallerySettings.tabSettings.click();
         if (videoGallerySettings.settingVerticalView.isSelected()) {
@@ -40,21 +36,20 @@ public class TestCaseTwo extends TestRunner {
         }
 
         //Настраиваем настройки модуля "Стикеры"
-        csCartSettings.navigateToAddonsPage();
         StickerSettings stickerSettings = csCartSettings.navigateToStickerSettingsPage();
-        stickerSettings.tabSettings.click();
-        stickerSettings.selectSettingOutputPosition("L");
-        stickerSettings.selectSetting_OutputType_LeftTop("row");
-        stickerSettings.selectSetting_MaxNumber_LeftTop("3");
-        stickerSettings.selectSetting_OutputType_LeftBottom("row");
-        stickerSettings.selectSetting_MaxNumber_LeftBottom("3");
-        stickerSettings.buttonSaveSettings.click();
+        stickerSettings.tab_Settings.click();
+        stickerSettings.setting_OutputPosition.selectOptionByValue("L");
+        stickerSettings.setting_OutputType_LeftTop.selectOptionByValue("row");
+        stickerSettings.setting_MaxNumber_LeftTop.selectOptionByValue("3");
+        stickerSettings.setting_OutputType_LeftBottom.selectOptionByValue("row");
+        stickerSettings.setting_MaxNumber_LeftBottom.selectOptionByValue("3");
+        stickerSettings.button_SaveSettings.click();
 
         //Переходим на страницу редактирования товара
-        ProductSettings productSettings = csCartSettings.navigateToEditingProductPage();
+        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_ProductSearch("Apple iPhone 14");
         $x("//td[@class='product-name-column wrap-word']//a[contains(text(), 'Apple iPhone 14')]").click();
-        productSettings.selectProductTemplate("default_template");
+        productSettings.productTemplate.selectOptionByValue("default_template");
         csCartSettings.navigateToStProductPage(1);
         csCartSettings.cookieNotice();
     }
@@ -97,7 +92,7 @@ public class TestCaseTwo extends TestRunner {
         csCartSettings.shiftBrowserTab(0);
         ProductSettings productSettings = new ProductSettings();
         productSettings.tab_General.hover().click();
-        productSettings.selectProductTemplate("bigpicture_template");
+        productSettings.productTemplate.selectOptionByValue("bigpicture_template");
         csCartSettings.navigateToStProductPage(2);
         Selenide.sleep(2000);
         Selenide.screenshot("2130 ProdPage - HorizontalIcons, LeftRow, BigPictureTemplate");
@@ -105,7 +100,7 @@ public class TestCaseTwo extends TestRunner {
         Selenide.sleep(2000);
         Selenide.screenshot("2135 ProdPage(RTL) - HorizontalIcons, LeftRow, BigPictureTemplate");
         csCartSettings.shiftBrowserTab(0);
-        productSettings.selectProductTemplate("abt__ut2_bigpicture_flat_template");
+        productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_flat_template");
         csCartSettings.navigateToStProductPage(3);
         Selenide.sleep(2000);
         Selenide.screenshot("2140 ProdPage - HorizontalIcons, LeftRow, BigPictureFlatTemplate");
@@ -113,7 +108,7 @@ public class TestCaseTwo extends TestRunner {
         Selenide.sleep(2000);
         Selenide.screenshot("2145 ProdPage(RTL) - HorizontalIcons, LeftRow, BigPictureFlatTemplate");
         csCartSettings.shiftBrowserTab(0);
-        productSettings.selectProductTemplate("abt__ut2_three_columns_template");
+        productSettings.productTemplate.selectOptionByValue("abt__ut2_three_columns_template");
         csCartSettings.navigateToStProductPage(4);
         Selenide.sleep(2000);
         Selenide.screenshot("2150 ProdPage - HorizontalIcons, LeftRow, ThreeColumned");
@@ -209,4 +204,4 @@ public class TestCaseTwo extends TestRunner {
         Selenide.sleep(2000);
         Selenide.screenshot("2305 WishList(RTL) - HorizontalIcons, LeftRow");
     }
-}*/
+}
