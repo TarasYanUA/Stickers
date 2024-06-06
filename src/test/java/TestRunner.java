@@ -11,7 +11,7 @@ public class TestRunner {
     public void openBrowser() {
         Configuration.browser = "chrome";
         open(BASIC_URL);
-        Configuration.holdBrowserOpen = false; //не закрываем браузер пока ведём разработку
+        Configuration.holdBrowserOpen = true; //не закрываем браузер пока ведём разработку
         Configuration.screenshots = true; //делаем скриншоты при падении
         WebDriverRunner.getWebDriver().manage().window().maximize(); //окно браузера на весь экран
         $(".btn.btn-primary").click();

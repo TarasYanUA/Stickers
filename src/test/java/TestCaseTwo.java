@@ -56,7 +56,6 @@ public class TestCaseTwo extends TestRunner {
 
     @Test(priority=2)
     public void TestCaseTwo_ProductPage() {
-
         StProductPage stProductPage = new StProductPage();
         //Проверяем, что галерея мини-иконок горизонтальная
         Assert.assertFalse($(".ab-vg-vertical-thumbnails").exists(), "Gallery of mini-icons is not Horizontal!");
@@ -75,7 +74,7 @@ public class TestCaseTwo extends TestRunner {
         stProductPage.block_Popular.scrollTo();
         Selenide.sleep(2000);
         Selenide.screenshot("2105 BlockPopular - HorizontalIcons, LeftRow, GridWithButtonMore");
-        stProductPage.block_Hits.click();
+        stProductPage.block_Hits.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
         Selenide.sleep(2000);
         Selenide.screenshot("2110 BlockHits - HorizontalIcons, LeftRow, AdvancedScroller");
         selectLanguage_RTL();
@@ -84,7 +83,7 @@ public class TestCaseTwo extends TestRunner {
         stProductPage.block_Popular.scrollTo();
         $("div.ut2-gl__body.content-on-hover img.img-ab-hover-gallery").shouldBe(Condition.visible);
         Selenide.screenshot("2120 BlockPopular(RTL) - HorizontalIcons, LeftRow, GridWithButtonMore");
-        stProductPage.block_Hits.click();
+        stProductPage.block_Hits.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
         Selenide.screenshot("2125 BlockHits(RTL) - HorizontalIcons, LeftRow, AdvancedScroller");
 
         //Смотрим другие шаблоны страницы товара
@@ -133,6 +132,7 @@ public class TestCaseTwo extends TestRunner {
         Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on category page!");
         //Проверяем, что пиктограммы расположены в позиции 1
         Assert.assertTrue($(".ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1 on category page!");
+        stCategoryPage.productInList.hover();
         Selenide.screenshot("2200 Category - HorizontalIcons, LeftRow, Grid");
 
         //Смотрим окно Быстрого просмотра
@@ -147,9 +147,9 @@ public class TestCaseTwo extends TestRunner {
         //Проверяем, что стикеры расположены в строку
         Assert.assertTrue($(".ut2-pb__items .row-filling").exists(), "Position of stickers is not in Row on quick view window!");
         //Проверяем, что пиктограммы присутствуют
-        Assert.assertTrue($(".ut2-pb__right .ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on quick view window!");
+        Assert.assertTrue($(".ut2-pb__items .ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on quick view window!");
         //Проверяем, что пиктограммы расположены в позиции 1
-        Assert.assertTrue($(".ut2-pb__right .ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1 on quick view window!");
+        Assert.assertTrue($(".ut2-pb__items .ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1 on quick view window!");
         Selenide.screenshot("2205 QuickView - HorizontalIcons, LeftRow");
         stCategoryPage.button_CloseQuickView.click();
         stCategoryPage.template_ListWithoutOptions.click();
@@ -170,11 +170,11 @@ public class TestCaseTwo extends TestRunner {
         Selenide.screenshot("2225 Category(RTL) - HorizontalIcons, LeftRow, ListWithoutOptions");
         stCategoryPage.template_Grid.click();
         Selenide.sleep(2000);
-        Selenide.screenshot("2230 Category(RTL) - HorizontalIcons, LeftRow, Grid");
         stCategoryPage.productInList.hover();
+        Selenide.screenshot("2230 Category(RTL) - HorizontalIcons, LeftRow, Grid");
         stCategoryPage.button_QuickView.click();
-        $(".ui-dialog-title").hover();
-        Selenide.sleep(3000);
+        stCategoryPage.button_CloseQuickView.hover();
+        Selenide.sleep(2000);
         Selenide.screenshot("2235 QuickView(RTL) - HorizontalIcons, LeftRow");
         stCategoryPage.button_CloseQuickView.click();
     }
@@ -201,6 +201,7 @@ public class TestCaseTwo extends TestRunner {
         stCategoryPage.productInList.hover();
         Selenide.screenshot("2300 WishList - HorizontalIcons, LeftRow");
         selectLanguage_RTL();
+        stCategoryPage.productInList.hover();
         Selenide.sleep(2000);
         Selenide.screenshot("2305 WishList(RTL) - HorizontalIcons, LeftRow");
     }

@@ -74,7 +74,7 @@ public class TestCaseOne extends TestRunner {
         stickerSettings.setting_OutputPosition.selectOptionByValue("L");
         stickerSettings.setting_OutputType_LeftTop.selectOptionByValue("column");
         stickerSettings.setting_MaxNumber_LeftTop.selectOptionByValue("3");
-        stickerSettings.setting_PositionsInProductLists.selectOptionByValue("column");
+        stickerSettings.setting_OutputType_LeftBottom.selectOptionByValue("column");
         stickerSettings.setting_MaxNumber_LeftBottom.selectOptionByValue("3");
         stickerSettings.button_SaveSettings.click();
         //Три верхних стикера
@@ -180,7 +180,7 @@ public class TestCaseOne extends TestRunner {
         stProductPage.block_Popular.scrollTo();
         Selenide.sleep(2000);
         Selenide.screenshot("1105 BlockPopular - VerticalIcons, LeftColumn, GridWithButtonMore");
-        stProductPage.block_Hits.click();
+        stProductPage.block_Hits.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
         Selenide.sleep(2000);
         Selenide.screenshot("1110 BlockHits - VerticalIcons, LeftColumn, AdvancedScroller");
         selectLanguage_RTL();
@@ -189,7 +189,7 @@ public class TestCaseOne extends TestRunner {
         stProductPage.block_Popular.scrollTo();
         $("div.ut2-gl__body.content-on-hover img.img-ab-hover-gallery").shouldBe(Condition.visible);
         Selenide.screenshot("1120 BlockPopular(RTL) - VerticalIcons, LeftColumn, GridWithButtonMore");
-        stProductPage.block_Hits.click();
+        stProductPage.block_Hits.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
         Selenide.screenshot("1125 BlockHits(RTL) - VerticalIcons, LeftColumn, AdvancedScroller");
 
         //Смотрим другие шаблоны страницы товара
@@ -238,6 +238,7 @@ public class TestCaseOne extends TestRunner {
         Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on category page!");
         //Проверяем, что пиктограммы расположены в позиции 1
         Assert.assertTrue($(".ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1 on category page!");
+        stCategoryPage.productInList.hover();
         Selenide.screenshot("1200 Category - VerticalIcons, LeftColumn, Grid");
 
         //Смотрим окно Быстрого просмотра
@@ -252,9 +253,9 @@ public class TestCaseOne extends TestRunner {
         //Проверяем, что стикеры расположены в колонку
         Assert.assertTrue($(".ut2-pb__items .column-filling").exists(), "Position of stickers is not in Column on quick view window!");
         //Проверяем, что пиктограммы присутствуют
-        Assert.assertTrue($(".ut2-pb__right .ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on quick view window!");
+        Assert.assertTrue($(".ut2-pb__items .ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on quick view window!");
         //Проверяем, что пиктограммы расположены в позиции 1
-        Assert.assertTrue($(".ut2-pb__right .ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1 on quick view window!");
+        Assert.assertTrue($(".ut2-pb__items .ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1 on quick view window!");
         Selenide.screenshot("1205 QuickView - VerticalIcons, LeftColumn");
         stCategoryPage.button_CloseQuickView.click();
         stCategoryPage.template_ListWithoutOptions.click();
@@ -275,11 +276,12 @@ public class TestCaseOne extends TestRunner {
         Selenide.screenshot("1225 Category(RTL) - VerticalIcons, LeftColumn, ListWithoutOptions");
         stCategoryPage.template_Grid.click();
         Selenide.sleep(2000);
+        stCategoryPage.productInList.hover();
         Selenide.screenshot("1230 Category(RTL) - VerticalIcons, LeftColumn, Grid");
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.click();
         $(".ui-dialog-title").hover();
-        Selenide.sleep(3000);
+        Selenide.sleep(2000);
         Selenide.screenshot("1235 QuickView(RTL) - VerticalIcons, LeftColumn");
         stCategoryPage.button_CloseQuickView.click();
     }

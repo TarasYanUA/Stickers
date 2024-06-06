@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Fixed Selenide code for the class 'StickerSettings'.">
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" afterDir="false" />
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Still work with TestCaseTwo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/storefront/StProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/StProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +79,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TestNG.TestCaseOne.executor": "Run",
+    "TestNG.TestCaseTwo.executor": "Run",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/IDEA Projects/Deal of the day/Deal of the day/pom.xml",
     "project.structure.last.edited": "Project",
@@ -88,7 +92,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestCaseTwo">
+  <component name="RunManager" selected="TestNG.TestCaseOne">
     <configuration name="Stickers/TestNG.xml" type="TestNG" temporary="true">
       <module name="Stickers" />
       <shortenClasspath name="NONE" />
@@ -161,8 +165,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TestCaseTwo" />
         <item itemvalue="TestNG.TestCaseOne" />
+        <item itemvalue="TestNG.TestCaseTwo" />
         <item itemvalue="TestNG.TestCaseFour" />
         <item itemvalue="TestNG.TestCaseThree" />
         <item itemvalue="TestNG.Stickers/TestNG.xml" />
@@ -447,7 +451,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717663369355</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="TestCaseTwo is ready and adapted!">
+      <option name="closed" value="true" />
+      <created>1717664161077</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1717664161077</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Still work with TestCaseTwo">
+      <option name="closed" value="true" />
+      <created>1717664381819</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1717664381819</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -462,8 +482,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added asserts on the product page." />
-    <MESSAGE value="Work with pictogram settings." />
     <MESSAGE value="Added pictogram settings." />
     <MESSAGE value="Added settings for two blocks." />
     <MESSAGE value="Product page and blocks with products are totally ready!" />
@@ -487,6 +505,8 @@
     <MESSAGE value="Added ReadMe file.&#10;Updated libraries at pom file." />
     <MESSAGE value="TestCaseOne is ready and adapted to 4.18.1." />
     <MESSAGE value="Fixed Selenide code for the class 'StickerSettings'." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Selenide code for the class 'StickerSettings'." />
+    <MESSAGE value="TestCaseTwo is ready and adapted!" />
+    <MESSAGE value="Still work with TestCaseTwo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Still work with TestCaseTwo" />
   </component>
 </project>
