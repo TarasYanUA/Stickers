@@ -70,74 +70,74 @@ public class TestCaseOne extends TestRunner {
 
         //Настраиваем настройки модуля "Стикеры"
         StickerSettings stickerSettings = csCartSettings.navigateToStickerSettingsPage();
-        stickerSettings.tabSettings.click();
-        stickerSettings.selectSettingOutputPosition("L");
-        stickerSettings.selectSetting_OutputType_LeftTop("column");
-        stickerSettings.selectSetting_MaxNumber_LeftTop("3");
-        stickerSettings.selectSetting_OutputType_LeftBottom("column");
-        stickerSettings.selectSetting_MaxNumber_LeftBottom("3");
-        stickerSettings.buttonSaveSettings.click();
+        stickerSettings.tab_Settings.click();
+        stickerSettings.setting_OutputPosition.selectOptionByValue("L");
+        stickerSettings.setting_OutputType_LeftTop.selectOptionByValue("column");
+        stickerSettings.setting_MaxNumber_LeftTop.selectOptionByValue("3");
+        stickerSettings.setting_PositionsInProductLists.selectOptionByValue("column");
+        stickerSettings.setting_MaxNumber_LeftBottom.selectOptionByValue("3");
+        stickerSettings.button_SaveSettings.click();
         //Три верхних стикера
         csCartSettings.navigateToStickerListPage();
         //Стикер "Акция" (красный цвет)
         stickerSettings.sticker_Promotion.click();
-        stickerSettings.selectSettingPositionsInProductLists("T");
-        stickerSettings.selectSettingPositionsOnProductPage("T");
+        stickerSettings.setting_PositionsInProductLists.selectOptionByValue("T");
+        stickerSettings.setting_PositionsOnProductPage.selectOptionByValue("T");
         stickerSettings.statusActive.click();
         addConditionOfPrice(stickerSettings);
-        stickerSettings.buttonSaveSticker.click();
+        stickerSettings.button_SaveSticker.click();
         //Стикер "Sale > 10% < 30%" (оранжевый цвет)
-        stickerSettings.dropDownToggle.click();
-        stickerSettings.toggleStickerList.click();
+        stickerSettings.abMenu_dropDownToggle.click();
+        stickerSettings.abMenu_StickerList.click();
         stickerSettings.sticker_SaleOrange.click();
-        stickerSettings.selectSettingPositionsInProductLists("T");
-        stickerSettings.selectSettingPositionsOnProductPage("T");
+        stickerSettings.setting_PositionsInProductLists.selectOptionByValue("T");
+        stickerSettings.setting_PositionsOnProductPage.selectOptionByValue("T");
         stickerSettings.statusActive.click();
         stickerSettings.tab_DisplayOn.hover().click();
-        stickerSettings.selectDisplayOn_ShortList("small_size");
-        stickerSettings.buttonSaveSticker.click();
+        stickerSettings.displayOn_ShortList.selectOptionByValue("small_size");
+        stickerSettings.button_SaveSticker.click();
         //Стикер "Популярный" (фиолетовый цвет)
-        stickerSettings.dropDownToggle.click();
-        stickerSettings.toggleStickerList.click();
+        stickerSettings.abMenu_dropDownToggle.click();
+        stickerSettings.abMenu_StickerList.click();
         stickerSettings.sticker_PopularProduct.click();
-        stickerSettings.selectSettingPositionsInProductLists("T");
-        stickerSettings.selectSettingPositionsOnProductPage("T");
+        stickerSettings.setting_PositionsInProductLists.selectOptionByValue("T");
+        stickerSettings.setting_PositionsOnProductPage.selectOptionByValue("T");
         stickerSettings.statusActive.click();
         addConditionOfPrice(stickerSettings);
-        stickerSettings.buttonSaveSticker.click();
+        stickerSettings.button_SaveSticker.click();
         stickerSettings.gearWheel.click();
         stickerSettings.generateStickerLinks.click();
         Selenide.sleep(2000);
         //Три нижних стикера
         //Стикер "Высокий рейтинг" (оранжевый цвет)
-        stickerSettings.dropDownToggle.shouldBe(Condition.interactable).click();
-        stickerSettings.toggleStickerList.click();
+        stickerSettings.abMenu_dropDownToggle.shouldBe(Condition.interactable).click();
+        stickerSettings.abMenu_StickerList.click();
         stickerSettings.sticker_TopRated.click();
-        stickerSettings.selectSettingPositionsInProductLists("B");
-        stickerSettings.selectSettingPositionsOnProductPage("B");
+        stickerSettings.setting_PositionsInProductLists.selectOptionByValue("B");
+        stickerSettings.setting_PositionsOnProductPage.selectOptionByValue("B");
         stickerSettings.statusActive.click();
         addConditionOfPrice(stickerSettings);
-        stickerSettings.buttonSaveSticker.click();
+        stickerSettings.button_SaveSticker.click();
         //Стикер "Бесплатная доставка" (цвет сине-белый)
-        stickerSettings.dropDownToggle.click();
-        stickerSettings.toggleStickerList.click();
+        stickerSettings.abMenu_dropDownToggle.click();
+        stickerSettings.abMenu_StickerList.click();
         stickerSettings.sticker_Free_Delivery.click();
-        stickerSettings.selectSettingPositionsInProductLists("B");
-        stickerSettings.selectSettingPositionsOnProductPage("B");
+        stickerSettings.setting_PositionsInProductLists.selectOptionByValue("B");
+        stickerSettings.setting_PositionsOnProductPage.selectOptionByValue("B");
         stickerSettings.statusActive.click();
         addConditionOfPrice(stickerSettings);
-        stickerSettings.buttonSaveSticker.click();
+        stickerSettings.button_SaveSticker.click();
         stickerSettings.gearWheel.click();
         stickerSettings.generateStickerLinks.click();
         Selenide.sleep(2000);
         //Стикер "Вес" (цвет серый)
-        stickerSettings.dropDownToggle.shouldBe(Condition.interactable).click();
-        stickerSettings.toggleStickerList.click();
+        stickerSettings.abMenu_dropDownToggle.shouldBe(Condition.interactable).click();
+        stickerSettings.abMenu_StickerList.click();
         stickerSettings.sticker_Weight.click();
-        stickerSettings.selectSettingPositionsInProductLists("B");
-        stickerSettings.selectSettingPositionsOnProductPage("B");
+        stickerSettings.setting_PositionsInProductLists.selectOptionByValue("B");
+        stickerSettings.setting_PositionsOnProductPage.selectOptionByValue("B");
         stickerSettings.statusActive.click();
-        stickerSettings.buttonSaveSticker.click();
+        stickerSettings.button_SaveSticker.click();
 
         //Настраиваем страницу товара
         csCartSettings.navigateToSection_Categories();
@@ -317,8 +317,8 @@ public class TestCaseOne extends TestRunner {
             stickerSettings.button_DeleteCondition.click();
         }
         stickerSettings.button_AddCondition.shouldBe(Condition.interactable).click();
-        stickerSettings.selectStickerCondition("price");
-        stickerSettings.selectStickerOperator("gte");
+        stickerSettings.fieldOfConditions.selectOptionByValue("price");
+        stickerSettings.fieldOfOperator.selectOptionByValue("gte");
         stickerSettings.clickAndType_PriceCondition("1400");
     }
 }

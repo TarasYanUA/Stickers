@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Added ReadMe file.&#10;Updated libraries at pom file.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CheckMenuToBeActive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" afterDir="false" />
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="TestCaseOne is ready and adapted to 4.18.1.">
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseFour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseFour.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseThree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -440,7 +432,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717596737852</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="TestCaseOne is ready and adapted to 4.18.1.">
+      <option name="closed" value="true" />
+      <created>1717656451038</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1717656451038</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -455,7 +455,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added product. The next is add condition to 5 stickers." />
     <MESSAGE value="Added condition to all stickers and prepared a product." />
     <MESSAGE value="Added asserts on the product page." />
     <MESSAGE value="Work with pictogram settings." />
@@ -480,6 +479,18 @@
     <MESSAGE value="Test-case 4 is done. Removed error messages." />
     <MESSAGE value="Added some comments in TestRunner." />
     <MESSAGE value="Added ReadMe file.&#10;Updated libraries at pom file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added ReadMe file.&#10;Updated libraries at pom file." />
+    <MESSAGE value="TestCaseOne is ready and adapted to 4.18.1." />
+    <option name="LAST_COMMIT_MESSAGE" value="TestCaseOne is ready and adapted to 4.18.1." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TestCaseOne.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
