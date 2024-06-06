@@ -36,8 +36,8 @@ public class StickerSettings {
     public SelenideElement buttonSaveSticker = $(".cm-submit.btn-primary");
     public SelenideElement gearWheel = $("div.btn-group.dropleft");
     public SelenideElement generateStickerLinks = $(".cm-post.cm-comet");
-    public SelenideElement dropDownToggle = $("#last_edited_items .btn.dropdown-toggle");
-    public SelenideElement toggleStickerList = $("#last_edited_items a[href*='ab__stickers.manage']");
+    public SelenideElement dropDownToggle = $(".ab__am-menu .btn.dropdown-toggle");
+    public SelenideElement toggleStickerList = $(".ab__am-menu a[href*='ab__stickers.manage']");
     public SelenideElement tableOfConditions = $(".conditions-tree-node.clearfix");
     public SelenideElement button_DeleteCondition = $(".icon-trash");
     public SelenideElement button_AddCondition = $("div[id*='add_condition'] .btn");

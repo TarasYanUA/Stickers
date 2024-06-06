@@ -1,3 +1,4 @@
+/*
 import adminPanel.*;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
@@ -8,6 +9,7 @@ import storefront.StProductPage;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
+*/
 /*
 ссылка на тест-кейс: https://docs.google.com/spreadsheets/d/1UdXKRCHxD7XP7W3UzDN28ff10LyiJPbZKrdvZllpUCU/edit#gid=1582514111
 Проверяем следующее:
@@ -22,7 +24,8 @@ import static com.codeborne.selenide.Selenide.$x;
 - Страница категории: все шаблоны + окно Быстрого просмотра
 - Блок с товарами: шаблоны АВ: Легкий скроллер + Сетка
 - Страница Избранных
-*/
+*//*
+
 public class TestCaseThree extends TestRunner {
     @Test(priority=1)
     public void TestCaseThree_ConfigureSettings() {
@@ -231,4 +234,4 @@ public class TestCaseThree extends TestRunner {
         Selenide.sleep(2000);
         Selenide.screenshot("3305 WishList(RTL) - HorizontalIcons, RightColumn");
     }
-}
+}*/

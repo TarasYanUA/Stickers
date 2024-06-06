@@ -26,8 +26,7 @@ public class TestCaseOne extends TestRunner {
     public void TestCaseOne_ConfigureSettings() {
         //Включаем мини-иконки в виде галереи и окно Быстрого просмотра
         CsCartSettings csCartSettings = new CsCartSettings();
-/*        csCartSettings.menuSettings.hover();
-        csCartSettings.sectionAppearance.click();
+        csCartSettings.navigateTo_AppearanceSettings();
         if (!csCartSettings.settingMiniThumbnailAsGallery.isSelected()) {
             csCartSettings.settingMiniThumbnailAsGallery.click();
         }
@@ -37,7 +36,6 @@ public class TestCaseOne extends TestRunner {
         csCartSettings.button_Save.click();
 
         //Включаем Вертикальное отображение мини-иконок (Модуль "Видео галерея")
-        csCartSettings.navigateToAddonsPage();
         VideoGallerySettings videoGallerySettings = csCartSettings.navigateToVideoGalleryPage();
         videoGallerySettings.tabSettings.click();
         if (!videoGallerySettings.settingVerticalView.isSelected()) {
@@ -46,7 +44,6 @@ public class TestCaseOne extends TestRunner {
         }
 
         //Настраиваем позицию пиктограмм
-        csCartSettings.navigateToAddonsPage();
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
         uniThemeSettings.tab_ProductList.click();
         uniThemeSettings.selectPictogramPosition_Grid("position_1");
@@ -57,23 +54,21 @@ public class TestCaseOne extends TestRunner {
         csCartSettings.button_Save.click();
 
         //Настраиваем блок с товарами
-        csCartSettings.menuDesign.hover();
-        csCartSettings.sectionLayouts.click();
+        csCartSettings.navigateToSectionLayouts();
         csCartSettings.layout_TabProducts.click();
         csCartSettings.layout_GearwheelOfBlockPopular.click();
         csCartSettings.popupWindow.shouldBe(Condition.enabled);
-        csCartSettings.selectBlockTemplate("blocks/products/ab__grid_list.tpl");
+        csCartSettings.layout_BlockTemplate.selectOptionByValue("blocks/products/ab__grid_list.tpl");
         csCartSettings.layoutBlock_TabContent.click();
-        csCartSettings.selectLayout_FieldFilling();
+        csCartSettings.layout_FieldFilling.selectOptionByValue("newest");
         csCartSettings.clickAndType_Layout_FieldMaxLimit();
         csCartSettings.layout_ButtonSaveBlock.click();
         csCartSettings.layout_GearwheelOfBlockHits.click();
         csCartSettings.popupWindow.shouldBe(Condition.enabled);
-        csCartSettings.selectBlockTemplate("blocks/products/products_scroller_advanced.tpl");
+        csCartSettings.layout_BlockTemplate.selectOptionByValue("blocks/products/products_scroller_advanced.tpl");
         csCartSettings.layout_ButtonSaveBlock.click();
 
         //Настраиваем настройки модуля "Стикеры"
-        csCartSettings.navigateToAddonsPage();
         StickerSettings stickerSettings = csCartSettings.navigateToStickerSettingsPage();
         stickerSettings.tabSettings.click();
         stickerSettings.selectSettingOutputPosition("L");
@@ -83,7 +78,6 @@ public class TestCaseOne extends TestRunner {
         stickerSettings.selectSetting_MaxNumber_LeftBottom("3");
         stickerSettings.buttonSaveSettings.click();
         //Три верхних стикера
-        csCartSettings.navigateToAddonsPage();
         csCartSettings.navigateToStickerListPage();
         //Стикер "Акция" (красный цвет)
         stickerSettings.sticker_Promotion.click();
@@ -144,9 +138,9 @@ public class TestCaseOne extends TestRunner {
         stickerSettings.selectSettingPositionsOnProductPage("B");
         stickerSettings.statusActive.click();
         stickerSettings.buttonSaveSticker.click();
-*/
+
         //Настраиваем страницу товара
-        csCartSettings.navigateToEditingCategoryPage();
+        csCartSettings.navigateToSection_Categories();
         $x("//a[text()='AB: Телефоны']").click();
         csCartSettings.statusActive_Category.click();
         csCartSettings.button_Save.click();
@@ -159,7 +153,7 @@ public class TestCaseOne extends TestRunner {
         productSettings.field_ListPrice.click();
         productSettings.field_ListPrice.clear();
         productSettings.field_ListPrice.sendKeys("2000");
-        productSettings.selectProductTemplate("default_template");
+        productSettings.productTemplate.selectOptionByValue("default_template");
         productSettings.tab_Shippings.hover().click();
         productSettings.clickAndType_ProductWeight("9");
         csCartSettings.navigateToStProductPage(1);
@@ -203,7 +197,7 @@ public class TestCaseOne extends TestRunner {
         csCartSettings.shiftBrowserTab(0);
         ProductSettings productSettings = new ProductSettings();
         productSettings.tab_General.hover().click();
-        productSettings.selectProductTemplate("bigpicture_template");
+        productSettings.productTemplate.selectOptionByValue("bigpicture_template");
         csCartSettings.navigateToStProductPage(2);
         Selenide.sleep(2000);
         Selenide.screenshot("1130 ProdPage - VerticalIcons, LeftColumn, BigPictureTemplate");
@@ -211,7 +205,7 @@ public class TestCaseOne extends TestRunner {
         Selenide.sleep(2000);
         Selenide.screenshot("1135 ProdPage(RTL) - VerticalIcons, LeftColumn, BigPictureTemplate");
         csCartSettings.shiftBrowserTab(0);
-        productSettings.selectProductTemplate("abt__ut2_bigpicture_flat_template");
+        productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_flat_template");
         csCartSettings.navigateToStProductPage(3);
         Selenide.sleep(2000);
         Selenide.screenshot("1140 ProdPage - VerticalIcons, LeftColumn, BigPictureFlatTemplate");
@@ -219,7 +213,7 @@ public class TestCaseOne extends TestRunner {
         Selenide.sleep(2000);
         Selenide.screenshot("1145 ProdPage(RTL) - VerticalIcons, LeftColumn, BigPictureFlatTemplate");
         csCartSettings.shiftBrowserTab(0);
-        productSettings.selectProductTemplate("abt__ut2_three_columns_template");
+        productSettings.productTemplate.selectOptionByValue("abt__ut2_three_columns_template");
         csCartSettings.navigateToStProductPage(4);
         Selenide.sleep(2000);
         Selenide.screenshot("1150 ProdPage - VerticalIcons, LeftColumn, ThreeColumned");

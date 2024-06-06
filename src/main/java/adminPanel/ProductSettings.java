@@ -1,7 +1,6 @@
 package adminPanel;
 
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.support.ui.Select;
 import static com.codeborne.selenide.Selenide.$;
 
 public class ProductSettings {
@@ -16,11 +15,6 @@ public class ProductSettings {
     public  SelenideElement field_ProductWeight = $("#product_weight");
     public  SelenideElement button_SearchProduct = $(".advanced-search-field__search");
 
-
-    public Select getProductTemplate(){return new Select(productTemplate);}
-    public void selectProductTemplate(String value){
-        getProductTemplate().selectByValue(value);
-    }
     public void clickAndType_ProductWeight(String value){
         field_ProductWeight.click();
         field_ProductWeight.clear();
