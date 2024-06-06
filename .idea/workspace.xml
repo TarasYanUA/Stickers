@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="TestCaseOne is ready and adapted to 4.18.1.">
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseThree.java" afterDir="false" />
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Fixed Selenide code for the class 'StickerSettings'.">
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +77,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TestNG.TestCaseOne.executor": "Run",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/IDEA Projects/UniTheme2/pom.xml",
+    "last_opened_file_path": "E:/IDEA Projects/Deal of the day/Deal of the day/pom.xml",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -89,7 +88,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestCaseOne">
+  <component name="RunManager" selected="TestNG.TestCaseTwo">
     <configuration name="Stickers/TestNG.xml" type="TestNG" temporary="true">
       <module name="Stickers" />
       <shortenClasspath name="NONE" />
@@ -162,10 +161,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.TestCaseTwo" />
         <item itemvalue="TestNG.TestCaseOne" />
         <item itemvalue="TestNG.TestCaseFour" />
         <item itemvalue="TestNG.TestCaseThree" />
-        <item itemvalue="TestNG.TestCaseTwo" />
         <item itemvalue="TestNG.Stickers/TestNG.xml" />
       </list>
     </recent_temporary>
@@ -440,7 +439,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717656451038</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Fixed Selenide code for the class 'StickerSettings'.">
+      <option name="closed" value="true" />
+      <created>1717663369355</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1717663369355</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -455,7 +462,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added condition to all stickers and prepared a product." />
     <MESSAGE value="Added asserts on the product page." />
     <MESSAGE value="Work with pictogram settings." />
     <MESSAGE value="Added pictogram settings." />
@@ -480,17 +486,7 @@
     <MESSAGE value="Added some comments in TestRunner." />
     <MESSAGE value="Added ReadMe file.&#10;Updated libraries at pom file." />
     <MESSAGE value="TestCaseOne is ready and adapted to 4.18.1." />
-    <option name="LAST_COMMIT_MESSAGE" value="TestCaseOne is ready and adapted to 4.18.1." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/TestCaseOne.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Fixed Selenide code for the class 'StickerSettings'." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Selenide code for the class 'StickerSettings'." />
   </component>
 </project>

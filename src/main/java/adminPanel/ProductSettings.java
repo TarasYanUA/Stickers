@@ -1,8 +1,6 @@
 package adminPanel;
 
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.Keys;
-
 import static com.codeborne.selenide.Selenide.$;
 
 public class ProductSettings {
@@ -15,7 +13,6 @@ public class ProductSettings {
     public SelenideElement tab_General = $("#detailed");
     public SelenideElement tab_Shippings = $("#shippings");
     public  SelenideElement field_ProductWeight = $("#product_weight");
-    public  SelenideElement button_SearchProduct = $(".advanced-search-field__search");
 
     public void clickAndType_ProductWeight(String value){
         field_ProductWeight.click();
@@ -25,7 +22,6 @@ public class ProductSettings {
     public void clickAndType_ProductSearch(String value){
         field_productSearch.click();
         field_productSearch.sendKeys(value);
-        button_SearchProduct.sendKeys(Keys.ENTER);
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
