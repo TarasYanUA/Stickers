@@ -46,11 +46,11 @@ public class TestCaseOne extends TestRunner {
         //Настраиваем позицию пиктограмм
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
         uniThemeSettings.tab_ProductList.click();
-        uniThemeSettings.selectPictogramPosition_Grid("position_1");
-        uniThemeSettings.selectPictogramPosition_ListWithoutOptions("position_1");
-        uniThemeSettings.selectPictogramPosition_CompactList("position_1");
+        uniThemeSettings.fieldOfPictogramPosition_Grid.selectOptionByValue("position_1");
+        uniThemeSettings.fieldOfPictogramPosition_ListWithoutOptions.selectOptionByValue("position_1");
+        uniThemeSettings.fieldOfPictogramPosition_CompactList.selectOptionByValue("position_1");
         uniThemeSettings.tab_Product.hover().click();
-        uniThemeSettings.selectPictogramPosition_Product("position_1");
+        uniThemeSettings.fieldOfPictogramPosition_Product.selectOptionByValue("position_1");
         csCartSettings.button_Save.click();
 
         //Настраиваем блок с товарами

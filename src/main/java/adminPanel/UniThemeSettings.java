@@ -1,7 +1,6 @@
 package adminPanel;
 
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.support.ui.Select;
 import static com.codeborne.selenide.Selenide.$;
 
 public class UniThemeSettings {
@@ -13,21 +12,4 @@ public class UniThemeSettings {
     public SelenideElement fieldOfPictogramPosition_ListWithoutOptions = $("select[id='settings.abt__ut2.product_list.products_without_options.ab__s_pictogram_position.desktop']");
     public SelenideElement fieldOfPictogramPosition_CompactList = $("select[id='settings.abt__ut2.product_list.short_list.ab__s_pictogram_position.desktop']");
     public SelenideElement fieldOfPictogramPosition_Product = $("select[id='settings.abt__ut2.products.view.ab__s_pictogram_position.desktop']");
-
-    public Select getFieldOfPictogramPosition_Grid(){return new Select(fieldOfPictogramPosition_Grid);}
-    public void selectPictogramPosition_Grid(String value){
-        getFieldOfPictogramPosition_Grid().selectByValue(value);
-    }
-    public Select getFieldOfPictogramPosition_ListWithoutOptions(){return new Select(fieldOfPictogramPosition_ListWithoutOptions);}
-    public void selectPictogramPosition_ListWithoutOptions(String value){
-        getFieldOfPictogramPosition_ListWithoutOptions().selectByValue(value);
-    }
-    public Select getFieldOfPictogramPosition_CompactList(){return new Select(fieldOfPictogramPosition_CompactList);}
-    public void selectPictogramPosition_CompactList(String value){
-        getFieldOfPictogramPosition_CompactList().selectByValue(value);
-    }
-    public Select getFieldOfPictogramPosition_Product(){return new Select(fieldOfPictogramPosition_Product);}
-    public void selectPictogramPosition_Product(String value){
-        getFieldOfPictogramPosition_Product().selectByValue(value);
-    }
 }

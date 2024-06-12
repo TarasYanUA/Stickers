@@ -40,11 +40,11 @@ public class TestCaseThree extends TestRunner {
         //Настраиваем позицию пиктограмм
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
         uniThemeSettings.tab_ProductList.click();
-        uniThemeSettings.selectPictogramPosition_Grid("position_2");
-        uniThemeSettings.selectPictogramPosition_ListWithoutOptions("position_2");
-        uniThemeSettings.selectPictogramPosition_CompactList("position_1"); //Позиции 2 у этого списка нет
+        uniThemeSettings.fieldOfPictogramPosition_Grid.selectOptionByValue("position_2");
+        uniThemeSettings.fieldOfPictogramPosition_ListWithoutOptions.selectOptionByValue("position_2");
+        uniThemeSettings.fieldOfPictogramPosition_CompactList.selectOptionByValue("position_1"); //Позиции 2 у этого списка нет
         uniThemeSettings.tab_Product.hover().click();
-        uniThemeSettings.selectPictogramPosition_Product("position_2");
+        uniThemeSettings.fieldOfPictogramPosition_Product.selectOptionByValue("position_2");
         csCartSettings.button_Save.click();
 
         //Настраиваем блок с товарами
