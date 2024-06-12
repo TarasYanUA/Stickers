@@ -152,9 +152,9 @@ public class TestCaseFour extends TestRunner {
         //Проверяем, что стикеры расположены в строку
         Assert.assertTrue($(".ut2-pb__items .row-filling").exists(), "Position of stickers is not in Column on quick view window!");
         //Проверяем, что пиктограммы присутствуют
-        //Assert.assertTrue($(".ut2-pb__right .ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on quick view window!");
+        Assert.assertTrue($(".ut2-pb__items .ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on quick view window!");
         //Проверяем, что пиктограммы расположены в позиции 2
-        //Assert.assertTrue($(".ut2-pb__right .ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2 on quick view window!");
+        Assert.assertTrue($(".ut2-pb__items .ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2 on quick view window!");
         Selenide.screenshot("4205 QuickView - VerticalIcons, RightRow");
         stCategoryPage.button_CloseQuickView.click();
         stCategoryPage.template_ListWithoutOptions.click();
