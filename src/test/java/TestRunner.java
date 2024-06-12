@@ -2,6 +2,8 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.*;
+import org.testng.asserts.SoftAssert;
+
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestRunner {
@@ -11,15 +13,27 @@ public class TestRunner {
     public void openBrowser() {
         Configuration.browser = "chrome";
         open(BASIC_URL);
-        Configuration.holdBrowserOpen = true; //не закрываем браузер пока ведём разработку
+        Configuration.holdBrowserOpen = false; //не закрываем браузер пока ведём разработку
         Configuration.screenshots = true; //делаем скриншоты при падении
         WebDriverRunner.getWebDriver().manage().window().maximize(); //окно браузера на весь экран
+
+        SoftAssert softAssertions = new SoftAssert();
+        CollectAssertMessages.setSoftAssertions(softAssertions);
+
         $(".btn.btn-primary").click();
         $("#bp_off_bottom_panel").click();
     }
 
     @AfterClass
     public void closeBrowser() {
+        SoftAssert softAssertions = CollectAssertMessages.getSoftAssertions();
+        try {
+            softAssertions.assertAll();
+        } catch (AssertionError e) {
+            System.out.println("\nОшибки в asserts:");
+            System.out.println(e.getMessage());
+        }
+
         Selenide.closeWebDriver();
     }
 
