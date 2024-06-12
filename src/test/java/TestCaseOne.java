@@ -23,9 +23,6 @@ import org.testng.asserts.SoftAssert;
 - Страница Избранных
 */
 public class TestCaseOne extends TestRunner {
-    SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
-
-
     @Test(priority = 1)
     public void TestCaseOne_ConfigureSettings() {
         //Включаем мини-иконки в виде галереи и окно Быстрого просмотра
@@ -167,6 +164,7 @@ public class TestCaseOne extends TestRunner {
     @Test(priority = 2)
     public void TestCaseOne_ProductPage() {
         StProductPage stProductPage = new StProductPage();
+        SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
 
         //Проверяем, что галерея мини-иконок вертикальная
         softAssert.assertTrue($(".ab-vg-vertical-thumbnails").exists(), "Gallery of mini-icons is not Vertical!");
@@ -226,11 +224,12 @@ public class TestCaseOne extends TestRunner {
         Selenide.sleep(2000);
         Selenide.screenshot("1155 ProdPage(RTL) - VerticalIcons, LeftColumn, ThreeColumned");
     }
-
     @Test(priority = 3)
     public void TestCaseOne_CategoryPage() {
-        selectLanguage_RU();
         StCategoryPage stCategoryPage = new StCategoryPage();
+        SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
+
+        selectLanguage_RU();
         stCategoryPage.breadcrumbs_Phones.click();
         Selenide.sleep(2000);
         //Проверяем, что присутствуют стикеры слева и вверху
@@ -293,8 +292,10 @@ public class TestCaseOne extends TestRunner {
 
     @Test(priority = 4)
     public void TestCaseOne_WishList() {
-        selectLanguage_RU();
         StCategoryPage stCategoryPage = new StCategoryPage();
+        SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
+
+        selectLanguage_RU();
         stCategoryPage.productInList.hover();
         stCategoryPage.button_AddToWishList.click();
         stCategoryPage.button_CloseWishListPopup.shouldBe(Condition.visible).click();

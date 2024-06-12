@@ -8,6 +8,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class TestRunner {
     public static final String BASIC_URL = "https://abd-c2c90cd507.demos.abt.team/admin.php?dispatch=ab__stickers.manage";
+    private SoftAssert softAssert;
 
     @BeforeClass
     public void openBrowser() {
@@ -17,8 +18,8 @@ public class TestRunner {
         Configuration.screenshots = true; //делаем скриншоты при падении
         WebDriverRunner.getWebDriver().manage().window().maximize(); //окно браузера на весь экран
 
-        SoftAssert softAssertions = new SoftAssert();
-        CollectAssertMessages.setSoftAssertions(softAssertions);
+        softAssert = new SoftAssert();
+        CollectAssertMessages.setSoftAssertions(softAssert);
 
         $(".btn.btn-primary").click();
         $("#bp_off_bottom_panel").click();
@@ -26,9 +27,9 @@ public class TestRunner {
 
     @AfterClass
     public void closeBrowser() {
-        SoftAssert softAssertions = CollectAssertMessages.getSoftAssertions();
+        softAssert = CollectAssertMessages.getSoftAssertions();
         try {
-            softAssertions.assertAll();
+            softAssert.assertAll();
         } catch (AssertionError e) {
             System.out.println("\nОшибки в asserts:");
             System.out.println(e.getMessage());
