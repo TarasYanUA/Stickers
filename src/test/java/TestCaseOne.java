@@ -244,7 +244,7 @@ public class TestCaseOne extends TestRunner {
         //Смотрим окно Быстрого просмотра
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.click();
-        $(".ui-dialog-title").shouldBe(Condition.visible).hover();
+        $(".ui-dialog-title").shouldBe(Condition.enabled).hover();
         Selenide.sleep(2000);
         //Проверяем, что присутствуют стикеры слева и вверху
         Assert.assertTrue($(".ut2-pb__items .ab-stickers-container__TL").exists(), "There are no stickers on the Top-Left side on quick view window!");
@@ -309,6 +309,7 @@ public class TestCaseOne extends TestRunner {
         Selenide.screenshot("1300 WishList - VerticalIcons, LeftColumn");
         selectLanguage_RTL();
         Selenide.sleep(2000);
+        stCategoryPage.productInList.hover();
         Selenide.screenshot("1305 WishList(RTL) - VerticalIcons, LeftColumn");
     }
 

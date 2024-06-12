@@ -5,7 +5,7 @@ import org.testng.annotations.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestRunner {
-    public static final String BASIC_URL = "https://abd-c625afeb8e.demos.abt.team/admin.php?dispatch=settings.manage&section_id=Appearance";
+    public static final String BASIC_URL = "https://abd-c2c90cd507.demos.abt.team/admin.php?dispatch=ab__stickers.manage";
 
     @BeforeClass
     public void openBrowser() {

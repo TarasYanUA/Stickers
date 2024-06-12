@@ -84,6 +84,7 @@ public class TestCaseTwo extends TestRunner {
         $("div.ut2-gl__body.content-on-hover img.img-ab-hover-gallery").shouldBe(Condition.visible);
         Selenide.screenshot("2120 BlockPopular(RTL) - HorizontalIcons, LeftRow, GridWithButtonMore");
         stProductPage.block_Hits.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
+        Selenide.sleep(2000);
         Selenide.screenshot("2125 BlockHits(RTL) - HorizontalIcons, LeftRow, AdvancedScroller");
 
         //Смотрим другие шаблоны страницы товара

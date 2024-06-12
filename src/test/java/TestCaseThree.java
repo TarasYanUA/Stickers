@@ -1,4 +1,3 @@
-/*
 import adminPanel.*;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
@@ -9,6 +8,7 @@ import storefront.StProductPage;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
+/*
 ссылка на тест-кейс: https://docs.google.com/spreadsheets/d/1UdXKRCHxD7XP7W3UzDN28ff10LyiJPbZKrdvZllpUCU/edit#gid=1582514111
 Проверяем следующее:
 - CS-Cart: Быстрый просмотр + мини-иконки галереи
@@ -22,6 +22,7 @@ import static com.codeborne.selenide.Selenide.$x;
 - Страница категории: все шаблоны + окно Быстрого просмотра
 - Блок с товарами: шаблоны АВ: Легкий скроллер + Сетка
 - Страница Избранных
+*/
 
 
 public class TestCaseThree extends TestRunner {
@@ -29,7 +30,6 @@ public class TestCaseThree extends TestRunner {
     public void TestCaseThree_ConfigureSettings() {
         //Включаем Горизонтальное отображение мини-иконок (Модуль "Видео галерея")
         CsCartSettings csCartSettings = new CsCartSettings();
-        csCartSettings.navigateToAddonsPage();
         VideoGallerySettings videoGallerySettings = csCartSettings.navigateToVideoGalleryPage();
         videoGallerySettings.tabSettings.click();
         if (videoGallerySettings.settingVerticalView.isSelected()) {
@@ -38,7 +38,6 @@ public class TestCaseThree extends TestRunner {
         }
 
         //Настраиваем позицию пиктограмм
-        csCartSettings.navigateToAddonsPage();
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
         uniThemeSettings.tab_ProductList.click();
         uniThemeSettings.selectPictogramPosition_Grid("position_2");
@@ -49,36 +48,34 @@ public class TestCaseThree extends TestRunner {
         csCartSettings.button_Save.click();
 
         //Настраиваем блок с товарами
-        csCartSettings.menuDesign.hover();
-        csCartSettings.sectionLayouts.click();
+        csCartSettings.navigateToSectionLayouts();
         csCartSettings.layout_TabProducts.click();
         csCartSettings.layout_GearwheelOfBlockPopular.click();
         csCartSettings.popupWindow.shouldBe(Condition.enabled);
-        csCartSettings.selectBlockTemplate("blocks/products/products_native_scroller_advanced.tpl");
+        csCartSettings.layout_BlockTemplate.selectOptionByValue("blocks/products/products_native_scroller_advanced.tpl");
         csCartSettings.layout_ButtonSaveBlock.click();
         csCartSettings.layout_GearwheelOfBlockHits.click();
         csCartSettings.popupWindow.shouldBe(Condition.enabled);
-        csCartSettings.selectBlockTemplate("blocks/products/products_multicolumns.tpl");
+        csCartSettings.layout_BlockTemplate.selectOptionByValue("blocks/products/products_multicolumns.tpl");
         csCartSettings.layout_ButtonSaveBlock.click();
 
         //Настраиваем настройки модуля "Стикеры"
-        csCartSettings.navigateToAddonsPage();
         StickerSettings stickerSettings = csCartSettings.navigateToStickerSettingsPage();
-        stickerSettings.tabSettings.click();
-        stickerSettings.selectSettingOutputPosition("R");
-        stickerSettings.selectSetting_OutputType_RightTop("column");
-        stickerSettings.selectSetting_MaxNumber_RightTop("3");
-        stickerSettings.selectSetting_OutputType_RightBottom("column");
-        stickerSettings.selectSetting_MaxNumber_RightBottom("3");
-        stickerSettings.tabPictograms.click();
-        stickerSettings.selectSetting_AppearanceOfPictograms("teardrop");
-        stickerSettings.buttonSaveSettings.click();
+        stickerSettings.tab_Settings.click();
+        stickerSettings.setting_OutputPosition.selectOptionByValue("R");
+        stickerSettings.setting_OutputType_RightTop.selectOptionByValue("column");
+        stickerSettings.setting_MaxNumber_RightTop.selectOptionByValue("3");
+        stickerSettings.setting_OutputType_RightBottom.selectOptionByValue("column");
+        stickerSettings.setting_MaxNumber_RightBottom.selectOptionByValue("3");
+        stickerSettings.tab_Pictograms.click();
+        stickerSettings.setting_AppearanceOfPictograms.selectOptionByValue("teardrop");
+        stickerSettings.button_SaveSettings.click();
 
-        //Переходим на страницу редактирования товара
-        ProductSettings productSettings = csCartSettings.navigateToEditingProductPage();
+        //Настраиваем страницу товара
+        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_ProductSearch("Apple iPhone 14");
         $x("//td[@class='product-name-column wrap-word']//a[contains(text(), 'Apple iPhone 14')]").click();
-        productSettings.selectProductTemplate("default_template");
+        productSettings.productTemplate.selectOptionByValue("default_template");
         csCartSettings.navigateToStProductPage(1);
         csCartSettings.cookieNotice();
     }
@@ -103,7 +100,7 @@ public class TestCaseThree extends TestRunner {
         stProductPage.block_Popular.scrollTo();
         Selenide.sleep(2000);
         Selenide.screenshot("3105 BlockPopular - HorizontalIcons, RightColumn, LightScroller");
-        stProductPage.block_Hits.click();
+        stProductPage.block_Hits.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
         Selenide.sleep(2000);
         Selenide.screenshot("3110 BlockHits - HorizontalIcons, RightColumn, Grid");
         selectLanguage_RTL();
@@ -112,7 +109,7 @@ public class TestCaseThree extends TestRunner {
         stProductPage.block_Popular.scrollTo();
         $("div.ut2-gl__body.content-on-hover img.img-ab-hover-gallery").shouldBe(Condition.visible);
         Selenide.screenshot("3120 BlockPopular(RTL) - HorizontalIcons, RightColumn, LightScroller");
-        stProductPage.block_Hits.click();
+        stProductPage.block_Hits.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
         Selenide.screenshot("3125 BlockHits(RTL) - HorizontalIcons, RightColumn, Grid");
 
         //Смотрим другие шаблоны страницы товара
@@ -120,7 +117,7 @@ public class TestCaseThree extends TestRunner {
         csCartSettings.shiftBrowserTab(0);
         ProductSettings productSettings = new ProductSettings();
         productSettings.tab_General.hover().click();
-        productSettings.selectProductTemplate("bigpicture_template");
+        productSettings.productTemplate.selectOptionByValue("bigpicture_template");
         csCartSettings.navigateToStProductPage(2);
         Selenide.sleep(2000);
         Selenide.screenshot("3130 ProdPage - HorizontalIcons, RightColumn, BigPictureTemplate");
@@ -128,7 +125,7 @@ public class TestCaseThree extends TestRunner {
         Selenide.sleep(2000);
         Selenide.screenshot("3135 ProdPage(RTL) - HorizontalIcons, RightColumn, BigPictureTemplate");
         csCartSettings.shiftBrowserTab(0);
-        productSettings.selectProductTemplate("abt__ut2_bigpicture_flat_template");
+        productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_flat_template");
         csCartSettings.navigateToStProductPage(3);
         Selenide.sleep(2000);
         Selenide.screenshot("3140 ProdPage - HorizontalIcons, RightColumn, BigPictureFlatTemplate");
@@ -136,7 +133,7 @@ public class TestCaseThree extends TestRunner {
         Selenide.sleep(2000);
         Selenide.screenshot("3145 ProdPage(RTL) - HorizontalIcons, RightColumn, BigPictureFlatTemplate");
         csCartSettings.shiftBrowserTab(0);
-        productSettings.selectProductTemplate("abt__ut2_three_columns_template");
+        productSettings.productTemplate.selectOptionByValue("abt__ut2_three_columns_template");
         csCartSettings.navigateToStProductPage(4);
         Selenide.sleep(2000);
         Selenide.screenshot("3150 ProdPage - HorizontalIcons, RightColumn, ThreeColumned");
@@ -161,13 +158,14 @@ public class TestCaseThree extends TestRunner {
         Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on category page!");
         //Проверяем, что пиктограммы расположены в позиции 2
         Assert.assertTrue($(".ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2 on category page!");
+        stCategoryPage.productInList.hover();
         Selenide.screenshot("3200 Category - HorizontalIcons, RightColumn, Grid");
 
         //Смотрим окно Быстрого просмотра
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.click();
-        $(".ui-dialog-title").hover();
-        Selenide.sleep(3000);
+        $(".ui-dialog-title").shouldBe(Condition.enabled).hover();
+        Selenide.sleep(2000);
         //Проверяем, что присутствуют стикеры справа и вверху
         Assert.assertTrue($(".ut2-pb__items .ab-stickers-container__TR").exists(), "There are no stickers on the Top-Right side on quick view window!");
         //Проверяем, что присутствуют стикеры справа и внизу
@@ -175,9 +173,9 @@ public class TestCaseThree extends TestRunner {
         //Проверяем, что стикеры расположены в колонку
         Assert.assertTrue($(".ut2-pb__items .column-filling").exists(), "Position of stickers is not in Column on quick view window!");
         //Проверяем, что пиктограммы присутствуют
-        Assert.assertTrue($(".ut2-pb__right .ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on quick view window!");
+        Assert.assertTrue($(".ut2-pb__items .ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on quick view window!");
         //Проверяем, что пиктограммы расположены в позиции 2
-        Assert.assertTrue($(".ut2-pb__right .ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2 on quick view window!");
+        Assert.assertTrue($(".ut2-pb__items .ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2 on quick view window!");
         Selenide.screenshot("3205 QuickView - HorizontalIcons, RightColumn");
         stCategoryPage.button_CloseQuickView.click();
         stCategoryPage.template_ListWithoutOptions.click();
@@ -198,11 +196,12 @@ public class TestCaseThree extends TestRunner {
         Selenide.screenshot("3225 Category(RTL) - HorizontalIcons, RightColumn, ListWithoutOptions");
         stCategoryPage.template_Grid.click();
         Selenide.sleep(2000);
+        stCategoryPage.productInList.hover();
         Selenide.screenshot("3230 Category(RTL) - HorizontalIcons, RightColumn, Grid");
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.click();
-        $(".ui-dialog-title").hover();
-        Selenide.sleep(3000);
+        $(".ui-dialog-title").shouldBe(Condition.enabled).hover();
+        Selenide.sleep(2000);
         Selenide.screenshot("3235 QuickView(RTL) - HorizontalIcons, RightColumn");
         stCategoryPage.button_CloseQuickView.click();
     }
@@ -230,7 +229,7 @@ public class TestCaseThree extends TestRunner {
         Selenide.screenshot("3300 WishList - HorizontalIcons, RightColumn");
         selectLanguage_RTL();
         Selenide.sleep(2000);
+        stCategoryPage.productInList.hover();
         Selenide.screenshot("3305 WishList(RTL) - HorizontalIcons, RightColumn");
     }
 }
-*/
