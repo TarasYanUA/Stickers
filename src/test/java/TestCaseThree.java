@@ -203,7 +203,7 @@ public class TestCaseThree extends TestRunner {
         $(".ui-dialog-title").shouldBe(Condition.enabled).hover();
         Selenide.sleep(2000);
         Selenide.screenshot("3235 QuickView(RTL) - HorizontalIcons, RightColumn");
-        stCategoryPage.button_CloseQuickView.click();
+        stCategoryPage.button_CloseQuickView.hover().click();
     }
 
     @Test(priority=4)
