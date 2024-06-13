@@ -37,7 +37,7 @@ public class TestCaseThree extends TestRunner {
             videoGallerySettings.buttonSaveVideoGallery.click();
         }
 
-        //Настраиваем позицию пиктограмм
+        //Настраиваем позицию пиктограмм (тема Uni2)
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
         uniThemeSettings.tab_ProductList.click();
         uniThemeSettings.fieldOfPictogramPosition_Grid.selectOptionByValue("position_2");
@@ -45,6 +45,8 @@ public class TestCaseThree extends TestRunner {
         uniThemeSettings.fieldOfPictogramPosition_CompactList.selectOptionByValue("position_1"); //Позиции 2 у этого списка нет
         uniThemeSettings.tab_Product.hover().click();
         uniThemeSettings.fieldOfPictogramPosition_Product.selectOptionByValue("position_2");
+        //Настраиваем Комбинации формаций изображений галереи товара
+        uniThemeSettings.setting_CombinationsOfProductGalleryImageFormations.selectOptionByValue("3");
         csCartSettings.button_Save.click();
 
         //Настраиваем блок с товарами
@@ -142,6 +144,14 @@ public class TestCaseThree extends TestRunner {
         selectLanguage_RTL();
         Selenide.sleep(2000);
         Selenide.screenshot("3155 ProdPage(RTL) - HorizontalIcons, RightColumn, ThreeColumned");
+        csCartSettings.shiftBrowserTab(0);
+        productSettings.productTemplate.selectOptionByValue("abt__ut2_cascade_gallery_template");
+        csCartSettings.navigateToStProductPage(5);
+        Selenide.sleep(2000);
+        Selenide.screenshot("3160 ProdPage - HorizontalIcons, RightColumn, CascadeGallery f3");
+        selectLanguage_RTL();
+        Selenide.sleep(2000);
+        Selenide.screenshot("3165 ProdPage(RTL) - HorizontalIcons, RightColumn, CascadeGallery f3");
     }
 
     @Test(priority = 3)

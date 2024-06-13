@@ -45,6 +45,12 @@ public class TestCaseTwo extends TestRunner {
         stickerSettings.setting_MaxNumber_LeftBottom.selectOptionByValue("3");
         stickerSettings.button_SaveSettings.click();
 
+        //Настраиваем Комбинации формаций изображений галереи товара (тема Uni2)
+        UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
+        uniThemeSettings.tab_Product.scrollIntoView(false).click();
+        uniThemeSettings.setting_CombinationsOfProductGalleryImageFormations.selectOptionByValue("2");
+        csCartSettings.button_Save.click();
+
         //Переходим на страницу редактирования товара
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.clickAndType_ProductSearch("Apple iPhone 14");
@@ -117,6 +123,14 @@ public class TestCaseTwo extends TestRunner {
         selectLanguage_RTL();
         Selenide.sleep(2000);
         Selenide.screenshot("2155 ProdPage(RTL) - HorizontalIcons, LeftRow, ThreeColumned");
+        csCartSettings.shiftBrowserTab(0);
+        productSettings.productTemplate.selectOptionByValue("abt__ut2_cascade_gallery_template");
+        csCartSettings.navigateToStProductPage(5);
+        Selenide.sleep(2000);
+        Selenide.screenshot("2160 ProdPage - HorizontalIcons, LeftRow, CascadeGallery f2");
+        selectLanguage_RTL();
+        Selenide.sleep(2000);
+        Selenide.screenshot("2165 ProdPage(RTL) - HorizontalIcons, LeftRow, CascadeGallery f2");
     }
 
     @Test(priority = 3)

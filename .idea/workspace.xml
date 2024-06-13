@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Improved some code.">
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Added SoftAssert to the other three test-cases.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/UniThemeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/UniThemeSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseFour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseFour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseThree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +100,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestCaseThree">
+  <component name="RunManager" selected="TestNG.TestCaseTwo">
     <configuration name="Stickers/TestNG.xml" type="TestNG" temporary="true">
       <module name="Stickers" />
       <shortenClasspath name="NONE" />
@@ -169,10 +173,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TestCaseThree" />
         <item itemvalue="TestNG.TestCaseTwo" />
-        <item itemvalue="TestNG.TestCaseOne" />
         <item itemvalue="TestNG.TestCaseFour" />
+        <item itemvalue="TestNG.TestCaseThree" />
+        <item itemvalue="TestNG.TestCaseOne" />
         <item itemvalue="TestNG.Stickers/TestNG.xml" />
       </list>
     </recent_temporary>
@@ -431,14 +435,6 @@
       <option name="project" value="LOCAL" />
       <updated>1678200339225</updated>
     </task>
-    <task id="LOCAL-00036" summary="Added ReadMe file.&#10;Updated libraries at pom file.">
-      <option name="closed" value="true" />
-      <created>1717596737852</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1717596737852</updated>
-    </task>
     <task id="LOCAL-00037" summary="TestCaseOne is ready and adapted to 4.18.1.">
       <option name="closed" value="true" />
       <created>1717656451038</created>
@@ -543,7 +539,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718262797268</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Added SoftAssert to the other three test-cases.">
+      <option name="closed" value="true" />
+      <created>1718268875559</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1718268875559</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -558,7 +562,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added description to test-case 1." />
     <MESSAGE value="Added wish list to test-case 1." />
     <MESSAGE value="Added wish list and sticker description." />
     <MESSAGE value="Added wish list and sticker description with corresponding screenshots." />
@@ -583,6 +586,7 @@
     <MESSAGE value="Prepared SoftAsserts for the first test case." />
     <MESSAGE value="SoftAsserts for the first test-case are ready and work properly!" />
     <MESSAGE value="Improved some code." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved some code." />
+    <MESSAGE value="Added SoftAssert to the other three test-cases." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added SoftAssert to the other three test-cases." />
   </component>
 </project>

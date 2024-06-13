@@ -44,7 +44,7 @@ public class TestCaseOne extends TestRunner {
             videoGallerySettings.buttonSaveVideoGallery.click();
         }
 
-        //Настраиваем позицию пиктограмм
+        //Настраиваем позицию пиктограмм (тема Uni2)
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
         uniThemeSettings.tab_ProductList.click();
         uniThemeSettings.fieldOfPictogramPosition_Grid.selectOptionByValue("position_1");
@@ -223,6 +223,15 @@ public class TestCaseOne extends TestRunner {
         selectLanguage_RTL();
         Selenide.sleep(2000);
         Selenide.screenshot("1155 ProdPage(RTL) - VerticalIcons, LeftColumn, ThreeColumned");
+        csCartSettings.shiftBrowserTab(0);
+        productSettings.productTemplate.selectOptionByValue("abt__ut2_cascade_gallery_template");
+        csCartSettings.navigateToStProductPage(5);
+        Selenide.sleep(2000);
+        Selenide.screenshot("1160 ProdPage - VerticalIcons, LeftColumn, CascadeGallery");
+        selectLanguage_RTL();
+        Selenide.sleep(2000);
+        Selenide.screenshot("1165 ProdPage(RTL) - VerticalIcons, LeftColumn, CascadeGallery");
+
     }
     @Test(priority = 3)
     public void TestCaseOne_CategoryPage() {
