@@ -164,8 +164,8 @@ public class TestCaseThree extends TestRunner {
         //Смотрим окно Быстрого просмотра
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.click();
-        $(".ui-dialog-title").shouldBe(Condition.enabled).hover();
         Selenide.sleep(2000);
+        $(".ui-dialog-title").hover();
         //Проверяем, что присутствуют стикеры справа и вверху
         Assert.assertTrue($(".ut2-pb__items .ab-stickers-container__TR").exists(), "There are no stickers on the Top-Right side on quick view window!");
         //Проверяем, что присутствуют стикеры справа и внизу
@@ -200,8 +200,8 @@ public class TestCaseThree extends TestRunner {
         Selenide.screenshot("3230 Category(RTL) - HorizontalIcons, RightColumn, Grid");
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.click();
-        $(".ui-dialog-title").shouldBe(Condition.enabled).hover();
         Selenide.sleep(2000);
+        $(".ui-dialog-title").hover();
         Selenide.screenshot("3235 QuickView(RTL) - HorizontalIcons, RightColumn");
         stCategoryPage.button_CloseQuickView.hover().click();
     }

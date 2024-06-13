@@ -7,7 +7,7 @@ import org.testng.asserts.SoftAssert;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestRunner {
-    public static final String BASIC_URL = "https://abd-c2c90cd507.demos.abt.team/admin.php?dispatch=ab__stickers.manage";
+    public static final String BASIC_URL = "https://yavden.test.abt.team/4181mven_stickers/admin.php?dispatch=themes.manage";
     private SoftAssert softAssert;
 
     @BeforeClass
