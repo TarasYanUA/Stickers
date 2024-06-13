@@ -1,12 +1,12 @@
 import adminPanel.*;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import storefront.StCategoryPage;
 import storefront.StProductPage;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
+import org.testng.asserts.SoftAssert;
 
 /*
 ссылка на тест-кейс: https://docs.google.com/spreadsheets/d/1UdXKRCHxD7XP7W3UzDN28ff10LyiJPbZKrdvZllpUCU/edit#gid=1582514111
@@ -26,7 +26,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 
 public class TestCaseThree extends TestRunner {
-    @Test(priority=1)
+    @Test(priority = 1)
     public void TestCaseThree_ConfigureSettings() {
         //Включаем Горизонтальное отображение мини-иконок (Модуль "Видео галерея")
         CsCartSettings csCartSettings = new CsCartSettings();
@@ -80,21 +80,23 @@ public class TestCaseThree extends TestRunner {
         csCartSettings.cookieNotice();
     }
 
-    @Test(priority=2)
+    @Test(priority = 2)
     public void TestCaseThree_ProductPage() {
         StProductPage stProductPage = new StProductPage();
+        SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
+
         //Проверяем, что галерея мини-иконок горизонтальная
-        Assert.assertFalse($(".ab-vg-vertical-thumbnails").exists(), "Gallery of mini-icons is not Horizontal!");
+        softAssert.assertFalse($(".ab-vg-vertical-thumbnails").exists(), "Gallery of mini-icons is not Horizontal!");
         //Проверяем, что присутствуют стикеры справа и вверху
-        Assert.assertTrue($(".ab-stickers-container__TR").exists(), "There are no stickers on the Top-Right side!");
+        softAssert.assertTrue($(".ab-stickers-container__TR").exists(), "There are no stickers on the Top-Right side!");
         //Проверяем, что присутствуют стикеры справа и внизу
-        Assert.assertTrue($(".ab-stickers-container__BR").exists(), "There are no stickers on the Bottom-Right side!");
+        softAssert.assertTrue($(".ab-stickers-container__BR").exists(), "There are no stickers on the Bottom-Right side!");
         //Проверяем, что стикеры расположены в колонку
-        Assert.assertTrue($(".column-filling").exists(), "Position of stickers is not in Column!");
+        softAssert.assertTrue($(".column-filling").exists(), "Position of stickers is not in Column!");
         //Проверяем, что пиктограммы присутствуют
-        Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the product page!");
+        softAssert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the product page!");
         //Проверяем, что пиктограммы расположены в позиции 2
-        Assert.assertTrue($(".ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2!");
+        softAssert.assertTrue($(".ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2!");
         Selenide.sleep(2000);   //Паузы нужны, чтобы на скриншоте были видны стикеры
         Selenide.screenshot("3100 ProdPage - HorizontalIcons, RightColumn, DefaultTemplate");
         stProductPage.block_Popular.scrollTo();
@@ -142,22 +144,24 @@ public class TestCaseThree extends TestRunner {
         Selenide.screenshot("3155 ProdPage(RTL) - HorizontalIcons, RightColumn, ThreeColumned");
     }
 
-    @Test(priority=3)
+    @Test(priority = 3)
     public void TestCaseThree_CategoryPage(){
-        selectLanguage_RU();
         StCategoryPage stCategoryPage = new StCategoryPage();
+        SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
+
+        selectLanguage_RU();
         stCategoryPage.breadcrumbs_Phones.click();
         Selenide.sleep(2000);
         //Проверяем, что присутствуют стикеры справа и вверху
-        Assert.assertTrue($(".ab-stickers-container__TR").exists(), "There are no stickers on the Top-Right side on category page!");
+        softAssert.assertTrue($(".ab-stickers-container__TR").exists(), "There are no stickers on the Top-Right side on category page!");
         //Проверяем, что присутствуют стикеры справа и внизу
-        Assert.assertTrue($(".ab-stickers-container__BR").exists(), "There are no stickers on the Bottom-Right side on category page!");
+        softAssert.assertTrue($(".ab-stickers-container__BR").exists(), "There are no stickers on the Bottom-Right side on category page!");
         //Проверяем, что стикеры расположены в колонку
-        Assert.assertTrue($(".column-filling").exists(), "Position of stickers is not in Column on category page!");
+        softAssert.assertTrue($(".column-filling").exists(), "Position of stickers is not in Column on category page!");
         //Проверяем, что пиктограммы присутствуют
-        Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on category page!");
+        softAssert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on category page!");
         //Проверяем, что пиктограммы расположены в позиции 2
-        Assert.assertTrue($(".ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2 on category page!");
+        softAssert.assertTrue($(".ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2 on category page!");
         stCategoryPage.productInList.hover();
         Selenide.screenshot("3200 Category - HorizontalIcons, RightColumn, Grid");
 
@@ -167,15 +171,15 @@ public class TestCaseThree extends TestRunner {
         Selenide.sleep(2000);
         $(".ui-dialog-title").hover();
         //Проверяем, что присутствуют стикеры справа и вверху
-        Assert.assertTrue($(".ut2-pb__items .ab-stickers-container__TR").exists(), "There are no stickers on the Top-Right side on quick view window!");
+        softAssert.assertTrue($(".ut2-pb__items .ab-stickers-container__TR").exists(), "There are no stickers on the Top-Right side on quick view window!");
         //Проверяем, что присутствуют стикеры справа и внизу
-        Assert.assertTrue($(".ut2-pb__items .ab-stickers-container__BR").exists(), "There are no stickers on the Bottom-Right side on quick view window!");
+        softAssert.assertTrue($(".ut2-pb__items .ab-stickers-container__BR").exists(), "There are no stickers on the Bottom-Right side on quick view window!");
         //Проверяем, что стикеры расположены в колонку
-        Assert.assertTrue($(".ut2-pb__items .column-filling").exists(), "Position of stickers is not in Column on quick view window!");
+        softAssert.assertTrue($(".ut2-pb__items .column-filling").exists(), "Position of stickers is not in Column on quick view window!");
         //Проверяем, что пиктограммы присутствуют
-        Assert.assertTrue($(".ut2-pb__items .ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on quick view window!");
+        softAssert.assertTrue($(".ut2-pb__items .ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on quick view window!");
         //Проверяем, что пиктограммы расположены в позиции 2
-        Assert.assertTrue($(".ut2-pb__items .ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2 on quick view window!");
+        softAssert.assertTrue($(".ut2-pb__items .ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2 on quick view window!");
         Selenide.screenshot("3205 QuickView - HorizontalIcons, RightColumn");
         stCategoryPage.button_CloseQuickView.click();
         stCategoryPage.template_ListWithoutOptions.click();
@@ -183,9 +187,9 @@ public class TestCaseThree extends TestRunner {
         Selenide.screenshot("3210 Category - HorizontalIcons, RightColumn, ListWithoutOptions");
         stCategoryPage.template_CompactList.click();
         //Проверяем, что стикеры присутствуют
-        Assert.assertTrue($(".ab-stickers-container").exists(), "There is no stickers on category page as Compact list!");
+        softAssert.assertTrue($(".ab-stickers-container").exists(), "There is no stickers on category page as Compact list!");
         //Проверяем, что пиктограммы присутствуют
-        Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There is no pictograms on category page as Compact list!");
+        softAssert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There is no pictograms on category page as Compact list!");
         Selenide.sleep(2000);
         Selenide.screenshot("3215 Category - HorizontalIcons, RightColumn, CompactList");
         selectLanguage_RTL();
@@ -206,25 +210,27 @@ public class TestCaseThree extends TestRunner {
         stCategoryPage.button_CloseQuickView.hover().click();
     }
 
-    @Test(priority=4)
+    @Test(priority = 4)
     public void TestCaseThree_WishList(){
-        selectLanguage_RU();
         StCategoryPage stCategoryPage = new StCategoryPage();
+        SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
+
+        selectLanguage_RU();
         stCategoryPage.productInList.hover();
         stCategoryPage.button_AddToWishList.click();
         stCategoryPage.button_CloseWishListPopup.shouldBe(Condition.visible).click();
         stCategoryPage.button_WishListOnTop.click();
         Selenide.sleep(2000);
         ///Проверяем, что присутствуют стикеры справа и вверху
-        Assert.assertTrue($(".ab-stickers-container__TR").exists(), "There are no stickers on the Top-Right side on Wishlist page!");
+        softAssert.assertTrue($(".ab-stickers-container__TR").exists(), "There are no stickers on the Top-Right side on Wishlist page!");
         //Проверяем, что присутствуют стикеры справа и внизу
-        Assert.assertTrue($(".ab-stickers-container__BR").exists(), "There are no stickers on the Bottom-Right side on Wishlist page!");
+        softAssert.assertTrue($(".ab-stickers-container__BR").exists(), "There are no stickers on the Bottom-Right side on Wishlist page!");
         //Проверяем, что стикеры расположены в колонку
-        Assert.assertTrue($(".column-filling").exists(), "Position of stickers is not in Column on Wishlist page!");
+        softAssert.assertTrue($(".column-filling").exists(), "Position of stickers is not in Column on Wishlist page!");
         //Проверяем, что пиктограммы присутствуют
-        Assert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on Wishlist page!");
+        softAssert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on Wishlist page!");
         //Проверяем, что пиктограммы расположены в позиции 2
-        Assert.assertTrue($(".ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2 on Wishlist page!");
+        softAssert.assertTrue($(".ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2 on Wishlist page!");
         stCategoryPage.productInList.hover();
         Selenide.screenshot("3300 WishList - HorizontalIcons, RightColumn");
         selectLanguage_RTL();

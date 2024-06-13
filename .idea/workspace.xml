@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="SoftAsserts for the first test-case are ready and work properly!">
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Improved some code.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +96,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestCaseOne">
+  <component name="RunManager" selected="TestNG.TestCaseThree">
     <configuration name="Stickers/TestNG.xml" type="TestNG" temporary="true">
       <module name="Stickers" />
       <shortenClasspath name="NONE" />
@@ -169,10 +169,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TestCaseOne" />
-        <item itemvalue="TestNG.TestCaseFour" />
         <item itemvalue="TestNG.TestCaseThree" />
         <item itemvalue="TestNG.TestCaseTwo" />
+        <item itemvalue="TestNG.TestCaseOne" />
+        <item itemvalue="TestNG.TestCaseFour" />
         <item itemvalue="TestNG.Stickers/TestNG.xml" />
       </list>
     </recent_temporary>
@@ -535,7 +535,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718209599960</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Improved some code.">
+      <option name="closed" value="true" />
+      <created>1718262797268</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1718262797268</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -550,7 +558,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added asserts to some steps of the category page." />
     <MESSAGE value="Added description to test-case 1." />
     <MESSAGE value="Added wish list to test-case 1." />
     <MESSAGE value="Added wish list and sticker description." />
@@ -575,6 +582,7 @@
     <MESSAGE value="Test case Four is ready!" />
     <MESSAGE value="Prepared SoftAsserts for the first test case." />
     <MESSAGE value="SoftAsserts for the first test-case are ready and work properly!" />
-    <option name="LAST_COMMIT_MESSAGE" value="SoftAsserts for the first test-case are ready and work properly!" />
+    <MESSAGE value="Improved some code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved some code." />
   </component>
 </project>
