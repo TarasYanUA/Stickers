@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-public class CsCartSettings implements CheckMenuToBeActive{
+public class CsCartSettings implements CheckMenuToBeActive {
     public CsCartSettings(){super();}
     public SelenideElement button_Save = $(".btn.btn-primary.cm-submit");
     public SelenideElement popupWindow = $(".ui-dialog-title");

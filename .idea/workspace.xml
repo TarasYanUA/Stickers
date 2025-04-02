@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Added SoftAssert to the other three test-cases.">
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Added a new template of a product page to all test-cases.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/UniThemeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/UniThemeSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseFour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseFour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseThree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +56,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;TarasYanUA&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/TarasYanUA/Stickers.git&quot;,
+    &quot;accountId&quot;: &quot;51eb8828-6df6-4bb4-96b1-341c135a258d&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -80,6 +88,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TestNG.Stickers/TestNG.xml.executor&quot;: &quot;Run&quot;,
     &quot;TestNG.TestCaseFour.executor&quot;: &quot;Run&quot;,
     &quot;TestNG.TestCaseOne.executor&quot;: &quot;Run&quot;,
     &quot;TestNG.TestCaseThree.executor&quot;: &quot;Run&quot;,
@@ -88,7 +97,8 @@
     &quot;last_opened_file_path&quot;: &quot;E:/IDEA Projects/Deal of the day/Deal of the day/pom.xml&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -100,7 +110,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestCaseTwo">
+  <component name="RunManager" selected="TestNG.Stickers/TestNG.xml">
     <configuration name="Stickers/TestNG.xml" type="TestNG" temporary="true">
       <module name="Stickers" />
       <shortenClasspath name="NONE" />
@@ -165,19 +175,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.Stickers/TestNG.xml" />
       <item itemvalue="TestNG.TestCaseFour" />
       <item itemvalue="TestNG.TestCaseOne" />
       <item itemvalue="TestNG.TestCaseThree" />
       <item itemvalue="TestNG.TestCaseTwo" />
-      <item itemvalue="TestNG.Stickers/TestNG.xml" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TestCaseTwo" />
-        <item itemvalue="TestNG.TestCaseFour" />
+        <item itemvalue="TestNG.Stickers/TestNG.xml" />
         <item itemvalue="TestNG.TestCaseThree" />
         <item itemvalue="TestNG.TestCaseOne" />
-        <item itemvalue="TestNG.Stickers/TestNG.xml" />
+        <item itemvalue="TestNG.TestCaseTwo" />
+        <item itemvalue="TestNG.TestCaseFour" />
       </list>
     </recent_temporary>
   </component>
@@ -435,14 +445,6 @@
       <option name="project" value="LOCAL" />
       <updated>1678200339225</updated>
     </task>
-    <task id="LOCAL-00037" summary="TestCaseOne is ready and adapted to 4.18.1.">
-      <option name="closed" value="true" />
-      <created>1717656451038</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1717656451038</updated>
-    </task>
     <task id="LOCAL-00038" summary="Fixed Selenide code for the class 'StickerSettings'.">
       <option name="closed" value="true" />
       <created>1717663369355</created>
@@ -547,7 +549,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718268875559</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Added a new template of a product page to all test-cases.">
+      <option name="closed" value="true" />
+      <created>1718272172706</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1718272172706</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -562,7 +572,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added wish list to test-case 1." />
     <MESSAGE value="Added wish list and sticker description." />
     <MESSAGE value="Added wish list and sticker description with corresponding screenshots." />
     <MESSAGE value="Removed sticker description with its screenshots." />
@@ -587,6 +596,7 @@
     <MESSAGE value="SoftAsserts for the first test-case are ready and work properly!" />
     <MESSAGE value="Improved some code." />
     <MESSAGE value="Added SoftAssert to the other three test-cases." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added SoftAssert to the other three test-cases." />
+    <MESSAGE value="Added a new template of a product page to all test-cases." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a new template of a product page to all test-cases." />
   </component>
 </project>
