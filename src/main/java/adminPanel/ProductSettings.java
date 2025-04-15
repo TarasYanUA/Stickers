@@ -2,6 +2,7 @@ package adminPanel;
 
 import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class ProductSettings {
     public ProductSettings(){super();}
@@ -22,10 +23,6 @@ public class ProductSettings {
     public void clickAndType_ProductSearch(String value){
         field_productSearch.click();
         field_productSearch.sendKeys(value);
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        sleep(3000);
     }
 }

@@ -161,7 +161,7 @@ public class TestCase_1 extends TestRunner {
         SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
 
         csCartSettings.navigateToSection_Products();
-        csCartSettings.clickAndType_SearchFieldOfProduct("Apple iPhone 14");
+        productSettings.clickAndType_ProductSearch("Apple iPhone 14");
         csCartSettings.chooseAnyProduct();
         StProductPage stProductPage = csCartSettings.navigateToStProductPage(1);
 

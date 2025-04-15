@@ -60,7 +60,6 @@ public class CsCartSettings implements CheckMenuToBeActive {
     //Меню "Товары --Товары и Категории"
     SelenideElement menu_Products = $("a[href$='dispatch=products.manage'].main-menu-1__link");
     SelenideElement section_Products = $(By.id("products_products"));
-    SelenideElement searchFieldOfProduct = $("input[form='search_filters_form']");
     SelenideElement chooseAnyProduct = $(".products-list__image");
     public SelenideElement gearWheelOnTop = $(".nav__actions-bar .dropdown-icon--tools");
     SelenideElement button_Preview = $x("//ul[@class='dropdown-menu']//a[contains(text(), 'Предпросмотр')]");
@@ -72,12 +71,6 @@ public class CsCartSettings implements CheckMenuToBeActive {
         checkMenuToBeActive("dispatch=products.manage", menu_Products);
         section_Products.click();
         return new ProductSettings();
-    }
-
-    public void clickAndType_SearchFieldOfProduct(String value) {
-        searchFieldOfProduct.click();
-        searchFieldOfProduct.sendKeys(value);
-        sleep(3000);
     }
 
     public void chooseAnyProduct() {

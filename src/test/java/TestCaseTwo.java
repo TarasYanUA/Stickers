@@ -49,7 +49,7 @@ public class TestCaseTwo extends TestRunner {
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
         uniThemeSettings.tab_Product.scrollIntoView(false).click();
         uniThemeSettings.setting_CombinationsOfProductGalleryImageFormations.selectOptionByValue("2");
-        csCartSettings.button_Save.click();
+        csCartSettings.saveSettings();
 
         //Переходим на страницу редактирования товара
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
