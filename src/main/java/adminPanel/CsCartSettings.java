@@ -4,27 +4,38 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
+import storefront.StCategoryPage;
+import storefront.StProductPage;
+
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class CsCartSettings implements CheckMenuToBeActive {
-    public CsCartSettings(){super();}
+    public CsCartSettings() {
+        super();
+    }
+
     public SelenideElement button_Save = $(".btn.btn-primary.cm-submit");
     public SelenideElement popupWindow = $(".ui-dialog-title");
 
-    public void cookieNotice(){
-        $(".cookie-notice").shouldBe(Condition.interactable);
-        $(".cm-btn-success").click();
+    public void cookieNotice() {
+        if ($(".cookie-notice").exists()){
+            $(".cookie-notice").shouldBe(Condition.interactable);
+            $(".cm-btn-success").click();
+        }
     }
 
-    public void shiftBrowserTab(int tabNumber){
-        getWebDriver().getWindowHandle(); switchTo().window(tabNumber);
+    public void shiftBrowserTab(int tabNumber) {
+        getWebDriver().getWindowHandle();
+        switchTo().window(tabNumber);
     }
 
     //Меню "Веб-сайт -- Темы -- Макеты"
-    private SelenideElement menu_Website = $("a[href$='dispatch=themes.manage'].main-menu-1__link");
-    private SelenideElement section_Themes = $("#website_themes");
-    private SelenideElement sectionLayouts = $(".nav__actions-bar a[href$='block_manager.manage']");
+    SelenideElement menu_Website = $("a[href$='dispatch=themes.manage'].main-menu-1__link");
+    SelenideElement section_Themes = $("#website_themes");
+    SelenideElement sectionLayouts = $(".nav__actions-bar a[href$='block_manager.manage']");
     public SelenideElement layout_TabProducts = $x("//a[contains(@href, 'selected_location')][text()='Товары']");
     public SelenideElement layout_GearwheelOfBlockPopular = $x("//div[@title=\"Самые популярные\"]/..//div[contains(@class, 'bm-action-properties')]");
     public SelenideElement layout_GearwheelOfBlockHits = $x("//div[@title=\"Распродажа\"]/..//div[contains(@class, 'bm-action-properties')]");
@@ -39,38 +50,73 @@ public class CsCartSettings implements CheckMenuToBeActive {
         section_Themes.click();
         sectionLayouts.click();
     }
-    public void clickAndType_Layout_FieldMaxLimit(){
+
+    public void clickAndType_Layout_FieldMaxLimit() {
         layout_FieldMaxLimit.click();
         layout_FieldMaxLimit.clear();
         layout_FieldMaxLimit.setValue("4");
     }
 
-    //Меню "Товары --Товары"
-    private SelenideElement menu_Products = $("a[href$='dispatch=products.manage'].main-menu-1__link");
-    private SelenideElement section_Products = $(By.id("products_products"));
+    //Меню "Товары --Товары и Категории"
+    SelenideElement menu_Products = $("a[href$='dispatch=products.manage'].main-menu-1__link");
+    SelenideElement section_Products = $(By.id("products_products"));
+    SelenideElement searchFieldOfProduct = $("input[form='search_filters_form']");
+    SelenideElement chooseAnyProduct = $(".products-list__image");
+    public SelenideElement gearWheelOnTop = $(".nav__actions-bar .dropdown-icon--tools");
+    SelenideElement button_Preview = $x("//ul[@class='dropdown-menu']//a[contains(text(), 'Предпросмотр')]");
+    SelenideElement section_Categories = $(By.id("products_categories"));
+    public SelenideElement statusActive_Category = $("#elm_category_status_0_a");
+    public SelenideElement button_ViewProducts = $("a[href*='products.manage&cid']");
 
-    public ProductSettings navigateToSection_Products(){
+    public ProductSettings navigateToSection_Products() {
         checkMenuToBeActive("dispatch=products.manage", menu_Products);
         section_Products.click();
         return new ProductSettings();
     }
 
-    //Меню "Товары -- Категории"
-    private SelenideElement section_Categories = $(By.id("products_categories"));
-    public SelenideElement statusActive_Category = $("#elm_category_status_0_a");
-    public SelenideElement gearWheelOnTop = $(".dropdown-icon--tools");
-    public SelenideElement button_Preview = $x("//a[contains(text(), 'Предпросмотр')]");
-    public SelenideElement button_ViewProducts = $("a[href*='products.manage&cid']");
+    public void clickAndType_SearchFieldOfProduct(String value) {
+        searchFieldOfProduct.click();
+        searchFieldOfProduct.sendKeys(value);
+        sleep(3000);
+    }
 
-    public void navigateToSection_Categories(){
+    public void chooseAnyProduct() {
+        chooseAnyProduct.shouldBe(Condition.appear, Duration.ofSeconds(8));
+        chooseAnyProduct.click();
+    }
+
+    public StProductPage navigateToStProductPage(int tabNumber) {
+        if ($(".cm-notification-close").exists()) {
+            $(".cm-notification-close").click();
+        }
+        gearWheelOnTop.click();
+        button_Preview.click();
+        shiftBrowserTab(tabNumber);
+        cookieNotice();
+        return new StProductPage();
+    }
+
+    public void navigateToSection_Categories() {
         checkMenuToBeActive("dispatch=products.manage", menu_Products);
         section_Categories.click();
     }
 
+    public StCategoryPage navigateToStCategoryPage(int tabNumber) {
+        if ($(".cm-notification-close").exists()) {
+            $(".cm-notification-close").click();
+        }
+        gearWheelOnTop.click();
+        button_Preview.click();
+        shiftBrowserTab(tabNumber);
+        cookieNotice();
+        return new StCategoryPage();
+    }
+
+
     //Меню "Настройки -- Общие настройки"
-    private SelenideElement menu_Settings = $("#administration");
-    private SelenideElement section_GeneralSettings = $("a[href$='section_id=General']");
-    private SelenideElement section_Appearance = $("a[href*='section_id=Appearance']");
+    SelenideElement menu_Settings = $("#administration");
+    SelenideElement section_GeneralSettings = $("a[href$='section_id=General']");
+    SelenideElement section_Appearance = $("a[href*='section_id=Appearance']");
     public SelenideElement settingMiniThumbnailAsGallery = $("#field___thumbnails_gallery_147");
     public SelenideElement settingQuickView = $x("//input[contains(@id, 'field___enable_quick_view_')]");
 
@@ -91,38 +137,40 @@ public class CsCartSettings implements CheckMenuToBeActive {
     public SelenideElement menuOFVideoGalleryAddon = $("tr#addon_ab__video_gallery button.btn.dropdown-toggle");
     public SelenideElement sectionVideoGalleryGeneralSettings = $("tr#addon_ab__video_gallery a[href*='selected_section=settings']");
 
-    private void navigateTo_DownloadedAddonsPage() {
+    void navigateTo_DownloadedAddonsPage() {
         checkMenuToBeActive("dispatch=addons.manage", menu_Addons);
         section_DownloadedAddons.click();
     }
-    public UniThemeSettings navigateToUniThemeSettings(){
+
+    public UniThemeSettings navigateToUniThemeSettings() {
         navigateTo_DownloadedAddonsPage();
         menuOfUniTheme.click();
         sectionThemeSettings.click();
         return new UniThemeSettings();
     }
-    public StickerSettings navigateToStickerSettingsPage(){
+
+    public StickerSettings navigateToStickerSettingsPage() {
         navigateTo_DownloadedAddonsPage();
         menuOfStickerAddon.click();
         sectionStickerSettings.click();
         return new StickerSettings();
     }
-    public void navigateToStickerListPage(){
+
+    public void navigateToStickerListPage() {
         navigateTo_DownloadedAddonsPage();
         menuOfStickerAddon.click();
         sectionStickerList.click();
     }
-    public VideoGallerySettings navigateToVideoGalleryPage(){
+
+    public VideoGallerySettings navigateToVideoGalleryPage() {
         navigateTo_DownloadedAddonsPage();
         menuOFVideoGalleryAddon.click();
         sectionVideoGalleryGeneralSettings.click();
         return new VideoGallerySettings();
     }
-    public void navigateToStProductPage(int tabNumber){
+
+    public void saveSettings() {
         button_Save.click();
-        Selenide.sleep(2000);
-        gearWheelOnTop.click();
-        button_Preview.click();
-        getWebDriver().getWindowHandle(); switchTo().window(tabNumber);
+        Selenide.sleep(1500);
     }
 }

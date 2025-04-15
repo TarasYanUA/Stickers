@@ -1,7 +1,7 @@
 <suite name="Stickers">
     <test name="Test-cases for the add-on 'Stickers'">
         <classes>
-            <class name="TestCaseOne" />
+            <class name="TestCase_1" />
             <class name="TestCaseTwo" />
             <class name="TestCaseThree" />
             <class name="TestCaseFour" />

@@ -1,21 +1,28 @@
 package adminPanel;
 
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
+
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class StickerSettings {
-    public StickerSettings(){super();}
-    public SelenideElement sticker_Promotion = $("a[href*='sticker_id=11']");
-    public SelenideElement sticker_SaleOrange = $("a[href*='sticker_id=14']");
-    public SelenideElement sticker_PopularProduct = $("a[href*='sticker_id=18']");
-    public SelenideElement sticker_TopRated = $("a[href*='sticker_id=10']");
-    public SelenideElement sticker_Free_Delivery = $("a[href*='sticker_id=19']");
-    public SelenideElement sticker_Weight = $("a[href*='sticker_id=20']");
+    public StickerSettings() {
+        super();
+    }
+
+    public SelenideElement sticker_Promotion = $("a[href*='sticker_id=22']");       //Стикер "Акция" (красный цвет)
+    public SelenideElement sticker_SaleOrange = $("a[href*='sticker_id=7']");       //Стикер "Sale > 10% < 30%" (оранжевый цвет)
+    public SelenideElement sticker_PopularProduct = $("a[href*='sticker_id=19']");  //Стикер "Популярный" (фиолетовый цвет)
+    public SelenideElement sticker_TopRated = $("a[href*='sticker_id=21']");        //Стикер "Высокий рейтинг" (оранжевый цвет)
+    public SelenideElement sticker_Free_Delivery = $("a[href*='sticker_id=26']");   //Стикер "Бесплатная доставка" (цвет сине-белый)
+    public SelenideElement sticker_Weight = $("a[href*='sticker_id=29']");          //Стикер "Вес" (цвет серый)
 
     public SelenideElement tab_Settings = $("#settings");
     public SelenideElement tab_Pictograms = $("#ab__stickers_pictograms");
     public SelenideElement tab_Conditions = $("#conditions");
-    public SelenideElement tab_DisplayOn = $("#display_on");
+    SelenideElement tab_Display = $("#display");
+
     public SelenideElement setting_OutputPosition = $("select[id*='addon_option_ab__stickers_output_position']");
     public SelenideElement setting_OutputType_LeftTop = $("#ab__stickers_TL");
     public SelenideElement setting_MaxNumber_LeftTop = $("#ab__stickers_TL_max_count");
@@ -25,11 +32,8 @@ public class StickerSettings {
     public SelenideElement setting_MaxNumber_RightTop = $("#ab__stickers_TR_max_count");
     public SelenideElement setting_OutputType_RightBottom = $("#ab__stickers_BR");
     public SelenideElement setting_MaxNumber_RightBottom = $("#ab__stickers_BR_max_count");
-    public SelenideElement setting_PositionsInProductLists = $("#ab__stickers_output_position_list");
-    public SelenideElement setting_PositionsOnProductPage = $("#ab__stickers_output_position_detailed_page");
     public SelenideElement setting_AppearanceOfPictograms = $("select[id*=addon_option_ab__stickers_p_appearance]");
 
-    public SelenideElement displayOn_ShortList = $("select[id='ab__stickers_display_on_blocks_products_short_list_tpl']");
     public SelenideElement statusActive = $("input[id^='ab__stickers_status_'][id$='_a']");
     public SelenideElement button_SaveSettings = $(".cm-addons-save-settings");
     public SelenideElement button_SaveSticker = $(".cm-submit.btn-primary");
@@ -44,7 +48,46 @@ public class StickerSettings {
     public SelenideElement fieldOfOperator = $("select[name*='sticker_data'][id*='sticker_condition_operator']");
     public SelenideElement fieldOfPriceCondition = $("input[name*='sticker_data'].input-medium");
 
-    public void clickAndType_PriceCondition(String value){
+    SelenideElement productPage_DisplayPlace = $(By.id("ab__stickers_display_place_detailed_page"));
+    SelenideElement productPage_Position = $(By.id("ab__stickers_output_position_detailed_page"));
+    SelenideElement productPage_Size = $(By.id("ab__stickers_display_on_detailed_page"));
+    SelenideElement grid_DisplayPlace = $(By.id("ab__stickers_display_place_blocks_products_products_multicolumns_tpl"));
+    SelenideElement grid_Position = $(By.id("ab__stickers_output_position_blocks_products_products_multicolumns_tpl"));
+    SelenideElement grid_Size = $(By.id("ab__stickers_display_on_blocks_products_products_multicolumns_tpl"));
+    SelenideElement gridMore_DisplayPlace = $(By.id("ab__stickers_display_place_blocks_products_ab__grid_list_tpl"));
+    SelenideElement gridMore_Position = $(By.id("ab__stickers_output_position_blocks_products_ab__grid_list_tpl"));
+    SelenideElement gridMore_Size = $(By.id("ab__stickers_display_on_blocks_products_ab__grid_list_tpl"));
+    SelenideElement scrollerAdvanced_DisplayPlace = $(By.id("ab__stickers_display_place_blocks_products_products_scroller_advanced_tpl"));
+    SelenideElement scrollerAdvanced_Position = $(By.id("ab__stickers_output_position_blocks_products_products_scroller_advanced_tpl"));
+    SelenideElement scrollerAdvanced_Size = $(By.id("ab__stickers_display_on_blocks_products_products_scroller_advanced_tpl"));
+    SelenideElement extendedPromotions_DisplayPlace = $(By.id("ab__stickers_display_place_addons_ab__deal_of_the_day_blocks_ab__deal_of_the_day_tpl"));
+    SelenideElement extendedPromotions_Size = $(By.id("ab__stickers_display_on_addons_ab__deal_of_the_day_blocks_ab__deal_of_the_day_tpl"));
+
+    public void setSettingsAt_DisplayTab(String placeValue, String positionValue, String sizeValue) {
+        executeJavaScript("window.scrollTo(0, 0);");
+        tab_Display.click();
+        productPage_DisplayPlace.selectOptionByValue(placeValue);
+        if (productPage_Position.exists())
+            productPage_Position.selectOptionByValue(positionValue);
+        productPage_Size.selectOptionByValue(sizeValue);
+
+        grid_DisplayPlace.selectOptionByValue(placeValue);
+        grid_Position.selectOptionByValue(positionValue);
+        grid_Size.selectOptionByValue(sizeValue);
+
+        gridMore_DisplayPlace.selectOptionByValue(placeValue);
+        gridMore_Position.selectOptionByValue(positionValue);
+        gridMore_Size.selectOptionByValue(sizeValue);
+
+        scrollerAdvanced_DisplayPlace.selectOptionByValue(placeValue);
+        scrollerAdvanced_Position.selectOptionByValue(positionValue);
+        scrollerAdvanced_Size.selectOptionByValue(sizeValue);
+
+        extendedPromotions_DisplayPlace.selectOptionByValue(placeValue);
+        extendedPromotions_Size.selectOptionByValue(sizeValue);
+    }
+
+    public void clickAndType_PriceCondition(String value) {
         fieldOfPriceCondition.click();
         fieldOfPriceCondition.clear();
         fieldOfPriceCondition.sendKeys(value);

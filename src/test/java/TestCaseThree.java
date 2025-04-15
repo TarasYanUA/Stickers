@@ -107,7 +107,7 @@ public class TestCaseThree extends TestRunner {
         stProductPage.block_Hits.scrollIntoView("{behavior: \"instant\", block: \"center\", inline: \"center\"}").click();
         Selenide.sleep(2000);
         Selenide.screenshot("3110 BlockHits - HorizontalIcons, RightColumn, Grid");
-        selectLanguage_RTL();
+        shiftLanguage("ar");
         Selenide.sleep(2000);
         Selenide.screenshot("3115 ProdPage(RTL) - HorizontalIcons, RightColumn, DefaultTemplate");
         stProductPage.block_Popular.scrollTo();
@@ -125,7 +125,7 @@ public class TestCaseThree extends TestRunner {
         csCartSettings.navigateToStProductPage(2);
         Selenide.sleep(2000);
         Selenide.screenshot("3130 ProdPage - HorizontalIcons, RightColumn, BigPictureTemplate");
-        selectLanguage_RTL();
+        shiftLanguage("ar");
         Selenide.sleep(2000);
         Selenide.screenshot("3135 ProdPage(RTL) - HorizontalIcons, RightColumn, BigPictureTemplate");
         csCartSettings.shiftBrowserTab(0);
@@ -133,7 +133,7 @@ public class TestCaseThree extends TestRunner {
         csCartSettings.navigateToStProductPage(3);
         Selenide.sleep(2000);
         Selenide.screenshot("3140 ProdPage - HorizontalIcons, RightColumn, BigPictureFlatTemplate");
-        selectLanguage_RTL();
+        shiftLanguage("ar");
         Selenide.sleep(2000);
         Selenide.screenshot("3145 ProdPage(RTL) - HorizontalIcons, RightColumn, BigPictureFlatTemplate");
         csCartSettings.shiftBrowserTab(0);
@@ -141,7 +141,7 @@ public class TestCaseThree extends TestRunner {
         csCartSettings.navigateToStProductPage(4);
         Selenide.sleep(2000);
         Selenide.screenshot("3150 ProdPage - HorizontalIcons, RightColumn, ThreeColumned");
-        selectLanguage_RTL();
+        shiftLanguage("ar");
         Selenide.sleep(2000);
         Selenide.screenshot("3155 ProdPage(RTL) - HorizontalIcons, RightColumn, ThreeColumned");
         csCartSettings.shiftBrowserTab(0);
@@ -149,7 +149,7 @@ public class TestCaseThree extends TestRunner {
         csCartSettings.navigateToStProductPage(5);
         Selenide.sleep(2000);
         Selenide.screenshot("3160 ProdPage - HorizontalIcons, RightColumn, CascadeGallery f3");
-        selectLanguage_RTL();
+        shiftLanguage("ar");
         Selenide.sleep(2000);
         Selenide.screenshot("3165 ProdPage(RTL) - HorizontalIcons, RightColumn, CascadeGallery f3");
     }
@@ -159,7 +159,7 @@ public class TestCaseThree extends TestRunner {
         StCategoryPage stCategoryPage = new StCategoryPage();
         SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
 
-        selectLanguage_RU();
+        shiftLanguage("ru");
         stCategoryPage.breadcrumbs_Phones.click();
         Selenide.sleep(2000);
         //Проверяем, что присутствуют стикеры справа и вверху
@@ -202,7 +202,7 @@ public class TestCaseThree extends TestRunner {
         softAssert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There is no pictograms on category page as Compact list!");
         Selenide.sleep(2000);
         Selenide.screenshot("3215 Category - HorizontalIcons, RightColumn, CompactList");
-        selectLanguage_RTL();
+        shiftLanguage("ar");
         Selenide.sleep(2000);
         Selenide.screenshot("3220 Category(RTL) - HorizontalIcons, RightColumn, CompactList");
         stCategoryPage.template_ListWithoutOptions.click();
@@ -225,7 +225,7 @@ public class TestCaseThree extends TestRunner {
         StCategoryPage stCategoryPage = new StCategoryPage();
         SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
 
-        selectLanguage_RU();
+        shiftLanguage("ru");
         stCategoryPage.productInList.hover();
         stCategoryPage.button_AddToWishList.click();
         stCategoryPage.button_CloseWishListPopup.shouldBe(Condition.visible).click();
@@ -243,7 +243,7 @@ public class TestCaseThree extends TestRunner {
         softAssert.assertTrue($(".ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2 on Wishlist page!");
         stCategoryPage.productInList.hover();
         Selenide.screenshot("3300 WishList - HorizontalIcons, RightColumn");
-        selectLanguage_RTL();
+        shiftLanguage("ar");
         Selenide.sleep(2000);
         stCategoryPage.productInList.hover();
         Selenide.screenshot("3305 WishList(RTL) - HorizontalIcons, RightColumn");

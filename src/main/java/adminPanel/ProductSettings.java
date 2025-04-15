@@ -8,11 +8,11 @@ public class ProductSettings {
 
     public SelenideElement statusActive_Product = $("#elm_product_status_0_a");
     public SelenideElement field_ListPrice = $("#elm_list_price");
-    public SelenideElement field_productSearch = $("input[form='search_filters_form']");
+    SelenideElement field_productSearch = $("input[form='search_filters_form']");
     public SelenideElement productTemplate = $("#elm_details_layout");
     public SelenideElement tab_General = $("#detailed");
     public SelenideElement tab_Shippings = $("#shippings");
-    public  SelenideElement field_ProductWeight = $("#product_weight");
+    SelenideElement field_ProductWeight = $("#product_weight");
 
     public void clickAndType_ProductWeight(String value){
         field_ProductWeight.click();
@@ -23,7 +23,7 @@ public class ProductSettings {
         field_productSearch.click();
         field_productSearch.sendKeys(value);
         try {
-            Thread.sleep(2000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
