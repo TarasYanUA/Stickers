@@ -1,16 +1,19 @@
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestRunner {
-    public static final String BASIC_URL = "https://trs.test.abt.team/4181mvru/admin.php?dispatch=addons.manage";
+    public static final String BASIC_URL = "https://abd-cf44bbfbfe.demos.abt.team/admin.php?dispatch=addons.manage";
     private SoftAssert softAssert;
 
-    @BeforeClass
+    @BeforeMethod
     public void openBrowser() {
         Configuration.browser = "chrome";
         open(BASIC_URL);
@@ -25,7 +28,7 @@ public class TestRunner {
         $("#bp_off_bottom_panel").click();
     }
 
-    @AfterClass
+    @AfterMethod
     public void closeBrowser() {
         softAssert = CollectAssertMessages.getSoftAssertions();
         try {
@@ -35,22 +38,22 @@ public class TestRunner {
             System.out.println(e.getMessage());
         }
 
+        sleep(2000);
         Selenide.closeWebDriver();
     }
 
-    public void selectLanguage_RTL() {
+    public void shiftLanguage(String arRu) {
         $("a[id*='_wrap_language_']").hover().click();
-        $(".ty-select-block__list-item a[data-ca-name='ar']").click();
+        $(".ty-select-block__list-item a[data-ca-name='" + arRu + "']").click();
     }
-    public void selectLanguage_RU() {
-        $("a[id*='_wrap_language_']").hover().click();
-        $(".ty-select-block__list-item a[data-ca-name='ru']").click();
+
+    public void takeScreenshot(String screenName) {
+        sleep(4000);
+        screenshot(screenName);
     }
-    public void makePause(){
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
+    public void waitForSpinnerDisappear() {
+        $("div#ajax_loading_box").shouldBe(Condition.disappear, Duration.ofSeconds(10));
+        Selenide.sleep(1000);
     }
 }

@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Added a new template of a product page to all test-cases.">
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Updated pom.xml file.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/storefront/StCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/StCategoryPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCaseOne.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +47,7 @@
           <entry type="LOCAL">
             <value>
               <list>
-                <branch-info repo="$PROJECT_DIR$" source="4.18.1b" />
+                <branch-info repo="$PROJECT_DIR$" source="v3.0.0" />
               </list>
             </value>
           </entry>
@@ -51,7 +56,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="4.18.1b" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -83,24 +88,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;TestNG.Stickers/TestNG.xml.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.TestCaseFour.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.TestCaseOne.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.TestCaseThree.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.TestCaseTwo.executor&quot;: &quot;Run&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/IDEA Projects/Deal of the day/Deal of the day/pom.xml&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.Stickers/TestNG.xml.executor": "Run",
+    "TestNG.TestCaseFour.executor": "Run",
+    "TestNG.TestCaseOne.TestCaseOne_CategoryPage_WishList.executor": "Run",
+    "TestNG.TestCaseOne.TestCaseOne_ProductPage.executor": "Run",
+    "TestNG.TestCaseOne.executor": "Run",
+    "TestNG.TestCaseThree.executor": "Run",
+    "TestNG.TestCaseTwo.executor": "Run",
+    "git-widget-placeholder": "v3.0.0",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/IDEA Projects/UniTheme2_Mobile/pom.xml",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -110,7 +119,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Stickers/TestNG.xml">
+  <component name="RunManager" selected="TestNG.TestCaseOne">
     <configuration name="Stickers/TestNG.xml" type="TestNG" temporary="true">
       <module name="Stickers" />
       <shortenClasspath name="NONE" />
@@ -130,10 +139,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCaseFour" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCaseOne" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCaseFour" />
+      <option name="MAIN_CLASS_NAME" value="TestCaseOne" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -141,11 +150,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCaseOne" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCaseOne.TestCaseOne_CategoryPage_WishList" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestCaseOne" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="METHOD_NAME" value="TestCaseOne_CategoryPage_WishList" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCaseOne.TestCaseOne_ProductPage" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Stickers" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCaseOne" />
+      <option name="METHOD_NAME" value="TestCaseOne_ProductPage" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -163,31 +185,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCaseTwo" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Stickers" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCaseTwo" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="TestNG.TestCaseOne.TestCaseOne_CategoryPage_WishList" />
+      <item itemvalue="TestNG.TestCaseOne.TestCaseOne_ProductPage" />
       <item itemvalue="TestNG.Stickers/TestNG.xml" />
-      <item itemvalue="TestNG.TestCaseFour" />
       <item itemvalue="TestNG.TestCaseOne" />
       <item itemvalue="TestNG.TestCaseThree" />
-      <item itemvalue="TestNG.TestCaseTwo" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.TestCaseOne" />
+        <item itemvalue="TestNG.TestCaseOne.TestCaseOne_CategoryPage_WishList" />
+        <item itemvalue="TestNG.TestCaseOne.TestCaseOne_ProductPage" />
         <item itemvalue="TestNG.Stickers/TestNG.xml" />
         <item itemvalue="TestNG.TestCaseThree" />
-        <item itemvalue="TestNG.TestCaseOne" />
-        <item itemvalue="TestNG.TestCaseTwo" />
-        <item itemvalue="TestNG.TestCaseFour" />
       </list>
     </recent_temporary>
   </component>
@@ -445,14 +456,6 @@
       <option name="project" value="LOCAL" />
       <updated>1678200339225</updated>
     </task>
-    <task id="LOCAL-00038" summary="Fixed Selenide code for the class 'StickerSettings'.">
-      <option name="closed" value="true" />
-      <created>1717663369355</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1717663369355</updated>
-    </task>
     <task id="LOCAL-00039" summary="TestCaseTwo is ready and adapted!">
       <option name="closed" value="true" />
       <created>1717664161077</created>
@@ -557,7 +560,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718272172706</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Updated pom.xml file.">
+      <option name="closed" value="true" />
+      <created>1743595688558</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1743595688558</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -572,7 +583,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added wish list and sticker description." />
     <MESSAGE value="Added wish list and sticker description with corresponding screenshots." />
     <MESSAGE value="Removed sticker description with its screenshots." />
     <MESSAGE value="Starts working with test-case 2." />
@@ -597,6 +607,28 @@
     <MESSAGE value="Improved some code." />
     <MESSAGE value="Added SoftAssert to the other three test-cases." />
     <MESSAGE value="Added a new template of a product page to all test-cases." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a new template of a product page to all test-cases." />
+    <MESSAGE value="Updated pom.xml file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated pom.xml file." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
