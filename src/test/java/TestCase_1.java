@@ -105,7 +105,7 @@ public class TestCase_1 extends TestRunner {
         stickerSettings.button_SaveSticker.click();
         stickerSettings.gearWheel.click();
         stickerSettings.generateStickerLinks.click();
-        Selenide.sleep(2000);
+        Selenide.sleep(3000);
 
         //Три нижних стикера
         //Стикер "Высокий рейтинг" (оранжевый цвет)
@@ -126,7 +126,7 @@ public class TestCase_1 extends TestRunner {
         stickerSettings.button_SaveSticker.click();
         stickerSettings.gearWheel.click();
         stickerSettings.generateStickerLinks.click();
-        Selenide.sleep(2000);
+        Selenide.sleep(3000);
         //Стикер "Вес" (цвет серый)
         stickerSettings.abMenu_dropDownToggle.shouldBe(Condition.interactable).click();
         stickerSettings.abMenu_StickerList.click();
@@ -270,7 +270,7 @@ public class TestCase_1 extends TestRunner {
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.hover().click();
         waitForSpinnerDisappear();
-        $(".ui-dialog-title").hover();
+        $(".ui-dialog-title").shouldBe(Condition.visible).hover();
 
         //Проверяем, что присутствуют стикеры слева и вверху
         softAssert.assertTrue($(".ut2-pb__items .ab-stickers-container__TL").exists(), "There are no stickers on the Top-Left side on quick view window!");
@@ -314,7 +314,7 @@ public class TestCase_1 extends TestRunner {
         stCategoryPage.productInList.hover();
         takeScreenshot("1230 Category(RTL) - VerticalIcons, LeftColumn, Grid");
         stCategoryPage.productInList.hover();
-        stCategoryPage.button_QuickView.click();
+        stCategoryPage.button_QuickView.hover().click();
         waitForSpinnerDisappear();
         $(".ui-dialog-title").hover();
         takeScreenshot("1235 QuickView(RTL) - VerticalIcons, LeftColumn");
@@ -327,7 +327,7 @@ public class TestCase_1 extends TestRunner {
         waitForSpinnerDisappear();
         stCategoryPage.button_CloseWishListPopup.shouldBe(Condition.visible).click();
         stCategoryPage.button_WishListOnTop.click();
-        Selenide.sleep(2000);
+        Selenide.sleep(3000);
 
         //Проверяем, что присутствуют стикеры слева и вверху
         softAssert.assertTrue($(".ab-stickers-container__TL").exists(), "There are no stickers on the Top-Left side on Wishlist page!");
@@ -347,7 +347,7 @@ public class TestCase_1 extends TestRunner {
         stCategoryPage.productInList.hover();
         takeScreenshot("1250 WishList - VerticalIcons, LeftColumn");
         shiftLanguage("ar");
-        Selenide.sleep(2000);
+        Selenide.sleep(3000);
         stCategoryPage.productInList.hover();
         takeScreenshot("1255 WishList(RTL) - VerticalIcons, LeftColumn");
     }
