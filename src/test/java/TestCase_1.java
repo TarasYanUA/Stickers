@@ -194,6 +194,7 @@ public class TestCase_1 extends TestRunner {
         $(".ab-stickers-container__product_labels").shouldBe(Condition.visible);
         takeScreenshot("1120 BlockPopular(RTL) - VerticalIcons, LeftColumn, GridWithButtonMore");
         stProductPage.block_Hits.scrollIntoCenter().click();
+        $(".ab-stickers-container__product_labels").shouldBe(Condition.visible);
         takeScreenshot("1125 BlockHits(RTL) - VerticalIcons, LeftColumn, AdvancedScroller");
 
         //Смотрим другие шаблоны страницы товара
@@ -316,9 +317,10 @@ public class TestCase_1 extends TestRunner {
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.hover().click();
         waitForSpinnerDisappear();
-        $(".ui-dialog-title").hover();
+        $(".ui-dialog-title").shouldBe(Condition.visible).hover();
         takeScreenshot("1235 QuickView(RTL) - VerticalIcons, LeftColumn");
         stCategoryPage.button_CloseQuickView.click();
+
 
         //Работаем на странице Избранных товаров
         shiftLanguage("ru");

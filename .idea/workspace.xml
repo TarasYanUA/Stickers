@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Adapted TestCase_1 to the newest add-on and theme versions.">
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Adapted TestCase_2 to the newest add-on and theme versions.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +109,7 @@
     "TestNG.TestCaseThree.executor": "Run",
     "TestNG.TestCaseTwo.executor": "Run",
     "TestNG.TestCase_2.executor": "Run",
+    "TestNG.TestCase_3.executor": "Run",
     "git-widget-placeholder": "v3.0.0",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/IDEA Projects/UniTheme2_Mobile/pom.xml",
@@ -126,26 +128,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestCase_2">
-    <configuration name="Stickers/TestNG.xml" type="TestNG" temporary="true">
-      <module name="Stickers" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/TestNG.xml" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.TestCase_3">
     <configuration name="TestCase_1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
@@ -192,20 +175,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestCase_3" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Stickers" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCase_3" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="TestNG.TestCase_3" />
       <item itemvalue="TestNG.TestCase_2" />
       <item itemvalue="TestNG.TestCase_1" />
       <item itemvalue="TestNG.TestCase_1.TestCaseOne_ProductPage" />
       <item itemvalue="TestNG.TestCase_1.TestCaseOne_CategoryPage_WishList" />
-      <item itemvalue="TestNG.Stickers/TestNG.xml" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.TestCase_3" />
         <item itemvalue="TestNG.TestCase_2" />
         <item itemvalue="TestNG.TestCase_1" />
         <item itemvalue="TestNG.TestCase_1.TestCaseOne_CategoryPage_WishList" />
         <item itemvalue="TestNG.TestCase_1.TestCaseOne_ProductPage" />
-        <item itemvalue="TestNG.Stickers/TestNG.xml" />
       </list>
     </recent_temporary>
   </component>
@@ -463,14 +457,6 @@
       <option name="project" value="LOCAL" />
       <updated>1678200339225</updated>
     </task>
-    <task id="LOCAL-00041" summary="Fixed TestCaseOne. Now it works excellent.">
-      <option name="closed" value="true" />
-      <created>1717684510703</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1717684510703</updated>
-    </task>
     <task id="LOCAL-00042" summary="Fixed some bugs in two first tests.">
       <option name="closed" value="true" />
       <created>1717753605142</created>
@@ -575,7 +561,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744721165770</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Adapted TestCase_2 to the newest add-on and theme versions.">
+      <option name="closed" value="true" />
+      <created>1744727275895</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1744727275895</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -590,7 +584,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed sticker description with its screenshots." />
     <MESSAGE value="Starts working with test-case 2." />
     <MESSAGE value="Test-case 2 -- the last item has left yet." />
     <MESSAGE value="Test-case 2 is done.&#10;File TestNG is added.&#10;Methods to select language on storefront are changed." />
@@ -615,7 +608,8 @@
     <MESSAGE value="Added a new template of a product page to all test-cases." />
     <MESSAGE value="Updated pom.xml file." />
     <MESSAGE value="Adapted TestCase_1 to the newest add-on and theme versions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adapted TestCase_1 to the newest add-on and theme versions." />
+    <MESSAGE value="Adapted TestCase_2 to the newest add-on and theme versions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adapted TestCase_2 to the newest add-on and theme versions." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

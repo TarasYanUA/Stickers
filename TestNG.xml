@@ -3,7 +3,7 @@
         <classes>
             <class name="TestCase_1" />
             <class name="TestCase_2" />
-            <class name="TestCaseThree" />
+            <class name="TestCase_3" />
             <class name="TestCaseFour" />
         </classes>
     </test>
