@@ -4,20 +4,17 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
-
 import java.time.Duration;
-
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestRunner {
-    public static final String BASIC_URL = "https://abd-cf44bbfbfe.demos.abt.team/admin.php?dispatch=addons.manage";
+    public static final String BASIC_URL = "https://abd-b224bf2dfc.demos.abt.team/admin.php?dispatch=addons.manage";
     private SoftAssert softAssert;
 
     @BeforeMethod
     public void openBrowser() {
         Configuration.browser = "chrome";
         open(BASIC_URL);
-        Configuration.holdBrowserOpen = false; //не закрываем браузер пока ведём разработку
         Configuration.screenshots = true; //делаем скриншоты при падении
         WebDriverRunner.getWebDriver().manage().window().maximize(); //окно браузера на весь экран
 
@@ -48,7 +45,7 @@ public class TestRunner {
     }
 
     public void takeScreenshot(String screenName) {
-        sleep(4000);
+        sleep(3000);
         screenshot(screenName);
     }
 

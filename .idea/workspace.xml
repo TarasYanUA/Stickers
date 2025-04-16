@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Adapted TestCase_3 to the newest add-on and theme versions.">
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Adapted TestCase_4 to the newest add-on and theme versions.">
+      <change afterPath="$PROJECT_DIR$/.run/TestNG_Stickers.run.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/storefront/StProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/StProductPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCaseFour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,9 +109,10 @@
     "TestNG.TestCase_2.executor": "Run",
     "TestNG.TestCase_3.executor": "Run",
     "TestNG.TestCase_4.executor": "Run",
+    "TestNG.TestNG_Stickers.executor": "Run",
     "git-widget-placeholder": "v3.0.0",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/IDEA Projects/UniTheme2_Mobile/pom.xml",
+    "last_opened_file_path": "E:/IDEA Projects/Stickers/TestNG.xml",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -131,7 +128,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestCase_4">
+  <component name="RunManager" selected="TestNG.TestNG_Stickers">
     <configuration name="TestCase_1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
@@ -189,6 +186,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="TestNG.TestNG_Stickers" />
       <item itemvalue="TestNG.TestCase_3" />
       <item itemvalue="TestNG.TestCase_4" />
       <item itemvalue="TestNG.TestCase_2" />
@@ -459,14 +457,6 @@
       <option name="project" value="LOCAL" />
       <updated>1678200339225</updated>
     </task>
-    <task id="LOCAL-00043" summary="Test-case three is ready!">
-      <option name="closed" value="true" />
-      <created>1718196074422</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1718196074422</updated>
-    </task>
     <task id="LOCAL-00044" summary="Fixed class UniThemeSettings.">
       <option name="closed" value="true" />
       <created>1718196408807</created>
@@ -571,7 +561,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744790164068</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Adapted TestCase_4 to the newest add-on and theme versions.">
+      <option name="closed" value="true" />
+      <created>1744804884100</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1744804884100</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -586,7 +584,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test-case 2 -- the last item has left yet." />
     <MESSAGE value="Test-case 2 is done.&#10;File TestNG is added.&#10;Methods to select language on storefront are changed." />
     <MESSAGE value="Test-case 3, part 2 is ready!" />
     <MESSAGE value="Test-case 4 is done.&#10;Changed name for screenshots." />
@@ -611,7 +608,8 @@
     <MESSAGE value="Adapted TestCase_1 to the newest add-on and theme versions." />
     <MESSAGE value="Adapted TestCase_2 to the newest add-on and theme versions." />
     <MESSAGE value="Adapted TestCase_3 to the newest add-on and theme versions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adapted TestCase_3 to the newest add-on and theme versions." />
+    <MESSAGE value="Adapted TestCase_4 to the newest add-on and theme versions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adapted TestCase_4 to the newest add-on and theme versions." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
