@@ -9,4 +9,5 @@ public class StProductPage {
 
     public SelenideElement block_Popular = $(".ty-mainbox-container .ty-mainbox-title");
     public SelenideElement block_Hits = $x("(//li[contains(@id, 'abt__ut2_grid_tab')])[2]");
+    public SelenideElement stickersContainerAtProductBlock = $(".ut2-gl__item .ab-stickers-container__product_labels");
 }

@@ -112,16 +112,18 @@ public class TestCase_3 extends TestRunner {
         
         takeScreenshot("3100 ProdPage - HorizontalIcons, RightColumn, DefaultTemplate");
         stProductPage.block_Popular.scrollIntoCenter();
+        stProductPage.stickersContainerAtProductBlock.shouldBe(Condition.visible);
         takeScreenshot("3105 BlockPopular - HorizontalIcons, RightColumn, LightScroller");
         stProductPage.block_Hits.scrollIntoCenter().click();
+        Selenide.sleep(3000);
         takeScreenshot("3110 BlockHits - HorizontalIcons, RightColumn, Grid");
         shiftLanguage("ar");
         takeScreenshot("3115 ProdPage(RTL) - HorizontalIcons, RightColumn, DefaultTemplate");
         stProductPage.block_Popular.scrollIntoCenter();
-        $(".ab-stickers-container__product_labels").shouldBe(Condition.visible);
+        stProductPage.stickersContainerAtProductBlock.shouldBe(Condition.visible);
         takeScreenshot("3120 BlockPopular(RTL) - HorizontalIcons, RightColumn, LightScroller");
         stProductPage.block_Hits.scrollIntoCenter().click();
-        $(".ab-stickers-container__product_labels").shouldBe(Condition.visible);
+        Selenide.sleep(3000);
         takeScreenshot("3125 BlockHits(RTL) - HorizontalIcons, RightColumn, Grid");
 
         //Смотрим другие шаблоны страницы товара
@@ -186,9 +188,10 @@ public class TestCase_3 extends TestRunner {
         
         //Проверяем, что пиктограммы расположены в позиции 2
         softAssert.assertTrue($(".ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2 on category page!");
-   
-        stCategoryPage.productInList.hover();
+
         takeScreenshot("3200 Category - HorizontalIcons, RightColumn, Grid");
+        stCategoryPage.productInList.hover();
+        takeScreenshot("3202 Category - Pictograms, Grid");
 
         //Смотрим окно Быстрого просмотра
         stCategoryPage.productInList.hover();
@@ -213,6 +216,8 @@ public class TestCase_3 extends TestRunner {
       
         takeScreenshot("3205 QuickView - HorizontalIcons, RightColumn");
         stCategoryPage.button_CloseQuickView.click();
+
+        //Смотрим другие шаблона страницы категории
         stCategoryPage.template_ListWithoutOptions.click();
         waitForSpinnerDisappear();
         takeScreenshot("3210 Category - HorizontalIcons, RightColumn, ListWithoutOptions");
@@ -233,8 +238,9 @@ public class TestCase_3 extends TestRunner {
         takeScreenshot("3225 Category(RTL) - HorizontalIcons, RightColumn, ListWithoutOptions");
         stCategoryPage.template_Grid.click();
         waitForSpinnerDisappear();
-        stCategoryPage.productInList.hover();
         takeScreenshot("3230 Category(RTL) - HorizontalIcons, RightColumn, Grid");
+        stCategoryPage.productInList.hover();
+        takeScreenshot("3232 Category(RTL) - Pictograms, Grid");
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.hover().click();
         waitForSpinnerDisappear();
