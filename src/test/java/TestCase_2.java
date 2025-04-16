@@ -90,16 +90,18 @@ public class TestCase_2 extends TestRunner {
 
         takeScreenshot("2100 ProdPage - HorizontalIcons, LeftRow, DefaultTemplate");
         stProductPage.block_Popular.scrollIntoCenter();
+        stProductPage.stickersContainerAtProductBlock.shouldBe(Condition.visible);
         takeScreenshot("2105 BlockPopular - HorizontalIcons, LeftRow, GridWithButtonMore");
         stProductPage.block_Hits.scrollIntoCenter().click();
+        Selenide.sleep(3000);
         takeScreenshot("2110 BlockHits - HorizontalIcons, LeftRow, AdvancedScroller");
         shiftLanguage("ar");
         takeScreenshot("2115 ProdPage(RTL) - HorizontalIcons, LeftRow, DefaultTemplate");
         stProductPage.block_Popular.scrollIntoCenter();
-        $(".ab-stickers-container__product_labels").shouldBe(Condition.visible);
+        stProductPage.stickersContainerAtProductBlock.shouldBe(Condition.visible);
         takeScreenshot("2120 BlockPopular(RTL) - HorizontalIcons, LeftRow, GridWithButtonMore");
         stProductPage.block_Hits.scrollIntoCenter().click();
-        $(".ab-stickers-container__product_labels").shouldBe(Condition.visible);
+        Selenide.sleep(3000);
         takeScreenshot("2125 BlockHits(RTL) - HorizontalIcons, LeftRow, AdvancedScroller");
 
         //Смотрим другие шаблоны страницы товара
@@ -169,8 +171,9 @@ public class TestCase_2 extends TestRunner {
         //Проверяем, что пиктограммы расположены в позиции 1
         softAssert.assertTrue($(".ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1 on category page!");
 
-        stCategoryPage.productInList.hover();
         takeScreenshot("2200 Category - HorizontalIcons, LeftRow, Grid");
+        stCategoryPage.productInList.hover();
+        takeScreenshot("2202 Category - Pictograms, Grid");
 
         //Смотрим окно Быстрого просмотра
         stCategoryPage.productInList.hover();
@@ -215,8 +218,9 @@ public class TestCase_2 extends TestRunner {
         takeScreenshot("2225 Category(RTL) - HorizontalIcons, LeftRow, ListWithoutOptions");
         stCategoryPage.template_Grid.click();
         waitForSpinnerDisappear();
-        stCategoryPage.productInList.hover();
         takeScreenshot("2230 Category(RTL) - HorizontalIcons, LeftRow, Grid");
+        stCategoryPage.productInList.hover();
+        takeScreenshot("2232 Category(RTL) - Pictograms, Grid");
         stCategoryPage.button_QuickView.hover().click();
         waitForSpinnerDisappear();
         $(".ui-dialog-title").shouldBe(Condition.visible).hover();

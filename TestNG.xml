@@ -4,7 +4,7 @@
             <class name="TestCase_1" />
             <class name="TestCase_2" />
             <class name="TestCase_3" />
-            <class name="TestCaseFour" />
+            <class name="TestCase_4" />
         </classes>
     </test>
 </suite>

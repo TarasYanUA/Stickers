@@ -185,16 +185,18 @@ public class TestCase_1 extends TestRunner {
 
         takeScreenshot("1100 ProdPage - VerticalIcons, LeftColumn, DefaultTemplate");
         stProductPage.block_Popular.scrollIntoCenter();
+        stProductPage.stickersContainerAtProductBlock.shouldBe(Condition.visible);
         takeScreenshot("1105 BlockPopular - VerticalIcons, LeftColumn, GridWithButtonMore");
         stProductPage.block_Hits.scrollIntoCenter().click();
+        Selenide.sleep(3000);
         takeScreenshot("1110 BlockHits - VerticalIcons, LeftColumn, AdvancedScroller");
         shiftLanguage("ar");
         takeScreenshot("1115 ProdPage(RTL) - VerticalIcons, LeftColumn, DefaultTemplate");
         stProductPage.block_Popular.scrollIntoCenter();
-        $(".ab-stickers-container__product_labels").shouldBe(Condition.visible);
+        stProductPage.stickersContainerAtProductBlock.shouldBe(Condition.visible);
         takeScreenshot("1120 BlockPopular(RTL) - VerticalIcons, LeftColumn, GridWithButtonMore");
         stProductPage.block_Hits.scrollIntoCenter().click();
-        $(".ab-stickers-container__product_labels").shouldBe(Condition.visible);
+        Selenide.sleep(3000);
         takeScreenshot("1125 BlockHits(RTL) - VerticalIcons, LeftColumn, AdvancedScroller");
 
         //Смотрим другие шаблоны страницы товара
@@ -264,8 +266,9 @@ public class TestCase_1 extends TestRunner {
         //Проверяем, что пиктограммы расположены в позиции 1
         softAssert.assertTrue($(".ab-s-pictograms-wrapper-position_1").exists(), "Pictograms are not in Position 1 on category page!");
 
-        stCategoryPage.productInList.hover();
         takeScreenshot("1200 Category - VerticalIcons, LeftColumn, Grid");
+        stCategoryPage.productInList.hover();
+        takeScreenshot("1202 Category - Pictograms, Grid");
 
         //Смотрим окно Быстрого просмотра
         stCategoryPage.productInList.hover();
@@ -312,8 +315,9 @@ public class TestCase_1 extends TestRunner {
         takeScreenshot("1225 Category(RTL) - VerticalIcons, LeftColumn, ListWithoutOptions");
         stCategoryPage.template_Grid.click();
         waitForSpinnerDisappear();
-        stCategoryPage.productInList.hover();
         takeScreenshot("1230 Category(RTL) - VerticalIcons, LeftColumn, Grid");
+        stCategoryPage.productInList.hover();
+        takeScreenshot("1232 Category(RTL) - Pictograms, Grid");
         stCategoryPage.productInList.hover();
         stCategoryPage.button_QuickView.hover().click();
         waitForSpinnerDisappear();
