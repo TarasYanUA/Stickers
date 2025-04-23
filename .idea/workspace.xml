@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Adapted TestCase_4 to the newest add-on and theme versions.">
-      <change afterPath="$PROJECT_DIR$/.run/TestNG_Stickers.run.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestCase_5_AboveUnderPrice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/UniThemeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/UniThemeSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +88,7 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2L2dd5FqOsPsEzpZw42iQjgYPqJ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager">
     <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -106,17 +109,21 @@
     "TestNG.TestCaseOne.executor": "Run",
     "TestNG.TestCaseThree.executor": "Run",
     "TestNG.TestCaseTwo.executor": "Run",
+    "TestNG.TestCase_1.executor": "Run",
     "TestNG.TestCase_2.executor": "Run",
     "TestNG.TestCase_3.executor": "Run",
     "TestNG.TestCase_4.executor": "Run",
+    "TestNG.TestCase_5_AboveUnderPrice.TestCase_5_ConfigureSettings.executor": "Run",
+    "TestNG.TestCase_5_AboveUnderPrice.TestCase_5_ProductPage.executor": "Run",
+    "TestNG.TestCase_5_AboveUnderPrice.executor": "Run",
     "TestNG.TestNG_Stickers.executor": "Run",
     "git-widget-placeholder": "v3.0.0",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/IDEA Projects/Stickers/TestNG.xml",
+    "last_opened_file_path": "E:/IDEA Projects/Stickers/pom.xml",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -124,49 +131,15 @@
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="storefront" />
       <recent name="" />
+      <recent name="storefront" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestNG_Stickers">
+  <component name="RunManager" selected="TestNG.TestCase_5_AboveUnderPrice">
     <configuration name="TestCase_1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestCase_1" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestCase_1.TestCaseOne_CategoryPage_WishList" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Stickers" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCase_1" />
-      <option name="METHOD_NAME" value="TestCaseOne_CategoryPage_WishList" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestCase_2" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Stickers" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCase_2" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestCase_3" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Stickers" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCase_3" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -185,21 +158,56 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestCase_5_AboveUnderPrice" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Stickers" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCase_5_AboveUnderPrice" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCase_5_AboveUnderPrice.TestCase_5_ConfigureSettings" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Stickers" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCase_5_AboveUnderPrice" />
+      <option name="METHOD_NAME" value="TestCase_5_ConfigureSettings" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCase_5_AboveUnderPrice.TestCase_5_ProductPage" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Stickers" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCase_5_AboveUnderPrice" />
+      <option name="METHOD_NAME" value="TestCase_5_ProductPage" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="TestNG.TestNG_Stickers" />
-      <item itemvalue="TestNG.TestCase_3" />
-      <item itemvalue="TestNG.TestCase_4" />
-      <item itemvalue="TestNG.TestCase_2" />
+      <item itemvalue="TestNG.TestCase_5_AboveUnderPrice" />
+      <item itemvalue="TestNG.TestCase_5_AboveUnderPrice.TestCase_5_ConfigureSettings" />
+      <item itemvalue="TestNG.TestCase_5_AboveUnderPrice.TestCase_5_ProductPage" />
       <item itemvalue="TestNG.TestCase_1" />
-      <item itemvalue="TestNG.TestCase_1.TestCaseOne_CategoryPage_WishList" />
+      <item itemvalue="TestNG.TestCase_4" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TestCase_4" />
-        <item itemvalue="TestNG.TestCase_3" />
-        <item itemvalue="TestNG.TestCase_2" />
+        <item itemvalue="TestNG.TestCase_5_AboveUnderPrice" />
+        <item itemvalue="TestNG.TestCase_5_AboveUnderPrice.TestCase_5_ProductPage" />
+        <item itemvalue="TestNG.TestCase_5_AboveUnderPrice.TestCase_5_ConfigureSettings" />
         <item itemvalue="TestNG.TestCase_1" />
-        <item itemvalue="TestNG.TestCase_1.TestCaseOne_CategoryPage_WishList" />
+        <item itemvalue="TestNG.TestCase_4" />
       </list>
     </recent_temporary>
   </component>
@@ -457,14 +465,6 @@
       <option name="project" value="LOCAL" />
       <updated>1678200339225</updated>
     </task>
-    <task id="LOCAL-00044" summary="Fixed class UniThemeSettings.">
-      <option name="closed" value="true" />
-      <created>1718196408807</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1718196408807</updated>
-    </task>
     <task id="LOCAL-00045" summary="Test case Four is ready!">
       <option name="closed" value="true" />
       <created>1718197951824</created>
@@ -569,7 +569,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744804884100</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Adapted TestCase_4 to the newest add-on and theme versions.">
+      <option name="closed" value="true" />
+      <created>1744814091621</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1744814091621</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

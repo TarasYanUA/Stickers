@@ -8,7 +8,7 @@ import java.time.Duration;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestRunner {
-    public static final String BASIC_URL = "https://abd-b224bf2dfc.demos.abt.team/admin.php?dispatch=addons.manage";
+    public static final String BASIC_URL = "https://trs.test.abt.team/4183ultru/admin.php?dispatch=addons.manage";
     private SoftAssert softAssert;
 
     @BeforeMethod
