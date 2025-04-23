@@ -296,6 +296,13 @@ public class TestCase_1 extends TestRunner {
 
         //Смотрим другие шаблона страницы категории
         stCategoryPage.template_ListWithoutOptions.click();
+
+        //Проверяем, что стикеры присутствуют
+        softAssert.assertTrue($(".ab-stickers-container").exists(), "There is no stickers on category page as List without options!");
+
+        //Проверяем, что пиктограммы присутствуют
+        softAssert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There is no pictograms on category page as List without options!");
+
         waitForSpinnerDisappear();
         takeScreenshot("1210 Category - VerticalIcons, LeftColumn, ListWithoutOptions");
         stCategoryPage.template_CompactList.click();

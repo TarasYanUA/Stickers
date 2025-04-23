@@ -51,9 +51,15 @@ public class StickerSettings {
     SelenideElement productPage_DisplayPlace = $(By.id("ab__stickers_display_place_detailed_page"));
     SelenideElement productPage_Position = $(By.id("ab__stickers_output_position_detailed_page"));
     SelenideElement productPage_Size = $(By.id("ab__stickers_display_on_detailed_page"));
+    SelenideElement products_DisplayPlace = $(By.id("ab__stickers_display_place_blocks_products_products_tpl"));        //шаблон страницы категории "Список без опций"
+    SelenideElement products_Position = $(By.id("ab__stickers_output_position_blocks_products_products_tpl"));
+    SelenideElement products_Size = $(By.id("ab__stickers_display_on_blocks_products_products_tpl"));
     SelenideElement grid_DisplayPlace = $(By.id("ab__stickers_display_place_blocks_products_products_multicolumns_tpl"));
     SelenideElement grid_Position = $(By.id("ab__stickers_output_position_blocks_products_products_multicolumns_tpl"));
     SelenideElement grid_Size = $(By.id("ab__stickers_display_on_blocks_products_products_multicolumns_tpl"));
+    SelenideElement shortList_DisplayPlace = $(By.id("ab__stickers_display_place_blocks_products_short_list_tpl"));     //шаблон страницы категории "Компактный список"
+    SelenideElement shortList_Position = $(By.id("ab__stickers_output_position_blocks_products_short_list_tpl"));
+    SelenideElement shortList_Size = $(By.id("ab__stickers_display_on_blocks_products_short_list_tpl"));
     SelenideElement gridMore_DisplayPlace = $(By.id("ab__stickers_display_place_blocks_products_ab__grid_list_tpl"));
     SelenideElement gridMore_Position = $(By.id("ab__stickers_output_position_blocks_products_ab__grid_list_tpl"));
     SelenideElement gridMore_Size = $(By.id("ab__stickers_display_on_blocks_products_ab__grid_list_tpl"));
@@ -63,6 +69,13 @@ public class StickerSettings {
     SelenideElement extendedPromotions_DisplayPlace = $(By.id("ab__stickers_display_place_addons_ab__deal_of_the_day_blocks_ab__deal_of_the_day_tpl"));
     SelenideElement extendedPromotions_Size = $(By.id("ab__stickers_display_on_addons_ab__deal_of_the_day_blocks_ab__deal_of_the_day_tpl"));
 
+
+    public void clickAndType_PriceCondition(String value) {
+        fieldOfPriceCondition.click();
+        fieldOfPriceCondition.clear();
+        fieldOfPriceCondition.sendKeys(value);
+    }
+
     public void setSettingsAt_DisplayTab(String placeValue, String positionValue, String sizeValue) {
         executeJavaScript("window.scrollTo(0, 0);");
         tab_Display.click();
@@ -71,25 +84,32 @@ public class StickerSettings {
             productPage_Position.selectOptionByValue(positionValue);
         productPage_Size.selectOptionByValue(sizeValue);
 
+        products_DisplayPlace.selectOptionByValue(placeValue);
+        if (products_Position.exists())
+            products_Position.selectOptionByValue(positionValue);
+        products_Size.selectOptionByValue(sizeValue);
+
         grid_DisplayPlace.selectOptionByValue(placeValue);
-        grid_Position.selectOptionByValue(positionValue);
+        if (grid_Position.exists())
+            grid_Position.selectOptionByValue(positionValue);
         grid_Size.selectOptionByValue(sizeValue);
 
+        shortList_DisplayPlace.selectOptionByValue(placeValue);
+        if (shortList_Position.exists())
+            shortList_Position.selectOptionByValue(positionValue);
+        shortList_Size.selectOptionByValue(sizeValue);
+
         gridMore_DisplayPlace.selectOptionByValue(placeValue);
-        gridMore_Position.selectOptionByValue(positionValue);
+        if (gridMore_Position.exists())
+            gridMore_Position.selectOptionByValue(positionValue);
         gridMore_Size.selectOptionByValue(sizeValue);
 
         scrollerAdvanced_DisplayPlace.selectOptionByValue(placeValue);
-        scrollerAdvanced_Position.selectOptionByValue(positionValue);
+        if (scrollerAdvanced_Position.exists())
+            scrollerAdvanced_Position.selectOptionByValue(positionValue);
         scrollerAdvanced_Size.selectOptionByValue(sizeValue);
 
         extendedPromotions_DisplayPlace.selectOptionByValue(placeValue);
         extendedPromotions_Size.selectOptionByValue(sizeValue);
-    }
-
-    public void clickAndType_PriceCondition(String value) {
-        fieldOfPriceCondition.click();
-        fieldOfPriceCondition.clear();
-        fieldOfPriceCondition.sendKeys(value);
     }
 }

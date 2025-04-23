@@ -44,6 +44,9 @@ public class CsCartSettings implements CheckMenuToBeActive {
     public SelenideElement layoutBlock_TabContent = $("li[id*='block_contents'] a");
     public SelenideElement layout_FieldFilling = $("select[id*='content_items_filling']");
     public SelenideElement layout_FieldMaxLimit = $("input[id*='content_items_properties_items_limit']");
+    public SelenideElement layout_ButtonSettings = $("a[id*='sw_case_settings_']");
+    public SelenideElement layoutSettings_ShowPrice = $("input[id*='products_properties_show_price']");
+    public SelenideElement layoutSetting_OutsideNavigation = $("input[id*='products_properties_outside_navigation']");
 
     public void navigateToSectionLayouts() {
         checkMenuToBeActive("dispatch=themes.manage", menu_Website);
