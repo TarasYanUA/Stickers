@@ -6,6 +6,8 @@ import storefront.StCategoryPage;
 import storefront.StProductPage;
 import org.testng.asserts.SoftAssert;
 
+import static adminPanel.CsCartSettings.saveSettings;
+import static adminPanel.CsCartSettings.shiftBrowserTab;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -53,14 +55,13 @@ public class TestCase_4 extends TestRunner {
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
         uniThemeSettings.tab_Product.scrollIntoView(false).click();
         uniThemeSettings.setting_CombinationsOfProductGalleryImageFormations.selectOptionByValue("1");
-        csCartSettings.button_Save.click();
+        saveSettings();
 
         //Переходим на страницу редактирования товара
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
-        productSettings.clickAndType_ProductSearch("Apple iPhone 14");
-        $x("//td[@class='product-name-column wrap-word']//a[contains(text(), 'Apple iPhone 14')]").click();
+        productSettings.selectProductByName("Apple iPhone 14");
         productSettings.productTemplate.selectOptionByValue("default_template");
-        csCartSettings.saveSettings();
+        saveSettings();
     }
 
     @Test(priority = 20, dependsOnMethods = "TestCase_4_ConfigureSettings")
@@ -70,28 +71,27 @@ public class TestCase_4 extends TestRunner {
         SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
 
         csCartSettings.navigateToSection_Products();
-        productSettings.clickAndType_ProductSearch("Apple iPhone 14");
-        csCartSettings.chooseAnyProduct();
-        StProductPage stProductPage = csCartSettings.navigateToStProductPage(1);
+        productSettings.selectProductByName("Apple iPhone 14");
+        StProductPage stProductPage = productSettings.navigateTo_StProductPage(1);
 
         //Проверяем, что галерея мини-иконок вертикальная
         softAssert.assertTrue($(".ab-vg-vertical-thumbnails").exists(), "Gallery of mini-icons is not Horizontal!");
-     
+
         //Проверяем, что присутствуют стикеры справа и вверху
         softAssert.assertTrue($(".ab-stickers-container__TR").exists(), "There are no stickers on the Top-Right side!");
-     
+
         //Проверяем, что присутствуют стикеры справа и внизу
         softAssert.assertTrue($(".ab-stickers-container__BR").exists(), "There are no stickers on the Bottom-Right side!");
-     
+
         //Проверяем, что стикеры расположены в строку
         softAssert.assertTrue($(".row-filling").exists(), "Position of stickers is not in Column!");
-     
+
         //Проверяем, что пиктограммы присутствуют
         softAssert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the product page!");
-     
+
         //Проверяем, что пиктограммы расположены в позиции 2
         softAssert.assertTrue($(".ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2!");
-     
+
         takeScreenshot("4100 ProdPage - VerticalIcons, RightRow, DefaultTemplate");
         stProductPage.block_Popular.scrollIntoCenter();
         stProductPage.stickersContainerAtProductBlock.shouldBe(Condition.visible);
@@ -109,39 +109,39 @@ public class TestCase_4 extends TestRunner {
         takeScreenshot("4125 BlockHits(RTL) - VerticalIcons, RightRow, Grid");
 
         //Смотрим другие шаблоны страницы товара
-        csCartSettings.shiftBrowserTab(0);
+        shiftBrowserTab(0);
         productSettings.tab_General.hover().click();
         productSettings.productTemplate.selectOptionByValue("bigpicture_template");
-        csCartSettings.navigateToStProductPage(2);
+        productSettings.navigateTo_StProductPage(2);
         takeScreenshot("4130 ProdPage - VerticalIcons, RightRow, BigPictureTemplate");
         shiftLanguage("ar");
         takeScreenshot("4135 ProdPage(RTL) - VerticalIcons, RightRow, BigPictureTemplate");
 
-        csCartSettings.shiftBrowserTab(0);
+        shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_flat_template");
-        csCartSettings.navigateToStProductPage(3);
+        productSettings.navigateTo_StProductPage(3);
         takeScreenshot("4140 ProdPage - VerticalIcons, RightRow, BigPictureFlatTemplate");
         shiftLanguage("ar");
         takeScreenshot("4145 ProdPage(RTL) - VerticalIcons, RightRow, BigPictureFlatTemplate");
 
-        csCartSettings.shiftBrowserTab(0);
+        shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_three_columns_template");
-        csCartSettings.navigateToStProductPage(4);
+        productSettings.navigateTo_StProductPage(4);
         takeScreenshot("4150 ProdPage - VerticalIcons, RightRow, ThreeColumned");
         shiftLanguage("ar");
         takeScreenshot("4155 ProdPage(RTL) - VerticalIcons, RightRow, ThreeColumned");
 
-        csCartSettings.shiftBrowserTab(0);
+        shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_cascade_gallery_template");
-        csCartSettings.navigateToStProductPage(5);
+        productSettings.navigateTo_StProductPage(5);
         takeScreenshot("4160 ProdPage - VerticalIcons, RightRow, CascadeGallery f1");
         shiftLanguage("ar");
         takeScreenshot("4165 ProdPage(RTL) - VerticalIcons, RightRow, CascadeGallery f1");
 
-        csCartSettings.shiftBrowserTab(0);
+        shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_gallery_template");
-        csCartSettings.saveSettings();
-        csCartSettings.navigateToStProductPage(6);
+        saveSettings();
+        productSettings.navigateTo_StProductPage(6);
         takeScreenshot("4170 ProdPage - VerticalIcons, RightRow, Gallery");
         shiftLanguage("ar");
         takeScreenshot("4175 ProdPage(RTL) - VerticalIcons, RightRow, Gallery");
@@ -152,9 +152,9 @@ public class TestCase_4 extends TestRunner {
         CsCartSettings csCartSettings = new CsCartSettings();
         SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
 
-        csCartSettings.navigateToSection_Categories();
+        CategorySettings categorySettings = csCartSettings.navigateToSection_Categories();
         $x("//a[text()='AB: Телефоны']").click();
-        StCategoryPage stCategoryPage = csCartSettings.navigateToStCategoryPage(1);
+        StCategoryPage stCategoryPage = categorySettings.navigateTo_StCategoryPage(1);
       
         //Проверяем, что присутствуют стикеры справа и вверху
         softAssert.assertTrue($(".ab-stickers-container__TR").exists(), "There are no stickers on the Top-Right side on category page!");

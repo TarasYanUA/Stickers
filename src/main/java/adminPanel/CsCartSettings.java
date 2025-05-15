@@ -4,10 +4,6 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-import storefront.StCategoryPage;
-import storefront.StProductPage;
-
-import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -17,58 +13,61 @@ public class CsCartSettings implements CheckMenuToBeActive {
         super();
     }
 
-    public SelenideElement button_Save = $(".btn.btn-primary.cm-submit");
-    public SelenideElement popupWindow = $(".ui-dialog-title");
+    public static SelenideElement notification = $(".cm-notification-close");
+    public static SelenideElement popupWindow = $(".ui-dialog-title");
+    public static SelenideElement cookieNotice = $(".cookie-notice");
+    public static SelenideElement gearWheelOnTop = $(".nav__actions-bar .dropdown-icon--tools");
+    public static SelenideElement button_Preview = $x("//ul[@class='dropdown-menu']//a[contains(text(), 'Предпросмотр')]");
+    public static SelenideElement button_Save = $(".btn.btn-primary.cm-submit");
+    SelenideElement menu_Website = $("a[href$='dispatch=themes.manage'].main-menu-1__link");
+    SelenideElement menu_Products = $("a[href$='dispatch=products.manage'].main-menu-1__link");
+    SelenideElement section_Themes = $("#website_themes");
+    SelenideElement section_Layouts = $(".nav__actions-bar a[href$='block_manager.manage']");
+    SelenideElement section_Products = $(By.id("products_products"));
+    SelenideElement section_Categories = $(By.id("products_categories"));
 
-    public void cookieNotice() {
-        if ($(".cookie-notice").exists()){
-            $(".cookie-notice").shouldBe(Condition.interactable);
-            $(".cm-btn-success").click();
-        }
+
+    public static void waitForPopupWindowAppear() {
+        popupWindow.shouldBe(Condition.visible);
+        Selenide.sleep(1000);
     }
 
-    public void shiftBrowserTab(int tabNumber) {
+    public static void waitForPopupWindowDisappear() {
+        popupWindow.shouldBe(Condition.disappear);
+        Selenide.sleep(1000);
+    }
+
+
+    public static void shiftBrowserTab(int tabNumber) {
         getWebDriver().getWindowHandle();
         switchTo().window(tabNumber);
     }
 
-    //Меню "Веб-сайт -- Темы -- Макеты"
-    SelenideElement menu_Website = $("a[href$='dispatch=themes.manage'].main-menu-1__link");
-    SelenideElement section_Themes = $("#website_themes");
-    SelenideElement sectionLayouts = $(".nav__actions-bar a[href$='block_manager.manage']");
-    public SelenideElement layout_TabProducts = $x("//a[contains(@href, 'selected_location')][text()='Товары']");
-    public SelenideElement layout_GearwheelOfBlockPopular = $x("//div[@title=\"Самые популярные\"]/..//div[contains(@class, 'bm-action-properties')]");
-    public SelenideElement layout_GearwheelOfBlockHits = $x("//div[@title=\"Распродажа\"]/..//div[contains(@class, 'bm-action-properties')]");
-    public SelenideElement layout_BlockTemplate = $("select[id*='products_template']");
-    public SelenideElement layout_ButtonSaveBlock = $("input[name='dispatch[block_manager.update_block]']");
-    public SelenideElement layoutBlock_TabContent = $("li[id*='block_contents'] a");
-    public SelenideElement layout_FieldFilling = $("select[id*='content_items_filling']");
-    public SelenideElement layout_FieldMaxLimit = $("input[id*='content_items_properties_items_limit']");
-    public SelenideElement layout_ButtonSettings = $("a[id*='sw_case_settings_']");
-    public SelenideElement layoutSettings_ShowPrice = $("input[id*='products_properties_show_price']");
-    public SelenideElement layoutSetting_OutsideNavigation = $("input[id*='products_properties_outside_navigation']");
+    public static void closeNotificationIfExists() {
+        if (notification.exists())
+            notification.click();
+    }
 
-    public void navigateToSectionLayouts() {
+    public static void closeCookieNoticeIfExists() {
+        if (cookieNotice.exists()){
+            cookieNotice.shouldBe(Condition.interactable);
+            $(".cm-btn-success").click();
+        }
+    }
+
+    public static void openPreviewPage(int tabNumber) {
+        gearWheelOnTop.click();
+        button_Preview.click();
+        shiftBrowserTab(tabNumber);
+        closeCookieNoticeIfExists();
+    }
+
+    public LayoutSettings navigateToSection_Layouts() {
         checkMenuToBeActive("dispatch=themes.manage", menu_Website);
         section_Themes.click();
-        sectionLayouts.click();
+        section_Layouts.click();
+        return new LayoutSettings();
     }
-
-    public void clickAndType_Layout_FieldMaxLimit() {
-        layout_FieldMaxLimit.click();
-        layout_FieldMaxLimit.clear();
-        layout_FieldMaxLimit.setValue("4");
-    }
-
-    //Меню "Товары --Товары и Категории"
-    SelenideElement menu_Products = $("a[href$='dispatch=products.manage'].main-menu-1__link");
-    SelenideElement section_Products = $(By.id("products_products"));
-    SelenideElement chooseAnyProduct = $(".products-list__image");
-    public SelenideElement gearWheelOnTop = $(".nav__actions-bar .dropdown-icon--tools");
-    SelenideElement button_Preview = $x("//ul[@class='dropdown-menu']//a[contains(text(), 'Предпросмотр')]");
-    SelenideElement section_Categories = $(By.id("products_categories"));
-    public SelenideElement statusActive_Category = $("#elm_category_status_0_a");
-    public SelenideElement button_ViewProducts = $("a[href*='products.manage&cid']");
 
     public ProductSettings navigateToSection_Products() {
         checkMenuToBeActive("dispatch=products.manage", menu_Products);
@@ -76,36 +75,10 @@ public class CsCartSettings implements CheckMenuToBeActive {
         return new ProductSettings();
     }
 
-    public void chooseAnyProduct() {
-        chooseAnyProduct.shouldBe(Condition.appear, Duration.ofSeconds(8));
-        chooseAnyProduct.click();
-    }
-
-    public StProductPage navigateToStProductPage(int tabNumber) {
-        if ($(".cm-notification-close").exists()) {
-            $(".cm-notification-close").click();
-        }
-        gearWheelOnTop.click();
-        button_Preview.click();
-        shiftBrowserTab(tabNumber);
-        cookieNotice();
-        return new StProductPage();
-    }
-
-    public void navigateToSection_Categories() {
+    public CategorySettings navigateToSection_Categories() {
         checkMenuToBeActive("dispatch=products.manage", menu_Products);
         section_Categories.click();
-    }
-
-    public StCategoryPage navigateToStCategoryPage(int tabNumber) {
-        if ($(".cm-notification-close").exists()) {
-            $(".cm-notification-close").click();
-        }
-        gearWheelOnTop.click();
-        button_Preview.click();
-        shiftBrowserTab(tabNumber);
-        cookieNotice();
-        return new StCategoryPage();
+        return new CategorySettings();
     }
 
 
@@ -165,7 +138,7 @@ public class CsCartSettings implements CheckMenuToBeActive {
         return new VideoGallerySettings();
     }
 
-    public void saveSettings() {
+    public static void saveSettings() {
         button_Save.click();
         Selenide.sleep(1500);
     }

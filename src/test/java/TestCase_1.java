@@ -4,6 +4,8 @@ import com.codeborne.selenide.Selenide;
 import org.testng.annotations.Test;
 import storefront.StCategoryPage;
 import storefront.StProductPage;
+
+import static adminPanel.CsCartSettings.shiftBrowserTab;
 import static com.codeborne.selenide.Selenide.*;
 import org.testng.asserts.SoftAssert;
 
@@ -26,8 +28,10 @@ import org.testng.asserts.SoftAssert;
 public class TestCase_1 extends TestRunner {
     @Test(priority = 10)
     public void TestCase_1_ConfigureSettings() {
-        //Включаем мини-иконки в виде галереи и окно Быстрого просмотра
+
         CsCartSettings csCartSettings = new CsCartSettings();
+
+        //Включаем мини-иконки в виде галереи и окно Быстрого просмотра
         csCartSettings.navigateTo_AppearanceSettings();
         if (!csCartSettings.settingMiniThumbnailAsGallery.isSelected()) {
             csCartSettings.settingMiniThumbnailAsGallery.click();
@@ -35,7 +39,7 @@ public class TestCase_1 extends TestRunner {
         if (!csCartSettings.settingQuickView.isSelected()) {
             csCartSettings.settingQuickView.click();
         }
-        csCartSettings.button_Save.click();
+        CsCartSettings.saveSettings();
 
         //Включаем Вертикальное отображение мини-иконок (Модуль "Видео галерея")
         VideoGallerySettings videoGallerySettings = csCartSettings.navigateToVideoGalleryPage();
@@ -53,22 +57,18 @@ public class TestCase_1 extends TestRunner {
         uniThemeSettings.fieldOfPictogramPosition_CompactList.selectOptionByValue("position_1");
         uniThemeSettings.tab_Product.hover().click();
         uniThemeSettings.fieldOfPictogramPosition_Product.selectOptionByValue("position_1");
-        csCartSettings.button_Save.click();
+        CsCartSettings.saveSettings();
 
         //Настраиваем блок с товарами
-        csCartSettings.navigateToSectionLayouts();
-        csCartSettings.layout_TabProducts.click();
-        csCartSettings.layout_GearwheelOfBlockPopular.click();
-        csCartSettings.popupWindow.shouldBe(Condition.enabled);
-        csCartSettings.layout_BlockTemplate.selectOptionByValue("blocks/products/ab__grid_list.tpl");
-        csCartSettings.layoutBlock_TabContent.click();
-        csCartSettings.layout_FieldFilling.selectOptionByValue("newest");
-        csCartSettings.clickAndType_Layout_FieldMaxLimit();
-        csCartSettings.layout_ButtonSaveBlock.click();
-        csCartSettings.layout_GearwheelOfBlockHits.click();
-        csCartSettings.popupWindow.shouldBe(Condition.enabled);
-        csCartSettings.layout_BlockTemplate.selectOptionByValue("blocks/products/products_scroller_advanced.tpl");
-        csCartSettings.layout_ButtonSaveBlock.click();
+        LayoutSettings layoutSettings = csCartSettings.navigateToSection_Layouts();
+        layoutSettings.layout_TabProducts.click();
+        layoutSettings.openBlockProperties("Самые популярные");
+        layoutSettings.layout_BlockTemplate.selectOptionByValue("blocks/products/ab__grid_list.tpl");
+        layoutSettings.setFillingForBlockContent("newest");
+        layoutSettings.saveBlockProperties();
+        layoutSettings.openBlockProperties("Распродажа");
+        layoutSettings.layout_BlockTemplate.selectOptionByValue("blocks/products/products_scroller_advanced.tpl");
+        layoutSettings.saveBlockProperties();
 
         //Настраиваем настройки модуля "Стикеры"
         StickerSettings stickerSettings = csCartSettings.navigateToStickerSettingsPage();
@@ -136,22 +136,17 @@ public class TestCase_1 extends TestRunner {
         stickerSettings.button_SaveSticker.click();
 
         //Настраиваем страницу товара
-        csCartSettings.navigateToSection_Categories();
-        $x("//a[text()='AB: Телефоны']").click();
-        csCartSettings.statusActive_Category.click();
-        csCartSettings.saveSettings();
-        csCartSettings.gearWheelOnTop.click();
-        csCartSettings.button_ViewProducts.click();
+        CategorySettings categorySettings = csCartSettings.navigateToSection_Categories();
+        categorySettings.openCategoryPage("AB: Телефоны");
+        categorySettings.activateCategoryAndSave();
+        categorySettings.viewCategoryProducts();
         ProductSettings productSettings = new ProductSettings();
-        $x("//td[@class='product-name-column wrap-word']//a[contains(text(), 'Apple iPhone 14')]").click();
+        productSettings.selectProductByName("Apple iPhone 14");
         productSettings.statusActive_Product.click();
-        productSettings.field_ListPrice.click();
-        productSettings.field_ListPrice.clear();
-        productSettings.field_ListPrice.sendKeys("2000");
+        productSettings.setValueTo_ListPrice("2000");
         productSettings.productTemplate.selectOptionByValue("default_template");
-        productSettings.tab_Shippings.hover().click();
-        productSettings.clickAndType_ProductWeight("9");
-        csCartSettings.saveSettings();
+        productSettings.setValueTo_ProductWeight("9");
+        CsCartSettings.saveSettings();
     }
 
     @Test(priority = 20, dependsOnMethods = "TestCase_1_ConfigureSettings")
@@ -161,9 +156,8 @@ public class TestCase_1 extends TestRunner {
         SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
 
         csCartSettings.navigateToSection_Products();
-        productSettings.clickAndType_ProductSearch("Apple iPhone 14");
-        csCartSettings.chooseAnyProduct();
-        StProductPage stProductPage = csCartSettings.navigateToStProductPage(1);
+        productSettings.selectProductByName("Apple iPhone 14");
+        StProductPage stProductPage = productSettings.navigateTo_StProductPage(1);
 
         //Проверяем, что галерея мини-иконок вертикальная
         softAssert.assertTrue($(".ab-vg-vertical-thumbnails").exists(), "Gallery of mini-icons is not Vertical!");
@@ -200,43 +194,43 @@ public class TestCase_1 extends TestRunner {
         takeScreenshot("1125 BlockHits(RTL) - VerticalIcons, LeftColumn, AdvancedScroller");
 
         //Смотрим другие шаблоны страницы товара
-        csCartSettings.shiftBrowserTab(0);
+        shiftBrowserTab(0);
         productSettings.tab_General.hover().click();
         productSettings.productTemplate.selectOptionByValue("bigpicture_template");
-        csCartSettings.saveSettings();
-        csCartSettings.navigateToStProductPage(2);
+        CsCartSettings.saveSettings();
+        productSettings.navigateTo_StProductPage(2);
         takeScreenshot("1130 ProdPage - VerticalIcons, LeftColumn, BigPictureTemplate");
         shiftLanguage("ar");
         takeScreenshot("1135 ProdPage(RTL) - VerticalIcons, LeftColumn, BigPictureTemplate");
 
-        csCartSettings.shiftBrowserTab(0);
+        shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_flat_template");
-        csCartSettings.saveSettings();
-        csCartSettings.navigateToStProductPage(3);
+        CsCartSettings.saveSettings();
+        productSettings.navigateTo_StProductPage(3);
         takeScreenshot("1140 ProdPage - VerticalIcons, LeftColumn, BigPictureFlatTemplate");
         shiftLanguage("ar");
         takeScreenshot("1145 ProdPage(RTL) - VerticalIcons, LeftColumn, BigPictureFlatTemplate");
 
-        csCartSettings.shiftBrowserTab(0);
+        shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_three_columns_template");
-        csCartSettings.saveSettings();
-        csCartSettings.navigateToStProductPage(4);
+        CsCartSettings.saveSettings();
+        productSettings.navigateTo_StProductPage(4);
         takeScreenshot("1150 ProdPage - VerticalIcons, LeftColumn, ThreeColumned");
         shiftLanguage("ar");
         takeScreenshot("1155 ProdPage(RTL) - VerticalIcons, LeftColumn, ThreeColumned");
 
-        csCartSettings.shiftBrowserTab(0);
+        shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_cascade_gallery_template");
-        csCartSettings.saveSettings();
-        csCartSettings.navigateToStProductPage(5);
+        CsCartSettings.saveSettings();
+        productSettings.navigateTo_StProductPage(5);
         takeScreenshot("1160 ProdPage - VerticalIcons, LeftColumn, CascadeGallery");
         shiftLanguage("ar");
         takeScreenshot("1165 ProdPage(RTL) - VerticalIcons, LeftColumn, CascadeGallery");
 
-        csCartSettings.shiftBrowserTab(0);
+        shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_gallery_template");
-        csCartSettings.saveSettings();
-        csCartSettings.navigateToStProductPage(6);
+        CsCartSettings.saveSettings();
+        productSettings.navigateTo_StProductPage(6);
         takeScreenshot("1170 ProdPage - VerticalIcons, LeftColumn, Gallery");
         shiftLanguage("ar");
         takeScreenshot("1175 ProdPage(RTL) - VerticalIcons, LeftColumn, Gallery");
@@ -247,9 +241,9 @@ public class TestCase_1 extends TestRunner {
         CsCartSettings csCartSettings = new CsCartSettings();
         SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
 
-        csCartSettings.navigateToSection_Categories();
+        CategorySettings categorySettings = csCartSettings.navigateToSection_Categories();
         $x("//a[text()='AB: Телефоны']").click();
-        StCategoryPage stCategoryPage = csCartSettings.navigateToStCategoryPage(1);
+        StCategoryPage stCategoryPage = categorySettings.navigateTo_StCategoryPage(1);
 
         //Проверяем, что присутствуют стикеры слева и вверху
         softAssert.assertTrue($(".ab-stickers-container__TL").exists(), "There are no stickers on the Top-Left side on category page!");
