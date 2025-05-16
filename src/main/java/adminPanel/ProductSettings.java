@@ -15,7 +15,7 @@ public class ProductSettings extends CsCartSettings {
 
     SelenideElement field_productSearch = $("input[form='search_filters_form']");
     public SelenideElement statusActive_Product = $("#elm_product_status_0_a");
-    SelenideElement field_ListPrice = $("#elm_list_price");
+    public SelenideElement field_ListPrice = $("#elm_list_price");
     public SelenideElement productTemplate = $("#elm_details_layout");
     public SelenideElement tab_General = $("#detailed");
     SelenideElement tab_Shippings = $("#shippings");
@@ -27,12 +27,8 @@ public class ProductSettings extends CsCartSettings {
         field_ProductWeight.setValue(value);
     }
 
-    public void setValueTo_ListPrice(String value){
-        field_ListPrice.setValue(value);
-    }
-
     public void selectProductByName(String productName){
-        field_productSearch.sendKeys(productName);
+        field_productSearch.setValue(productName);
         $x(String.format("//td[@class='product-name-column wrap-word']//a[contains(text(), '%s')]", productName))
                 .shouldBe(Condition.visible, Duration.ofSeconds(8))
                 .click();

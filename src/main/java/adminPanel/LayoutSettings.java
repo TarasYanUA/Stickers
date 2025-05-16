@@ -20,10 +20,6 @@ public class LayoutSettings extends CsCartSettings {
     SelenideElement layoutSetting_OutsideNavigation = $("input[id*='products_properties_outside_navigation']");
 
 
-    void setMaxProductLimit(String index) {
-        layout_FieldMaxLimit.setValue(index);
-    }
-
     public void openBlockProperties(String blockName) {
         $x(String.format("//div[@title='%s']/..//div[contains(@class, 'bm-action-properties')]", blockName)).click();
         Utils.waitForPopupWindow(true);
@@ -32,7 +28,7 @@ public class LayoutSettings extends CsCartSettings {
     public void setFillingForBlockContent(String filling) {
         layoutBlock_TabContent.click();
         layout_FieldFilling.selectOption(filling);
-        setMaxProductLimit("4");
+        layout_FieldMaxLimit.setValue("4");
     }
 
     public void setBlockSettings() {

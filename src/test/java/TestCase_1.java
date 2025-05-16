@@ -85,51 +85,42 @@ public class TestCase_1 extends TestRunner {
         //Стикер "Акция" (красный цвет)
         stickerSettings.sticker_Promotion.click();
         stickerSettings.statusActive.click();
-        addConditionOfPrice(stickerSettings);
+        stickerSettings.addConditionOfPrice();
         stickerSettings.setSettingsAt_DisplayTab("product_labels", "T", "full_size");
         stickerSettings.button_SaveSticker.click();
         //Стикер "Sale > 10% < 30%" (оранжевый цвет)
-        stickerSettings.abMenu_dropDownToggle.click();
-        stickerSettings.abMenu_StickerList.click();
+        stickerSettings.goToAbMenu_StickerListPage();
         stickerSettings.sticker_SaleOrange.click();
         stickerSettings.statusActive.click();
         stickerSettings.setSettingsAt_DisplayTab("product_labels", "T", "full_size");
         stickerSettings.button_SaveSticker.click();
         //Стикер "Популярный" (фиолетовый цвет)
-        stickerSettings.abMenu_dropDownToggle.click();
-        stickerSettings.abMenu_StickerList.click();
+        stickerSettings.goToAbMenu_StickerListPage();
         stickerSettings.sticker_PopularProduct.click();
         stickerSettings.statusActive.click();
-        addConditionOfPrice(stickerSettings);
+        stickerSettings.addConditionOfPrice();
         stickerSettings.setSettingsAt_DisplayTab("product_labels", "T", "full_size");
         stickerSettings.button_SaveSticker.click();
-        stickerSettings.gearWheel.click();
-        stickerSettings.generateStickerLinks.click();
-        Selenide.sleep(3000);
+        stickerSettings.generateStickerLinks();
 
         //Три нижних стикера
         //Стикер "Высокий рейтинг" (оранжевый цвет)
-        stickerSettings.abMenu_dropDownToggle.shouldBe(Condition.interactable).click();
-        stickerSettings.abMenu_StickerList.click();
+        stickerSettings.goToAbMenu_StickerListPage();
         stickerSettings.sticker_TopRated.click();
         stickerSettings.statusActive.click();
-        addConditionOfPrice(stickerSettings);
+        stickerSettings.addConditionOfPrice();
         stickerSettings.setSettingsAt_DisplayTab("product_labels", "B", "full_size");
         stickerSettings.button_SaveSticker.click();
         //Стикер "Бесплатная доставка" (цвет сине-белый)
-        stickerSettings.abMenu_dropDownToggle.click();
-        stickerSettings.abMenu_StickerList.click();
+        stickerSettings.goToAbMenu_StickerListPage();
         stickerSettings.sticker_Free_Delivery.click();
         stickerSettings.statusActive.click();
-        addConditionOfPrice(stickerSettings);
+        stickerSettings.addConditionOfPrice();
         stickerSettings.setSettingsAt_DisplayTab("product_labels", "B", "full_size");
         stickerSettings.button_SaveSticker.click();
-        stickerSettings.gearWheel.click();
-        stickerSettings.generateStickerLinks.click();
-        Selenide.sleep(3000);
+        stickerSettings.generateStickerLinks();
         //Стикер "Вес" (цвет серый)
-        stickerSettings.abMenu_dropDownToggle.shouldBe(Condition.interactable).click();
-        stickerSettings.abMenu_StickerList.click();
+        stickerSettings.goToAbMenu_StickerListPage();
         stickerSettings.sticker_Weight.click();
         stickerSettings.statusActive.click();
         stickerSettings.setSettingsAt_DisplayTab("product_labels", "B", "full_size");
@@ -143,7 +134,7 @@ public class TestCase_1 extends TestRunner {
         ProductSettings productSettings = new ProductSettings();
         productSettings.selectProductByName("Apple iPhone 14");
         productSettings.statusActive_Product.click();
-        productSettings.setValueTo_ListPrice("2000");
+        productSettings.field_ListPrice.setValue("2000");
         productSettings.productTemplate.selectOptionByValue("default_template");
         productSettings.setValueTo_ProductWeight("9");
         Utils.saveSettings();
@@ -359,15 +350,4 @@ public class TestCase_1 extends TestRunner {
         takeScreenshot("1255 WishList(RTL) - VerticalIcons, LeftColumn");
     }
 
-    private static void addConditionOfPrice(StickerSettings stickerSettings) {
-        stickerSettings.tab_Conditions.hover().click();
-        if (stickerSettings.tableOfConditions.exists()) {
-            stickerSettings.tableOfConditions.hover();
-            stickerSettings.button_DeleteCondition.click();
-        }
-        stickerSettings.button_AddCondition.shouldBe(Condition.interactable).click();
-        stickerSettings.fieldOfConditions.selectOptionByValue("price");
-        stickerSettings.fieldOfOperator.selectOptionByValue("gte");
-        stickerSettings.clickAndType_PriceCondition("1400");
-    }
 }

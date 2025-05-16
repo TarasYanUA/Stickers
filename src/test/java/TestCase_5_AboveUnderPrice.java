@@ -53,20 +53,17 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
         //Стикер "Акция" (красный цвет)
         stickerSettings.sticker_Promotion.click();
         stickerSettings.statusActive.click();
-        addConditionOfPrice(stickerSettings);
+        stickerSettings.addConditionOfPrice();
         stickerSettings.setSettingsAt_DisplayTab("price.before", "T", "small_size");
         stickerSettings.button_SaveSticker.click();
         //Стикер "Популярный" (фиолетовый цвет)
-        stickerSettings.abMenu_dropDownToggle.click();
-        stickerSettings.abMenu_StickerList.click();
+        stickerSettings.goToAbMenu_StickerListPage();
         stickerSettings.sticker_PopularProduct.click();
         stickerSettings.statusActive.click();
-        addConditionOfPrice(stickerSettings);
+        stickerSettings.addConditionOfPrice();
         stickerSettings.setSettingsAt_DisplayTab("price.after", "T", "small_size");
         stickerSettings.button_SaveSticker.click();
-        stickerSettings.gearWheel.click();
-        stickerSettings.generateStickerLinks.click();
-        Selenide.sleep(3000);
+        stickerSettings.generateStickerLinks();
 
         //Настраиваем формат цены в теме UniTheme2
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
@@ -81,7 +78,7 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
         categorySettings.viewCategoryProducts();
         productSettings.selectProductByName("Apple iPhone 14");
         productSettings.statusActive_Product.click();
-        productSettings.setValueTo_ListPrice("2000");
+        productSettings.field_ListPrice.setValue("2000");
         productSettings.productTemplate.selectOptionByValue("default_template");
         Utils.saveSettings();
     }
@@ -269,17 +266,5 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
         Selenide.sleep(3000);
         stCategoryPage.productInList.hover();
         takeScreenshot("5255 WishList(RTL) - AboveUnderPrice");
-    }
-
-    private static void addConditionOfPrice(StickerSettings stickerSettings) {
-        stickerSettings.tab_Conditions.hover().click();
-        if (stickerSettings.tableOfConditions.exists()) {
-            stickerSettings.tableOfConditions.hover();
-            stickerSettings.button_DeleteCondition.click();
-        }
-        stickerSettings.button_AddCondition.shouldBe(Condition.interactable).click();
-        stickerSettings.fieldOfConditions.selectOptionByValue("price");
-        stickerSettings.fieldOfOperator.selectOptionByValue("gte");
-        stickerSettings.clickAndType_PriceCondition("1400");
     }
 }
