@@ -62,15 +62,8 @@ public class TestCase_3 extends TestRunner {
 
         //Настраиваем настройки модуля "Стикеры"
         StickerSettings stickerSettings = csCartSettings.navigateToStickerSettingsPage();
-        stickerSettings.tab_Settings.click();
-        stickerSettings.setting_OutputPosition.selectOptionByValue("R");
-        stickerSettings.setting_OutputType_RightTop.selectOptionByValue("column");
-        stickerSettings.setting_MaxNumber_RightTop.selectOptionByValue("3");
-        stickerSettings.setting_OutputType_RightBottom.selectOptionByValue("column");
-        stickerSettings.setting_MaxNumber_RightBottom.selectOptionByValue("3");
-        stickerSettings.tab_Pictograms.click();
-        stickerSettings.setting_AppearanceOfPictograms.selectOptionByValue("teardrop");
-        stickerSettings.button_SaveSettings.click();
+        stickerSettings.configureStickerSettings("R", "column", "3");
+        stickerSettings.configureAppearanceOfPictograms("teardrop");
 
         //Настраиваем страницу товара
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();

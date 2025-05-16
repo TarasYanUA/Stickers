@@ -72,13 +72,7 @@ public class TestCase_1 extends TestRunner {
 
         //Настраиваем настройки модуля "Стикеры"
         StickerSettings stickerSettings = csCartSettings.navigateToStickerSettingsPage();
-        stickerSettings.tab_Settings.click();
-        stickerSettings.setting_OutputPosition.selectOptionByValue("L");
-        stickerSettings.setting_OutputType_LeftTop.selectOptionByValue("column");
-        stickerSettings.setting_MaxNumber_LeftTop.selectOptionByValue("3");
-        stickerSettings.setting_OutputType_LeftBottom.selectOptionByValue("column");
-        stickerSettings.setting_MaxNumber_LeftBottom.selectOptionByValue("3");
-        stickerSettings.button_SaveSettings.click();
+        stickerSettings.configureStickerSettings("L", "column", "3");
 
         //Три верхних стикера
         csCartSettings.navigateToStickerListPage();
@@ -87,20 +81,17 @@ public class TestCase_1 extends TestRunner {
         stickerSettings.statusActive.click();
         stickerSettings.addConditionOfPrice();
         stickerSettings.setSettingsAt_DisplayTab("product_labels", "T", "full_size");
-        stickerSettings.button_SaveSticker.click();
         //Стикер "Sale > 10% < 30%" (оранжевый цвет)
         stickerSettings.goToAbMenu_StickerListPage();
         stickerSettings.sticker_SaleOrange.click();
         stickerSettings.statusActive.click();
         stickerSettings.setSettingsAt_DisplayTab("product_labels", "T", "full_size");
-        stickerSettings.button_SaveSticker.click();
         //Стикер "Популярный" (фиолетовый цвет)
         stickerSettings.goToAbMenu_StickerListPage();
         stickerSettings.sticker_PopularProduct.click();
         stickerSettings.statusActive.click();
         stickerSettings.addConditionOfPrice();
         stickerSettings.setSettingsAt_DisplayTab("product_labels", "T", "full_size");
-        stickerSettings.button_SaveSticker.click();
         stickerSettings.generateStickerLinks();
 
         //Три нижних стикера
@@ -110,21 +101,18 @@ public class TestCase_1 extends TestRunner {
         stickerSettings.statusActive.click();
         stickerSettings.addConditionOfPrice();
         stickerSettings.setSettingsAt_DisplayTab("product_labels", "B", "full_size");
-        stickerSettings.button_SaveSticker.click();
         //Стикер "Бесплатная доставка" (цвет сине-белый)
         stickerSettings.goToAbMenu_StickerListPage();
         stickerSettings.sticker_Free_Delivery.click();
         stickerSettings.statusActive.click();
         stickerSettings.addConditionOfPrice();
         stickerSettings.setSettingsAt_DisplayTab("product_labels", "B", "full_size");
-        stickerSettings.button_SaveSticker.click();
         stickerSettings.generateStickerLinks();
         //Стикер "Вес" (цвет серый)
         stickerSettings.goToAbMenu_StickerListPage();
         stickerSettings.sticker_Weight.click();
         stickerSettings.statusActive.click();
         stickerSettings.setSettingsAt_DisplayTab("product_labels", "B", "full_size");
-        stickerSettings.button_SaveSticker.click();
 
         //Настраиваем страницу товара
         CategorySettings categorySettings = csCartSettings.navigateToSection_Categories();

@@ -55,14 +55,12 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
         stickerSettings.statusActive.click();
         stickerSettings.addConditionOfPrice();
         stickerSettings.setSettingsAt_DisplayTab("price.before", "T", "small_size");
-        stickerSettings.button_SaveSticker.click();
         //Стикер "Популярный" (фиолетовый цвет)
         stickerSettings.goToAbMenu_StickerListPage();
         stickerSettings.sticker_PopularProduct.click();
         stickerSettings.statusActive.click();
         stickerSettings.addConditionOfPrice();
         stickerSettings.setSettingsAt_DisplayTab("price.after", "T", "small_size");
-        stickerSettings.button_SaveSticker.click();
         stickerSettings.generateStickerLinks();
 
         //Настраиваем формат цены в теме UniTheme2

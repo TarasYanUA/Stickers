@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
+import java.time.Duration;
 import java.util.List;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -21,35 +22,34 @@ public class StickerSettings {
     public SelenideElement sticker_Free_Delivery = $("a[href*='sticker_id=26']");   //Стикер "Бесплатная доставка" (цвет сине-белый)
     public SelenideElement sticker_Weight = $("a[href*='sticker_id=29']");          //Стикер "Вес" (цвет серый)
 
-    public SelenideElement tab_Settings = $(By.id("settings"));
-    public SelenideElement tab_Pictograms = $(By.id("ab__stickers_pictograms"));
-    public SelenideElement tab_Conditions = $(By.id("conditions"));
-    public SelenideElement tab_Display = $(By.id("display"));
+    SelenideElement tab_Settings = $(By.id("settings"));
+    SelenideElement tab_Pictograms = $(By.id("ab__stickers_pictograms"));
+    SelenideElement tab_Conditions = $(By.id("conditions"));
+    SelenideElement tab_Display = $(By.id("display"));
 
-    public SelenideElement setting_OutputPosition = $("select[id*='addon_option_ab__stickers_output_position']");
-    public SelenideElement setting_OutputType_LeftTop = $(By.id("ab__stickers_TL"));
-    public SelenideElement setting_MaxNumber_LeftTop = $(By.id("ab__stickers_TL_max_count"));
-    public SelenideElement setting_OutputType_LeftBottom = $(By.id("ab__stickers_BL"));
-    public SelenideElement setting_MaxNumber_LeftBottom = $(By.id("ab__stickers_BL_max_count"));
-    public SelenideElement setting_OutputType_RightTop = $(By.id("ab__stickers_TR"));
-    public SelenideElement setting_MaxNumber_RightTop = $(By.id("ab__stickers_TR_max_count"));
-    public SelenideElement setting_OutputType_RightBottom = $(By.id("ab__stickers_BR"));
-    public SelenideElement setting_MaxNumber_RightBottom = $(By.id("ab__stickers_BR_max_count"));
-    public SelenideElement setting_AppearanceOfPictograms = $("select[id*=addon_option_ab__stickers_p_appearance]");
+    SelenideElement setting_OutputPosition = $("select[id*='addon_option_ab__stickers_output_position']");
+    SelenideElement setting_OutputType_LeftTop = $(By.id("ab__stickers_TL"));
+    SelenideElement setting_MaxNumber_LeftTop = $(By.id("ab__stickers_TL_max_count"));
+    SelenideElement setting_OutputType_LeftBottom = $(By.id("ab__stickers_BL"));
+    SelenideElement setting_MaxNumber_LeftBottom = $(By.id("ab__stickers_BL_max_count"));
+    SelenideElement setting_OutputType_RightTop = $(By.id("ab__stickers_TR"));
+    SelenideElement setting_MaxNumber_RightTop = $(By.id("ab__stickers_TR_max_count"));
+    SelenideElement setting_OutputType_RightBottom = $(By.id("ab__stickers_BR"));
+    SelenideElement setting_MaxNumber_RightBottom = $(By.id("ab__stickers_BR_max_count"));
+    SelenideElement setting_AppearanceOfPictograms = $("select[id*=addon_option_ab__stickers_p_appearance]");
 
     public SelenideElement statusActive = $("input[id^='ab__stickers_status_'][id$='_a']");
-    public SelenideElement button_SaveSettings = $(".cm-addons-save-settings");
-    public SelenideElement button_SaveSticker = $(".cm-submit.btn-primary");
+    SelenideElement button_SaveSettings = $(".cm-submit.btn-primary");
     SelenideElement gearWheel = $("div.btn-group.dropleft");
     SelenideElement generateStickerLinks = $(".cm-post.cm-comet");
     SelenideElement abMenu_dropDownToggle = $(".ab__am-menu .btn.dropdown-toggle");
     SelenideElement abMenu_StickerList = $(".ab__am-menu a[href*='ab__stickers.manage']");
-    public SelenideElement tableOfConditions = $(".conditions-tree-node.clearfix");
-    public SelenideElement button_DeleteCondition = $(".icon-trash");
-    public SelenideElement button_AddCondition = $("div[id*='add_condition'] .btn");
-    public SelenideElement fieldOfConditions = $("div[class='conditions-tree-node'] select");
-    public SelenideElement fieldOfOperator = $("select[name*='sticker_data'][id*='sticker_condition_operator']");
-    public SelenideElement fieldOfPriceCondition = $("input[name*='sticker_data'].input-medium");
+    SelenideElement tableOfConditions = $(".conditions-tree-node.clearfix");
+    SelenideElement button_DeleteCondition = $(".icon-trash");
+    SelenideElement button_AddCondition = $("div[id*='add_condition'] .btn");
+    SelenideElement fieldOfConditions = $("div[class='conditions-tree-node'] select");
+    SelenideElement fieldOfOperator = $("select[name*='sticker_data'][id*='sticker_condition_operator']");
+    SelenideElement fieldOfPriceCondition = $("input[name*='sticker_data'].input-medium");
 
     SelenideElement productPage_DisplayPlace = $(By.id("ab__stickers_display_place_detailed_page"));
     SelenideElement productPage_Position = $(By.id("ab__stickers_output_position_detailed_page"));
@@ -85,6 +85,17 @@ public class StickerSettings {
         fieldOfPriceCondition.setValue("1400");
     }
 
+    public void generateStickerLinks() {
+        gearWheel.shouldBe(Condition.interactable, Duration.ofSeconds(10)).click();
+        generateStickerLinks.click();
+        Utils.waitForSpinnerDisappear();
+    }
+
+    public void goToAbMenu_StickerListPage() {
+        abMenu_dropDownToggle.shouldBe(Condition.interactable, Duration.ofSeconds(10)).click();
+        abMenu_StickerList.click();
+    }
+
     static class DisplayBlock {
         SelenideElement place;
         SelenideElement position;
@@ -95,17 +106,6 @@ public class StickerSettings {
             this.position = position;
             this.size = size;
         }
-    }
-
-    public void generateStickerLinks() {
-        gearWheel.click();
-        generateStickerLinks.click();
-        Utils.waitForSpinnerDisappear();
-    }
-
-    public void goToAbMenu_StickerListPage() {
-        abMenu_dropDownToggle.shouldBe(Condition.interactable).click();
-        abMenu_StickerList.click();
     }
 
     public void setSettingsAt_DisplayTab(String place, String position, String size) {
@@ -129,5 +129,51 @@ public class StickerSettings {
             }
             block.size.selectOptionByValue(size);
         }
+
+        button_SaveSettings.click();
+    }
+
+    public void configureStickerSettings(String side, String type, String maxCount) {
+        tab_Settings.click();
+        setting_OutputPosition.selectOptionByValue(side);
+
+        class Block {
+            SelenideElement outputType;
+            SelenideElement maxNumber;
+
+            Block(SelenideElement outputType, SelenideElement maxNumber) {
+                this.outputType = outputType;
+                this.maxNumber = maxNumber;
+            }
+        }
+
+        List<Block> blocks;
+
+        if (side.equals("L")) {
+            blocks = List.of(
+                    new Block(setting_OutputType_LeftTop, setting_MaxNumber_LeftTop),
+                    new Block(setting_OutputType_LeftBottom, setting_MaxNumber_LeftBottom)
+            );
+        } else if (side.equals("R")) {
+            blocks = List.of(
+                    new Block(setting_OutputType_RightTop, setting_MaxNumber_RightTop),
+                    new Block(setting_OutputType_RightBottom, setting_MaxNumber_RightBottom)
+            );
+        } else {
+            throw new IllegalArgumentException("Сторона должна быть 'L' или 'R'");
+        }
+
+        for (Block block : blocks) {
+            block.outputType.selectOptionByValue(type);
+            block.maxNumber.selectOptionByValue(maxCount);
+        }
+
+        button_SaveSettings.click();
+    }
+
+    public void configureAppearanceOfPictograms(String appearance) {
+        tab_Pictograms.click();
+        setting_AppearanceOfPictograms.selectOptionByValue(appearance);
+        button_SaveSettings.click();
     }
 }

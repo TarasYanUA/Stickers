@@ -38,13 +38,7 @@ public class TestCase_2 extends TestRunner {
 
         //Настраиваем настройки модуля "Стикеры"
         StickerSettings stickerSettings = csCartSettings.navigateToStickerSettingsPage();
-        stickerSettings.tab_Settings.click();
-        stickerSettings.setting_OutputPosition.selectOptionByValue("L");
-        stickerSettings.setting_OutputType_LeftTop.selectOptionByValue("row");
-        stickerSettings.setting_MaxNumber_LeftTop.selectOptionByValue("3");
-        stickerSettings.setting_OutputType_LeftBottom.selectOptionByValue("row");
-        stickerSettings.setting_MaxNumber_LeftBottom.selectOptionByValue("3");
-        stickerSettings.button_SaveSettings.click();
+        stickerSettings.configureStickerSettings("L", "row", "3");
 
         //Настраиваем Комбинации формаций изображений галереи товара (тема Uni2)
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();

@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Continue refactoring of the code for CsCartSettings class.">
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Make refactoring of the code for StickerSettings class.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/LayoutSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/LayoutSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_5_AboveUnderPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_5_AboveUnderPrice.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -465,14 +466,6 @@
       <option name="project" value="LOCAL" />
       <updated>1678200339225</updated>
     </task>
-    <task id="LOCAL-00049" summary="Improved some code.">
-      <option name="closed" value="true" />
-      <created>1718262797268</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1718262797268</updated>
-    </task>
     <task id="LOCAL-00050" summary="Added SoftAssert to the other three test-cases.">
       <option name="closed" value="true" />
       <created>1718268875559</created>
@@ -577,7 +570,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747385627362</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Make refactoring of the code for StickerSettings class.">
+      <option name="closed" value="true" />
+      <created>1747388888554</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1747388888554</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -592,7 +593,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test-case 4 is done. Removed error messages." />
     <MESSAGE value="Added some comments in TestRunner." />
     <MESSAGE value="Added ReadMe file.&#10;Updated libraries at pom file." />
     <MESSAGE value="TestCaseOne is ready and adapted to 4.18.1." />
@@ -617,22 +617,7 @@
     <MESSAGE value="Added new test 'TestCase_5_AboveUnderPrice'." />
     <MESSAGE value="Started refactoring of the code for CsCartSettings class." />
     <MESSAGE value="Continue refactoring of the code for CsCartSettings class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Continue refactoring of the code for CsCartSettings class." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/TestCase_1.java</url>
-          <line>102</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java</url>
-          <line>103</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Make refactoring of the code for StickerSettings class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Make refactoring of the code for StickerSettings class." />
   </component>
 </project>
