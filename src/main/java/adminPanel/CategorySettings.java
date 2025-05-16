@@ -3,11 +3,10 @@ package adminPanel;
 import com.codeborne.selenide.SelenideElement;
 import storefront.StCategoryPage;
 
-import static adminPanel.CsCartSettings.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class CategorySettings {
+public class CategorySettings extends CsCartSettings {
 
     //Меню "Товары -- Категории"
     public CategorySettings() {super();}
@@ -17,7 +16,6 @@ public class CategorySettings {
 
 
     public StCategoryPage navigateTo_StCategoryPage(int tabNumber) {
-        closeNotificationIfExists();
         openPreviewPage(tabNumber);
         return new StCategoryPage();
     }
@@ -28,7 +26,7 @@ public class CategorySettings {
 
     public void activateCategoryAndSave() {
         statusActive_Category.click();
-        saveSettings();
+        Utils.saveSettings();
     }
 
     public void viewCategoryProducts() {

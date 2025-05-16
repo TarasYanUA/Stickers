@@ -6,8 +6,6 @@ import org.testng.asserts.SoftAssert;
 import storefront.StCategoryPage;
 import storefront.StProductPage;
 
-import static adminPanel.CsCartSettings.saveSettings;
-import static adminPanel.CsCartSettings.shiftBrowserTab;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -23,6 +21,7 @@ import static com.codeborne.selenide.Selenide.$x;
 - UniTheme2:
     - Списки товаров -- Формат отображения цен -- Вариант 6
 */
+
 public class TestCase_5_AboveUnderPrice extends TestRunner {
     @Test(priority = 10)
     public void TestCase_5_ConfigureSettings() {
@@ -34,7 +33,7 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
         csCartSettings.navigateTo_AppearanceSettings();
         if (!csCartSettings.settingQuickView.isSelected()) {
             csCartSettings.settingQuickView.click();
-            saveSettings();
+            Utils.saveSettings();
         }
 
         //Настраиваем два блока с товарами
@@ -73,7 +72,7 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
         uniThemeSettings.tab_ProductList.click();
         uniThemeSettings.setting_PriceDisplayFormat.selectOptionByValue("col-rev-mix");
-        saveSettings();
+        Utils.saveSettings();
 
         //Настраиваем страницу товара
         CategorySettings categorySettings = csCartSettings.navigateToSection_Categories();
@@ -84,7 +83,7 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
         productSettings.statusActive_Product.click();
         productSettings.setValueTo_ListPrice("2000");
         productSettings.productTemplate.selectOptionByValue("default_template");
-        saveSettings();
+        Utils.saveSettings();
     }
 
     @Test(priority = 20, dependsOnMethods = "TestCase_5_ConfigureSettings")
@@ -122,42 +121,42 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
         takeScreenshot("5125 BlockHits(RTL) - AboveUnderPrice, AdvancedScroller");
 
         //Смотрим другие шаблоны страницы товара
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.tab_General.hover().click();
         productSettings.productTemplate.selectOptionByValue("bigpicture_template");
-        saveSettings();
+        Utils.saveSettings();
         productSettings.navigateTo_StProductPage(2);
         takeScreenshot("5130 ProdPage - AboveUnderPrice, BigPictureTemplate");
         shiftLanguage("ar");
         takeScreenshot("5135 ProdPage(RTL) - AboveUnderPrice, BigPictureTemplate");
 
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_flat_template");
-        saveSettings();
+        Utils.saveSettings();
         productSettings.navigateTo_StProductPage(3);
         takeScreenshot("5140 ProdPage - AboveUnderPrice, BigPictureFlatTemplate");
         shiftLanguage("ar");
         takeScreenshot("5145 ProdPage(RTL) - AboveUnderPrice, BigPictureFlatTemplate");
 
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_three_columns_template");
-        saveSettings();
+        Utils.saveSettings();
         productSettings.navigateTo_StProductPage(4);
         takeScreenshot("5150 ProdPage - AboveUnderPrice, ThreeColumned");
         shiftLanguage("ar");
         takeScreenshot("5155 ProdPage(RTL) - AboveUnderPrice, ThreeColumned");
 
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_cascade_gallery_template");
-        saveSettings();
+        Utils.saveSettings();
         productSettings.navigateTo_StProductPage(5);
         takeScreenshot("5160 ProdPage - AboveUnderPrice, CascadeGallery");
         shiftLanguage("ar");
         takeScreenshot("5165 ProdPage(RTL) - AboveUnderPrice, CascadeGallery");
 
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_gallery_template");
-        saveSettings();
+        Utils.saveSettings();
         productSettings.navigateTo_StProductPage(6);
         $(".ty-product-prices").scrollIntoCenter();
         takeScreenshot("5170 ProdPage - AboveUnderPrice, Gallery");

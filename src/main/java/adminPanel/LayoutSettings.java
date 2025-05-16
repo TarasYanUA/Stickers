@@ -2,11 +2,9 @@ package adminPanel;
 
 import com.codeborne.selenide.SelenideElement;
 
-import static adminPanel.CsCartSettings.waitForPopupWindowAppear;
-import static adminPanel.CsCartSettings.waitForPopupWindowDisappear;
 import static com.codeborne.selenide.Selenide.*;
 
-public class LayoutSettings {
+public class LayoutSettings extends CsCartSettings {
 
     //Меню "Веб-сайт -- Темы -- Макеты"
     public LayoutSettings(){super();}
@@ -23,14 +21,12 @@ public class LayoutSettings {
 
 
     void setMaxProductLimit(String index) {
-        layout_FieldMaxLimit.click();
-        layout_FieldMaxLimit.clear();
         layout_FieldMaxLimit.setValue(index);
     }
 
     public void openBlockProperties(String blockName) {
         $x(String.format("//div[@title='%s']/..//div[contains(@class, 'bm-action-properties')]", blockName)).click();
-        waitForPopupWindowAppear();
+        Utils.waitForPopupWindow(true);
     }
 
     public void setFillingForBlockContent(String filling) {
@@ -42,14 +38,12 @@ public class LayoutSettings {
     public void setBlockSettings() {
         sleep(1500);
         layout_ButtonSettings.click();
-        if (!layoutSettings_ShowPrice.isSelected())
-            layoutSettings_ShowPrice.click();
-        if (layoutSetting_OutsideNavigation.isSelected())
-            layoutSetting_OutsideNavigation.scrollIntoCenter().click();
+        Utils.setCheckbox(layoutSettings_ShowPrice, true, "layoutSettings_ShowPrice");
+        Utils.setCheckbox(layoutSetting_OutsideNavigation, false, "layoutSetting_OutsideNavigation");
     }
 
     public void saveBlockProperties() {
         layout_ButtonSaveBlock.click();
-        waitForPopupWindowDisappear();
+        Utils.waitForPopupWindow(false);
     }
 }

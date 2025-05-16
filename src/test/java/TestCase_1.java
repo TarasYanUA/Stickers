@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 import storefront.StCategoryPage;
 import storefront.StProductPage;
 
-import static adminPanel.CsCartSettings.shiftBrowserTab;
 import static com.codeborne.selenide.Selenide.*;
 import org.testng.asserts.SoftAssert;
 
@@ -25,6 +24,7 @@ import org.testng.asserts.SoftAssert;
 - Блок с товарами: шаблоны АВ: Сетка (с кнопкой "Показать ещё") + АВ: Расширенный скроллер товаров
 - Страница Избранных
 */
+
 public class TestCase_1 extends TestRunner {
     @Test(priority = 10)
     public void TestCase_1_ConfigureSettings() {
@@ -39,7 +39,7 @@ public class TestCase_1 extends TestRunner {
         if (!csCartSettings.settingQuickView.isSelected()) {
             csCartSettings.settingQuickView.click();
         }
-        CsCartSettings.saveSettings();
+        Utils.saveSettings();
 
         //Включаем Вертикальное отображение мини-иконок (Модуль "Видео галерея")
         VideoGallerySettings videoGallerySettings = csCartSettings.navigateToVideoGalleryPage();
@@ -57,7 +57,7 @@ public class TestCase_1 extends TestRunner {
         uniThemeSettings.fieldOfPictogramPosition_CompactList.selectOptionByValue("position_1");
         uniThemeSettings.tab_Product.hover().click();
         uniThemeSettings.fieldOfPictogramPosition_Product.selectOptionByValue("position_1");
-        CsCartSettings.saveSettings();
+        Utils.saveSettings();
 
         //Настраиваем блок с товарами
         LayoutSettings layoutSettings = csCartSettings.navigateToSection_Layouts();
@@ -146,7 +146,7 @@ public class TestCase_1 extends TestRunner {
         productSettings.setValueTo_ListPrice("2000");
         productSettings.productTemplate.selectOptionByValue("default_template");
         productSettings.setValueTo_ProductWeight("9");
-        CsCartSettings.saveSettings();
+        Utils.saveSettings();
     }
 
     @Test(priority = 20, dependsOnMethods = "TestCase_1_ConfigureSettings")
@@ -194,42 +194,42 @@ public class TestCase_1 extends TestRunner {
         takeScreenshot("1125 BlockHits(RTL) - VerticalIcons, LeftColumn, AdvancedScroller");
 
         //Смотрим другие шаблоны страницы товара
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.tab_General.hover().click();
         productSettings.productTemplate.selectOptionByValue("bigpicture_template");
-        CsCartSettings.saveSettings();
+        Utils.saveSettings();
         productSettings.navigateTo_StProductPage(2);
         takeScreenshot("1130 ProdPage - VerticalIcons, LeftColumn, BigPictureTemplate");
         shiftLanguage("ar");
         takeScreenshot("1135 ProdPage(RTL) - VerticalIcons, LeftColumn, BigPictureTemplate");
 
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_flat_template");
-        CsCartSettings.saveSettings();
+        Utils.saveSettings();
         productSettings.navigateTo_StProductPage(3);
         takeScreenshot("1140 ProdPage - VerticalIcons, LeftColumn, BigPictureFlatTemplate");
         shiftLanguage("ar");
         takeScreenshot("1145 ProdPage(RTL) - VerticalIcons, LeftColumn, BigPictureFlatTemplate");
 
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_three_columns_template");
-        CsCartSettings.saveSettings();
+        Utils.saveSettings();
         productSettings.navigateTo_StProductPage(4);
         takeScreenshot("1150 ProdPage - VerticalIcons, LeftColumn, ThreeColumned");
         shiftLanguage("ar");
         takeScreenshot("1155 ProdPage(RTL) - VerticalIcons, LeftColumn, ThreeColumned");
 
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_cascade_gallery_template");
-        CsCartSettings.saveSettings();
+        Utils.saveSettings();
         productSettings.navigateTo_StProductPage(5);
         takeScreenshot("1160 ProdPage - VerticalIcons, LeftColumn, CascadeGallery");
         shiftLanguage("ar");
         takeScreenshot("1165 ProdPage(RTL) - VerticalIcons, LeftColumn, CascadeGallery");
 
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_gallery_template");
-        CsCartSettings.saveSettings();
+        Utils.saveSettings();
         productSettings.navigateTo_StProductPage(6);
         takeScreenshot("1170 ProdPage - VerticalIcons, LeftColumn, Gallery");
         shiftLanguage("ar");

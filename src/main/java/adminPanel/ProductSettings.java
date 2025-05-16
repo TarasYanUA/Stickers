@@ -6,10 +6,9 @@ import storefront.StProductPage;
 
 import java.time.Duration;
 
-import static adminPanel.CsCartSettings.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class ProductSettings {
+public class ProductSettings extends CsCartSettings {
 
     //Меню "Товары -- Товары"
     public ProductSettings(){super();}
@@ -40,7 +39,6 @@ public class ProductSettings {
     }
 
     public StProductPage navigateTo_StProductPage(int tabNumber) {
-        closeNotificationIfExists();
         openPreviewPage(tabNumber);
         return new StProductPage();
     }

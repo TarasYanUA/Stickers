@@ -1,64 +1,63 @@
 package adminPanel;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class CsCartSettings implements CheckMenuToBeActive {
     public CsCartSettings() {
         super();
     }
 
-    public static SelenideElement notification = $(".cm-notification-close");
-    public static SelenideElement popupWindow = $(".ui-dialog-title");
-    public static SelenideElement cookieNotice = $(".cookie-notice");
-    public static SelenideElement gearWheelOnTop = $(".nav__actions-bar .dropdown-icon--tools");
-    public static SelenideElement button_Preview = $x("//ul[@class='dropdown-menu']//a[contains(text(), 'Предпросмотр')]");
-    public static SelenideElement button_Save = $(".btn.btn-primary.cm-submit");
+    SelenideElement notification = $(".cm-notification-close");
+    SelenideElement cookieNotice = $(".cookie-notice");
+    SelenideElement gearWheelOnTop = $(".nav__actions-bar .dropdown-icon--tools");
+    SelenideElement button_Preview = $x("//ul[@class='dropdown-menu']//a[contains(text(), 'Предпросмотр')]");
     SelenideElement menu_Website = $("a[href$='dispatch=themes.manage'].main-menu-1__link");
     SelenideElement menu_Products = $("a[href$='dispatch=products.manage'].main-menu-1__link");
+    SelenideElement menu_Addons = $("a[href$='dispatch=addons.manage'].main-menu-1__link");
     SelenideElement section_Themes = $("#website_themes");
     SelenideElement section_Layouts = $(".nav__actions-bar a[href$='block_manager.manage']");
     SelenideElement section_Products = $(By.id("products_products"));
     SelenideElement section_Categories = $(By.id("products_categories"));
+    SelenideElement section_DownloadedAddons = $("#addons_downloaded_add_ons");
+
+    //Меню "Модули -- Скачанные модули"
+    SelenideElement menuOfUniTheme = $("tr#addon_abt__unitheme2 button.btn.dropdown-toggle");
+    SelenideElement sectionThemeSettings = $("div.nowrap a[href*='abt__ut2.settings']");
+    SelenideElement menuOfStickerAddon = $("tr#addon_ab__stickers button.btn.dropdown-toggle");
+    SelenideElement sectionStickerSettings = $("div.nowrap a[href*='addon=ab__stickers']");
+    SelenideElement sectionStickerList = $("tr#addon_ab__stickers a[href*='ab__stickers.manage']");
+    SelenideElement menuOFVideoGalleryAddon = $("tr#addon_ab__video_gallery button.btn.dropdown-toggle");
+    SelenideElement sectionVideoGalleryGeneralSettings = $("tr#addon_ab__video_gallery a[href*='selected_section=settings']");
+
+    //Меню "Настройки -- Общие настройки"
+    SelenideElement menu_Settings = $("#administration");
+    SelenideElement section_GeneralSettings = $("a[href$='section_id=General']");
+    SelenideElement section_Appearance = $("a[href*='section_id=Appearance']");
+    public SelenideElement settingMiniThumbnailAsGallery = $("#field___thumbnails_gallery_147");
+    public SelenideElement settingQuickView = $x("//input[contains(@id, 'field___enable_quick_view_')]");
 
 
-    public static void waitForPopupWindowAppear() {
-        popupWindow.shouldBe(Condition.visible);
-        Selenide.sleep(1000);
-    }
-
-    public static void waitForPopupWindowDisappear() {
-        popupWindow.shouldBe(Condition.disappear);
-        Selenide.sleep(1000);
-    }
-
-
-    public static void shiftBrowserTab(int tabNumber) {
-        getWebDriver().getWindowHandle();
-        switchTo().window(tabNumber);
-    }
-
-    public static void closeNotificationIfExists() {
+    public void closeNotificationIfExists() {
         if (notification.exists())
             notification.click();
     }
 
-    public static void closeCookieNoticeIfExists() {
+    public void closeCookieNoticeIfExists() {
         if (cookieNotice.exists()){
             cookieNotice.shouldBe(Condition.interactable);
             $(".cm-btn-success").click();
         }
     }
 
-    public static void openPreviewPage(int tabNumber) {
+    public void openPreviewPage(int tabNumber) {
+        closeNotificationIfExists();
         gearWheelOnTop.click();
         button_Preview.click();
-        shiftBrowserTab(tabNumber);
+        Utils.shiftBrowserTab(tabNumber);
         closeCookieNoticeIfExists();
     }
 
@@ -80,31 +79,6 @@ public class CsCartSettings implements CheckMenuToBeActive {
         section_Categories.click();
         return new CategorySettings();
     }
-
-
-    //Меню "Настройки -- Общие настройки"
-    SelenideElement menu_Settings = $("#administration");
-    SelenideElement section_GeneralSettings = $("a[href$='section_id=General']");
-    SelenideElement section_Appearance = $("a[href*='section_id=Appearance']");
-    public SelenideElement settingMiniThumbnailAsGallery = $("#field___thumbnails_gallery_147");
-    public SelenideElement settingQuickView = $x("//input[contains(@id, 'field___enable_quick_view_')]");
-
-    public void navigateTo_AppearanceSettings() {
-        menu_Settings.click();
-        section_GeneralSettings.click();
-        section_Appearance.click();
-    }
-
-    //Меню "Модули -- Скачанные модули"
-    public SelenideElement menu_Addons = $("a[href$='dispatch=addons.manage'].main-menu-1__link");
-    public SelenideElement section_DownloadedAddons = $("#addons_downloaded_add_ons");
-    public SelenideElement menuOfUniTheme = $("tr#addon_abt__unitheme2 button.btn.dropdown-toggle");
-    public SelenideElement sectionThemeSettings = $("div.nowrap a[href*='abt__ut2.settings']");
-    public SelenideElement menuOfStickerAddon = $("tr#addon_ab__stickers button.btn.dropdown-toggle");
-    public SelenideElement sectionStickerSettings = $("div.nowrap a[href*='addon=ab__stickers']");
-    public SelenideElement sectionStickerList = $("tr#addon_ab__stickers a[href*='ab__stickers.manage']");
-    public SelenideElement menuOFVideoGalleryAddon = $("tr#addon_ab__video_gallery button.btn.dropdown-toggle");
-    public SelenideElement sectionVideoGalleryGeneralSettings = $("tr#addon_ab__video_gallery a[href*='selected_section=settings']");
 
     void navigateTo_DownloadedAddonsPage() {
         checkMenuToBeActive("dispatch=addons.manage", menu_Addons);
@@ -138,8 +112,9 @@ public class CsCartSettings implements CheckMenuToBeActive {
         return new VideoGallerySettings();
     }
 
-    public static void saveSettings() {
-        button_Save.click();
-        Selenide.sleep(1500);
+    public void navigateTo_AppearanceSettings() {
+        menu_Settings.click();
+        section_GeneralSettings.click();
+        section_Appearance.click();
     }
 }

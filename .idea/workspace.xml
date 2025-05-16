@@ -4,17 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Added new test 'TestCase_5_AboveUnderPrice'.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CategorySettings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/adminPanel/LayoutSettings.java" afterDir="false" />
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Started refactoring of the code for CsCartSettings class.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/adminPanel/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CategorySettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CategorySettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/LayoutSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/LayoutSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/ProductSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_5_AboveUnderPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_5_AboveUnderPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -469,14 +471,6 @@
       <option name="project" value="LOCAL" />
       <updated>1678200339225</updated>
     </task>
-    <task id="LOCAL-00047" summary="Prepared SoftAsserts for the first test case.">
-      <option name="closed" value="true" />
-      <created>1718206582469</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1718206582469</updated>
-    </task>
     <task id="LOCAL-00048" summary="SoftAsserts for the first test-case are ready and work properly!">
       <option name="closed" value="true" />
       <created>1718209599960</created>
@@ -581,7 +575,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745481086888</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Started refactoring of the code for CsCartSettings class.">
+      <option name="closed" value="true" />
+      <created>1747321474803</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1747321474803</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -596,7 +598,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test-case 3, part 2 is ready!" />
     <MESSAGE value="Test-case 4 is done.&#10;Changed name for screenshots." />
     <MESSAGE value="Test-case 4 is done. Removed error messages." />
     <MESSAGE value="Added some comments in TestRunner." />
@@ -621,21 +622,7 @@
     <MESSAGE value="Adapted TestCase_3 to the newest add-on and theme versions." />
     <MESSAGE value="Adapted TestCase_4 to the newest add-on and theme versions." />
     <MESSAGE value="Added new test 'TestCase_5_AboveUnderPrice'." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new test 'TestCase_5_AboveUnderPrice'." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/adminPanel/CsCartSettings.java</url>
-          <line>57</line>
-          <properties class="adminPanel.CsCartSettings" method="openPreviewPage">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Started refactoring of the code for CsCartSettings class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Started refactoring of the code for CsCartSettings class." />
   </component>
 </project>

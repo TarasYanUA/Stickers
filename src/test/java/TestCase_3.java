@@ -5,8 +5,6 @@ import org.testng.annotations.Test;
 import storefront.StCategoryPage;
 import storefront.StProductPage;
 
-import static adminPanel.CsCartSettings.saveSettings;
-import static adminPanel.CsCartSettings.shiftBrowserTab;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 import org.testng.asserts.SoftAssert;
@@ -26,7 +24,6 @@ import org.testng.asserts.SoftAssert;
 - Блок с товарами: шаблоны АВ: Легкий скроллер + Сетка
 - Страница Избранных
 */
-
 
 public class TestCase_3 extends TestRunner {
     @Test(priority = 10)
@@ -51,7 +48,7 @@ public class TestCase_3 extends TestRunner {
         uniThemeSettings.fieldOfPictogramPosition_Product.selectOptionByValue("position_2");
         //Настраиваем Комбинации формаций изображений галереи товара
         uniThemeSettings.setting_CombinationsOfProductGalleryImageFormations.selectOptionByValue("3");
-        saveSettings();
+        Utils.saveSettings();
 
         //Настраиваем блок с товарами
         LayoutSettings layoutSettings = csCartSettings.navigateToSection_Layouts();
@@ -79,7 +76,7 @@ public class TestCase_3 extends TestRunner {
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.selectProductByName("Apple iPhone 14");
         productSettings.productTemplate.selectOptionByValue("default_template");
-        saveSettings();
+        Utils.saveSettings();
     }
 
     @Test(priority = 20, dependsOnMethods = "TestCase_3_ConfigureSettings")
@@ -127,7 +124,7 @@ public class TestCase_3 extends TestRunner {
         takeScreenshot("3125 BlockHits(RTL) - HorizontalIcons, RightColumn, Grid");
 
         //Смотрим другие шаблоны страницы товара
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.tab_General.hover().click();
         productSettings.productTemplate.selectOptionByValue("bigpicture_template");
         productSettings.navigateTo_StProductPage(2);
@@ -135,30 +132,30 @@ public class TestCase_3 extends TestRunner {
         shiftLanguage("ar");
         takeScreenshot("3135 ProdPage(RTL) - HorizontalIcons, RightColumn, BigPictureTemplate");
 
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_flat_template");
         productSettings.navigateTo_StProductPage(3);
         takeScreenshot("3140 ProdPage - HorizontalIcons, RightColumn, BigPictureFlatTemplate");
         shiftLanguage("ar");
         takeScreenshot("3145 ProdPage(RTL) - HorizontalIcons, RightColumn, BigPictureFlatTemplate");
 
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_three_columns_template");
         productSettings.navigateTo_StProductPage(4);
         takeScreenshot("3150 ProdPage - HorizontalIcons, RightColumn, ThreeColumned");
         shiftLanguage("ar");
         takeScreenshot("3155 ProdPage(RTL) - HorizontalIcons, RightColumn, ThreeColumned");
 
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_cascade_gallery_template");
         productSettings.navigateTo_StProductPage(5);
         takeScreenshot("3160 ProdPage - HorizontalIcons, RightColumn, CascadeGallery f3");
         shiftLanguage("ar");
         takeScreenshot("3165 ProdPage(RTL) - HorizontalIcons, RightColumn, CascadeGallery f3");
 
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_gallery_template");
-        saveSettings();
+        Utils.saveSettings();
         productSettings.navigateTo_StProductPage(6);
         takeScreenshot("3170 ProdPage - HorizontalIcons, RightColumn, Gallery");
         shiftLanguage("ar");

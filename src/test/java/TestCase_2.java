@@ -6,8 +6,6 @@ import storefront.StCategoryPage;
 import storefront.StProductPage;
 import org.testng.asserts.SoftAssert;
 
-import static adminPanel.CsCartSettings.saveSettings;
-import static adminPanel.CsCartSettings.shiftBrowserTab;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -25,6 +23,7 @@ import static com.codeborne.selenide.Selenide.$x;
 - Блок с товарами: шаблоны АВ: Сетка (с кнопкой "Показать ещё") + АВ: Расширенный скроллер товаров
 - Страница Избранных
 */
+
 public class TestCase_2 extends TestRunner {
     @Test(priority = 10)
     public void TestCase_2_ConfigureSettings() {
@@ -51,13 +50,13 @@ public class TestCase_2 extends TestRunner {
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
         uniThemeSettings.tab_Product.scrollIntoView(false).click();
         uniThemeSettings.setting_CombinationsOfProductGalleryImageFormations.selectOptionByValue("2");
-        saveSettings();
+        Utils.saveSettings();
 
         //Переходим на страницу редактирования товара
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.selectProductByName("Apple iPhone 14");
         productSettings.productTemplate.selectOptionByValue("default_template");
-        saveSettings();
+        Utils.saveSettings();
     }
 
     @Test(priority = 20, dependsOnMethods = "TestCase_2_ConfigureSettings")
@@ -105,42 +104,42 @@ public class TestCase_2 extends TestRunner {
         takeScreenshot("2125 BlockHits(RTL) - HorizontalIcons, LeftRow, AdvancedScroller");
 
         //Смотрим другие шаблоны страницы товара
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.tab_General.hover().click();
         productSettings.productTemplate.selectOptionByValue("bigpicture_template");
-        saveSettings();
+        Utils.saveSettings();
         productSettings.navigateTo_StProductPage(2);
         takeScreenshot("2130 ProdPage - HorizontalIcons, LeftRow, BigPictureTemplate");
         shiftLanguage("ar");
         takeScreenshot("2135 ProdPage(RTL) - HorizontalIcons, LeftRow, BigPictureTemplate");
 
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_flat_template");
-        saveSettings();
+        Utils.saveSettings();
         productSettings.navigateTo_StProductPage(3);
         takeScreenshot("2140 ProdPage - HorizontalIcons, LeftRow, BigPictureFlatTemplate");
         shiftLanguage("ar");
         takeScreenshot("2145 ProdPage(RTL) - HorizontalIcons, LeftRow, BigPictureFlatTemplate");
 
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_three_columns_template");
-        saveSettings();
+        Utils.saveSettings();
         productSettings.navigateTo_StProductPage(4);
         takeScreenshot("2150 ProdPage - HorizontalIcons, LeftRow, ThreeColumned");
         shiftLanguage("ar");
         takeScreenshot("2155 ProdPage(RTL) - HorizontalIcons, LeftRow, ThreeColumned");
 
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_cascade_gallery_template");
-        saveSettings();
+        Utils.saveSettings();
         productSettings.navigateTo_StProductPage(5);
         takeScreenshot("2160 ProdPage - HorizontalIcons, LeftRow, CascadeGallery f2");
         shiftLanguage("ar");
         takeScreenshot("2165 ProdPage(RTL) - HorizontalIcons, LeftRow, CascadeGallery f2");
 
-        shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_gallery_template");
-        saveSettings();
+        Utils.saveSettings();
         productSettings.navigateTo_StProductPage(6);
         takeScreenshot("2170 ProdPage - HorizontalIcons, LeftRow, Gallery");
         shiftLanguage("ar");
