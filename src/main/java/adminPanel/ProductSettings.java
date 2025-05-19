@@ -1,28 +1,41 @@
 package adminPanel;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.sleep;
+import storefront.StProductPage;
 
-public class ProductSettings {
+import java.time.Duration;
+
+import static com.codeborne.selenide.Selenide.*;
+
+public class ProductSettings extends CsCartSettings {
+
+    //Меню "Товары -- Товары"
     public ProductSettings(){super();}
 
+    SelenideElement field_productSearch = $("input[form='search_filters_form']");
     public SelenideElement statusActive_Product = $("#elm_product_status_0_a");
     public SelenideElement field_ListPrice = $("#elm_list_price");
-    SelenideElement field_productSearch = $("input[form='search_filters_form']");
     public SelenideElement productTemplate = $("#elm_details_layout");
     public SelenideElement tab_General = $("#detailed");
-    public SelenideElement tab_Shippings = $("#shippings");
+    SelenideElement tab_Shippings = $("#shippings");
     SelenideElement field_ProductWeight = $("#product_weight");
 
-    public void clickAndType_ProductWeight(String value){
-        field_ProductWeight.click();
-        field_ProductWeight.clear();
-        field_ProductWeight.sendKeys(value);
+
+    public void setValueTo_ProductWeight(String value){
+        tab_Shippings.hover().click();
+        field_ProductWeight.setValue(value);
     }
-    public void clickAndType_ProductSearch(String value){
-        field_productSearch.click();
-        field_productSearch.sendKeys(value);
-        sleep(3000);
+
+    public void selectProductByName(String productName){
+        field_productSearch.setValue(productName);
+        $x(String.format("//td[@class='product-name-column wrap-word']//a[contains(text(), '%s')]", productName))
+                .shouldBe(Condition.visible, Duration.ofSeconds(8))
+                .click();
+    }
+
+    public StProductPage navigateTo_StProductPage(int tabNumber) {
+        openPreviewPage(tabNumber);
+        return new StProductPage();
     }
 }

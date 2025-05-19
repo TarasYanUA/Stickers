@@ -23,40 +23,30 @@ import static com.codeborne.selenide.Selenide.$x;
 - Блок с товарами: шаблоны АВ: Сетка (с кнопкой "Показать ещё") + АВ: Расширенный скроллер товаров
 - Страница Избранных
 */
+
 public class TestCase_2 extends TestRunner {
     @Test(priority = 10)
     public void TestCase_2_ConfigureSettings() {
         //Включаем Горизонтальное отображение мини-иконок (Модуль "Видео галерея")
         CsCartSettings csCartSettings = new CsCartSettings();
         VideoGallerySettings videoGallerySettings = csCartSettings.navigateToVideoGalleryPage();
-        videoGallerySettings.tabSettings.click();
-        if (videoGallerySettings.settingVerticalView.isSelected()) {
-            videoGallerySettings.settingVerticalView.click();
-            videoGallerySettings.buttonSaveVideoGallery.click();
-        }
+        videoGallerySettings.setVerticalView(false);
 
         //Настраиваем настройки модуля "Стикеры"
         StickerSettings stickerSettings = csCartSettings.navigateToStickerSettingsPage();
-        stickerSettings.tab_Settings.click();
-        stickerSettings.setting_OutputPosition.selectOptionByValue("L");
-        stickerSettings.setting_OutputType_LeftTop.selectOptionByValue("row");
-        stickerSettings.setting_MaxNumber_LeftTop.selectOptionByValue("3");
-        stickerSettings.setting_OutputType_LeftBottom.selectOptionByValue("row");
-        stickerSettings.setting_MaxNumber_LeftBottom.selectOptionByValue("3");
-        stickerSettings.button_SaveSettings.click();
+        stickerSettings.configureStickerSettings("L", "row", "3");
 
         //Настраиваем Комбинации формаций изображений галереи товара (тема Uni2)
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
-        uniThemeSettings.tab_Product.scrollIntoView(false).click();
+        uniThemeSettings.goToProductTab();
         uniThemeSettings.setting_CombinationsOfProductGalleryImageFormations.selectOptionByValue("2");
-        csCartSettings.saveSettings();
+        Utils.saveSettings();
 
         //Переходим на страницу редактирования товара
         ProductSettings productSettings = csCartSettings.navigateToSection_Products();
-        productSettings.clickAndType_ProductSearch("Apple iPhone 14");
-        csCartSettings.chooseAnyProduct();
+        productSettings.selectProductByName("Apple iPhone 14");
         productSettings.productTemplate.selectOptionByValue("default_template");
-        csCartSettings.saveSettings();
+        Utils.saveSettings();
     }
 
     @Test(priority = 20, dependsOnMethods = "TestCase_2_ConfigureSettings")
@@ -66,9 +56,8 @@ public class TestCase_2 extends TestRunner {
         SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
 
         csCartSettings.navigateToSection_Products();
-        productSettings.clickAndType_ProductSearch("Apple iPhone 14");
-        csCartSettings.chooseAnyProduct();
-        StProductPage stProductPage = csCartSettings.navigateToStProductPage(1);
+        productSettings.selectProductByName("Apple iPhone 14");
+        StProductPage stProductPage = productSettings.navigateTo_StProductPage(1);
 
         //Проверяем, что галерея мини-иконок горизонтальная
         softAssert.assertFalse($(".ab-vg-vertical-thumbnails").exists(), "Gallery of mini-icons is not Horizontal!");
@@ -105,43 +94,43 @@ public class TestCase_2 extends TestRunner {
         takeScreenshot("2125 BlockHits(RTL) - HorizontalIcons, LeftRow, AdvancedScroller");
 
         //Смотрим другие шаблоны страницы товара
-        csCartSettings.shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.tab_General.hover().click();
         productSettings.productTemplate.selectOptionByValue("bigpicture_template");
-        csCartSettings.saveSettings();
-        csCartSettings.navigateToStProductPage(2);
+        Utils.saveSettings();
+        productSettings.navigateTo_StProductPage(2);
         takeScreenshot("2130 ProdPage - HorizontalIcons, LeftRow, BigPictureTemplate");
         shiftLanguage("ar");
         takeScreenshot("2135 ProdPage(RTL) - HorizontalIcons, LeftRow, BigPictureTemplate");
 
-        csCartSettings.shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_flat_template");
-        csCartSettings.saveSettings();
-        csCartSettings.navigateToStProductPage(3);
+        Utils.saveSettings();
+        productSettings.navigateTo_StProductPage(3);
         takeScreenshot("2140 ProdPage - HorizontalIcons, LeftRow, BigPictureFlatTemplate");
         shiftLanguage("ar");
         takeScreenshot("2145 ProdPage(RTL) - HorizontalIcons, LeftRow, BigPictureFlatTemplate");
 
-        csCartSettings.shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_three_columns_template");
-        csCartSettings.saveSettings();
-        csCartSettings.navigateToStProductPage(4);
+        Utils.saveSettings();
+        productSettings.navigateTo_StProductPage(4);
         takeScreenshot("2150 ProdPage - HorizontalIcons, LeftRow, ThreeColumned");
         shiftLanguage("ar");
         takeScreenshot("2155 ProdPage(RTL) - HorizontalIcons, LeftRow, ThreeColumned");
 
-        csCartSettings.shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_cascade_gallery_template");
-        csCartSettings.saveSettings();
-        csCartSettings.navigateToStProductPage(5);
+        Utils.saveSettings();
+        productSettings.navigateTo_StProductPage(5);
         takeScreenshot("2160 ProdPage - HorizontalIcons, LeftRow, CascadeGallery f2");
         shiftLanguage("ar");
         takeScreenshot("2165 ProdPage(RTL) - HorizontalIcons, LeftRow, CascadeGallery f2");
 
-        csCartSettings.shiftBrowserTab(0);
+        Utils.shiftBrowserTab(0);
         productSettings.productTemplate.selectOptionByValue("abt__ut2_bigpicture_gallery_template");
-        csCartSettings.saveSettings();
-        csCartSettings.navigateToStProductPage(6);
+        Utils.saveSettings();
+        productSettings.navigateTo_StProductPage(6);
         takeScreenshot("2170 ProdPage - HorizontalIcons, LeftRow, Gallery");
         shiftLanguage("ar");
         takeScreenshot("2175 ProdPage(RTL) - HorizontalIcons, LeftRow, Gallery");
@@ -152,9 +141,9 @@ public class TestCase_2 extends TestRunner {
         CsCartSettings csCartSettings = new CsCartSettings();
         SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
 
-        csCartSettings.navigateToSection_Categories();
+        CategorySettings categorySettings = csCartSettings.navigateToSection_Categories();
         $x("//a[text()='AB: Телефоны']").click();
-        StCategoryPage stCategoryPage = csCartSettings.navigateToStCategoryPage(1);
+        StCategoryPage stCategoryPage = categorySettings.navigateTo_StCategoryPage(1);
 
         //Проверяем, что присутствуют стикеры слева и вверху
         softAssert.assertTrue($(".ab-stickers-container__TL").exists(), "There are no stickers on the Top-Left side on category page!");
@@ -176,10 +165,7 @@ public class TestCase_2 extends TestRunner {
         takeScreenshot("2202 Category - Pictograms, Grid");
 
         //Смотрим окно Быстрого просмотра
-        stCategoryPage.productInList.hover();
-        stCategoryPage.button_QuickView.hover().click();
-        waitForSpinnerDisappear();
-        $(".ui-dialog-title").shouldBe(Condition.visible).hover();
+        stCategoryPage.openQuickViewWindow();
 
         //Проверяем, что присутствуют стикеры слева и вверху
         softAssert.assertTrue($(".ut2-pb__items .ab-stickers-container__TL").exists(), "There are no stickers on the Top-Left side on quick view window!");
@@ -199,10 +185,10 @@ public class TestCase_2 extends TestRunner {
         takeScreenshot("2205 QuickView - HorizontalIcons, LeftRow");
         stCategoryPage.button_CloseQuickView.hover().click();
         stCategoryPage.template_ListWithoutOptions.click();
-        waitForSpinnerDisappear();
+        Utils.waitForSpinnerDisappear();
         takeScreenshot("2210 Category - HorizontalIcons, LeftRow, ListWithoutOptions");
         stCategoryPage.template_CompactList.click();
-        waitForSpinnerDisappear();
+        Utils.waitForSpinnerDisappear();
 
         //Проверяем, что стикеры присутствуют
         softAssert.assertTrue($(".ab-stickers-container").exists(), "There is no stickers on category page as Compact list!");
@@ -214,28 +200,21 @@ public class TestCase_2 extends TestRunner {
         shiftLanguage("ar");
         takeScreenshot("2220 Category(RTL) - HorizontalIcons, LeftRow, CompactList");
         stCategoryPage.template_ListWithoutOptions.click();
-        waitForSpinnerDisappear();
+        Utils.waitForSpinnerDisappear();
         takeScreenshot("2225 Category(RTL) - HorizontalIcons, LeftRow, ListWithoutOptions");
         stCategoryPage.template_Grid.click();
-        waitForSpinnerDisappear();
+        Utils.waitForSpinnerDisappear();
         takeScreenshot("2230 Category(RTL) - HorizontalIcons, LeftRow, Grid");
         stCategoryPage.productInList.hover();
         takeScreenshot("2232 Category(RTL) - Pictograms, Grid");
-        stCategoryPage.button_QuickView.hover().click();
-        waitForSpinnerDisappear();
-        $(".ui-dialog-title").shouldBe(Condition.visible).hover();
+        stCategoryPage.openQuickViewWindow();
         takeScreenshot("2235 QuickView(RTL) - HorizontalIcons, LeftRow");
         stCategoryPage.button_CloseQuickView.hover().click();
 
 
         //Работаем на странице Избранных товаров
         shiftLanguage("ru");
-        stCategoryPage.productInList.hover();
-        stCategoryPage.button_AddToWishList.click();
-        waitForSpinnerDisappear();
-        stCategoryPage.button_CloseWishListPopup.shouldBe(Condition.visible).click();
-        stCategoryPage.button_WishListOnTop.click();
-        Selenide.sleep(3000);
+        stCategoryPage.addProductToWishListAndNavigateToWishListPage();
 
         //Проверяем, что присутствуют стикеры слева и вверху
         softAssert.assertTrue($(".ab-stickers-container__TL").exists(), "There are no stickers on the Top-Left side on Wishlist page!");
@@ -255,7 +234,7 @@ public class TestCase_2 extends TestRunner {
         stCategoryPage.productInList.hover();
         takeScreenshot("2250 WishList - HorizontalIcons, LeftRow");
         shiftLanguage("ar");
-        Selenide.sleep(3000);
+        Selenide.sleep(2000);
         stCategoryPage.productInList.hover();
         takeScreenshot("2255 WishList(RTL) - HorizontalIcons, LeftRow");
     }

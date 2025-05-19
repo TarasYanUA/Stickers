@@ -1,13 +1,12 @@
-import com.codeborne.selenide.Condition;
+import adminPanel.CsCartSettings;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
-import java.time.Duration;
 import static com.codeborne.selenide.Selenide.*;
 
-public class TestRunner {
+public class TestRunner extends CsCartSettings {
     public static final String BASIC_URL = "https://trs.test.abt.team/4183ultru/admin.php?dispatch=addons.manage";
     private SoftAssert softAssert;
 
@@ -47,10 +46,5 @@ public class TestRunner {
     public void takeScreenshot(String screenName) {
         sleep(3000);
         screenshot(screenName);
-    }
-
-    public void waitForSpinnerDisappear() {
-        $("div#ajax_loading_box").shouldBe(Condition.disappear, Duration.ofSeconds(10));
-        Selenide.sleep(1000);
     }
 }

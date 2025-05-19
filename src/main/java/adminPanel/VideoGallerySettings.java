@@ -6,7 +6,12 @@ import static com.codeborne.selenide.Selenide.$;
 public class VideoGallerySettings {
     public VideoGallerySettings(){super();}
 
-    public SelenideElement tabSettings = $("#settings");
-    public SelenideElement settingVerticalView = $("input[id*='addon_option_ab__video_gallery_vertical']");
-    public SelenideElement buttonSaveVideoGallery = $(".cm-addons-save-settings");
+    SelenideElement tabSettings = $("#settings");
+    SelenideElement settingVerticalView = $("input[id*='addon_option_ab__video_gallery_vertical']");
+
+    public void setVerticalView(boolean shouldBeChecked) {
+        tabSettings.click();
+        Utils.setCheckbox(settingVerticalView, shouldBeChecked, "settingVerticalView");
+        Utils.saveSettings();
+    }
 }
