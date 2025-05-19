@@ -31,11 +31,7 @@ public class TestCase_4 extends TestRunner {
         //Включаем Вертикальное отображение мини-иконок (Модуль "Видео галерея")
         CsCartSettings csCartSettings = new CsCartSettings();
         VideoGallerySettings videoGallerySettings = csCartSettings.navigateToVideoGalleryPage();
-        videoGallerySettings.tabSettings.click();
-        if (!videoGallerySettings.settingVerticalView.isSelected()) {
-            videoGallerySettings.settingVerticalView.click();
-            videoGallerySettings.buttonSaveVideoGallery.click();
-        }
+        videoGallerySettings.setVerticalView(true);
 
         //Настраиваем настройки модуля "Стикеры"
         StickerSettings stickerSettings = csCartSettings.navigateToStickerSettingsPage();

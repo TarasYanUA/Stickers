@@ -32,11 +32,7 @@ public class TestCase_3 extends TestRunner {
 
         //Включаем Горизонтальное отображение мини-иконок (Модуль "Видео галерея")
         VideoGallerySettings videoGallerySettings = csCartSettings.navigateToVideoGalleryPage();
-        videoGallerySettings.tabSettings.click();
-        if (videoGallerySettings.settingVerticalView.isSelected()) {
-            videoGallerySettings.settingVerticalView.click();
-            videoGallerySettings.buttonSaveVideoGallery.click();
-        }
+        videoGallerySettings.setVerticalView(false);
 
         //Настраиваем позицию пиктограмм (тема Uni2)
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();

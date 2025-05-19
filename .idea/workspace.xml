@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Made refactoring of the code for StickerSettings class.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/UniThemeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/UniThemeSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_3.java" afterDir="false" />
-    </list>
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Made refactoring of the code for UniThemeSettings class." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -464,14 +458,6 @@
       <option name="project" value="LOCAL" />
       <updated>1678200339225</updated>
     </task>
-    <task id="LOCAL-00051" summary="Added a new template of a product page to all test-cases.">
-      <option name="closed" value="true" />
-      <created>1718272172706</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1718272172706</updated>
-    </task>
     <task id="LOCAL-00052" summary="Updated pom.xml file.">
       <option name="closed" value="true" />
       <created>1743595688558</created>
@@ -576,7 +562,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747397119963</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Made refactoring of the code for UniThemeSettings class.">
+      <option name="closed" value="true" />
+      <created>1747644347570</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1747644347571</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -591,7 +585,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added ReadMe file.&#10;Updated libraries at pom file." />
     <MESSAGE value="TestCaseOne is ready and adapted to 4.18.1." />
     <MESSAGE value="Fixed Selenide code for the class 'StickerSettings'." />
     <MESSAGE value="TestCaseTwo is ready and adapted!" />
@@ -616,6 +609,7 @@
     <MESSAGE value="Continue refactoring of the code for CsCartSettings class." />
     <MESSAGE value="Make refactoring of the code for StickerSettings class." />
     <MESSAGE value="Made refactoring of the code for StickerSettings class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made refactoring of the code for StickerSettings class." />
+    <MESSAGE value="Made refactoring of the code for UniThemeSettings class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made refactoring of the code for UniThemeSettings class." />
   </component>
 </project>
