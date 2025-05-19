@@ -27,7 +27,7 @@ public class LayoutSettings extends CsCartSettings {
 
     public void setFillingForBlockContent(String filling) {
         layoutBlock_TabContent.click();
-        layout_FieldFilling.selectOption(filling);
+        layout_FieldFilling.selectOptionByValue(filling);
         layout_FieldMaxLimit.setValue("4");
     }
 

@@ -26,6 +26,7 @@ public class StCategoryPage {
     }
 
     public void addProductToWishListAndNavigateToWishListPage() {
+        productInList.hover();
         button_AddToWishList.hover().click();
         Utils.waitForSpinnerDisappear();
         button_CloseWishListPopup.shouldBe(Condition.visible).click();

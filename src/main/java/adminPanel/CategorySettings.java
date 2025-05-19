@@ -21,7 +21,7 @@ public class CategorySettings extends CsCartSettings {
     }
 
     public void openCategoryPage(String categoryName) {
-        $x(String.format("//a[contains(text(), '%s']", categoryName)).click();
+        $x(String.format("//a[contains(text(), '%s')]", categoryName)).click();
     }
 
     public void activateCategoryAndSave() {

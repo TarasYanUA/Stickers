@@ -40,6 +40,7 @@ public class TestCase_4 extends TestRunner {
 
         //Настраиваем Комбинации формаций изображений галереи товара (тема Uni2)
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
+        uniThemeSettings.setPictogramPositionsAtProductListTab("position_2");
         uniThemeSettings.goToProductTab();
         uniThemeSettings.setting_CombinationsOfProductGalleryImageFormations.selectOptionByValue("1");
         Utils.saveSettings();
