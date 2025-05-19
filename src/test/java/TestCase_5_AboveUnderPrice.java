@@ -182,10 +182,7 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
         takeScreenshot("5202 Category - AboveUnderPrice, Grid on hover");
 
         //Смотрим окно Быстрого просмотра
-        stCategoryPage.productInList.hover();
-        stCategoryPage.button_QuickView.hover().click();
-        waitForSpinnerDisappear();
-        $(".ui-dialog-title").shouldBe(Condition.visible).hover();
+        stCategoryPage.openQuickViewWindow();
 
         //Проверяем, что присутствует стикер ПЕРЕД ценой
         softAssert.assertTrue($(".ui-dialog .ab-stickers-container__price_before").exists(),
@@ -200,7 +197,7 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
 
         //Смотрим другие шаблона страницы категории
         stCategoryPage.template_ListWithoutOptions.click();
-        waitForSpinnerDisappear();
+        Utils.waitForSpinnerDisappear();
 
         //Проверяем, что присутствует стикер ПЕРЕД ценой
         softAssert.assertTrue($(".ab-stickers-container__price_before").exists(),
@@ -212,7 +209,7 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
 
         takeScreenshot("5210 Category - AboveUnderPrice, ListWithoutOptions");
         stCategoryPage.template_CompactList.click();
-        waitForSpinnerDisappear();
+        Utils.waitForSpinnerDisappear();
 
         //Проверяем, что присутствует стикер ПЕРЕД ценой
         softAssert.assertTrue($(".ab-stickers-container__price_before").exists(),
@@ -226,29 +223,21 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
         shiftLanguage("ar");
         takeScreenshot("5220 Category(RTL) - AboveUnderPrice, CompactList");
         stCategoryPage.template_ListWithoutOptions.click();
-        waitForSpinnerDisappear();
+        Utils.waitForSpinnerDisappear();
         takeScreenshot("5225 Category(RTL) - AboveUnderPrice, ListWithoutOptions");
         stCategoryPage.template_Grid.click();
-        waitForSpinnerDisappear();
+        Utils.waitForSpinnerDisappear();
         takeScreenshot("5230 Category(RTL) - AboveUnderPrice, Grid");
         stCategoryPage.productInList.hover();
         takeScreenshot("5232 Category(RTL) - AboveUnderPrice, Grid on hover");
-        stCategoryPage.productInList.hover();
-        stCategoryPage.button_QuickView.hover().click();
-        waitForSpinnerDisappear();
-        $(".ui-dialog-title").shouldBe(Condition.visible).hover();
+        stCategoryPage.openQuickViewWindow();
         takeScreenshot("5235 QuickView(RTL) - AboveUnderPrice");
         stCategoryPage.button_CloseQuickView.click();
 
 
         //Работаем на странице Избранных товаров
         shiftLanguage("ru");
-        stCategoryPage.productInList.hover();
-        stCategoryPage.button_AddToWishList.click();
-        waitForSpinnerDisappear();
-        stCategoryPage.button_CloseWishListPopup.shouldBe(Condition.visible).click();
-        stCategoryPage.button_WishListOnTop.click();
-        Selenide.sleep(3000);
+        stCategoryPage.addProductToWishListAndNavigateToWishListPage();
 
         //Проверяем, что присутствует стикер ПЕРЕД ценой
         softAssert.assertTrue($(".ab-stickers-container__price_before").exists(),
@@ -261,7 +250,7 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
         stCategoryPage.productInList.hover();
         takeScreenshot("5250 WishList - AboveUnderPrice");
         shiftLanguage("ar");
-        Selenide.sleep(3000);
+        Selenide.sleep(2000);
         stCategoryPage.productInList.hover();
         takeScreenshot("5255 WishList(RTL) - AboveUnderPrice");
     }

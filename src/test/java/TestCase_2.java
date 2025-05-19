@@ -165,10 +165,7 @@ public class TestCase_2 extends TestRunner {
         takeScreenshot("2202 Category - Pictograms, Grid");
 
         //Смотрим окно Быстрого просмотра
-        stCategoryPage.productInList.hover();
-        stCategoryPage.button_QuickView.hover().click();
-        waitForSpinnerDisappear();
-        $(".ui-dialog-title").shouldBe(Condition.visible).hover();
+        stCategoryPage.openQuickViewWindow();
 
         //Проверяем, что присутствуют стикеры слева и вверху
         softAssert.assertTrue($(".ut2-pb__items .ab-stickers-container__TL").exists(), "There are no stickers on the Top-Left side on quick view window!");
@@ -188,10 +185,10 @@ public class TestCase_2 extends TestRunner {
         takeScreenshot("2205 QuickView - HorizontalIcons, LeftRow");
         stCategoryPage.button_CloseQuickView.hover().click();
         stCategoryPage.template_ListWithoutOptions.click();
-        waitForSpinnerDisappear();
+        Utils.waitForSpinnerDisappear();
         takeScreenshot("2210 Category - HorizontalIcons, LeftRow, ListWithoutOptions");
         stCategoryPage.template_CompactList.click();
-        waitForSpinnerDisappear();
+        Utils.waitForSpinnerDisappear();
 
         //Проверяем, что стикеры присутствуют
         softAssert.assertTrue($(".ab-stickers-container").exists(), "There is no stickers on category page as Compact list!");
@@ -203,28 +200,21 @@ public class TestCase_2 extends TestRunner {
         shiftLanguage("ar");
         takeScreenshot("2220 Category(RTL) - HorizontalIcons, LeftRow, CompactList");
         stCategoryPage.template_ListWithoutOptions.click();
-        waitForSpinnerDisappear();
+        Utils.waitForSpinnerDisappear();
         takeScreenshot("2225 Category(RTL) - HorizontalIcons, LeftRow, ListWithoutOptions");
         stCategoryPage.template_Grid.click();
-        waitForSpinnerDisappear();
+        Utils.waitForSpinnerDisappear();
         takeScreenshot("2230 Category(RTL) - HorizontalIcons, LeftRow, Grid");
         stCategoryPage.productInList.hover();
         takeScreenshot("2232 Category(RTL) - Pictograms, Grid");
-        stCategoryPage.button_QuickView.hover().click();
-        waitForSpinnerDisappear();
-        $(".ui-dialog-title").shouldBe(Condition.visible).hover();
+        stCategoryPage.openQuickViewWindow();
         takeScreenshot("2235 QuickView(RTL) - HorizontalIcons, LeftRow");
         stCategoryPage.button_CloseQuickView.hover().click();
 
 
         //Работаем на странице Избранных товаров
         shiftLanguage("ru");
-        stCategoryPage.productInList.hover();
-        stCategoryPage.button_AddToWishList.click();
-        waitForSpinnerDisappear();
-        stCategoryPage.button_CloseWishListPopup.shouldBe(Condition.visible).click();
-        stCategoryPage.button_WishListOnTop.click();
-        Selenide.sleep(3000);
+        stCategoryPage.addProductToWishListAndNavigateToWishListPage();
 
         //Проверяем, что присутствуют стикеры слева и вверху
         softAssert.assertTrue($(".ab-stickers-container__TL").exists(), "There are no stickers on the Top-Left side on Wishlist page!");
@@ -244,7 +234,7 @@ public class TestCase_2 extends TestRunner {
         stCategoryPage.productInList.hover();
         takeScreenshot("2250 WishList - HorizontalIcons, LeftRow");
         shiftLanguage("ar");
-        Selenide.sleep(3000);
+        Selenide.sleep(2000);
         stCategoryPage.productInList.hover();
         takeScreenshot("2255 WishList(RTL) - HorizontalIcons, LeftRow");
     }

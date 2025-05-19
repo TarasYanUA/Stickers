@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Made refactoring of the code for UniThemeSettings class." />
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Made refactoring of the code for VideoGallerySettings class.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/storefront/StCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/StCategoryPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_5_AboveUnderPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_5_AboveUnderPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -458,14 +467,6 @@
       <option name="project" value="LOCAL" />
       <updated>1678200339225</updated>
     </task>
-    <task id="LOCAL-00052" summary="Updated pom.xml file.">
-      <option name="closed" value="true" />
-      <created>1743595688558</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1743595688558</updated>
-    </task>
     <task id="LOCAL-00053" summary="Adapted TestCase_1 to the newest add-on and theme versions.">
       <option name="closed" value="true" />
       <created>1744720239987</created>
@@ -570,7 +571,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747644347571</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Made refactoring of the code for VideoGallerySettings class.">
+      <option name="closed" value="true" />
+      <created>1747645246988</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1747645246988</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -585,7 +594,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="TestCaseOne is ready and adapted to 4.18.1." />
     <MESSAGE value="Fixed Selenide code for the class 'StickerSettings'." />
     <MESSAGE value="TestCaseTwo is ready and adapted!" />
     <MESSAGE value="Still work with TestCaseTwo" />
@@ -610,6 +618,23 @@
     <MESSAGE value="Make refactoring of the code for StickerSettings class." />
     <MESSAGE value="Made refactoring of the code for StickerSettings class." />
     <MESSAGE value="Made refactoring of the code for UniThemeSettings class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made refactoring of the code for UniThemeSettings class." />
+    <MESSAGE value="Made refactoring of the code for VideoGallerySettings class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made refactoring of the code for VideoGallerySettings class." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TestCase_1.java</url>
+          <line>156</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TestCase_1.java</url>
+          <line>153</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
