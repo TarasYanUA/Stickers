@@ -51,11 +51,8 @@ public class TestCase_1 extends TestRunner {
 
         //Настраиваем позицию пиктограмм (тема Uni2)
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
-        uniThemeSettings.tab_ProductList.click();
-        uniThemeSettings.fieldOfPictogramPosition_Grid.selectOptionByValue("position_1");
-        uniThemeSettings.fieldOfPictogramPosition_ListWithoutOptions.selectOptionByValue("position_1");
-        uniThemeSettings.fieldOfPictogramPosition_CompactList.selectOptionByValue("position_1");
-        uniThemeSettings.tab_Product.hover().click();
+        uniThemeSettings.setPictogramPositionsAtProductListTab("position_1");
+        uniThemeSettings.goToProductTab();
         uniThemeSettings.fieldOfPictogramPosition_Product.selectOptionByValue("position_1");
         Utils.saveSettings();
 

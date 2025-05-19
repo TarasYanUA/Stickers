@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Make refactoring of the code for StickerSettings class.">
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Made refactoring of the code for StickerSettings class.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/UniThemeSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/UniThemeSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_5_AboveUnderPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_5_AboveUnderPrice.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -466,14 +464,6 @@
       <option name="project" value="LOCAL" />
       <updated>1678200339225</updated>
     </task>
-    <task id="LOCAL-00050" summary="Added SoftAssert to the other three test-cases.">
-      <option name="closed" value="true" />
-      <created>1718268875559</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1718268875559</updated>
-    </task>
     <task id="LOCAL-00051" summary="Added a new template of a product page to all test-cases.">
       <option name="closed" value="true" />
       <created>1718272172706</created>
@@ -578,7 +568,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747388888554</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Made refactoring of the code for StickerSettings class.">
+      <option name="closed" value="true" />
+      <created>1747397119963</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1747397119963</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -593,7 +591,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added some comments in TestRunner." />
     <MESSAGE value="Added ReadMe file.&#10;Updated libraries at pom file." />
     <MESSAGE value="TestCaseOne is ready and adapted to 4.18.1." />
     <MESSAGE value="Fixed Selenide code for the class 'StickerSettings'." />
@@ -618,6 +615,7 @@
     <MESSAGE value="Started refactoring of the code for CsCartSettings class." />
     <MESSAGE value="Continue refactoring of the code for CsCartSettings class." />
     <MESSAGE value="Make refactoring of the code for StickerSettings class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Make refactoring of the code for StickerSettings class." />
+    <MESSAGE value="Made refactoring of the code for StickerSettings class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made refactoring of the code for StickerSettings class." />
   </component>
 </project>

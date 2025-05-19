@@ -40,13 +40,9 @@ public class TestCase_3 extends TestRunner {
 
         //Настраиваем позицию пиктограмм (тема Uni2)
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
-        uniThemeSettings.tab_ProductList.click();
-        uniThemeSettings.fieldOfPictogramPosition_Grid.selectOptionByValue("position_2");
-        uniThemeSettings.fieldOfPictogramPosition_ListWithoutOptions.selectOptionByValue("position_2");
-        uniThemeSettings.fieldOfPictogramPosition_CompactList.selectOptionByValue("position_1"); //Позиции 2 у этого списка нет
-        uniThemeSettings.tab_Product.hover().click();
-        uniThemeSettings.fieldOfPictogramPosition_Product.selectOptionByValue("position_2");
+        uniThemeSettings.setPictogramPositionsAtProductListTab("position_2");
         //Настраиваем Комбинации формаций изображений галереи товара
+        uniThemeSettings.goToProductTab();
         uniThemeSettings.setting_CombinationsOfProductGalleryImageFormations.selectOptionByValue("3");
         Utils.saveSettings();
 

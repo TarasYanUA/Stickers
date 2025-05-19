@@ -44,7 +44,7 @@ public class TestCase_4 extends TestRunner {
 
         //Настраиваем Комбинации формаций изображений галереи товара (тема Uni2)
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
-        uniThemeSettings.tab_Product.scrollIntoView(false).click();
+        uniThemeSettings.goToProductTab();
         uniThemeSettings.setting_CombinationsOfProductGalleryImageFormations.selectOptionByValue("1");
         Utils.saveSettings();
 
