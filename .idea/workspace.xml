@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Fixed bugs after code refactoring.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/storefront/AssertsOnStorefront.java" afterDir="false" />
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Transferred all asserts into one class AssertsOnStorefront and designed the newest method to handle the asserts in tests.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CollectAssertMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/CollectAssertMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_5_AboveUnderPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_5_AboveUnderPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/storefront/AssertsOnStorefront.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/AssertsOnStorefront.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +132,7 @@
       <recent name="storefront" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestCase_4.TestCase_4_ConfigureSettings">
+  <component name="RunManager" selected="TestNG.TestCase_5_AboveUnderPrice">
     <configuration name="TestCase_1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
@@ -209,8 +201,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TestCase_4.TestCase_4_ConfigureSettings" />
         <item itemvalue="TestNG.TestCase_5_AboveUnderPrice" />
+        <item itemvalue="TestNG.TestCase_4.TestCase_4_ConfigureSettings" />
         <item itemvalue="TestNG.TestCase_5_AboveUnderPrice.TestCase_5_ProductPage" />
         <item itemvalue="TestNG.TestCase_5_AboveUnderPrice.TestCase_5_ConfigureSettings" />
         <item itemvalue="TestNG.TestCase_1" />
@@ -471,14 +463,6 @@
       <option name="project" value="LOCAL" />
       <updated>1678200339225</updated>
     </task>
-    <task id="LOCAL-00055" summary="Adapted TestCase_2 to the newest add-on and theme versions.">
-      <option name="closed" value="true" />
-      <created>1744727275895</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1744727275895</updated>
-    </task>
     <task id="LOCAL-00056" summary="Adapted TestCase_3 to the newest add-on and theme versions.">
       <option name="closed" value="true" />
       <created>1744790164068</created>
@@ -583,7 +567,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747664229544</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Transferred all asserts into one class AssertsOnStorefront and designed the newest method to handle the asserts in tests.">
+      <option name="closed" value="true" />
+      <created>1747901491904</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1747901491904</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -598,7 +590,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Still work with TestCaseTwo" />
     <MESSAGE value="Fixed TestCaseOne. Now it works excellent." />
     <MESSAGE value="Fixed some bugs in two first tests." />
     <MESSAGE value="Test-case three is ready!" />
@@ -623,24 +614,7 @@
     <MESSAGE value="Made refactoring of the code for VideoGallerySettings class." />
     <MESSAGE value="Refactoring of the code is done." />
     <MESSAGE value="Fixed bugs after code refactoring." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs after code refactoring." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/storefront/AssertsOnStorefront.java</url>
-          <line>24</line>
-          <properties field="locatedBeforePrice" class="storefront.AssertsOnStorefront" />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/storefront/AssertsOnStorefront.java</url>
-          <line>25</line>
-          <properties field="locatedAfterPrice" class="storefront.AssertsOnStorefront" />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Transferred all asserts into one class AssertsOnStorefront and designed the newest method to handle the asserts in tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Transferred all asserts into one class AssertsOnStorefront and designed the newest method to handle the asserts in tests." />
   </component>
 </project>

@@ -9,8 +9,6 @@ public class AssertsOnStorefront {
         super();
     }
 
-    private SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
-
     public String quickViewWindow = ".ut2-pb__items ";
 
     public String stickersExist = ".ab-stickers-container";
@@ -31,6 +29,8 @@ public class AssertsOnStorefront {
 
 
     public void assertElementExists(String selector, String page, String prefix) {
+        SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
+
         Map<String, String> messages = Map.ofEntries(
                 Map.entry(stickersExist, "There are no stickers "),
                 Map.entry(verticalThumbnails, "Gallery of mini-icons is not Vertical "),
