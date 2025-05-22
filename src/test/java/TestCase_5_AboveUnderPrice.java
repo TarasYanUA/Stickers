@@ -2,7 +2,7 @@ import adminPanel.*;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
+import storefront.AssertsOnStorefront;
 import storefront.StCategoryPage;
 import storefront.StProductPage;
 
@@ -23,12 +23,14 @@ import static com.codeborne.selenide.Selenide.$x;
 */
 
 public class TestCase_5_AboveUnderPrice extends TestRunner {
+
+    CsCartSettings csCartSettings = new CsCartSettings();
+    StickerSettings stickerSettings = new StickerSettings();
+    ProductSettings productSettings = new ProductSettings();
+    AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
+
     @Test(priority = 10)
     public void TestCase_5_ConfigureSettings() {
-        CsCartSettings csCartSettings = new CsCartSettings();
-        ProductSettings productSettings = new ProductSettings();
-        StickerSettings stickerSettings = new StickerSettings();
-
         //Включаем мини-иконки в виде галереи и окно Быстрого просмотра
         csCartSettings.navigateTo_AppearanceSettings();
         if (!csCartSettings.settingQuickView.isSelected()) {
@@ -83,21 +85,15 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
 
     @Test(priority = 20, dependsOnMethods = "TestCase_5_ConfigureSettings")
     public void TestCase_5_ProductPage() {
-        CsCartSettings csCartSettings = new CsCartSettings();
-        ProductSettings productSettings = new ProductSettings();
-        SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
-
-        csCartSettings.navigateToSection_Products();
+        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.selectProductByName("Apple iPhone 14");
         StProductPage stProductPage = productSettings.navigateTo_StProductPage(1);
 
         //Проверяем, что присутствует стикер ПЕРЕД ценой
-        softAssert.assertTrue($(".ab-stickers-container__price_before").exists(),
-                "There is no sticker, located BEFORE price on the product page!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.locatedBeforePrice, "on product page", "");
 
         //Проверяем, что присутствует стикер ПОСЛЕ цены
-        softAssert.assertTrue($(".ab-stickers-container__price_after").exists(),
-                "There is no sticker, located AFTER price on the product page!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.locatedAfterPrice, "on product page", "");
 
         takeScreenshot("5100 ProdPage - AboveUnderPrice, DefaultTemplate");
         stProductPage.block_Popular.scrollIntoCenter();
@@ -162,20 +158,15 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
 
     @Test(priority = 30, dependsOnMethods = "TestCase_5_ConfigureSettings")
     public void TestCase_5_CategoryPage_WishList() {
-        CsCartSettings csCartSettings = new CsCartSettings();
-        SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
-
         CategorySettings categorySettings = csCartSettings.navigateToSection_Categories();
         $x("//a[text()='AB: Телефоны']").click();
         StCategoryPage stCategoryPage = categorySettings.navigateTo_StCategoryPage(1);
 
         //Проверяем, что присутствует стикер ПЕРЕД ценой
-        softAssert.assertTrue($(".ab-stickers-container__price_before").exists(),
-                "There is no sticker, located BEFORE price on the category page 'Grid'!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.locatedBeforePrice, "on category page as Grid", "");
 
         //Проверяем, что присутствует стикер ПОСЛЕ цены
-        softAssert.assertTrue($(".ab-stickers-container__price_after").exists(),
-                "There is no sticker, located AFTER price on the category page 'Grid'!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.locatedAfterPrice, "on category page as Grid", "");
 
         takeScreenshot("5200 Category - AboveUnderPrice, Grid");
         stCategoryPage.productInList.hover();
@@ -185,12 +176,10 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
         stCategoryPage.openQuickViewWindow();
 
         //Проверяем, что присутствует стикер ПЕРЕД ценой
-        softAssert.assertTrue($(".ui-dialog .ab-stickers-container__price_before").exists(),
-                "There is no sticker, located BEFORE price on the on quick view window!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.locatedBeforePrice, "in quick view window", assertsOnStorefront.quickViewWindow);
 
         //Проверяем, что присутствует стикер ПОСЛЕ цены
-        softAssert.assertTrue($(".ui-dialog .ab-stickers-container__price_after").exists(),
-                "There is no sticker, located AFTER price on the on quick view window!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.locatedAfterPrice, "in quick view window", assertsOnStorefront.quickViewWindow);
 
         takeScreenshot("5205 QuickView - AboveUnderPrice");
         stCategoryPage.button_CloseQuickView.click();
@@ -200,24 +189,20 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
         Utils.waitForSpinnerDisappear();
 
         //Проверяем, что присутствует стикер ПЕРЕД ценой
-        softAssert.assertTrue($(".ab-stickers-container__price_before").exists(),
-                "There is no sticker, located BEFORE price on the category page 'List without options'!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.locatedBeforePrice, "on category page as List without options", "");
 
         //Проверяем, что присутствует стикер ПОСЛЕ цены
-        softAssert.assertTrue($(".ab-stickers-container__price_after").exists(),
-                "There is no sticker, located AFTER price on the category page 'List without options'!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.locatedAfterPrice, "on category page as List without options", "");
 
         takeScreenshot("5210 Category - AboveUnderPrice, ListWithoutOptions");
         stCategoryPage.template_CompactList.click();
         Utils.waitForSpinnerDisappear();
 
         //Проверяем, что присутствует стикер ПЕРЕД ценой
-        softAssert.assertTrue($(".ab-stickers-container__price_before").exists(),
-                "There is no sticker, located BEFORE price on the category page 'Compact list'!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.locatedBeforePrice, "on category page as Compact list", "");
 
         //Проверяем, что присутствует стикер ПОСЛЕ цены
-        softAssert.assertTrue($(".ab-stickers-container__price_after").exists(),
-                "There is no sticker, located AFTER price on the category page 'Compact list'!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.locatedAfterPrice, "on category page as Compact list", "");
 
         takeScreenshot("5215 Category - AboveUnderPrice, CompactList");
         shiftLanguage("ar");
@@ -240,12 +225,10 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
         stCategoryPage.addProductToWishListAndNavigateToWishListPage();
 
         //Проверяем, что присутствует стикер ПЕРЕД ценой
-        softAssert.assertTrue($(".ab-stickers-container__price_before").exists(),
-                "There is no sticker, located BEFORE price on Wishlist page!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.locatedBeforePrice, "on wishlist page", "");
 
         //Проверяем, что присутствует стикер ПОСЛЕ цены
-        softAssert.assertTrue($(".ab-stickers-container__price_after").exists(),
-                "There is no sticker, located AFTER price on Wishlist page!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.locatedAfterPrice, "on wishlist page", "");
 
         stCategoryPage.productInList.hover();
         takeScreenshot("5250 WishList - AboveUnderPrice");

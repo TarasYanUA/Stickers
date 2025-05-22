@@ -4,6 +4,8 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
+import storefront.CollectAssertMessages;
+
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestRunner extends CsCartSettings {
