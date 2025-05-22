@@ -2,11 +2,10 @@ import adminPanel.*;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.Test;
+import storefront.AssertsOnStorefront;
 import storefront.StCategoryPage;
 import storefront.StProductPage;
-import org.testng.asserts.SoftAssert;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
 /*
@@ -26,10 +25,13 @@ import static com.codeborne.selenide.Selenide.$x;
 */
 
 public class TestCase_4 extends TestRunner {
+
+    CsCartSettings csCartSettings = new CsCartSettings();
+    AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
+
     @Test(priority = 10)
     public void TestCase_4_ConfigureSettings() {
         //Включаем Вертикальное отображение мини-иконок (Модуль "Видео галерея")
-        CsCartSettings csCartSettings = new CsCartSettings();
         VideoGallerySettings videoGallerySettings = csCartSettings.navigateToVideoGalleryPage();
         videoGallerySettings.setVerticalView(true);
 
@@ -40,6 +42,7 @@ public class TestCase_4 extends TestRunner {
 
         //Настраиваем Комбинации формаций изображений галереи товара (тема Uni2)
         UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
+        uniThemeSettings.setPictogramPositionsAtProductListTab("position_2");
         uniThemeSettings.goToProductTab();
         uniThemeSettings.setting_CombinationsOfProductGalleryImageFormations.selectOptionByValue("1");
         Utils.saveSettings();
@@ -53,31 +56,27 @@ public class TestCase_4 extends TestRunner {
 
     @Test(priority = 20, dependsOnMethods = "TestCase_4_ConfigureSettings")
     public void TestCase_4_ProductPage() {
-        CsCartSettings csCartSettings = new CsCartSettings();
-        ProductSettings productSettings = new ProductSettings();
-        SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
-
-        csCartSettings.navigateToSection_Products();
+        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
         productSettings.selectProductByName("Apple iPhone 14");
         StProductPage stProductPage = productSettings.navigateTo_StProductPage(1);
 
         //Проверяем, что галерея мини-иконок вертикальная
-        softAssert.assertTrue($(".ab-vg-vertical-thumbnails").exists(), "Gallery of mini-icons is not Horizontal!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.verticalThumbnails, "on product page", "");
 
         //Проверяем, что присутствуют стикеры справа и вверху
-        softAssert.assertTrue($(".ab-stickers-container__TR").exists(), "There are no stickers on the Top-Right side!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.stickersContainer_TopRight, "on product page", "");
 
         //Проверяем, что присутствуют стикеры справа и внизу
-        softAssert.assertTrue($(".ab-stickers-container__BR").exists(), "There are no stickers on the Bottom-Right side!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.stickersContainer_BottomRight, "on product page", "");
 
         //Проверяем, что стикеры расположены в строку
-        softAssert.assertTrue($(".row-filling").exists(), "Position of stickers is not in Column!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.rowFilling, "on product page", "");
 
         //Проверяем, что пиктограммы присутствуют
-        softAssert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the product page!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.pictogramsExist, "on product page", "");
 
         //Проверяем, что пиктограммы расположены в позиции 2
-        softAssert.assertTrue($(".ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.pictogramsPosition_2, "on product page", "");
 
         takeScreenshot("4100 ProdPage - VerticalIcons, RightRow, DefaultTemplate");
         stProductPage.block_Popular.scrollIntoCenter();
@@ -136,27 +135,24 @@ public class TestCase_4 extends TestRunner {
 
     @Test(priority = 30, dependsOnMethods = "TestCase_4_ConfigureSettings")
     public void TestCase_4_CategoryPage(){
-        CsCartSettings csCartSettings = new CsCartSettings();
-        SoftAssert softAssert = CollectAssertMessages.getSoftAssertions();
-
         CategorySettings categorySettings = csCartSettings.navigateToSection_Categories();
         $x("//a[text()='AB: Телефоны']").click();
         StCategoryPage stCategoryPage = categorySettings.navigateTo_StCategoryPage(1);
       
         //Проверяем, что присутствуют стикеры справа и вверху
-        softAssert.assertTrue($(".ab-stickers-container__TR").exists(), "There are no stickers on the Top-Right side on category page!");
-      
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.stickersContainer_TopRight, "on category page", "");
+
         //Проверяем, что присутствуют стикеры справа и внизу
-        softAssert.assertTrue($(".ab-stickers-container__BR").exists(), "There are no stickers on the Bottom-Right side on category page!");
-      
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.stickersContainer_BottomRight, "on category page", "");
+
         //Проверяем, что стикеры расположены в строку
-        softAssert.assertTrue($(".row-filling").exists(), "Position of stickers is not in Column on category page!");
-     
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.rowFilling, "on category page", "");
+
         //Проверяем, что пиктограммы присутствуют
-        softAssert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on category page!");
-      
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.pictogramsExist, "on category page", "");
+
         //Проверяем, что пиктограммы расположены в позиции 2
-        softAssert.assertTrue($(".ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2 on category page!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.pictogramsPosition_2, "on category page", "");
 
         takeScreenshot("4200 Category - VerticalIcons, RightRow, Grid");
         stCategoryPage.productInList.hover();
@@ -166,20 +162,20 @@ public class TestCase_4 extends TestRunner {
         stCategoryPage.openQuickViewWindow();
       
         //Проверяем, что присутствуют стикеры справа и вверху
-        softAssert.assertTrue($(".ut2-pb__items .ab-stickers-container__TR").exists(), "There are no stickers on the Top-Right side on quick view window!");
-     
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.stickersContainer_TopRight, "in quick view window", assertsOnStorefront.quickViewWindow);
+
         //Проверяем, что присутствуют стикеры справа и внизу
-        softAssert.assertTrue($(".ut2-pb__items .ab-stickers-container__BR").exists(), "There are no stickers on the Bottom-Right side on quick view window!");
-     
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.stickersContainer_BottomRight, "in quick view window", assertsOnStorefront.quickViewWindow);
+
         //Проверяем, что стикеры расположены в строку
-        softAssert.assertTrue($(".ut2-pb__items .row-filling").exists(), "Position of stickers is not in Column on quick view window!");
-     
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.rowFilling, "in quick view window", assertsOnStorefront.quickViewWindow);
+
         //Проверяем, что пиктограммы присутствуют
-        softAssert.assertTrue($(".ut2-pb__items .ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on quick view window!");
-     
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.pictogramsExist, "in quick view window", assertsOnStorefront.quickViewWindow);
+
         //Проверяем, что пиктограммы расположены в позиции 2
-        softAssert.assertTrue($(".ut2-pb__items .ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2 on quick view window!");
-      
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.pictogramsPosition_2, "in quick view window", assertsOnStorefront.quickViewWindow);
+
         takeScreenshot("4205 QuickView - VerticalIcons, RightRow");
         stCategoryPage.button_CloseQuickView.click();
 
@@ -191,10 +187,10 @@ public class TestCase_4 extends TestRunner {
         Utils.waitForSpinnerDisappear();
 
         //Проверяем, что стикеры присутствуют
-        softAssert.assertTrue($(".ab-stickers-container").exists(), "There is no stickers on category page as Compact list!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.stickersExist, "on category page as Compact list", "");
 
         //Проверяем, что пиктограммы присутствуют
-        softAssert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There is no pictograms on category page as Compact list!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.pictogramsExist, "on category page as Compact list", "");
 
         takeScreenshot("4215 Category - VerticalIcons, RightRow, CompactList");
         shiftLanguage("ar");
@@ -217,19 +213,19 @@ public class TestCase_4 extends TestRunner {
         stCategoryPage.addProductToWishListAndNavigateToWishListPage();
 
         //Проверяем, что присутствуют стикеры справа и вверху
-        softAssert.assertTrue($(".ab-stickers-container__TR").exists(), "There are no stickers on the Top-Right side on Wishlist page!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.stickersContainer_TopRight, "on wishlist page", "");
 
         //Проверяем, что присутствуют стикеры справа и внизу
-        softAssert.assertTrue($(".ab-stickers-container__BR").exists(), "There are no stickers on the Bottom-Right side on Wishlist page!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.stickersContainer_BottomRight, "on wishlist page", "");
 
         //Проверяем, что стикеры расположены в строку
-        softAssert.assertTrue($(".row-filling").exists(), "Position of stickers is not in Column on Wishlist page!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.rowFilling, "on wishlist page", "");
 
         //Проверяем, что пиктограммы присутствуют
-        softAssert.assertTrue($(".ab-s-pictograms-wrapper").exists(), "There are no pictograms on the page on Wishlist page!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.pictogramsExist, "on wishlist page", "");
 
         //Проверяем, что пиктограммы расположены в позиции 2
-        softAssert.assertTrue($(".ab-s-pictograms-wrapper-position_2").exists(), "Pictograms are not in Position 2 on Wishlist page!");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.pictogramsPosition_2, "on wishlist page", "");
 
         stCategoryPage.productInList.hover();
         takeScreenshot("4250 WishList - VerticalIcons, RightRow");

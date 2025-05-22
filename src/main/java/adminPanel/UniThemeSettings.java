@@ -21,9 +21,9 @@ public class UniThemeSettings {
 
     public void setPictogramPositionsAtProductListTab(String position) {
         tab_ProductList.hover().click();
-        fieldOfPictogramPosition_Grid.selectOption(position);
-        fieldOfPictogramPosition_ListWithoutOptions.selectOption(position);
-        fieldOfPictogramPosition_CompactList.selectOption("position_1");
+        fieldOfPictogramPosition_Grid.selectOptionByValue(position);
+        fieldOfPictogramPosition_ListWithoutOptions.selectOptionByValue(position);
+        fieldOfPictogramPosition_CompactList.selectOptionByValue("position_1");
     }
 
     public void goToProductTab() {

@@ -4,10 +4,12 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
+import storefront.CollectAssertMessages;
+
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestRunner extends CsCartSettings {
-    public static final String BASIC_URL = "https://trs.test.abt.team/4183ultru/admin.php?dispatch=addons.manage";
+    public static final String BASIC_URL = "https://abd-2be9dbb39b.demos.abt.team/admin.php?dispatch=addons.manage";
     private SoftAssert softAssert;
 
     @BeforeMethod
@@ -15,6 +17,7 @@ public class TestRunner extends CsCartSettings {
         Configuration.browser = "chrome";
         open(BASIC_URL);
         Configuration.screenshots = true; //делаем скриншоты при падении
+        Configuration.savePageSource = false; //не создавать html файлы при создании скриншотов
         WebDriverRunner.getWebDriver().manage().window().maximize(); //окно браузера на весь экран
 
         softAssert = new SoftAssert();

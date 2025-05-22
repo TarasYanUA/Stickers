@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Made refactoring of the code for VideoGallerySettings class.">
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Fixed bugs after code refactoring.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/storefront/AssertsOnStorefront.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/storefront/StCategoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/StCategoryPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CollectAssertMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/storefront/CollectAssertMessages.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_3.java" afterDir="false" />
@@ -114,6 +116,7 @@
     &quot;TestNG.TestCase_1.executor&quot;: &quot;Run&quot;,
     &quot;TestNG.TestCase_2.executor&quot;: &quot;Run&quot;,
     &quot;TestNG.TestCase_3.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TestCase_4.TestCase_4_ConfigureSettings.executor&quot;: &quot;Run&quot;,
     &quot;TestNG.TestCase_4.executor&quot;: &quot;Run&quot;,
     &quot;TestNG.TestCase_5_AboveUnderPrice.TestCase_5_ConfigureSettings.executor&quot;: &quot;Run&quot;,
     &quot;TestNG.TestCase_5_AboveUnderPrice.TestCase_5_ProductPage.executor&quot;: &quot;Run&quot;,
@@ -137,7 +140,7 @@
       <recent name="storefront" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestNG_Stickers">
+  <component name="RunManager" selected="TestNG.TestCase_4.TestCase_4_ConfigureSettings">
     <configuration name="TestCase_1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
@@ -149,11 +152,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCase_4" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCase_4.TestCase_4_ConfigureSettings" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestCase_4" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="METHOD_NAME" value="TestCase_4_ConfigureSettings" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -197,19 +201,19 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.TestNG_Stickers" />
-      <item itemvalue="TestNG.TestCase_5_AboveUnderPrice" />
+      <item itemvalue="TestNG.TestCase_1" />
+      <item itemvalue="TestNG.TestCase_4.TestCase_4_ConfigureSettings" />
       <item itemvalue="TestNG.TestCase_5_AboveUnderPrice.TestCase_5_ConfigureSettings" />
       <item itemvalue="TestNG.TestCase_5_AboveUnderPrice.TestCase_5_ProductPage" />
-      <item itemvalue="TestNG.TestCase_1" />
-      <item itemvalue="TestNG.TestCase_4" />
+      <item itemvalue="TestNG.TestCase_5_AboveUnderPrice" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.TestCase_4.TestCase_4_ConfigureSettings" />
         <item itemvalue="TestNG.TestCase_5_AboveUnderPrice" />
         <item itemvalue="TestNG.TestCase_5_AboveUnderPrice.TestCase_5_ProductPage" />
         <item itemvalue="TestNG.TestCase_5_AboveUnderPrice.TestCase_5_ConfigureSettings" />
         <item itemvalue="TestNG.TestCase_1" />
-        <item itemvalue="TestNG.TestCase_4" />
       </list>
     </recent_temporary>
   </component>
@@ -467,22 +471,6 @@
       <option name="project" value="LOCAL" />
       <updated>1678200339225</updated>
     </task>
-    <task id="LOCAL-00053" summary="Adapted TestCase_1 to the newest add-on and theme versions.">
-      <option name="closed" value="true" />
-      <created>1744720239987</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1744720239987</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Adapted TestCase_1 to the newest add-on and theme versions.">
-      <option name="closed" value="true" />
-      <created>1744721165770</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1744721165770</updated>
-    </task>
     <task id="LOCAL-00055" summary="Adapted TestCase_2 to the newest add-on and theme versions.">
       <option name="closed" value="true" />
       <created>1744727275895</created>
@@ -579,7 +567,23 @@
       <option name="project" value="LOCAL" />
       <updated>1747645246988</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Refactoring of the code is done.">
+      <option name="closed" value="true" />
+      <created>1747648803413</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1747648803413</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Fixed bugs after code refactoring.">
+      <option name="closed" value="true" />
+      <created>1747664229544</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1747664229544</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -594,8 +598,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed Selenide code for the class 'StickerSettings'." />
-    <MESSAGE value="TestCaseTwo is ready and adapted!" />
     <MESSAGE value="Still work with TestCaseTwo" />
     <MESSAGE value="Fixed TestCaseOne. Now it works excellent." />
     <MESSAGE value="Fixed some bugs in two first tests." />
@@ -619,20 +621,24 @@
     <MESSAGE value="Made refactoring of the code for StickerSettings class." />
     <MESSAGE value="Made refactoring of the code for UniThemeSettings class." />
     <MESSAGE value="Made refactoring of the code for VideoGallerySettings class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made refactoring of the code for VideoGallerySettings class." />
+    <MESSAGE value="Refactoring of the code is done." />
+    <MESSAGE value="Fixed bugs after code refactoring." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs after code refactoring." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/TestCase_1.java</url>
-          <line>156</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/TestCase_1.java</url>
-          <line>153</line>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/storefront/AssertsOnStorefront.java</url>
+          <line>24</line>
+          <properties field="locatedBeforePrice" class="storefront.AssertsOnStorefront" />
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/storefront/AssertsOnStorefront.java</url>
+          <line>25</line>
+          <properties field="locatedAfterPrice" class="storefront.AssertsOnStorefront" />
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
