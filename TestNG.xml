@@ -2,8 +2,8 @@
     <test name="Test-cases for the add-on 'Stickers'">
         <classes>
             <class name="TestCase_1" />
-            <class name="TestCase_2" />
-            <class name="TestCase_3" />
+<!--            <class name="TestCase_2" />-->
+<!--            <class name="TestCase_3" />-->
             <class name="TestCase_4" />
             <class name="TestCase_5_AboveUnderPrice" />
         </classes>

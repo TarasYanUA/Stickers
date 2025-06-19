@@ -3,8 +3,7 @@ package adminPanel;
 import com.codeborne.selenide.SelenideElement;
 import storefront.StCategoryPage;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.*;
 
 public class CategorySettings extends CsCartSettings {
 
@@ -30,6 +29,7 @@ public class CategorySettings extends CsCartSettings {
     }
 
     public void viewCategoryProducts() {
+        sleep(2000);
         gearWheelOnTop.click();
         button_ViewProducts.click();
     }

@@ -9,7 +9,7 @@ import storefront.CollectAssertMessages;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestRunner extends CsCartSettings {
-    public static final String BASIC_URL = "https://abd-2be9dbb39b.demos.abt.team/admin.php?dispatch=addons.manage";
+    public static final String BASIC_URL = "https://trs.test.abt.team/4184ultru/admin.php?dispatch=addons.manage";
     private SoftAssert softAssert;
 
     @BeforeMethod

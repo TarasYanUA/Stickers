@@ -294,19 +294,19 @@ public class TestCase_1 extends TestRunner {
         stCategoryPage.addProductToWishListAndNavigateToWishListPage();
 
         //Проверяем, что присутствуют стикеры слева и вверху
-        assertsOnStorefront.assertElementExists(assertsOnStorefront.stickersContainer_TopLeft, "on Wishlist page", "");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.stickersContainer_TopLeft, "on wishlist page", "");
 
         //Проверяем, что присутствуют стикеры слева и внизу
-        assertsOnStorefront.assertElementExists(assertsOnStorefront.stickersContainer_BottomLeft, "on Wishlist page", "");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.stickersContainer_BottomLeft, "on wishlist page", "");
 
         //Проверяем, что стикеры расположены в колонку
-        assertsOnStorefront.assertElementExists(assertsOnStorefront.columnFilling, "on Wishlist page", "");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.columnFilling, "on wishlist page", "");
 
         //Проверяем, что пиктограммы присутствуют
-        assertsOnStorefront.assertElementExists(assertsOnStorefront.pictogramsExist, "on Wishlist page", "");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.pictogramsExist, "on my wishlist.", "");
 
         //Проверяем, что пиктограммы расположены в позиции 1
-        assertsOnStorefront.assertElementExists(assertsOnStorefront.pictogramsPosition_1, "on Wishlist page", "");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.pictogramsPosition_1, "on wishlist page", "");
 
         stCategoryPage.productInList.hover();
         takeScreenshot("1250 WishList - VerticalIcons, LeftColumn");
