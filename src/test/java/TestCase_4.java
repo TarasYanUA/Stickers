@@ -26,29 +26,29 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class TestCase_4 extends TestRunner {
 
-    CsCartSettings csCartSettings = new CsCartSettings();
+    BasicPage basicPage = new BasicPage();
     AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
     @Test(priority = 10)
     public void TestCase_4_ConfigureSettings() {
         //Включаем Вертикальное отображение мини-иконок (Модуль "Видео галерея")
-        VideoGallerySettings videoGallerySettings = csCartSettings.navigateToVideoGalleryPage();
+        VideoGallerySettings videoGallerySettings = basicPage.navigateToVideoGalleryPage();
         videoGallerySettings.setVerticalView(true);
 
         //Настраиваем настройки модуля "Стикеры"
-        StickerSettings stickerSettings = csCartSettings.navigateToStickerSettingsPage();
+        StickerSettings stickerSettings = basicPage.navigateToStickerSettingsPage();
         stickerSettings.configureStickerSettings("R", "row", "3");
         stickerSettings.configureAppearanceOfPictograms("teardrop");
 
         //Настраиваем Комбинации формаций изображений галереи товара (тема Uni2)
-        UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
+        UniThemeSettings uniThemeSettings = basicPage.navigateToUniThemeSettings();
         uniThemeSettings.setPictogramPositionsAtProductListTab("position_2");
         uniThemeSettings.goToProductTab();
         uniThemeSettings.setting_CombinationsOfProductGalleryImageFormations.selectOptionByValue("1");
         Utils.saveSettings();
 
         //Переходим на страницу редактирования товара
-        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
+        ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.selectProductByName("Apple iPhone 14");
         productSettings.productTemplate.selectOptionByValue("default_template");
         Utils.saveSettings();
@@ -56,7 +56,7 @@ public class TestCase_4 extends TestRunner {
 
     @Test(priority = 20, dependsOnMethods = "TestCase_4_ConfigureSettings")
     public void TestCase_4_ProductPage() {
-        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
+        ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.selectProductByName("Apple iPhone 14");
         StProductPage stProductPage = productSettings.navigateTo_StProductPage(1);
 
@@ -135,7 +135,7 @@ public class TestCase_4 extends TestRunner {
 
     @Test(priority = 30, dependsOnMethods = "TestCase_4_ConfigureSettings")
     public void TestCase_4_CategoryPage(){
-        CategorySettings categorySettings = csCartSettings.navigateToSection_Categories();
+        CategorySettings categorySettings = basicPage.navigateToSection_Categories();
         $x("//a[text()='AB: Телефоны']").click();
         StCategoryPage stCategoryPage = categorySettings.navigateTo_StCategoryPage(1);
       

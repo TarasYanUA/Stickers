@@ -27,35 +27,31 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class TestCase_1 extends TestRunner {
 
-    CsCartSettings csCartSettings = new CsCartSettings();
+    BasicPage basicPage = new BasicPage();
     ProductSettings productSettings = new ProductSettings();
     AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
     @Test(priority = 10)
     public void TestCase_1_ConfigureSettings() {
         //Включаем мини-иконки в виде галереи и окно Быстрого просмотра
-        csCartSettings.navigateTo_AppearanceSettings();
-        if (!csCartSettings.settingMiniThumbnailAsGallery.isSelected()) {
-            csCartSettings.settingMiniThumbnailAsGallery.click();
-        }
-        if (!csCartSettings.settingQuickView.isSelected()) {
-            csCartSettings.settingQuickView.click();
-        }
+        basicPage.navigateTo_AppearanceSettings();
+        Utils.setCheckbox(basicPage.settingMiniThumbnailAsGallery, true, "settingMiniThumbnailAsGallery");
+        Utils.setCheckbox(basicPage.settingQuickView, true, "settingQuickView");
         Utils.saveSettings();
 
         //Включаем Вертикальное отображение мини-иконок (Модуль "Видео галерея")
-        VideoGallerySettings videoGallerySettings = csCartSettings.navigateToVideoGalleryPage();
+        VideoGallerySettings videoGallerySettings = basicPage.navigateToVideoGalleryPage();
         videoGallerySettings.setVerticalView(true);
 
         //Настраиваем позицию пиктограмм (тема Uni2)
-        UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
+        UniThemeSettings uniThemeSettings = basicPage.navigateToUniThemeSettings();
         uniThemeSettings.setPictogramPositionsAtProductListTab("position_1");
         uniThemeSettings.goToProductTab();
         uniThemeSettings.fieldOfPictogramPosition_Product.selectOptionByValue("position_1");
         Utils.saveSettings();
 
         //Настраиваем блок с товарами
-        LayoutSettings layoutSettings = csCartSettings.navigateToSection_Layouts();
+        LayoutSettings layoutSettings = basicPage.navigateToSection_Layouts();
         layoutSettings.layout_TabProducts.click();
         layoutSettings.openBlockProperties("Самые популярные");
         layoutSettings.layout_BlockTemplate.selectOptionByValue("blocks/products/ab__grid_list.tpl");
@@ -66,11 +62,11 @@ public class TestCase_1 extends TestRunner {
         layoutSettings.saveBlockProperties();
 
         //Настраиваем настройки модуля "Стикеры"
-        StickerSettings stickerSettings = csCartSettings.navigateToStickerSettingsPage();
+        StickerSettings stickerSettings = basicPage.navigateToStickerSettingsPage();
         stickerSettings.configureStickerSettings("L", "column", "3");
 
         //Три верхних стикера
-        csCartSettings.navigateToStickerListPage();
+        basicPage.navigateToStickerListPage();
         //Стикер "Акция" (красный цвет)
         stickerSettings.sticker_Promotion.click();
         stickerSettings.statusActive.click();
@@ -110,7 +106,7 @@ public class TestCase_1 extends TestRunner {
         stickerSettings.setSettingsAt_DisplayTab("product_labels", "B", "full_size");
 
         //Настраиваем страницу товара
-        CategorySettings categorySettings = csCartSettings.navigateToSection_Categories();
+        CategorySettings categorySettings = basicPage.navigateToSection_Categories();
         categorySettings.openCategoryPage("AB: Телефоны");
         categorySettings.activateCategoryAndSave();
         categorySettings.viewCategoryProducts();
@@ -124,7 +120,7 @@ public class TestCase_1 extends TestRunner {
 
     @Test(priority = 20, dependsOnMethods = "TestCase_1_ConfigureSettings")
     public void TestCase_1_ProductPage() {
-        csCartSettings.navigateToSection_Products();
+        basicPage.navigateToSection_Products();
         productSettings.selectProductByName("Apple iPhone 14");
         StProductPage stProductPage = productSettings.navigateTo_StProductPage(1);
 
@@ -207,7 +203,7 @@ public class TestCase_1 extends TestRunner {
 
     @Test(priority = 30, dependsOnMethods = "TestCase_1_ConfigureSettings")
     public void TestCase_1_CategoryPage_WishList() {
-        CategorySettings categorySettings = csCartSettings.navigateToSection_Categories();
+        CategorySettings categorySettings = basicPage.navigateToSection_Categories();
         $x("//a[text()='AB: Телефоны']").click();
         StCategoryPage stCategoryPage = categorySettings.navigateTo_StCategoryPage(1);
 

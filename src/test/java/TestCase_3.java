@@ -26,17 +26,17 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class TestCase_3 extends TestRunner {
 
-    CsCartSettings csCartSettings = new CsCartSettings();
+    BasicPage basicPage = new BasicPage();
     AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
 
     @Test(priority = 10)
     public void TestCase_3_ConfigureSettings() {
         //Включаем Горизонтальное отображение мини-иконок (Модуль "Видео галерея")
-        VideoGallerySettings videoGallerySettings = csCartSettings.navigateToVideoGalleryPage();
+        VideoGallerySettings videoGallerySettings = basicPage.navigateToVideoGalleryPage();
         videoGallerySettings.setVerticalView(false);
 
         //Настраиваем позицию пиктограмм (тема Uni2)
-        UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
+        UniThemeSettings uniThemeSettings = basicPage.navigateToUniThemeSettings();
         uniThemeSettings.setPictogramPositionsAtProductListTab("position_2");
         //Настраиваем Комбинации формаций изображений галереи товара
         uniThemeSettings.goToProductTab();
@@ -44,7 +44,7 @@ public class TestCase_3 extends TestRunner {
         Utils.saveSettings();
 
         //Настраиваем блок с товарами
-        LayoutSettings layoutSettings = csCartSettings.navigateToSection_Layouts();
+        LayoutSettings layoutSettings = basicPage.navigateToSection_Layouts();
         layoutSettings.layout_TabProducts.click();
         layoutSettings.openBlockProperties("Самые популярные");
         layoutSettings.layout_BlockTemplate.selectOptionByValue("blocks/products/products_native_scroller_advanced.tpl");
@@ -54,12 +54,12 @@ public class TestCase_3 extends TestRunner {
         layoutSettings.saveBlockProperties();
 
         //Настраиваем настройки модуля "Стикеры"
-        StickerSettings stickerSettings = csCartSettings.navigateToStickerSettingsPage();
+        StickerSettings stickerSettings = basicPage.navigateToStickerSettingsPage();
         stickerSettings.configureStickerSettings("R", "column", "3");
         stickerSettings.configureAppearanceOfPictograms("teardrop");
 
         //Настраиваем страницу товара
-        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
+        ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.selectProductByName("Apple iPhone 14");
         productSettings.productTemplate.selectOptionByValue("default_template");
         Utils.saveSettings();
@@ -67,7 +67,7 @@ public class TestCase_3 extends TestRunner {
 
     @Test(priority = 20, dependsOnMethods = "TestCase_3_ConfigureSettings")
     public void TestCase_3_ProductPage() {
-        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
+        ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.selectProductByName("Apple iPhone 14");
         StProductPage stProductPage = productSettings.navigateTo_StProductPage(1);
 
@@ -146,7 +146,7 @@ public class TestCase_3 extends TestRunner {
 
     @Test(priority = 30, dependsOnMethods = "TestCase_3_ConfigureSettings")
     public void TestCase_3_CategoryPage(){
-        CategorySettings categorySettings = csCartSettings.navigateToSection_Categories();
+        CategorySettings categorySettings = basicPage.navigateToSection_Categories();
         $x("//a[text()='AB: Телефоны']").click();
         StCategoryPage stCategoryPage = categorySettings.navigateTo_StCategoryPage(1);
         

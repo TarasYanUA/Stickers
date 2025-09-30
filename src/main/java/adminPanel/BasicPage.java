@@ -6,8 +6,8 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class CsCartSettings implements CheckMenuToBeActive {
-    public CsCartSettings() {
+public class BasicPage implements CheckMenuToBeActive {
+    public BasicPage() {
         super();
     }
 

@@ -27,6 +27,6 @@ public class UniThemeSettings {
     }
 
     public void goToProductTab() {
-        tab_Product.scrollIntoView(false).click();
+        tab_Product.scrollIntoCenter().click();
     }
 }

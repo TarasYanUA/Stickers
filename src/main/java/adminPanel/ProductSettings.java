@@ -8,7 +8,7 @@ import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class ProductSettings extends CsCartSettings {
+public class ProductSettings extends BasicPage {
 
     //Меню "Товары -- Товары"
     public ProductSettings(){super();}

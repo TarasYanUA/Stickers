@@ -4,7 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class LayoutSettings extends CsCartSettings {
+public class LayoutSettings extends BasicPage {
 
     //Меню "Веб-сайт -- Темы -- Макеты"
     public LayoutSettings(){super();}

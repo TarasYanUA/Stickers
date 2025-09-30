@@ -5,13 +5,13 @@ import storefront.StCategoryPage;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class CategorySettings extends CsCartSettings {
+public class CategorySettings extends BasicPage {
 
     //Меню "Товары -- Категории"
     public CategorySettings() {super();}
 
     SelenideElement statusActive_Category = $("#elm_category_status_0_a");
-    public SelenideElement button_ViewProducts = $("a[href*='products.manage&cid']");
+    SelenideElement button_ViewProducts = $("a[href*='products.manage&cid']");
 
 
     public StCategoryPage navigateTo_StCategoryPage(int tabNumber) {

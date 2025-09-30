@@ -24,7 +24,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class TestCase_5_AboveUnderPrice extends TestRunner {
 
-    CsCartSettings csCartSettings = new CsCartSettings();
+    BasicPage basicPage = new BasicPage();
     StickerSettings stickerSettings = new StickerSettings();
     ProductSettings productSettings = new ProductSettings();
     AssertsOnStorefront assertsOnStorefront = new AssertsOnStorefront();
@@ -32,14 +32,12 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
     @Test(priority = 10)
     public void TestCase_5_ConfigureSettings() {
         //Включаем мини-иконки в виде галереи и окно Быстрого просмотра
-        csCartSettings.navigateTo_AppearanceSettings();
-        if (!csCartSettings.settingQuickView.isSelected()) {
-            csCartSettings.settingQuickView.click();
-            Utils.saveSettings();
-        }
+        basicPage.navigateTo_AppearanceSettings();
+        Utils.setCheckbox(basicPage.settingQuickView, true, "settingQuickView");
+        Utils.saveSettings();
 
         //Настраиваем два блока с товарами
-        LayoutSettings layoutSettings = csCartSettings.navigateToSection_Layouts();
+        LayoutSettings layoutSettings = basicPage.navigateToSection_Layouts();
         layoutSettings.layout_TabProducts.click();
         layoutSettings.openBlockProperties("Самые популярные");
         layoutSettings.layout_BlockTemplate.selectOptionByValue("blocks/products/ab__grid_list.tpl");
@@ -51,7 +49,7 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
         layoutSettings.saveBlockProperties();
 
         //Настраиваем два стикера
-        csCartSettings.navigateToStickerListPage();
+        basicPage.navigateToStickerListPage();
         //Стикер "Акция" (красный цвет)
         stickerSettings.sticker_Promotion.click();
         stickerSettings.statusActive.click();
@@ -66,13 +64,13 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
         stickerSettings.generateStickerLinks();
 
         //Настраиваем формат цены в теме UniTheme2
-        UniThemeSettings uniThemeSettings = csCartSettings.navigateToUniThemeSettings();
+        UniThemeSettings uniThemeSettings = basicPage.navigateToUniThemeSettings();
         uniThemeSettings.tab_ProductList.click();
         uniThemeSettings.setting_PriceDisplayFormat.selectOptionByValue("col-rev-mix");
         Utils.saveSettings();
 
         //Настраиваем страницу товара
-        CategorySettings categorySettings = csCartSettings.navigateToSection_Categories();
+        CategorySettings categorySettings = basicPage.navigateToSection_Categories();
         categorySettings.openCategoryPage("AB: Телефоны");
         categorySettings.activateCategoryAndSave();
         categorySettings.viewCategoryProducts();
@@ -85,7 +83,7 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
 
     @Test(priority = 20, dependsOnMethods = "TestCase_5_ConfigureSettings")
     public void TestCase_5_ProductPage() {
-        ProductSettings productSettings = csCartSettings.navigateToSection_Products();
+        ProductSettings productSettings = basicPage.navigateToSection_Products();
         productSettings.selectProductByName("Apple iPhone 14");
         StProductPage stProductPage = productSettings.navigateTo_StProductPage(1);
 
@@ -158,7 +156,7 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
 
     @Test(priority = 30, dependsOnMethods = "TestCase_5_ConfigureSettings")
     public void TestCase_5_CategoryPage_WishList() {
-        CategorySettings categorySettings = csCartSettings.navigateToSection_Categories();
+        CategorySettings categorySettings = basicPage.navigateToSection_Categories();
         $x("//a[text()='AB: Телефоны']").click();
         StCategoryPage stCategoryPage = categorySettings.navigateTo_StCategoryPage(1);
 

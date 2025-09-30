@@ -1,4 +1,4 @@
-import adminPanel.CsCartSettings;
+import adminPanel.BasicPage;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
@@ -8,7 +8,7 @@ import storefront.CollectAssertMessages;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class TestRunner extends CsCartSettings {
+public class TestRunner extends BasicPage {
     public static final String BASIC_URL = "https://trs.test.abt.team/4184ultru/admin.php?dispatch=addons.manage";
     private SoftAssert softAssert;
 
