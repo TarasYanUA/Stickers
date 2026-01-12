@@ -299,7 +299,7 @@ public class TestCase_1 extends TestRunner {
         assertsOnStorefront.assertElementExists(assertsOnStorefront.columnFilling, "on wishlist page", "");
 
         //Проверяем, что пиктограммы присутствуют
-        assertsOnStorefront.assertElementExists(assertsOnStorefront.pictogramsExist, "on my wishlist.", "");
+        assertsOnStorefront.assertElementExists(assertsOnStorefront.pictogramsExist, "on wishlist page", "");
 
         //Проверяем, что пиктограммы расположены в позиции 1
         assertsOnStorefront.assertElementExists(assertsOnStorefront.pictogramsPosition_1, "on wishlist page", "");

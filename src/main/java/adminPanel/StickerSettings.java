@@ -74,6 +74,7 @@ public class StickerSettings {
 
 
     public void addConditionOfPrice() {
+        Utils.closeAllNotifications();
         tab_Conditions.hover().click();
         if (tableOfConditions.exists()) {
             tableOfConditions.hover();
