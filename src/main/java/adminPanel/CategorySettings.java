@@ -1,5 +1,6 @@
 package adminPanel;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import storefront.StCategoryPage;
 
@@ -12,6 +13,8 @@ public class CategorySettings extends BasicPage {
 
     SelenideElement statusActive_Category = $("#elm_category_status_0_a");
     SelenideElement button_ViewProducts = $("a[href*='products.manage&cid']");
+    ElementsCollection collapsedCategoryList = $$("span[id*='off_comp'][class='cm-combination hidden']");
+    SelenideElement expandCategoryList = $x("//span[text()='Магазин: CS-Cart']/..//span[contains(@class, 'icon-caret-right')]");
 
 
     public StCategoryPage navigateTo_StCategoryPage(int tabNumber) {
@@ -20,7 +23,12 @@ public class CategorySettings extends BasicPage {
     }
 
     public void openCategoryPage(String categoryName) {
-        $x(String.format("//a[contains(text(), '%s')]", categoryName)).click();
+        if (!collapsedCategoryList.isEmpty()) {
+            expandCategoryList.click();
+            $x(String.format("//a[contains(text(), '%s')]", categoryName)).click();
+        } else {
+            $x(String.format("//a[contains(text(), '%s')]", categoryName)).click();
+        }
     }
 
     public void activateCategoryAndSave() {
