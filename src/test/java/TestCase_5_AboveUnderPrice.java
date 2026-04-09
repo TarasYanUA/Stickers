@@ -5,9 +5,7 @@ import org.testng.annotations.Test;
 import storefront.AssertsOnStorefront;
 import storefront.StCategoryPage;
 import storefront.StProductPage;
-
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
 
 /*
 Проверяем следующее:
@@ -157,7 +155,7 @@ public class TestCase_5_AboveUnderPrice extends TestRunner {
     @Test(priority = 30, dependsOnMethods = "TestCase_5_ConfigureSettings")
     public void TestCase_5_CategoryPage_WishList() {
         CategorySettings categorySettings = basicPage.navigateToSection_Categories();
-        $x("//a[text()='AB: Телефоны']").click();
+        categorySettings.openCategoryPage("AB: Телефоны");
         StCategoryPage stCategoryPage = categorySettings.navigateTo_StCategoryPage(1);
 
         //Проверяем, что присутствует стикер ПЕРЕД ценой

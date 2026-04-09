@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="* Updated libraries in pom file.">
+    <list default="true" id="921b07ce-571a-4bfe-9005-41c614f45fc7" name="Changes" comment="Made adaptation to CS-Cart 4.20.1.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/CategorySettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/CategorySettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/adminPanel/StickerSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestCase_5_AboveUnderPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase_5_AboveUnderPrice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,22 +68,22 @@
     &quot;assignee&quot;: &quot;TarasYanUA&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/TarasYanUA/Stickers.git",
-    "accountId": "ff46838b-796e-4b9e-97a7-6cf607c3a446"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/TarasYanUA/Stickers.git&quot;,
+    &quot;accountId&quot;: &quot;ff46838b-796e-4b9e-97a7-6cf607c3a446&quot;
   },
-  "recentNewPullRequestHead": {
-    "server": {
-      "useHttp": false,
-      "host": "github.com",
-      "port": null,
-      "suffix": null
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
     },
-    "owner": "TarasYanUA",
-    "repository": "Stickers"
+    &quot;owner&quot;: &quot;TarasYanUA&quot;,
+    &quot;repository&quot;: &quot;Stickers&quot;
   }
-}]]></component>
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -113,6 +118,8 @@
     "TestNG.TestCaseThree.executor": "Run",
     "TestNG.TestCaseTwo.executor": "Run",
     "TestNG.TestCase_1.executor": "Run",
+    "TestNG.TestCase_2.TestCase_2_CategoryPage.executor": "Run",
+    "TestNG.TestCase_2.TestCase_2_ProductPage.executor": "Run",
     "TestNG.TestCase_2.executor": "Run",
     "TestNG.TestCase_3.executor": "Run",
     "TestNG.TestCase_4.TestCase_4_ConfigureSettings.executor": "Run",
@@ -143,11 +150,35 @@
       <recent name="storefront" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestCase_1">
-    <configuration name="TestCase_1" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.TestCase_5_AboveUnderPrice">
+    <configuration name="TestCase_2.TestCase_2_CategoryPage" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCase_1" />
+      <option name="MAIN_CLASS_NAME" value="TestCase_2" />
+      <option name="METHOD_NAME" value="TestCase_2_CategoryPage" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCase_2.TestCase_2_ProductPage" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Stickers" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCase_2" />
+      <option name="METHOD_NAME" value="TestCase_2_ProductPage" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCase_3" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Stickers" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCase_3" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -155,12 +186,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCase_4.TestCase_4_ConfigureSettings" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCase_4" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Stickers" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestCase_4" />
-      <option name="METHOD_NAME" value="TestCase_4_ConfigureSettings" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -178,45 +208,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCase_5_AboveUnderPrice.TestCase_5_ConfigureSettings" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Stickers" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCase_5_AboveUnderPrice" />
-      <option name="METHOD_NAME" value="TestCase_5_ConfigureSettings" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestCase_5_AboveUnderPrice.TestCase_5_ProductPage" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Stickers" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCase_5_AboveUnderPrice" />
-      <option name="METHOD_NAME" value="TestCase_5_ProductPage" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="TestNG.TestNG_Stickers" />
-      <item itemvalue="TestNG.TestCase_1" />
-      <item itemvalue="TestNG.TestCase_4.TestCase_4_ConfigureSettings" />
-      <item itemvalue="TestNG.TestCase_5_AboveUnderPrice.TestCase_5_ConfigureSettings" />
-      <item itemvalue="TestNG.TestCase_5_AboveUnderPrice.TestCase_5_ProductPage" />
+      <item itemvalue="TestNG.TestCase_2.TestCase_2_CategoryPage" />
+      <item itemvalue="TestNG.TestCase_2.TestCase_2_ProductPage" />
+      <item itemvalue="TestNG.TestCase_3" />
+      <item itemvalue="TestNG.TestCase_4" />
       <item itemvalue="TestNG.TestCase_5_AboveUnderPrice" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TestCase_1" />
         <item itemvalue="TestNG.TestCase_5_AboveUnderPrice" />
-        <item itemvalue="TestNG.TestCase_4.TestCase_4_ConfigureSettings" />
-        <item itemvalue="TestNG.TestCase_5_AboveUnderPrice.TestCase_5_ProductPage" />
-        <item itemvalue="TestNG.TestCase_5_AboveUnderPrice.TestCase_5_ConfigureSettings" />
+        <item itemvalue="TestNG.TestCase_4" />
+        <item itemvalue="TestNG.TestCase_3" />
+        <item itemvalue="TestNG.TestCase_2.TestCase_2_CategoryPage" />
+        <item itemvalue="TestNG.TestCase_2.TestCase_2_ProductPage" />
       </list>
     </recent_temporary>
   </component>
@@ -481,14 +487,6 @@
       <option name="project" value="LOCAL" />
       <updated>1678200339225</updated>
     </task>
-    <task id="LOCAL-00059" summary="Added new test 'TestCase_5_AboveUnderPrice'.">
-      <option name="closed" value="true" />
-      <created>1745400668769</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1745400668769</updated>
-    </task>
     <task id="LOCAL-00060" summary="Added new test 'TestCase_5_AboveUnderPrice'.">
       <option name="closed" value="true" />
       <created>1745481086888</created>
@@ -593,7 +591,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775141519693</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Made adaptation to CS-Cart 4.20.1.">
+      <option name="closed" value="true" />
+      <created>1775146150119</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1775146150119</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -608,7 +614,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed class UniThemeSettings." />
     <MESSAGE value="Test case Four is ready!" />
     <MESSAGE value="Prepared SoftAsserts for the first test case." />
     <MESSAGE value="SoftAsserts for the first test-case are ready and work properly!" />
@@ -633,6 +638,18 @@
     <MESSAGE value="Fixed a critical bug on the assert method." />
     <MESSAGE value="* Updated vocabularies in pom file.&#10;* Refactored some code." />
     <MESSAGE value="* Updated libraries in pom file." />
-    <option name="LAST_COMMIT_MESSAGE" value="* Updated libraries in pom file." />
+    <MESSAGE value="Made adaptation to CS-Cart 4.20.1." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made adaptation to CS-Cart 4.20.1." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TestCase_2.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

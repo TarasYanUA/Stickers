@@ -6,8 +6,6 @@ import storefront.AssertsOnStorefront;
 import storefront.StCategoryPage;
 import storefront.StProductPage;
 
-import static com.codeborne.selenide.Selenide.$x;
-
 /*
 ссылка на тест-кейс: https://docs.google.com/spreadsheets/d/1UdXKRCHxD7XP7W3UzDN28ff10LyiJPbZKrdvZllpUCU/edit#gid=1582514111
 Проверяем следующее:
@@ -138,7 +136,7 @@ public class TestCase_2 extends TestRunner {
     @Test(priority = 30, dependsOnMethods = "TestCase_2_ConfigureSettings")
     public void TestCase_2_CategoryPage() {
         CategorySettings categorySettings = basicPage.navigateToSection_Categories();
-        $x("//a[text()='AB: Телефоны']").click();
+        categorySettings.openCategoryPage("AB: Телефоны");
         StCategoryPage stCategoryPage = categorySettings.navigateTo_StCategoryPage(1);
 
         //Проверяем, что присутствуют стикеры слева и вверху

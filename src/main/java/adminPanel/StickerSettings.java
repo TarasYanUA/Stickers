@@ -95,6 +95,7 @@ public class StickerSettings {
     public void goToAbMenu_StickerListPage() {
         abMenu_dropDownToggle.shouldBe(Condition.interactable, Duration.ofSeconds(10)).click();
         abMenu_StickerList.click();
+        Utils.closeAllNotifications();
     }
 
     static class DisplayBlock {
@@ -111,6 +112,7 @@ public class StickerSettings {
 
     public void setSettingsAt_DisplayTab(String place, String position, String size) {
         executeJavaScript("window.scrollTo(0, 0);");
+        Utils.closeAllNotifications();
         tab_Display.click();
 
         List<DisplayBlock> blocks = List.of(

@@ -6,8 +6,6 @@ import storefront.AssertsOnStorefront;
 import storefront.StCategoryPage;
 import storefront.StProductPage;
 
-import static com.codeborne.selenide.Selenide.$x;
-
 /*
 ссылка на тест-кейс: https://docs.google.com/spreadsheets/d/1UdXKRCHxD7XP7W3UzDN28ff10LyiJPbZKrdvZllpUCU/edit#gid=1582514111
 Проверяем следующее:
@@ -40,6 +38,7 @@ public class TestCase_3 extends TestRunner {
         uniThemeSettings.setPictogramPositionsAtProductListTab("position_2");
         //Настраиваем Комбинации формаций изображений галереи товара
         uniThemeSettings.goToProductTab();
+        uniThemeSettings.fieldOfPictogramPosition_Product.selectOptionByValue("position_2");
         uniThemeSettings.setting_CombinationsOfProductGalleryImageFormations.selectOptionByValue("3");
         Utils.saveSettings();
 
@@ -147,7 +146,7 @@ public class TestCase_3 extends TestRunner {
     @Test(priority = 30, dependsOnMethods = "TestCase_3_ConfigureSettings")
     public void TestCase_3_CategoryPage(){
         CategorySettings categorySettings = basicPage.navigateToSection_Categories();
-        $x("//a[text()='AB: Телефоны']").click();
+        categorySettings.openCategoryPage("AB: Телефоны");
         StCategoryPage stCategoryPage = categorySettings.navigateTo_StCategoryPage(1);
         
         //Проверяем, что присутствуют стикеры справа и вверху
