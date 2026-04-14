@@ -23,12 +23,9 @@ public class CategorySettings extends BasicPage {
     }
 
     public void openCategoryPage(String categoryName) {
-        if (!collapsedCategoryList.isEmpty()) {
+        if (!collapsedCategoryList.isEmpty())
             expandCategoryList.click();
-            $x(String.format("//a[contains(text(), '%s')]", categoryName)).click();
-        } else {
-            $x(String.format("//a[contains(text(), '%s')]", categoryName)).click();
-        }
+        $x(String.format("//a[contains(text(), '%s')]", categoryName)).click();
     }
 
     public void activateCategoryAndSave() {
