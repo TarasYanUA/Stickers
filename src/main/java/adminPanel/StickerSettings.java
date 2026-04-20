@@ -82,6 +82,7 @@ public class StickerSettings {
         }
         button_AddCondition.shouldBe(Condition.interactable).click();
         fieldOfConditions.selectOptionByValue("price");
+        Utils.waitForSpinnerDisappear();
         fieldOfOperator.selectOptionByValue("gte");
         fieldOfPriceCondition.setValue("1400");
     }
